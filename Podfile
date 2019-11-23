@@ -10,5 +10,6 @@ target 'Taqyeem' do
   pod 'NVActivityIndicatorView'
   pod 'Alamofire'
   pod 'IQKeyboardManagerSwift'
+  pod 'SkyFloatingLabelTextField', '~> 3.0'
 
 end

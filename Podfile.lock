@@ -7,12 +7,14 @@ PODS:
   - NVActivityIndicatorView (4.8.0):
     - NVActivityIndicatorView/Presenter (= 4.8.0)
   - NVActivityIndicatorView/Presenter (4.8.0)
+  - SkyFloatingLabelTextField (3.7.0)
 
 DEPENDENCIES:
   - Alamofire
   - IQKeyboardManagerSwift
   - Kingfisher
   - NVActivityIndicatorView
+  - SkyFloatingLabelTextField (~> 3.0)
 
 SPEC REPOS:
   trunk:
@@ -20,13 +22,15 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - Kingfisher
     - NVActivityIndicatorView
+    - SkyFloatingLabelTextField
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   Kingfisher: 0bf6eae7c2193f15719915fecb7c2c1c03855f3d
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
+  SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
 
-PODFILE CHECKSUM: e5861129a7cd6f9eaf43ed7e3388068d912761d7
+PODFILE CHECKSUM: 90e7fa8dd3843834ad4caeaa64e06d0d678f086f
 
 COCOAPODS: 1.8.4
