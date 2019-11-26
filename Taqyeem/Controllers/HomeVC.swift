@@ -10,16 +10,14 @@ import UIKit
 
 class HomeVC: UIViewController {
 
+    @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var stackMain: HomeStack!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        stackMain.roundCorners()
-        stackMain.layer.cornerRadius = 20
-        stackMain.masksToBounds = true
-        stackMain.layer.masksToBounds = true
-        stackMain.clipsToBounds = true
+        stackMain.initGestures()
+        containerView.addShadow(color: UIColor.gray)
     }
 
 }

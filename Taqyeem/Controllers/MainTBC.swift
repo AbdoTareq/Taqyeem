@@ -13,7 +13,8 @@ class MainTBC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setTabbarImages()
+        selectedIndex = 2
     }
     func setTabbarImages() {
            guard let vcs = viewControllers else { return }
@@ -23,23 +24,23 @@ class MainTBC: UITabBarController {
 
                switch (vc as! UINavigationController).topViewController
                {
-               case let vc where vc is HomeVC:
-                   tabBar.items?[index].selectedImage = UIImage(named: "home_selected")?.withRenderingMode(.alwaysOriginal)
-                   tabBar.items?[index].image = UIImage(named: "home")?.withRenderingMode(.alwaysOriginal)
-                   tabBar.items?[index].title = ""//localize("Search") // Profile
-                   tabBar.items?[index].tag = index
-
+                case let vc where vc is SettingsVC:
+                tabBar.items?[index].selectedImage = UIImage(named: "settings_selected")?.withRenderingMode(.alwaysOriginal)
+                tabBar.items?[index].image = UIImage(named: "settings")?.withRenderingMode(.alwaysOriginal)
+                tabBar.items?[index].title = ""//localize("Profile") // Reachers
+                tabBar.items?[index].tag = index
+                
                case let vc where vc is ContactVC:
                    tabBar.items?[index].selectedImage = UIImage(named: "contact_us_selected")?.withRenderingMode(.alwaysOriginal)
                    tabBar.items?[index].image = UIImage(named: "contact_us")?.withRenderingMode(.alwaysOriginal)
                    tabBar.items?[index].title = ""//localize("Offers") // Ads
                    tabBar.items?[index].tag = index
 
-               case let vc where vc is SettingsVC:
-                   tabBar.items?[index].selectedImage = UIImage(named: "settings_selected")?.withRenderingMode(.alwaysOriginal)
-                   tabBar.items?[index].image = UIImage(named: "settings")?.withRenderingMode(.alwaysOriginal)
-                   tabBar.items?[index].title = ""//localize("Profile") // Reachers
-                   tabBar.items?[index].tag = index
+               case let vc where vc is HomeVC:
+               tabBar.items?[index].selectedImage = UIImage(named: "home_selected")?.withRenderingMode(.alwaysOriginal)
+               tabBar.items?[index].image = UIImage(named: "home")?.withRenderingMode(.alwaysOriginal)
+               tabBar.items?[index].title = ""//localize("Search") // Profile
+               tabBar.items?[index].tag = index
 
                default: break
                }

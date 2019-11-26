@@ -82,4 +82,11 @@ extension UIView {
         }
         return snapshot
     }
+    @objc func addShadow(color: UIColor, radius: CGFloat = 5) {
+        layer.shadowColor = color.cgColor
+        layer.shadowOffset = CGSize.zero
+        layer.shadowOpacity = 0.4
+        layer.shadowRadius = radius
+        layer.masksToBounds = false
+    }
 }

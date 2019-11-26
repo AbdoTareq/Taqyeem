@@ -36,6 +36,11 @@
 		0653BFB82383147000BDC506 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0653BFB32383147000BDC506 /* APIResponse.swift */; };
 		0653BFB92383147000BDC506 /* ServiceBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0653BFB42383147000BDC506 /* ServiceBase.swift */; };
 		0653BFBA2383147000BDC506 /* PaginationN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0653BFB52383147000BDC506 /* PaginationN.swift */; };
+		06800B4D238D2D9600F4CF20 /* GeneralNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06800B4C238D2D9600F4CF20 /* GeneralNewsCell.swift */; };
+		06800B4F238D2DBE00F4CF20 /* GeneralNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06800B4E238D2DBE00F4CF20 /* GeneralNewsVC.swift */; };
+		06A6CA52238CA09A00565026 /* FavouritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A6CA51238CA09A00565026 /* FavouritesVC.swift */; };
+		06C6339C238C81330025F3C9 /* ResturantSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C6339B238C81330025F3C9 /* ResturantSearchVC.swift */; };
+		06C6339F238C81C40025F3C9 /* ResturantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C6339E238C81C40025F3C9 /* ResturantCell.swift */; };
 		06D1A30B23894416005568D1 /* Cairo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06D1A30523894415005568D1 /* Cairo-ExtraLight.ttf */; };
 		06D1A30C23894416005568D1 /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06D1A30623894415005568D1 /* Cairo-Bold.ttf */; };
 		06D1A30D23894416005568D1 /* Cairo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06D1A30723894415005568D1 /* Cairo-Light.ttf */; };
@@ -84,6 +89,11 @@
 		0653BFB32383147000BDC506 /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		0653BFB42383147000BDC506 /* ServiceBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceBase.swift; sourceTree = "<group>"; };
 		0653BFB52383147000BDC506 /* PaginationN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginationN.swift; sourceTree = "<group>"; };
+		06800B4C238D2D9600F4CF20 /* GeneralNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralNewsCell.swift; sourceTree = "<group>"; };
+		06800B4E238D2DBE00F4CF20 /* GeneralNewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralNewsVC.swift; sourceTree = "<group>"; };
+		06A6CA51238CA09A00565026 /* FavouritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesVC.swift; sourceTree = "<group>"; };
+		06C6339B238C81330025F3C9 /* ResturantSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantSearchVC.swift; sourceTree = "<group>"; };
+		06C6339E238C81C40025F3C9 /* ResturantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantCell.swift; sourceTree = "<group>"; };
 		06D1A30523894415005568D1 /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
 		06D1A30623894415005568D1 /* Cairo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Bold.ttf"; sourceTree = "<group>"; };
 		06D1A30723894415005568D1 /* Cairo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Light.ttf"; sourceTree = "<group>"; };
@@ -154,6 +164,7 @@
 		0653BF8423830B8100BDC506 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				06C6339D238C81AD0025F3C9 /* Cells */,
 				0653BF8B23830C8400BDC506 /* MainTBC.swift */,
 				06D1A3132389705E005568D1 /* HomeVC.swift */,
 				06D1A315238970B6005568D1 /* HomeStack.swift */,
@@ -161,6 +172,9 @@
 				06D1A3192389872F005568D1 /* ContactVC.swift */,
 				06D1A31B2389961C005568D1 /* LoginVC.swift */,
 				06D1A31D23899629005568D1 /* RegisterationVC.swift */,
+				06C6339B238C81330025F3C9 /* ResturantSearchVC.swift */,
+				06A6CA51238CA09A00565026 /* FavouritesVC.swift */,
+				06800B4E238D2DBE00F4CF20 /* GeneralNewsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -215,6 +229,15 @@
 				06D1A31123897001005568D1 /* BoardersExt.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		06C6339D238C81AD0025F3C9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				06C6339E238C81C40025F3C9 /* ResturantCell.swift */,
+				06800B4C238D2D9600F4CF20 /* GeneralNewsCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		06D1A30423894400005568D1 /* Fonts */ = {
@@ -371,6 +394,7 @@
 				0653BFA82383133600BDC506 /* ColorExt.swift in Sources */,
 				06D1A3142389705E005568D1 /* HomeVC.swift in Sources */,
 				0653BFA12383133600BDC506 /* ExtendedView.swift in Sources */,
+				06C6339C238C81330025F3C9 /* ResturantSearchVC.swift in Sources */,
 				0653BFAC2383133600BDC506 /* SpinnerExt.swift in Sources */,
 				0653BFB62383147000BDC506 /* GenericModel.swift in Sources */,
 				0653BFB72383147000BDC506 /* NetworkManager.swift in Sources */,
@@ -393,13 +417,17 @@
 				0653BFBA2383147000BDC506 /* PaginationN.swift in Sources */,
 				06D1A31223897001005568D1 /* BoardersExt.swift in Sources */,
 				0653BF712382C49600BDC506 /* AppDelegate.swift in Sources */,
+				06A6CA52238CA09A00565026 /* FavouritesVC.swift in Sources */,
 				0653BFAE2383133600BDC506 /* CodableExt.swift in Sources */,
 				06D1A316238970B6005568D1 /* HomeStack.swift in Sources */,
 				06D1A31C2389961C005568D1 /* LoginVC.swift in Sources */,
 				0653BFAA2383133600BDC506 /* JsonableExt.swift in Sources */,
 				0653BF8C23830C8400BDC506 /* MainTBC.swift in Sources */,
+				06800B4D238D2D9600F4CF20 /* GeneralNewsCell.swift in Sources */,
 				0653BF9E2383133600BDC506 /* ShadowExt.swift in Sources */,
 				0653BF732382C49600BDC506 /* SceneDelegate.swift in Sources */,
+				06C6339F238C81C40025F3C9 /* ResturantCell.swift in Sources */,
+				06800B4F238D2DBE00F4CF20 /* GeneralNewsVC.swift in Sources */,
 				06D1A31823898709005568D1 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

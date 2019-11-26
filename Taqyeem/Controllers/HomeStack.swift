@@ -7,7 +7,6 @@
 //
 
 import UIKit
-@IBDesignable
 class HomeStack: UIStackView {
     @IBOutlet weak var vwFav: UIView!
     @IBOutlet weak var vwSearch: UIView!
@@ -19,37 +18,35 @@ class HomeStack: UIStackView {
     @IBOutlet weak var stackFirst: UIStackView!
     @IBOutlet weak var stackSecond: UIStackView!
     @IBOutlet weak var stackThird: UIStackView!
-    
-    func roundCorners() {
-        vwFav.layer.masksToBounds = true
-        vwSearch.layer.masksToBounds = true
-        vwGeneralNews.layer.masksToBounds = true
-        vwManagementNews.layer.masksToBounds = true
-        vwEGate.layer.masksToBounds = true
-        vwAbout.layer.masksToBounds = true
-        
-        stackFirst.layer.masksToBounds = true
-        stackSecond.layer.masksToBounds = true
-        stackThird.layer.masksToBounds = true
-    }
-    
-    @IBInspectable private var color: UIColor?
-    override var backgroundColor: UIColor? {
-        get { return color }
-        set {
-            color = newValue
-            self.setNeedsLayout() // EDIT 2017-02-03 thank you @BruceLiu
-        }
-    }
 
-    private lazy var backgroundLayer: CAShapeLayer = {
-        let layer = CAShapeLayer()
-        self.layer.insertSublayer(layer, at: 0)
-        return layer
-    }()
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        backgroundLayer.path = UIBezierPath(rect: self.bounds).cgPath
-        backgroundLayer.fillColor = self.backgroundColor?.cgColor
+    
+    func initGestures() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToSearch(_:)))
+        vwSearch.addGestureRecognizer(tapGestureRecognizer)
+
+        let favGesture = UITapGestureRecognizer(target: self, action: #selector(goToFav))
+        vwFav.addGestureRecognizer(favGesture)
+        
+        let generalNewsGesture = UITapGestureRecognizer(target: self, action: #selector(goToGeneralNews))
+        vwGeneralNews.addGestureRecognizer(generalNewsGesture)
+        
+        let managementNewsGesture = UITapGestureRecognizer(target: self, action: #selector(goToManagementNews))
+        vwManagementNews.addGestureRecognizer(managementNewsGesture)
     }
+    @objc func goToSearch(_: UITapGestureRecognizer) {
+        let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "ResturantSearchVC") as! ResturantSearchVC
+        UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    @objc func goToFav(_: UITapGestureRecognizer) {
+        let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "FavouritesVC") as! FavouritesVC
+        UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    @objc func goToGeneralNews(_: UITapGestureRecognizer) {
+        let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "GeneralNewsVC") as! GeneralNewsVC
+        UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    @objc func goToManagementNews(_: UITapGestureRecognizer) {
+           let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "GeneralNewsVC") as! GeneralNewsVC
+           UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
+       }
 }

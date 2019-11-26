@@ -11,5 +11,5 @@ target 'Taqyeem' do
   pod 'Alamofire'
   pod 'IQKeyboardManagerSwift'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
-
+  pod 'Cosmos', '~> 20.0'
 end
