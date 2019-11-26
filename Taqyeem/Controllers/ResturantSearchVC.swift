@@ -14,9 +14,12 @@ class ResturantSearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.reloadData()
+        initNavigationBar()
     }
-
+    func initNavigationBar() {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationItem.setHidesBackButton(true, animated: false)
+    }
 }
 extension ResturantSearchVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,5 +34,4 @@ extension ResturantSearchVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
-    
 }

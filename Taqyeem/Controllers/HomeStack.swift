@@ -11,27 +11,27 @@ class HomeStack: UIStackView {
     @IBOutlet weak var vwFav: UIView!
     @IBOutlet weak var vwSearch: UIView!
     @IBOutlet weak var vwGeneralNews: UIView!
-    @IBOutlet weak var vwManagementNews: UIView!
+    @IBOutlet weak var vwbulletain: UIView!
     @IBOutlet weak var vwEGate: UIView!
     @IBOutlet weak var vwAbout: UIView!
     
     @IBOutlet weak var stackFirst: UIStackView!
     @IBOutlet weak var stackSecond: UIStackView!
     @IBOutlet weak var stackThird: UIStackView!
-
+    
     
     func initGestures() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToSearch(_:)))
         vwSearch.addGestureRecognizer(tapGestureRecognizer)
-
+        
         let favGesture = UITapGestureRecognizer(target: self, action: #selector(goToFav))
         vwFav.addGestureRecognizer(favGesture)
         
         let generalNewsGesture = UITapGestureRecognizer(target: self, action: #selector(goToGeneralNews))
         vwGeneralNews.addGestureRecognizer(generalNewsGesture)
         
-        let managementNewsGesture = UITapGestureRecognizer(target: self, action: #selector(goToManagementNews))
-        vwManagementNews.addGestureRecognizer(managementNewsGesture)
+        let bulletainGesture = UITapGestureRecognizer(target: self, action: #selector(goToBulletain))
+        vwbulletain.addGestureRecognizer(bulletainGesture)
     }
     @objc func goToSearch(_: UITapGestureRecognizer) {
         let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "ResturantSearchVC") as! ResturantSearchVC
@@ -45,8 +45,8 @@ class HomeStack: UIStackView {
         let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "GeneralNewsVC") as! GeneralNewsVC
         UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
     }
-    @objc func goToManagementNews(_: UITapGestureRecognizer) {
-           let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "GeneralNewsVC") as! GeneralNewsVC
-           UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
-       }
+    @objc func goToBulletain(_: UITapGestureRecognizer) {
+        let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "BulletainVC") as! BulletainVC
+        UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
+    }
 }

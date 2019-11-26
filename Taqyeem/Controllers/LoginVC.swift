@@ -13,7 +13,12 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        initNavigationBar()
+    }
+
+    func initNavigationBar() {
+           navigationController?.setNavigationBarHidden(true, animated: true)
+           //navigationItem.title = "مطاعمي المفضلة"
     }
 
     @IBAction func btnSkip_Click(_ sender: UIButton) {
