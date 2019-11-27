@@ -10,10 +10,17 @@ import UIKit
 
 class ContactVC: UIViewController {
 
+    @IBOutlet weak var stackContact: ContactStack!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        stackContact.initGestures()
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        initNavigationBar()
+    }
+    func initNavigationBar() {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationItem.setHidesBackButton(true, animated: false)
+    }
 }

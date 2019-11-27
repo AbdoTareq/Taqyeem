@@ -1,43 +1,44 @@
 //
-//  ResturantSearchVC.swift
+//  MyReportsVC.swift
 //  Taqyeem
 //
-//  Created by Mostafa sayed on 11/25/19.
+//  Created by Mostafa sayed on 11/27/19.
 //  Copyright © 2019 mazeedit. All rights reserved.
 //
 
 import UIKit
 
-class ResturantSearchVC: UIViewController {
-
+class MyReportsVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.tableFooterView = UIView()
         initNavigationBar()
     }
     func initNavigationBar() {
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        UINavigationBar.appearance().backgroundColor = UIColor(hexString: "#CCA121")
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationItem.title = "بلاغاتي"
         navigationItem.setHidesBackButton(true, animated: false)
     }
+    
 }
-extension ResturantSearchVC: UITableViewDelegate, UITableViewDataSource {
+extension MyReportsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ResturantCell", for: indexPath) as! ResturantCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReportCell", for: indexPath) as! ReportCell
         
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 90
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let nextVC = storyboard?.instantiateViewController(withIdentifier: "ResturantDetailsVC") as! ResturantDetailsVC
-        nextVC.resturantName = "Hello"
+        let nextVC = storyboard?.instantiateViewController(withIdentifier: "ReportDetailsVC") as! ReportDetailsVC
         UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
     }
 }

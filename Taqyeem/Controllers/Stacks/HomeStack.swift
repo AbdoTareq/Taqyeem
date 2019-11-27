@@ -32,6 +32,9 @@ class HomeStack: UIStackView {
         
         let bulletainGesture = UITapGestureRecognizer(target: self, action: #selector(goToBulletain))
         vwbulletain.addGestureRecognizer(bulletainGesture)
+        
+        let aboutGesture = UITapGestureRecognizer(target: self, action: #selector(goToAbout))
+        vwAbout.addGestureRecognizer(aboutGesture)
     }
     @objc func goToSearch(_: UITapGestureRecognizer) {
         let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "ResturantSearchVC") as! ResturantSearchVC
@@ -47,6 +50,10 @@ class HomeStack: UIStackView {
     }
     @objc func goToBulletain(_: UITapGestureRecognizer) {
         let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "BulletainVC") as! BulletainVC
+        UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    @objc func goToAbout(_: UITapGestureRecognizer) {
+        let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "AboutVC") as! AboutVC
         UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
     }
 }

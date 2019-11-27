@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        UINavigationBar.appearance().barTintColor = UIColor(hexString: "#CCA121")
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+
         return true
     }
     

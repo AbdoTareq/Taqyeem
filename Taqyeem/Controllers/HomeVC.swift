@@ -19,5 +19,12 @@ class HomeVC: UIViewController {
         stackMain.initGestures()
         containerView.addShadow(color: UIColor.gray)
     }
-
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+        initNavigationBar()
+    }
+    func initNavigationBar() {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationItem.setHidesBackButton(true, animated: false)
+    }
 }

@@ -15,6 +15,7 @@ class FavouritesVC: UIViewController {
         initNavigationBar()
     }
     func initNavigationBar() {
+        UINavigationBar.appearance().backgroundColor = UIColor(hexString: "#CCA121")
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationItem.title = "مطاعمي المفضلة"
         navigationItem.setHidesBackButton(true, animated: false)
@@ -32,5 +33,10 @@ extension FavouritesVC: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let nextVC = storyboard?.instantiateViewController(withIdentifier: "ResturantDetailsVC") as! ResturantDetailsVC
+        nextVC.resturantName = "Hello"
+        UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
     }
 }

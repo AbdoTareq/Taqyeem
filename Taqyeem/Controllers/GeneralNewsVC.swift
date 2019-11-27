@@ -16,6 +16,7 @@ class GeneralNewsVC: UIViewController {
         initNavigationBar()
     }
     func initNavigationBar() {
+        UINavigationBar.appearance().backgroundColor = UIColor(hexString: "#CCA121")
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationItem.title = "الأخبار"
         navigationItem.setHidesBackButton(true, animated: false)
@@ -35,5 +36,9 @@ extension GeneralNewsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let nextVC = storyboard?.instantiateViewController(withIdentifier: "NewsDetailsVC") as! NewsDetailsVC
+        nextVC.pageTitle = "عرض الخبر"
+        UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
+    }
 }

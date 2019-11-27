@@ -7,12 +7,14 @@
 //
 
 import UIKit
-
+import SkyFloatingLabelTextField
 class LoginVC: UIViewController {
 
+    @IBOutlet weak var txtPhone: SkyFloatingLabelTextField!
+    @IBOutlet weak var txtPassword: SkyFloatingLabelTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         initNavigationBar()
     }
 
