@@ -9,10 +9,14 @@
 import UIKit
 
 class SettingsVC: UIViewController {
-
+    
+    @IBOutlet weak var containerView: UIView!
+    
+    @IBOutlet weak var stackSettings: SettingsStack!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        stackSettings.initGestures()
+        containerView.addShadow(color: UIColor.gray)
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -23,5 +27,4 @@ class SettingsVC: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
         navigationItem.setHidesBackButton(true, animated: false)
     }
-
 }

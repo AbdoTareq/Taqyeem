@@ -10,15 +10,13 @@ import UIKit
 
 class NewsDetailsCell: UITableViewCell {
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var lblBody: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         containerView.addShadow(color: UIColor.gray)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func bindData(body: String) {
+        lblBody.text = body
     }
 
 }

@@ -14,6 +14,9 @@ class ReportDetailsVC: UIViewController {
         super.viewDidLoad()
         initNavigationBar()
     }
+    @IBAction func navBtnBack_Click(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
+    }
     func initNavigationBar() {
         UINavigationBar.appearance().backgroundColor = UIColor(hexString: "#CCA121")
         navigationController?.setNavigationBarHidden(false, animated: true)

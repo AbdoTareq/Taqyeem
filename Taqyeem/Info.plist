@@ -69,5 +69,7 @@
 		<string>Cairo-SemiBold.ttf</string>
 		<string>Cairo-Black.ttf</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>

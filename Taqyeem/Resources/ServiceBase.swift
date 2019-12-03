@@ -26,4 +26,10 @@ enum ServiceBase: String {
     
     case storeRating = "store_avg_ratings"
     case storeRatingDetails = "store_avg_spec_ratings"
+    
+    case news = "news"
+    case publications = "publication"
+    
+    case register = "user/save"
+    case login = "user/authenticate"
 }

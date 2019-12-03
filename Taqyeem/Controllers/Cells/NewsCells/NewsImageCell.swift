@@ -9,16 +9,17 @@
 import UIKit
 
 class NewsImageCell: UITableViewCell {
+    @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var containerView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         containerView.addShadow(color: UIColor.gray)
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func bindData(base64: String) {
+        if let decodedData = Data(base64Encoded: base64, options: .ignoreUnknownCharacters) {
+            img.image = UIImage(data: decodedData)
+        }
     }
 
 }

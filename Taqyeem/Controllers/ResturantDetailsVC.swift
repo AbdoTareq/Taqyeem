@@ -15,12 +15,15 @@ class ResturantDetailsVC: UIViewController {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 100.0
         tableView.rowHeight = UITableView.automaticDimension
+        initNavigationBar()
     }
-
+    @IBAction func navBtnBack_Click(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
+    }
     func initNavigationBar() {
         UINavigationBar.appearance().backgroundColor = UIColor(hexString: "#CCA121")
         navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationItem.title = title
+        navigationItem.title = resturantName
         navigationItem.setHidesBackButton(true, animated: false)
     }
 }

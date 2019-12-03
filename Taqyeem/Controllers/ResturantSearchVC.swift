@@ -37,7 +37,7 @@ extension ResturantSearchVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let nextVC = storyboard?.instantiateViewController(withIdentifier: "ResturantDetailsVC") as! ResturantDetailsVC
-        nextVC.resturantName = "Hello"
+        nextVC.resturantName = "مطعم المطار"
         UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
     }
 }

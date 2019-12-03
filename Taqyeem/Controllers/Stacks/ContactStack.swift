@@ -20,6 +20,11 @@ class ContactStack: UIStackView {
         
         let myReportsGesture = UITapGestureRecognizer(target: self, action: #selector(goToMyReports))
         vwMyReports.addGestureRecognizer(myReportsGesture)
+
+        let contactKaseemGesture = UITapGestureRecognizer(target: self, action: #selector(goToMyContactKaseem))
+        vwContact.addGestureRecognizer(contactKaseemGesture)
+        let contactManagementGesture = UITapGestureRecognizer(target: self, action: #selector(goToMyContactManagement))
+        vwContactManagement.addGestureRecognizer(contactManagementGesture)
         
     }
     @objc func goToCreateReport(_: UITapGestureRecognizer) {
@@ -30,4 +35,12 @@ class ContactStack: UIStackView {
           let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "MyReportsVC") as! MyReportsVC
           UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
       }
+    @objc func goToMyContactKaseem(_: UITapGestureRecognizer) {
+        let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "ContactKaseemVC") as! ContactKaseemVC
+        UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    @objc func goToMyContactManagement(_: UITapGestureRecognizer) {
+        let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "ContactManagementVC") as! ContactManagementVC
+        UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
+    }
 }

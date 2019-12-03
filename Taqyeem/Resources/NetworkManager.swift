@@ -25,7 +25,7 @@ class NetworkManager {
             func getURL() -> String {
                 switch self {
                 case .v1:
-                    return (Configuration.environment == .prod) ? "http://46.151.210.248:8888/" : "https://api-dev.reachplus.co/api/v1/"
+                    return (Configuration.environment == .prod) ? "http://46.151.210.248:8888/rating_app/" : "https://api-dev.reachplus.co/api/v1/"
                 case .v2:
                     return (Configuration.environment == .prod) ? "https://api.reachplus.co/api/v2/" : "https://api-dev.reachplus.co/api/v2/"
                 }
@@ -48,14 +48,16 @@ class NetworkManager {
     }()
 
     static var headers: [String: String] {
-        return ["Content-Type": "application/x-www-form-urlencoded",
+        return [
+            "Content-Type": "application/json",
                 "Accept": "application/json",
-                "Authorization": "Bearer \(UserDefaultsAccess.sharedInstance.token)",
+                //"Authorization": "Bearer \(UserDefaultsAccess.sharedInstance.token)",
                 //"Content-language": L102Language.currentAppleLanguage().contains("ar") ? "ar" : "en",
-                "current-version": appVersion]
+                //"current-version": appVersion
+        ]
     }
 
-    class func makeRequest<T: Decodable, U: Decodable>(configuration: Configuration, completion: @escaping (_ response: APIResponse<T, U>) -> Void) {
+    class func makeRequest(configuration: Configuration, completion: @escaping (_ response: DataResponse<Any>) -> Void) {
         rawResponse = nil
         let serviceURL = configuration.urlString
 
@@ -73,35 +75,31 @@ class NetworkManager {
         )
 
         //            .validate()
-        .validate(contentType: ["application/json"])
+        //.validate(contentType: ["application/json"])
 
         .responseJSON {
             response in
             print(response)
             debugPrint(response)
 
-            rawResponse = nil
-
             if let data = response.request?.httpBody {
                 print(String(data: data, encoding: .utf8) ?? "")
             }
 
-            let validatedResponse: APIResponse<T, U> = self.validateResponseForAPI(response: response)
-
-            completion(validatedResponse)
+            completion(response)
         }
     }
 
-    private class func validateResponseForAPI<T: Decodable, U: Decodable>(response: DataResponse<Any>) -> APIResponse<T, U> {
+    private class func validateResponseForAPI<T: Decodable>(response: DataResponse<Any>) -> APIResponse<T> {
         switch response.result
         {
         case let .success(result):
 
             guard
                 let JsonArray = result as? NSDictionary,
-                var obj: APIResponse<T, U> = JsonArray.getObject()
+                var obj: APIResponse<T> = JsonArray.getObject()
             else {
-                return APIResponse(sucess: false, message: "Unknown Error Code 38", data: nil, meta: nil)
+                return APIResponse(sucess: false, message: "Unknown Error Code 38", data: nil)
             }
             rawResponse = JsonArray
 
@@ -123,12 +121,12 @@ class NetworkManager {
             // Log
             print("Failure Response: \(result)")
             if let err = result as? URLError, err.code == .notConnectedToInternet {
-                return (APIResponse(sucess: false, message: "No Internet", data: nil, meta: nil))
+                return (APIResponse(sucess: false, message: "No Internet", data: nil))
             }
             else {
                 UserDefaultsAccess.sharedInstance.clearData()
                 //(UIApplication.shared.delegate as! AppDelegate).decideRootView(animated: false)
-                return (APIResponse(sucess: false, message: "Unknown Error Code 39", data: nil, meta: nil))
+                return (APIResponse(sucess: false, message: "Unknown Error Code 39", data: nil))
             }
         }
     }

@@ -9,16 +9,19 @@
 import UIKit
 
 class NewsTitleCell: UITableViewCell {
+    
+    @IBOutlet weak var lblTitle: UILabel!
+    
+    @IBOutlet weak var lblDate: UILabel!
+    
     @IBOutlet weak var containerView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         containerView.addShadow(color: UIColor.gray)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func bindData(title: String, date: String) {
+        lblTitle.text = title
+        lblDate.text = date
     }
 
 }

@@ -9,11 +9,26 @@
 import UIKit
 
 class GeneralNewsVC: UIViewController {
-
+    @IBOutlet weak var tableView: UITableView!
+    var vm: [NewsVM]?
     override func viewDidLoad() {
         super.viewDidLoad()
-
         initNavigationBar()
+        getData()
+    }
+
+    func getData() {
+        NewsVM.getNews() {news, error in
+            if error != nil {
+                self.showAlert(title: "Failed", message: error!, buttonTitle: "OK")
+            } else {
+                self.vm = news
+                self.tableView.reloadData()
+            }
+        }
+    }
+    @IBAction func navBtnBack_Click(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
     }
     func initNavigationBar() {
         UINavigationBar.appearance().backgroundColor = UIColor(hexString: "#CCA121")
@@ -25,12 +40,12 @@ class GeneralNewsVC: UIViewController {
 }
 extension GeneralNewsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        vm?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GeneralNewsCell", for: indexPath) as! GeneralNewsCell
-        
+        cell.bindData(news: vm![indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -39,6 +54,7 @@ extension GeneralNewsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let nextVC = storyboard?.instantiateViewController(withIdentifier: "NewsDetailsVC") as! NewsDetailsVC
         nextVC.pageTitle = "عرض الخبر"
+        nextVC.newsVM = vm![indexPath.row]
         UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
