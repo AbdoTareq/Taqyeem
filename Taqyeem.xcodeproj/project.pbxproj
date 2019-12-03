@@ -60,7 +60,6 @@
 		066CBBEE2395778600E118D9 /* RatingCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CBBED2395778600E118D9 /* RatingCriteria.swift */; };
 		066CBBF023958F3100E118D9 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CBBEF23958F3100E118D9 /* News.swift */; };
 		066CBBF223958FED00E118D9 /* NewsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CBBF123958FED00E118D9 /* NewsVM.swift */; };
-		066CBBF42395928B00E118D9 /* CodableExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CBBF32395928B00E118D9 /* CodableExt.swift */; };
 		066CBBF62395CA5000E118D9 /* BulletainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CBBF52395CA5000E118D9 /* BulletainVM.swift */; };
 		06800B4D238D2D9600F4CF20 /* GeneralNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06800B4C238D2D9600F4CF20 /* GeneralNewsCell.swift */; };
 		06800B4F238D2DBE00F4CF20 /* GeneralNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06800B4E238D2DBE00F4CF20 /* GeneralNewsVC.swift */; };
@@ -77,6 +76,7 @@
 		06BC662123928BD100651171 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BC662023928BD100651171 /* InfoVC.swift */; };
 		06BC66242392CA4900651171 /* AuthenticationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BC66232392CA4900651171 /* AuthenticationVM.swift */; };
 		06C4451B2396BB6D00DA1569 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4451A2396BB6D00DA1569 /* User.swift */; };
+		06C4451D23971FB500DA1569 /* CodableExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4451C23971FB500DA1569 /* CodableExt.swift */; };
 		06C6339C238C81330025F3C9 /* ResturantSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C6339B238C81330025F3C9 /* ResturantSearchVC.swift */; };
 		06C6339F238C81C40025F3C9 /* ResturantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C6339E238C81C40025F3C9 /* ResturantCell.swift */; };
 		06D1A30B23894416005568D1 /* Cairo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06D1A30523894415005568D1 /* Cairo-ExtraLight.ttf */; };
@@ -155,7 +155,6 @@
 		066CBBED2395778600E118D9 /* RatingCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCriteria.swift; sourceTree = "<group>"; };
 		066CBBEF23958F3100E118D9 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		066CBBF123958FED00E118D9 /* NewsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVM.swift; sourceTree = "<group>"; };
-		066CBBF32395928B00E118D9 /* CodableExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodableExt.swift; path = "../../../Reach Application/reach_ios/reach_ios/Reach_Network/Extensions/CodableExt.swift"; sourceTree = "<group>"; };
 		066CBBF52395CA5000E118D9 /* BulletainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletainVM.swift; sourceTree = "<group>"; };
 		06800B4C238D2D9600F4CF20 /* GeneralNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralNewsCell.swift; sourceTree = "<group>"; };
 		06800B4E238D2DBE00F4CF20 /* GeneralNewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralNewsVC.swift; sourceTree = "<group>"; };
@@ -172,6 +171,7 @@
 		06BC662023928BD100651171 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 		06BC66232392CA4900651171 /* AuthenticationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationVM.swift; sourceTree = "<group>"; };
 		06C4451A2396BB6D00DA1569 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		06C4451C23971FB500DA1569 /* CodableExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExt.swift; sourceTree = "<group>"; };
 		06C6339B238C81330025F3C9 /* ResturantSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantSearchVC.swift; sourceTree = "<group>"; };
 		06C6339E238C81C40025F3C9 /* ResturantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantCell.swift; sourceTree = "<group>"; };
 		06D1A30523894415005568D1 /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -315,7 +315,6 @@
 				06D1A31123897001005568D1 /* BoardersExt.swift */,
 				0653BF9A2383133500BDC506 /* CircleExt.swift */,
 				0653BF952383133400BDC506 /* CircleView.swift */,
-				066CBBF32395928B00E118D9 /* CodableExt.swift */,
 				0653BF972383133500BDC506 /* ColorExt.swift */,
 				0653BF932383133300BDC506 /* CopyableLabel.swift */,
 				0653BF982383133500BDC506 /* DateExt.swift */,
@@ -328,6 +327,7 @@
 				0653BF9B2383133500BDC506 /* SpinnerExt.swift */,
 				0653BF8F2383133300BDC506 /* TextFieldExt.swift */,
 				0653BF922383133300BDC506 /* ViewExt.swift */,
+				06C4451C23971FB500DA1569 /* CodableExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -597,6 +597,7 @@
 				0664EF3E238F1E9F00E29C9D /* ReportCell.swift in Sources */,
 				0653BFB82383147000BDC506 /* APIResponse.swift in Sources */,
 				06D1A31E23899629005568D1 /* RegisterationVC.swift in Sources */,
+				06C4451D23971FB500DA1569 /* CodableExt.swift in Sources */,
 				0653BFB92383147000BDC506 /* ServiceBase.swift in Sources */,
 				06D275A9238F25B500D9DD39 /* ReportDetailsVC.swift in Sources */,
 				066CBBEA2395752700E118D9 /* District.swift in Sources */,
@@ -614,7 +615,6 @@
 				0628176F238458CF0002420A /* UserDefaultsAccess.swift in Sources */,
 				0653BFA52383133600BDC506 /* AlertExt.swift in Sources */,
 				066CBBF023958F3100E118D9 /* News.swift in Sources */,
-				066CBBF42395928B00E118D9 /* CodableExt.swift in Sources */,
 				0664EF3B238ECC9300E29C9D /* MyReportsVC.swift in Sources */,
 				0653BF752382C49600BDC506 /* ViewController.swift in Sources */,
 				0664EF39238EC84400E29C9D /* ContactStack.swift in Sources */,
