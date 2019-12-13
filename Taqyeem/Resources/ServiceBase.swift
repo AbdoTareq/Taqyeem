@@ -19,7 +19,7 @@ enum ServiceBase: String {
     case activities = "activities/all"
     case ratingCriteria = "/rate_cr/all"
 
-    case stores = "stores"
+    case stores = "stores_global"
     case storesByMunic = "stores_by_munic"
     case storesByMunicDist = "stores_by_munic_dist"
     case storesByMunicStreet = "stores_by_street"
@@ -32,4 +32,9 @@ enum ServiceBase: String {
     
     case register = "user/save"
     case login = "user/authenticate"
+
+    case reports = "comp"
+    //case createReport = "comp"
+    
+    case favStores = "favorit_stores/user_fav"
 }

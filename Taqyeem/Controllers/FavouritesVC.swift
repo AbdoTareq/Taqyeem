@@ -9,10 +9,25 @@
 import UIKit
 
 class FavouritesVC: UIViewController {
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    var resturants: [ResturantVM]?
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
+        getData()
+    }
+    func getData() {
+        ResturantVM.getFavourites() {resturants, error in
+            if error != nil {
+                self.showAlert(message: error!)
+                return
+            }
+            guard let resturants = resturants else {return}
+            self.resturants = resturants
+            self.tableView.reloadData()
+            
+        }
     }
     @IBAction func navBtnBack_Click(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)

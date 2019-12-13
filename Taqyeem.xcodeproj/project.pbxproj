@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0617D8A923A2A15F00ACAA4A /* ResturantVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617D8A823A2A15F00ACAA4A /* ResturantVM.swift */; };
+		0617D8AB23A2A17A00ACAA4A /* Resturant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617D8AA23A2A17A00ACAA4A /* Resturant.swift */; };
 		0621EEBE238D815C008C13C3 /* ResturantICollectionViewmage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0621EEB8238D815B008C13C3 /* ResturantICollectionViewmage.swift */; };
 		0621EEBF238D815C008C13C3 /* ResturantGeneralInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0621EEB9238D815B008C13C3 /* ResturantGeneralInfo.swift */; };
 		0621EEC0238D815C008C13C3 /* ResturantActivitiesDirections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0621EEBA238D815B008C13C3 /* ResturantActivitiesDirections.swift */; };
@@ -77,6 +79,8 @@
 		06BC66242392CA4900651171 /* AuthenticationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BC66232392CA4900651171 /* AuthenticationVM.swift */; };
 		06C4451B2396BB6D00DA1569 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4451A2396BB6D00DA1569 /* User.swift */; };
 		06C4451D23971FB500DA1569 /* CodableExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4451C23971FB500DA1569 /* CodableExt.swift */; };
+		06C4451F23979F8C00DA1569 /* ReportVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4451E23979F8C00DA1569 /* ReportVM.swift */; };
+		06C445212397A7AB00DA1569 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C445202397A7AB00DA1569 /* Report.swift */; };
 		06C6339C238C81330025F3C9 /* ResturantSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C6339B238C81330025F3C9 /* ResturantSearchVC.swift */; };
 		06C6339F238C81C40025F3C9 /* ResturantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C6339E238C81C40025F3C9 /* ResturantCell.swift */; };
 		06D1A30B23894416005568D1 /* Cairo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06D1A30523894415005568D1 /* Cairo-ExtraLight.ttf */; };
@@ -100,6 +104,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0617D8A823A2A15F00ACAA4A /* ResturantVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantVM.swift; sourceTree = "<group>"; };
+		0617D8AA23A2A17A00ACAA4A /* Resturant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resturant.swift; sourceTree = "<group>"; };
 		0621EEB8238D815B008C13C3 /* ResturantICollectionViewmage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantICollectionViewmage.swift; sourceTree = "<group>"; };
 		0621EEB9238D815B008C13C3 /* ResturantGeneralInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantGeneralInfo.swift; sourceTree = "<group>"; };
 		0621EEBA238D815B008C13C3 /* ResturantActivitiesDirections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantActivitiesDirections.swift; sourceTree = "<group>"; };
@@ -172,6 +178,8 @@
 		06BC66232392CA4900651171 /* AuthenticationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationVM.swift; sourceTree = "<group>"; };
 		06C4451A2396BB6D00DA1569 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		06C4451C23971FB500DA1569 /* CodableExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExt.swift; sourceTree = "<group>"; };
+		06C4451E23979F8C00DA1569 /* ReportVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportVM.swift; sourceTree = "<group>"; };
+		06C445202397A7AB00DA1569 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		06C6339B238C81330025F3C9 /* ResturantSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantSearchVC.swift; sourceTree = "<group>"; };
 		06C6339E238C81C40025F3C9 /* ResturantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantCell.swift; sourceTree = "<group>"; };
 		06D1A30523894415005568D1 /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -290,6 +298,8 @@
 				066CBBED2395778600E118D9 /* RatingCriteria.swift */,
 				066CBBEF23958F3100E118D9 /* News.swift */,
 				06C4451A2396BB6D00DA1569 /* User.swift */,
+				06C445202397A7AB00DA1569 /* Report.swift */,
+				0617D8AA23A2A17A00ACAA4A /* Resturant.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -387,6 +397,8 @@
 				06BC66232392CA4900651171 /* AuthenticationVM.swift */,
 				066CBBF123958FED00E118D9 /* NewsVM.swift */,
 				066CBBF52395CA5000E118D9 /* BulletainVM.swift */,
+				06C4451E23979F8C00DA1569 /* ReportVM.swift */,
+				0617D8A823A2A15F00ACAA4A /* ResturantVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -623,6 +635,7 @@
 				06554F66238DD52B00935E21 /* NewsDetailsCell.swift in Sources */,
 				0621EEC0238D815C008C13C3 /* ResturantActivitiesDirections.swift in Sources */,
 				0664EF2E238EBFED00E29C9D /* CreateReportVC.swift in Sources */,
+				0617D8AB23A2A17A00ACAA4A /* Resturant.swift in Sources */,
 				06D275B2238F264B00D9DD39 /* ReportDateCell.swift in Sources */,
 				06554F64238DD51800935E21 /* NewsTitleCell.swift in Sources */,
 				068F6B11239272DA009CFFF2 /* ContactKaseemVC.swift in Sources */,
@@ -640,6 +653,7 @@
 				06BC661F23928B2500651171 /* PrivacyVC.swift in Sources */,
 				0653BF8C23830C8400BDC506 /* MainTBC.swift in Sources */,
 				066CBBEC2395769E00E118D9 /* Street.swift in Sources */,
+				06C445212397A7AB00DA1569 /* Report.swift in Sources */,
 				06800B4D238D2D9600F4CF20 /* GeneralNewsCell.swift in Sources */,
 				06C4451B2396BB6D00DA1569 /* User.swift in Sources */,
 				0653BF9E2383133600BDC506 /* ShadowExt.swift in Sources */,
@@ -648,7 +662,9 @@
 				06D275AC238F261D00D9DD39 /* ReportTitleCell.swift in Sources */,
 				066CBBF223958FED00E118D9 /* NewsVM.swift in Sources */,
 				0664EF32238EC17B00E29C9D /* CreateReportDetailsCell.swift in Sources */,
+				0617D8A923A2A15F00ACAA4A /* ResturantVM.swift in Sources */,
 				06800B53238D592900F4CF20 /* AboutVC.swift in Sources */,
+				06C4451F23979F8C00DA1569 /* ReportVM.swift in Sources */,
 				06C6339F238C81C40025F3C9 /* ResturantCell.swift in Sources */,
 				06800B4F238D2DBE00F4CF20 /* GeneralNewsVC.swift in Sources */,
 				06D1A31823898709005568D1 /* SettingsVC.swift in Sources */,
@@ -807,7 +823,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mazeedit.Taqyeem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -826,7 +842,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mazeedit.Taqyeem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -74,7 +74,7 @@ class RegisterationVC: UIViewController {
                 return
             }
             if user != nil {
-                UserDefaultsAccess.sharedInstance.user = user
+                UserDefaultsAccess.sharedInstance.user = user?.user
                 UserDefaultsAccess.sharedInstance.skippedLogin = false
                 let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "MainTBC") as! MainTBC
                 self.navigationController?.pushViewController(nextVC, animated: true)

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import Alamofire
 struct AuthenricationVM {
     var user: User
     var id: Int {
@@ -35,12 +35,15 @@ struct AuthenricationVM {
        return user.mobile ?? ""
     }
     static func register(user: User, completion: @escaping (_ success: Bool, _ error: String?) -> Void) {
-        let params: [String: Any] = ["firstName": user.firstName, "lastName": user.lastName, "nickName" :user.nickName,"email": user.email, "isBlackListed": "0", "isDeleted": 0,  "mobile": user.mobile, "password": user.password, "isAdmin": 0
-            ]
-        var config = NetworkManager.Configuration(parameters: params, url: .register, method: .post)
-        config.urlParameters = "all"
-        NetworkManager.makeRequest(configuration: config) {
-            response in
+        
+        
+        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/user/save")!)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let paramString = "{\"firstName\" : \"\(user.firstName)\", \"lastName\" : \"\(user.lastName)\", \"nickName\" : \"\(user.nickName)\", \"email\" : \"\(user.email)\", \"isBlackListed\" : \"\("0")\", \"isDeleted\" : \"\(0)\", \"mobile\" : \"\(user.mobile)\", \"password\" : \"\(user.password)\", \"isAdmin\" : \"\(0)\"}"
+        request.httpBody = paramString.data(using: .utf8)
+        
+        Alamofire.request(request).responseJSON { (response) in
             if let statusCode = response.response?.statusCode {
                 if statusCode == 201 {
                     completion(true, nil)
@@ -51,10 +54,13 @@ struct AuthenricationVM {
         }
     }
     static func login(mobile: String, password: String, completion: @escaping (_ user: AuthenricationVM?, _ error: String?) -> Void) {
-        let params: [String: Any] = ["mobile": mobile, "token": password]
-        let config = NetworkManager.Configuration(parameters: params, url: .login, method: .post)
-        NetworkManager.makeRequest(configuration: config) {
-            response in
+        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/user/authenticate")!)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let paramString = "{\"mobile\" : \"\(mobile)\", \"token\" : \"\(password)\"}"
+        request.httpBody = paramString.data(using: .utf8)
+        Alamofire.request(request).responseJSON { (response) in
+            print(response)
             if let statusCode = response.response?.statusCode {
                 if let res = response.result.value as? NSDictionary {
                     if statusCode >= 200 && statusCode < 300 {

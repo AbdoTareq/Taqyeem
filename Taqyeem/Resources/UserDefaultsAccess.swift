@@ -21,11 +21,11 @@ class UserDefaultsAccess {
             defaults.set(newValue, forKey: "token")
         }
     }
-    var user : AuthenricationVM? {
+    var user : User? {
         get {
-            return defaults.object(forKey: "loggedUser") as? AuthenricationVM
+            return UserDefaults.standard.getObject(key: "loggedUser")
         } set {
-            defaults.set(newValue, forKey: "loggedUser")
+            defaults.saveObject(rawData: newValue, forKey: "loggedUser")
         }
     }
     func clearData() {

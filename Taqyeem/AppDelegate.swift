@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         UINavigationBar.appearance().barTintColor = UIColor(hexString: "#CCA121")
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-
+        decideRootView(animated: false)
         return true
     }
     
@@ -38,14 +38,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func decideRootView(animated:Bool) {
-        if UserDefaultsAccess.sharedInstance.skippedLogin || UserDefaultsAccess.sharedInstance.token != "" {
+        if window == nil {
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+        }
+        if UserDefaultsAccess.sharedInstance.skippedLogin || UserDefaultsAccess.sharedInstance.user != nil {
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let objWelcomeVC = storyboard.instantiateViewController(withIdentifier: "MainTBC") as UIViewController
+            let objWelcomeVC = storyboard.instantiateViewController(withIdentifier: "MainTBC") as! UITabBarController
             if animated{
                 switchView(vc: objWelcomeVC, animtion: .transitionFlipFromTop)
                 return
             }
-            
             window?.rootViewController = objWelcomeVC
             window?.makeKeyAndVisible()
         }else{
@@ -55,11 +57,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 switchView(vc: objWelcomeVC, animtion: .transitionFlipFromTop)
                 return
             }
-            
             window?.rootViewController = objWelcomeVC
             window?.makeKeyAndVisible()
         }
-        
     }
     
     func switchView(vc:UIViewController,animtion:UIView.AnimationOptions)

@@ -6,6 +6,10 @@ enum Environment {
     case prod
 }
 class NetworkManager {
+    static var bURL = "http://46.151.210.248:8888/rating_app/"
+    static func getUrl(service: ServiceBase) -> String {
+        return "\(bURL)\(service.rawValue)"
+    }
     struct Configuration {
         var parameters: [String: Any]?
         var urlParameters: String = ""
@@ -51,7 +55,7 @@ class NetworkManager {
         return [
             "Content-Type": "application/json",
                 "Accept": "application/json",
-                //"Authorization": "Bearer \(UserDefaultsAccess.sharedInstance.token)",
+                "Authorization": "Bearer \(UserDefaultsAccess.sharedInstance.token)",
                 //"Content-language": L102Language.currentAppleLanguage().contains("ar") ? "ar" : "en",
                 //"current-version": appVersion
         ]
@@ -75,7 +79,7 @@ class NetworkManager {
         )
 
         //            .validate()
-        //.validate(contentType: ["application/json"])
+            .validate(contentType: ["application/json"])
 
         .responseJSON {
             response in
