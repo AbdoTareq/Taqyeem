@@ -15,7 +15,8 @@ enum ServiceBase: String {
     case streetsByDistrict = "streets_by_district_id"
     case streetsByMunic = "streets_by_munic"
     case streetsByMunicDist = "streets_by_munic_dist_ids"
-
+    case ratingAndComments = "store_rate_crt_dtls/all"
+     case saveComment = "store_rate_dtls/save"
     case activities = "activities/all"
     case ratingCriteria = "/rate_cr/all"
     case stores = "stores_global"

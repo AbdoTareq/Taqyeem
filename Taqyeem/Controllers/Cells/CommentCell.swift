@@ -8,6 +8,7 @@
 
 import UIKit
 import Cosmos
+import Kingfisher
 class CommentCell: UITableViewCell {
     
     @IBOutlet weak var containerView: UIView!
@@ -18,5 +19,14 @@ class CommentCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         containerView.addShadow(color: UIColor.gray)
+    }
+    func configure(comment : CommentVM)  {
+        self.lblComment.text =  comment.comment.comments ?? ""
+        self.vwRating.rating = comment.comment.ratingValue ?? 0.0
+        self.lblUserName.text =  comment.comment.userFullName ?? ""
+        let dataDecoded : Data = Data(base64Encoded: comment.comment.image ?? "", options: .ignoreUnknownCharacters)!
+        let decodedimage = UIImage(data: dataDecoded)
+        userImage.image = decodedimage
+        
     }
 }
