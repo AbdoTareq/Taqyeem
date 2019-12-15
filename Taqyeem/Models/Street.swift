@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct Street {
+struct Street : Codable{
     var id: Int?
     var code: String?
     var codeNumber: String?

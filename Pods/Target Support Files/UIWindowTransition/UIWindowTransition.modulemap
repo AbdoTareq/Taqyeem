@@ -1,0 +1,6 @@
+framework module UIWindowTransition {
+  umbrella header "UIWindowTransition-umbrella.h"
+
+  export *
+  module * { export * }
+}

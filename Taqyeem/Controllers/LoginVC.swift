@@ -9,13 +9,22 @@
 import UIKit
 import SkyFloatingLabelTextField
 class LoginVC: UIViewController {
-
+    
     @IBOutlet weak var txtPhone: SkyFloatingLabelTextField!
     @IBOutlet weak var txtPassword: SkyFloatingLabelTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         initNavigationBar()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+         if UserDefaultsAccess.sharedInstance.skippedLogin || UserDefaultsAccess.sharedInstance.user != nil {
+        let story = UIStoryboard(name: "Main", bundle:nil)
+        let vc = story.instantiateViewController(withIdentifier: "MainTBC") as! MainTBC
+        let duration = TimeInterval(0.10)
+        let transition = UIWindow.Transition(style: .fade, duration: duration)
+        UIApplication.shared.setRootViewController(vc, transition: transition)
+        }
     }
     func login() {
         if txtPhone.text == "" {
@@ -41,21 +50,21 @@ class LoginVC: UIViewController {
         }
     }
     func initNavigationBar() {
-           navigationController?.setNavigationBarHidden(true, animated: true)
-           //navigationItem.title = "مطاعمي المفضلة"
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        //navigationItem.title = "مطاعمي المفضلة"
     }
-
+    
     @IBAction func btnSkip_Click(_ sender: UIButton) {
         UserDefaultsAccess.sharedInstance.skippedLogin = true
         let nextVC = storyboard?.instantiateViewController(withIdentifier: "MainTBC") as! MainTBC
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
-
+    
     @IBAction func btnRegister_Click(_ sender: Any) {
         let nextVC = storyboard?.instantiateViewController(withIdentifier: "RegisterationVC") as! RegisterationVC
-               self.navigationController?.pushViewController(nextVC, animated: true)
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
-
+    
     @IBAction func btnLogin_Click(_ sender: UIButton) {
         login()
     }

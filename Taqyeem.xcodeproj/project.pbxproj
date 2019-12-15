@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04250C3823A518FD00ECB2A6 /* MunicVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04250C3723A518FD00ECB2A6 /* MunicVM.swift */; };
+		04250C3A23A51CAD00ECB2A6 /* FiltersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04250C3923A51CAD00ECB2A6 /* FiltersVC.swift */; };
+		04250C3C23A523F500ECB2A6 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04250C3B23A523F500ECB2A6 /* TitleCell.swift */; };
+		04250C3E23A52B4E00ECB2A6 /* DistrictVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04250C3D23A52B4E00ECB2A6 /* DistrictVM.swift */; };
+		04813F2423A53A9500859B96 /* StreetVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F2323A53A9500859B96 /* StreetVM.swift */; };
+		04813F2623A574B100859B96 /* RatingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F2523A574B100859B96 /* RatingVC.swift */; };
+		04813F2823A58BC600859B96 /* CommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F2723A58BC600859B96 /* CommentsVC.swift */; };
+		04813F2A23A58BE900859B96 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F2923A58BE900859B96 /* CommentCell.swift */; };
 		0617D8A923A2A15F00ACAA4A /* ResturantVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617D8A823A2A15F00ACAA4A /* ResturantVM.swift */; };
 		0617D8AB23A2A17A00ACAA4A /* Resturant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617D8AA23A2A17A00ACAA4A /* Resturant.swift */; };
 		0621EEBE238D815C008C13C3 /* ResturantICollectionViewmage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0621EEB8238D815B008C13C3 /* ResturantICollectionViewmage.swift */; };
@@ -104,6 +112,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04250C3723A518FD00ECB2A6 /* MunicVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunicVM.swift; sourceTree = "<group>"; };
+		04250C3923A51CAD00ECB2A6 /* FiltersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersVC.swift; sourceTree = "<group>"; };
+		04250C3B23A523F500ECB2A6 /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
+		04250C3D23A52B4E00ECB2A6 /* DistrictVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistrictVM.swift; sourceTree = "<group>"; };
+		04813F2323A53A9500859B96 /* StreetVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetVM.swift; sourceTree = "<group>"; };
+		04813F2523A574B100859B96 /* RatingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingVC.swift; sourceTree = "<group>"; };
+		04813F2723A58BC600859B96 /* CommentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsVC.swift; sourceTree = "<group>"; };
+		04813F2923A58BE900859B96 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		0617D8A823A2A15F00ACAA4A /* ResturantVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantVM.swift; sourceTree = "<group>"; };
 		0617D8AA23A2A17A00ACAA4A /* Resturant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resturant.swift; sourceTree = "<group>"; };
 		0621EEB8238D815B008C13C3 /* ResturantICollectionViewmage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantICollectionViewmage.swift; sourceTree = "<group>"; };
@@ -278,6 +294,9 @@
 				06D275A8238F25B500D9DD39 /* ReportDetailsVC.swift */,
 				068F6B10239272DA009CFFF2 /* ContactKaseemVC.swift */,
 				068F6B13239272F2009CFFF2 /* ContactManagementVC.swift */,
+				04250C3923A51CAD00ECB2A6 /* FiltersVC.swift */,
+				04813F2523A574B100859B96 /* RatingVC.swift */,
+				04813F2723A58BC600859B96 /* CommentsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -399,6 +418,9 @@
 				066CBBF52395CA5000E118D9 /* BulletainVM.swift */,
 				06C4451E23979F8C00DA1569 /* ReportVM.swift */,
 				0617D8A823A2A15F00ACAA4A /* ResturantVM.swift */,
+				04250C3723A518FD00ECB2A6 /* MunicVM.swift */,
+				04250C3D23A52B4E00ECB2A6 /* DistrictVM.swift */,
+				04813F2323A53A9500859B96 /* StreetVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -419,6 +441,8 @@
 				06C6339E238C81C40025F3C9 /* ResturantCell.swift */,
 				06800B4C238D2D9600F4CF20 /* GeneralNewsCell.swift */,
 				0664EF3D238F1E9F00E29C9D /* ReportCell.swift */,
+				04250C3B23A523F500ECB2A6 /* TitleCell.swift */,
+				04813F2923A58BE900859B96 /* CommentCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -589,6 +613,7 @@
 				0621EEC5238D81B4008C13C3 /* ResturantDetailsVC.swift in Sources */,
 				0653BFA82383133600BDC506 /* ColorExt.swift in Sources */,
 				06D1A3142389705E005568D1 /* HomeVC.swift in Sources */,
+				04250C3823A518FD00ECB2A6 /* MunicVM.swift in Sources */,
 				06BC66242392CA4900651171 /* AuthenticationVM.swift in Sources */,
 				0653BFA12383133600BDC506 /* ExtendedView.swift in Sources */,
 				06C6339C238C81330025F3C9 /* ResturantSearchVC.swift in Sources */,
@@ -601,6 +626,7 @@
 				06554F68238DD53700935E21 /* NewsImageCell.swift in Sources */,
 				0621EEC3238D815C008C13C3 /* ResturantLocation.swift in Sources */,
 				06D275B0238F263F00D9DD39 /* ReportImagesCell.swift in Sources */,
+				04250C3A23A51CAD00ECB2A6 /* FiltersVC.swift in Sources */,
 				06BC661923927E4800651171 /* HelpVC.swift in Sources */,
 				0653BFAD2383133600BDC506 /* GradientP.swift in Sources */,
 				0653BFA32383133600BDC506 /* ViewExt.swift in Sources */,
@@ -609,6 +635,7 @@
 				0664EF3E238F1E9F00E29C9D /* ReportCell.swift in Sources */,
 				0653BFB82383147000BDC506 /* APIResponse.swift in Sources */,
 				06D1A31E23899629005568D1 /* RegisterationVC.swift in Sources */,
+				04813F2823A58BC600859B96 /* CommentsVC.swift in Sources */,
 				06C4451D23971FB500DA1569 /* CodableExt.swift in Sources */,
 				0653BFB92383147000BDC506 /* ServiceBase.swift in Sources */,
 				06D275A9238F25B500D9DD39 /* ReportDetailsVC.swift in Sources */,
@@ -619,15 +646,18 @@
 				0653BFA02383133600BDC506 /* TextFieldExt.swift in Sources */,
 				06D275AE238F262B00D9DD39 /* ReportDetailsCell.swift in Sources */,
 				0653BFA92383133600BDC506 /* DateExt.swift in Sources */,
+				04250C3E23A52B4E00ECB2A6 /* DistrictVM.swift in Sources */,
 				0653BFA42383133600BDC506 /* CopyableLabel.swift in Sources */,
 				066CBBF62395CA5000E118D9 /* BulletainVM.swift in Sources */,
 				066CBBE8239573D000E118D9 /* Munic.swift in Sources */,
+				04813F2423A53A9500859B96 /* StreetVM.swift in Sources */,
 				0621EEBE238D815C008C13C3 /* ResturantICollectionViewmage.swift in Sources */,
 				0621EEBF238D815C008C13C3 /* ResturantGeneralInfo.swift in Sources */,
 				0628176F238458CF0002420A /* UserDefaultsAccess.swift in Sources */,
 				0653BFA52383133600BDC506 /* AlertExt.swift in Sources */,
 				066CBBF023958F3100E118D9 /* News.swift in Sources */,
 				0664EF3B238ECC9300E29C9D /* MyReportsVC.swift in Sources */,
+				04250C3C23A523F500ECB2A6 /* TitleCell.swift in Sources */,
 				0653BF752382C49600BDC506 /* ViewController.swift in Sources */,
 				0664EF39238EC84400E29C9D /* ContactStack.swift in Sources */,
 				0653BFAB2383133600BDC506 /* CircleExt.swift in Sources */,
@@ -638,6 +668,7 @@
 				0617D8AB23A2A17A00ACAA4A /* Resturant.swift in Sources */,
 				06D275B2238F264B00D9DD39 /* ReportDateCell.swift in Sources */,
 				06554F64238DD51800935E21 /* NewsTitleCell.swift in Sources */,
+				04813F2A23A58BE900859B96 /* CommentCell.swift in Sources */,
 				068F6B11239272DA009CFFF2 /* ContactKaseemVC.swift in Sources */,
 				0664EF34238EC19300E29C9D /* CreateReportImagesCell.swift in Sources */,
 				06BC662123928BD100651171 /* InfoVC.swift in Sources */,
@@ -647,6 +678,7 @@
 				06D1A31223897001005568D1 /* BoardersExt.swift in Sources */,
 				0653BF712382C49600BDC506 /* AppDelegate.swift in Sources */,
 				06A6CA52238CA09A00565026 /* FavouritesVC.swift in Sources */,
+				04813F2623A574B100859B96 /* RatingVC.swift in Sources */,
 				06D1A316238970B6005568D1 /* HomeStack.swift in Sources */,
 				06D1A31C2389961C005568D1 /* LoginVC.swift in Sources */,
 				0653BFAA2383133600BDC506 /* JsonableExt.swift in Sources */,
@@ -814,7 +846,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U54GNAM74P;
+				DEVELOPMENT_TEAM = C62678PPRW;
 				INFOPLIST_FILE = Taqyeem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -833,7 +865,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U54GNAM74P;
+				DEVELOPMENT_TEAM = C62678PPRW;
 				INFOPLIST_FILE = Taqyeem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

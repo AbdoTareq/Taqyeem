@@ -7,18 +7,18 @@
 //
 
 import Foundation
-struct District {
+struct District : Codable{
     var id: Int?
-    var code: String?
+   // var code: String?
     var name: String?
-    var nameNumber: String?
-    var municipalityId: Int?
-    var districtArea: String?
-    var supervisorId: Int?
-    var latitude: String?
-    var longitude: String?
-    var utmX: String?
-    var utmY: String?
-    var typeLogarithm: Int?
-    var employeeId: Int?
+//    var nameNumber: String?
+//    var municipalityId: Int?
+//    var districtArea: String?
+//    var supervisorId: Int?
+//    var latitude: String?
+//    var longitude: String?
+//    var utmX: String?
+//    var utmY: String?
+//    var typeLogarithm: Int?
+//    var employeeId: Int?
 }

@@ -168,3 +168,4 @@ extension NetworkManager.Configuration {
         self.parameters = parameters
     }
 }
+

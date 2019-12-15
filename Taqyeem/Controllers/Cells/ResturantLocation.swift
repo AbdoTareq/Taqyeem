@@ -10,17 +10,11 @@ import UIKit
 
 class ResturantLocation: UITableViewCell {
 
+    @IBOutlet weak var lblResturantAddress: UILabel!
     @IBOutlet weak var containerView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
             containerView.addShadow(color: UIColor.gray)
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

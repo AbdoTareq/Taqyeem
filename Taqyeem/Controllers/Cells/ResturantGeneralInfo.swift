@@ -7,9 +7,11 @@
 //
 
 import UIKit
-
+import Cosmos
 class ResturantGeneralInfo: UITableViewCell {
 
+    @IBOutlet weak var lblresturantDisc: UILabel!
+    @IBOutlet weak var vwRating: CosmosView!
     @IBOutlet weak var containerView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -10,19 +10,22 @@ import Foundation
 struct Resturant: Codable {
     var storeId: Int?
     var storeArabicName: String?
-    var municipalityId: String?
+    var municipalityId: Int?
     var municipalityName: String?
     var districtId: Int?
     var districtName: String?
     var streetId: Int?
+    var buildingNumber: Int?
     var amanatActivity: String?
     var surveyActivity: String?
-    var foodCategory: String?
+    var foodCategory: Int?
     var streetName: String?
     //var ratingCriteriaId": null,
     var ratingCriteriaDescription: String?
-    //var ratingValue": null,
+    var rating:Int?
+    var ratingValue:Int?
     var activityCategory: String?
+    var storeNameBanner: String?
     var englishNameBanner: String?
     var latitude: Double?
     var longitude: Double?

@@ -8,17 +8,16 @@
 
 import Foundation
 enum ServiceBase: String {
-    case munic = "munic" //
-    case district = "district"
+    case munic = "munic/all"
+    case district = "district/all"
     case districtByMunic = "district_by_munic"
-    case streets = "streets"
+    case streets = "streets/all"
     case streetsByDistrict = "streets_by_district_id"
     case streetsByMunic = "streets_by_munic"
     case streetsByMunicDist = "streets_by_munic_dist_ids"
 
     case activities = "activities/all"
     case ratingCriteria = "/rate_cr/all"
-
     case stores = "stores_global"
     case storesByMunic = "stores_by_munic"
     case storesByMunicDist = "stores_by_munic_dist"
@@ -35,6 +34,5 @@ enum ServiceBase: String {
 
     case reports = "comp"
     //case createReport = "comp"
-    
     case favStores = "favorit_stores/user_fav"
 }

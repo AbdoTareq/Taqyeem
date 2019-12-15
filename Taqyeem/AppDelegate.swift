@@ -8,7 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
-
+import UIWindowTransition
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         UINavigationBar.appearance().barTintColor = UIColor(hexString: "#CCA121")
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-        decideRootView(animated: false)
+        
         return true
     }
     
@@ -37,45 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
-    func decideRootView(animated:Bool) {
-        if window == nil {
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-        }
-        if UserDefaultsAccess.sharedInstance.skippedLogin || UserDefaultsAccess.sharedInstance.user != nil {
-            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let objWelcomeVC = storyboard.instantiateViewController(withIdentifier: "MainTBC") as! UITabBarController
-            if animated{
-                switchView(vc: objWelcomeVC, animtion: .transitionFlipFromTop)
-                return
-            }
-            window?.rootViewController = objWelcomeVC
-            window?.makeKeyAndVisible()
-        }else{
-            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let objWelcomeVC = storyboard.instantiateInitialViewController()!
-            if animated{
-                switchView(vc: objWelcomeVC, animtion: .transitionFlipFromTop)
-                return
-            }
-            window?.rootViewController = objWelcomeVC
-            window?.makeKeyAndVisible()
-        }
-    }
     
-    func switchView(vc:UIViewController,animtion:UIView.AnimationOptions)
-    {
-        DispatchQueue.main.async
-            {
-                let transition: UIView.AnimationOptions = animtion
-                let rootviewcontroller: UIWindow = ((UIApplication.shared.delegate?.window)!)!
-                
-                let mainwindow = (UIApplication.shared.delegate?.window!)!
-                //                mainwindow.backgroundColor = UIColor(hue: 0.6477, saturation: 0.6314, brightness: 0.6077, alpha: 0.8)
-                
-                rootviewcontroller.rootViewController = vc
-                
-                UIView.transition(with: mainwindow, duration: 0.55001, options: transition, animations: nil, completion: nil)
-        }
-    }
 }
 

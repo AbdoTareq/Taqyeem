@@ -12,4 +12,5 @@ target 'Taqyeem' do
   pod 'IQKeyboardManagerSwift'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'Cosmos', '~> 20.0'
+  pod 'UIWindowTransition'
 end
