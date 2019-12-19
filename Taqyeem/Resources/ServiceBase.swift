@@ -33,7 +33,7 @@ enum ServiceBase: String {
     case register = "user/save"
     case login = "user/authenticate"
 
-    case reports = "comp"
+    case reports = "comp/save"
     //case createReport = "comp"
     case favStores = "favorit_stores/user_fav"
 }

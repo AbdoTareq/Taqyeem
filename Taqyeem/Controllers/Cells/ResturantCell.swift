@@ -21,7 +21,7 @@ class ResturantCell: UITableViewCell {
     func configureCell(resturant :ResturantVM) {
         self.lblResturantName.text = resturant.resturant.storeNameBanner ??  resturant.resturant.storeArabicName
         let resturantNumb : String = String(resturant.resturant.buildingNumber ?? 0 )
-        let resturantRat : Int = resturant.resturant.rating ?? resturant.resturant.ratingValue ?? 0
+        let resturantRat : Int = resturant.resturant.rating ?? 0
         self.lblResturantAddress.text = resturantNumb + " " + resturant.resturant.streetName! + " " + resturant.resturant.districtName!
         self.vwRating.rating =  Double(resturantRat)
     }

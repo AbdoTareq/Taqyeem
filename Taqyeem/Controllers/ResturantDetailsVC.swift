@@ -53,7 +53,7 @@ extension ResturantDetailsVC : UITableViewDelegate , UITableViewDataSource{
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ResturantGeneralInfo", for: indexPath) as! ResturantGeneralInfo
             cell.lblresturantDisc.text =  (self.resturantVM.resturant.amanatActivity ?? "" + " - " + (self.resturantVM.resturant.surveyActivity ?? ""))
-            let rate  =  Int(self.resturantVM.resturant.rating ??  self.resturantVM.resturant.ratingValue ?? 0 )
+            let rate  =  Int(self.resturantVM.resturant.rating ?? 0 )
             cell.vwRating.rating =  Double(rate)
             return cell
         }

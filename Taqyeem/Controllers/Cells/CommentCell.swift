@@ -22,7 +22,7 @@ class CommentCell: UITableViewCell {
     }
     func configure(comment : CommentVM)  {
         self.lblComment.text =  comment.comment.comments ?? ""
-        self.vwRating.rating = comment.comment.ratingValue ?? 0.0
+        //self.vwRating.rating = Double(comment.comment.ratingValue  ?? 0)
         self.lblUserName.text =  comment.comment.userFullName ?? ""
         let dataDecoded : Data = Data(base64Encoded: comment.comment.image ?? "", options: .ignoreUnknownCharacters)!
         let decodedimage = UIImage(data: dataDecoded)

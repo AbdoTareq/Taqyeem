@@ -1489,6 +1489,21 @@
             </objects>
             <point key="canvasLocation" x="15792.753623188408" y="-2923.6607142857142"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="lKM-3a-AqF">
+            <objects>
+                <viewController id="fDH-ga-ZAH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TLA-1X-N0h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="UcH-Ma-IVp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ccN-Dm-deJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="16715" y="-2901"/>
+        </scene>
         <!--General News-->
         <scene sceneID="gvX-qg-1Pe">
             <objects>
@@ -2232,7 +2247,7 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yLO-pP-2JR" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="5" y="0.0" width="261" height="40"/>
+                                        <rect key="frame" x="5" y="-7" width="261" height="54"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                         <userDefinedRuntimeAttributes>
@@ -3449,14 +3464,14 @@
                                                             </collectionViewFlowLayout>
                                                             <cells>
                                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ResturantICollectionViewmage" id="0Qx-U9-RRK" customClass="ResturantICollectionViewmage" customModule="Taqyeem" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="2" width="64" height="64"/>
+                                                                    <rect key="frame" x="0.0" y="18" width="32" height="32"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="e4C-dh-HYN">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite-heart-button" translatesAutoresizingMaskIntoConstraints="NO" id="dDG-DX-2pM">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                                             </imageView>
                                                                         </subviews>
                                                                         <constraints>
@@ -4263,6 +4278,9 @@
                                                 <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="btnSubmitReport" destination="1fU-gp-Brb" id="j0z-9r-opZ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

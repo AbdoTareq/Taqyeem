@@ -10,6 +10,7 @@ import UIKit
 
 class CreateReportSendCell: UITableViewCell {
 
+    @IBOutlet weak var btnSubmitReport: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

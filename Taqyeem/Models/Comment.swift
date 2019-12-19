@@ -11,7 +11,7 @@ struct Comment: Codable {
     var id:Int?
     var comments:String?
     var iscommentblocked :Int?
-    var ratingValue : Double?
+    var ratingValue : Int?
     var ratingdatetime :String?
     var store :Int?
     var ratingCriteriaId :Int?

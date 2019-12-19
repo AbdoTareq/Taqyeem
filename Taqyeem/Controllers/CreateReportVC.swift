@@ -24,6 +24,16 @@ class CreateReportVC: UIViewController {
         navigationItem.title = "تقديم بلاغ/شكوي"
         navigationItem.setHidesBackButton(true, animated: false)
     }
+    
+    @objc func btnSubmitReportClicked(_ sender: UIButton) {
+        self.startLoadingActivity()
+        let complainType = "Enable or disable Notifications via \"Settings\" -> \"Notifications\" on your phone." //"{\u{22}compplaintypeid\u{22}:2}"
+        let userID  = String(describing: UserDefaultsAccess.sharedInstance.user?.id ?? 0)
+        let mobileUser =  "{" + "id:" + "\(userID)" + "}"
+        ReportVM.submitReport(complainInformation: "testComplain", complainText: "This is test for submitting report", complainType: complainType , mobile: UserDefaultsAccess.sharedInstance.user?.mobile ?? "", storename: "kfc", mobileuser: mobileUser) { success , errorMessage in
+            self.stopLoadingActivity()            
+        }
+    }
 }
 extension CreateReportVC : UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,7 +55,8 @@ extension CreateReportVC : UITableViewDelegate , UITableViewDataSource{
             return cell
         }
         if indexPath.row == 3 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "CreateReportSendCell", for: indexPath) as! CreateReportSendCell
+           let cell = tableView.dequeueReusableCell(withIdentifier: "CreateReportSendCell", for: indexPath) as! CreateReportSendCell
+            cell.btnSubmitReport.addTarget(self, action: #selector(btnSubmitReportClicked(_:)), for: .touchUpInside)
             return cell
         }
         return cell
