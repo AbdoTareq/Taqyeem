@@ -39,6 +39,8 @@ struct ReportVM {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         var dic : [String :String] = [String :String]()
         dic["compplaintypeid"] = "2"
+        var dic2 = "{\"compplaintypeid\" : \"\(2)\"}"
+        var userdic2 = "{\"id\" : \"\(62)\"}"
         
         var userdic : [String :String] = [String :String]()
          userdic["id"] = "62"
@@ -50,7 +52,7 @@ struct ReportVM {
                 if let jsonData = try? encoder.encode(userdic) {
                     if let userjsonString = String(data: jsonData, encoding: .utf8) {
                         
-                        let paramString = "{\"complaininformername\" : \"\(complainInformation)\", \"complaintext\" : \"\(complainText)\", \"compplaintype\" : \"\(dic.description)\", \"mobile\" : \"\(mobile)\", \"storename\" : \"\(storename)\", \"mobileuser\" : \"\(userdic.description)\", \"complainimages\" : \"\([])\"}"
+                        let paramString = "{\"complaininformername\" : \"\(complainInformation)\", \"complaintext\" : \"\(complainText)\", \"compplaintype\" : \(dic2), \"mobile\" : \"\(mobile)\", \"storename\" : \"\(storename)\", \"mobileuser\" : \(userdic2)}"
                         request.httpBody = paramString.data(using: .utf8)
                         Alamofire.request(request).responseJSON { (response) in
                             if let statusCode = response.response?.statusCode {
