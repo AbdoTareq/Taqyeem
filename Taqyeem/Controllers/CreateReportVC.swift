@@ -7,10 +7,12 @@
 //
 
 import UIKit
-
+import NotificationBannerSwift
 class CreateReportVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var reportTitle :String = ""
+      var reportDescription :String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
@@ -26,12 +28,31 @@ class CreateReportVC: UIViewController {
     }
     
     @objc func btnSubmitReportClicked(_ sender: UIButton) {
-        self.startLoadingActivity()
-        let complainType = "Enable or disable Notifications via \"Settings\" -> \"Notifications\" on your phone." //"{\u{22}compplaintypeid\u{22}:2}"
+       
+         self.startLoadingActivity()
+         prepareReportsData()
         let userID  = String(describing: UserDefaultsAccess.sharedInstance.user?.id ?? 0)
-        let mobileUser =  "{" + "id:" + "\(userID)" + "}"
-        ReportVM.submitReport(complainInformation: "testComplain", complainText: "This is test for submitting report", complainType: complainType , mobile: UserDefaultsAccess.sharedInstance.user?.mobile ?? "", storename: "kfc", mobileuser: mobileUser) { success , errorMessage in
-            self.stopLoadingActivity()            
+        ReportVM.submitReport(complainInformation: self.reportTitle, complainText: self.reportDescription , mobile: UserDefaultsAccess.sharedInstance.user?.mobile ?? "", storename: "kfc") { success , errorMessage in
+            self.stopLoadingActivity()
+            if success {
+             let banner = StatusBarNotificationBanner(title: "تم اضافه بلاغك بنجاح", style: .success)
+                banner.show()
+                self.navigationController?.popViewController(animated: true)
+            }
+            else {
+                let banner = StatusBarNotificationBanner(title: errorMessage!, style: .warning)
+                            banner.show()
+            }
+        }
+    }
+    func prepareReportsData()  {
+        for cellItem in  self.tableView.visibleCells {
+            if  let cell =  cellItem as? CreateReportTitleCell {
+                self.reportTitle = cell.txtTitle!.text!
+            }
+           if let  cell = cellItem as? CreateReportDetailsCell {
+            self.reportDescription  = cell.txtDetails.text!
+            }
         }
     }
 }

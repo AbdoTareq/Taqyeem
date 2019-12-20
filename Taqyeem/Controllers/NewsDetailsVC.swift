@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class NewsDetailsVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var pageTitle = ""
@@ -17,6 +16,7 @@ class NewsDetailsVC: UIViewController {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 100.0
         tableView.rowHeight = UITableView.automaticDimension
+    
     }
     
     @IBAction func navBtnBack_Click(_ sender: UIBarButtonItem) {
