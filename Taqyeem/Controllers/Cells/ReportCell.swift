@@ -10,16 +10,18 @@ import UIKit
 
 class ReportCell: UITableViewCell {
 
+    @IBOutlet weak var lblReportDate: UILabel!
+    @IBOutlet weak var lblReportTitle: UILabel!
     @IBOutlet weak var vwContainer: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         vwContainer.addShadow(color: UIColor.darkGray)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+     
+    func configure(report :ReportVM) {
+        self.lblReportDate.text =  report.complainDate
+        self.lblReportTitle.text =  report.complaininformername
     }
+   
 
 }

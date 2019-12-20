@@ -11,6 +11,9 @@ struct Report: Codable {
     var id: Int?
     var complaininformername: String?
     var complaintext: String?
-    var userId: Int?
-    var complainTypeId: Int?
+    var storename: String?
+    var mobile: Int?
+    var mobileuser : User
+     var complaindate: String?
+    
 }

@@ -2247,7 +2247,7 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yLO-pP-2JR" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="5" y="-7" width="261" height="54"/>
+                                        <rect key="frame" x="5" y="0.0" width="261" height="40"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                         <userDefinedRuntimeAttributes>
@@ -2932,7 +2932,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xhS-8I-rIW" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="5" y="-7" width="271" height="54"/>
+                                                <rect key="frame" x="5" y="0.0" width="271" height="40"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
@@ -2970,7 +2970,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J7t-SW-3OC" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="5" y="-7" width="271" height="54"/>
+                                                <rect key="frame" x="5" y="0.0" width="271" height="40"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
@@ -3008,7 +3008,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QRZ-Kb-1Og" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="5" y="-7" width="271" height="54"/>
+                                                <rect key="frame" x="5" y="0.0" width="271" height="40"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
@@ -3046,7 +3046,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hrd-mP-hzI" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="5" y="-7" width="271" height="54"/>
+                                                <rect key="frame" x="5" y="0.0" width="271" height="40"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
@@ -3084,7 +3084,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RS8-ad-4TB" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="5" y="-7" width="271" height="54"/>
+                                                <rect key="frame" x="5" y="0.0" width="271" height="40"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
@@ -4832,14 +4832,14 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ResturantICollectionViewmage" id="zlc-Qx-00h" customClass="ResturantICollectionViewmage" customModule="Taqyeem" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="18" width="32" height="32"/>
+                                                        <rect key="frame" x="0.0" y="2" width="64" height="64"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7BM-mf-Bcp">
-                                                            <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite-heart-button" translatesAutoresizingMaskIntoConstraints="NO" id="5Nn-TK-OJ5">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                                                 </imageView>
                                                             </subviews>
                                                             <constraints>
@@ -5173,14 +5173,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="lblReportDate" destination="AaA-Be-5tw" id="Mjt-m5-Yci"/>
+                                            <outlet property="lblReportTitle" destination="RgL-Cx-wEv" id="y1G-Of-6fV"/>
                                             <outlet property="vwContainer" destination="K7b-lb-NMC" id="jU2-SF-jtA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="y0d-E8-srx" id="OMX-nv-Pl8"/>
-                                    <outlet property="delegate" destination="y0d-E8-srx" id="TNj-sk-IzI"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

@@ -10,16 +10,44 @@ import Foundation
 import Alamofire
 struct ReportVM {
     var report: Report
-    func getMyReports(completion: @escaping (_ users: [NewsVM]?, _ error: String?) -> Void) {
-        var config = NetworkManager.Configuration(parameters: nil, url: .news, method: .get)
-        config.urlParameters = "all"
-        NetworkManager.makeRequest(configuration: config) {
-            response in
+    
+    var id: Int {
+        return report.id ?? 0
+    }
+    
+    var complaininformername: String {
+        return report.complaininformername ?? ""
+    }
+    
+    var complaintext: String {
+        return report.complaintext ?? ""
+    }
+    var storename: String {
+        return report.storename ?? ""
+    }
+    var mobile: Int {
+        return report.mobile ?? 0
+    }
+    var user: User {
+        return report.mobileuser ?? User()
+    }
+    var complainDate: String {
+        return report.complaindate ?? ""
+    }
+    
+    static func getMyReports(completion: @escaping (_ users: [ReportVM]?, _ error: String?) -> Void) {
+        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/comp/by_userid")!)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        var userdic2 = "{\"id\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\"}"
+        let paramString = "{\"mobileuser\" : \(userdic2)}"
+        request.httpBody = paramString.data(using: .utf8)
+        Alamofire.request(request).responseJSON { (response) in
             if let statusCode = response.response?.statusCode {
                 if let res = response.result.value as? [NSDictionary] {
                     if statusCode >= 200 && statusCode < 300 {
-                        if let news: [News] = res.getObject() {
-                            completion(news.map { NewsVM(news: $0) }, nil)
+                        if let resturants: [Report] = res.getObject() {
+                            completion(resturants.map { ReportVM(report: $0) }, nil)
                         }
                     } else {
                         completion(nil, "Unable to get data")
@@ -39,16 +67,16 @@ struct ReportVM {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         var dic2 = "{\"compplaintypeid\" : \"\(2)\"}"
         var userdic2 = "{\"id\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\"}"
-    let paramString = "{\"complaininformername\" : \"\(complainInformation)\", \"complaintext\" : \"\(complainText)\", \"compplaintype\" : \(dic2), \"mobile\" : \"\(mobile)\", \"storename\" : \"\(storename)\", \"mobileuser\" : \(userdic2)}"
-    request.httpBody = paramString.data(using: .utf8)
-    Alamofire.request(request).responseJSON { (response) in
-        if let statusCode = response.response?.statusCode {
-            if statusCode == 201 {
-                completion(true, nil)
-            } else {
-                completion(false, "\(statusCode) - Unable to register")
+        let paramString = "{\"complaininformername\" : \"\(complainInformation)\", \"complaintext\" : \"\(complainText)\", \"compplaintype\" : \(dic2), \"mobile\" : \"\(mobile)\", \"storename\" : \"\(storename)\", \"mobileuser\" : \(userdic2)}"
+        request.httpBody = paramString.data(using: .utf8)
+        Alamofire.request(request).responseJSON { (response) in
+            if let statusCode = response.response?.statusCode {
+                if statusCode == 201 {
+                    completion(true, nil)
+                } else {
+                    completion(false, "\(statusCode) - Unable to register")
+                }
             }
-        }
         }
     }
 }

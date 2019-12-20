@@ -28,10 +28,8 @@ class CreateReportVC: UIViewController {
     }
     
     @objc func btnSubmitReportClicked(_ sender: UIButton) {
-       
          self.startLoadingActivity()
          prepareReportsData()
-        let userID  = String(describing: UserDefaultsAccess.sharedInstance.user?.id ?? 0)
         ReportVM.submitReport(complainInformation: self.reportTitle, complainText: self.reportDescription , mobile: UserDefaultsAccess.sharedInstance.user?.mobile ?? "", storename: "kfc") { success , errorMessage in
             self.stopLoadingActivity()
             if success {

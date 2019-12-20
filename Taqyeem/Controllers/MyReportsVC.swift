@@ -7,13 +7,32 @@
 //
 
 import UIKit
-
+import  NotificationBannerSwift
 class MyReportsVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    var reports: [ReportVM]?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         initNavigationBar()
+        loadData()
+    }
+    
+    func loadData()  {
+        self.startLoadingActivity()
+        ReportVM.getMyReports { reports, errorMessage in
+            self.stopLoadingActivity()
+            if reports != nil {
+                self.reports =  reports
+                self.tableView.delegate =  self
+                self.tableView.dataSource =  self
+                self.tableView.reloadData()
+            }
+            else {
+                let banner = StatusBarNotificationBanner(title: errorMessage!, style: .warning)
+                banner.show()
+            }
+        }
     }
     @IBAction func navBtnBack_Click(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
@@ -28,12 +47,12 @@ class MyReportsVC: UIViewController {
 }
 extension MyReportsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        return self.reports?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReportCell", for: indexPath) as! ReportCell
-        
+        cell.configure(report: self.reports![indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
