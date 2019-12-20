@@ -10,7 +10,8 @@ import UIKit
 
 class ReportDetailsCell: UITableViewCell {
 
-   @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var lblReportDescription: UILabel!
+    @IBOutlet weak var containerView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         containerView.addShadow(color: UIColor.gray)

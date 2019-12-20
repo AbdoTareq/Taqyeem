@@ -10,10 +10,21 @@ import UIKit
 
 class ReportDetailsVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var lblReportDate: UILabel!
+    @IBOutlet weak var lblReportDescription: UILabel!
+    
+    @IBOutlet weak var lblReportTitle: UILabel!
+    var report :ReportVM!
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
+        tableView.delegate = self
+        tableView.dataSource =  self
+        tableView.reloadData()
+        
     }
+   
     @IBAction func navBtnBack_Click(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
     }
@@ -32,19 +43,23 @@ extension ReportDetailsVC : UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         if indexPath.row == 0 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "ReportTitleCell", for: indexPath) as! ReportTitleCell
+          let  cell = tableView.dequeueReusableCell(withIdentifier: "ReportTitleCell", for: indexPath) as! ReportTitleCell
+            cell.lblTitle.text = report.complaininformername
             return cell
         }
         if indexPath.row == 1 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "ReportDetailsCell", for: indexPath) as! ReportDetailsCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReportDetailsCell", for: indexPath) as! ReportDetailsCell
+            cell.lblReportDescription.text =  self.report.complaintext
             return cell
         }
         if indexPath.row == 2 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "ReportImagesCell", for: indexPath) as! ReportImagesCell
+           let  cell = tableView.dequeueReusableCell(withIdentifier: "ReportImagesCell", for: indexPath) as! ReportImagesCell
+            
             return cell
         }
         if indexPath.row == 3 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "ReportDateCell", for: indexPath) as! ReportDateCell
+           let  cell = tableView.dequeueReusableCell(withIdentifier: "ReportDateCell", for: indexPath) as! ReportDateCell
+            cell.lblReportDate.text =  self.report.complainDate
             return cell
         }
         return cell

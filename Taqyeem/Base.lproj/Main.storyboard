@@ -4383,6 +4383,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="containerView" destination="wZt-CM-xRG" id="Zsl-k8-1nN"/>
+                                            <outlet property="lblTitle" destination="rtV-na-1Mm" id="QD4-fO-Lo1"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReportDetailsCell" rowHeight="230" id="Dyy-Fs-n3N" customClass="ReportDetailsCell" customModule="Taqyeem" customModuleProvider="target">
@@ -4445,6 +4446,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="containerView" destination="h9V-eh-iNg" id="sXK-YS-bwj"/>
+                                            <outlet property="lblReportDescription" destination="ZuT-yj-Dam" id="Ctw-nz-IJQ"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReportImagesCell" rowHeight="141" id="lD9-oW-izU" customClass="ReportImagesCell" customModule="Taqyeem" customModuleProvider="target">
@@ -4599,13 +4601,10 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="containerView" destination="b2I-OZ-phl" id="W3z-Qg-Pwd"/>
+                                            <outlet property="lblReportDate" destination="kO1-Xi-tOt" id="vHS-Kg-jee"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="gCU-fB-bTm" id="1ds-Vr-gz0"/>
-                                    <outlet property="delegate" destination="gCU-fB-bTm" id="ftS-l5-yeP"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

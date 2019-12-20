@@ -10,6 +10,7 @@ import UIKit
 
 class ReportTitleCell: UITableViewCell {
 
+    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var containerView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()

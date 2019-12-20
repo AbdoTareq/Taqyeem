@@ -10,6 +10,7 @@ import UIKit
 
 class ReportDateCell: UITableViewCell {
     
+    @IBOutlet weak var lblReportDate: UILabel!
     @IBOutlet weak var containerView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()

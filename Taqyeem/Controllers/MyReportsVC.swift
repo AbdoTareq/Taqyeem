@@ -43,7 +43,6 @@ class MyReportsVC: UIViewController {
         navigationItem.title = "بلاغاتي"
         navigationItem.setHidesBackButton(true, animated: false)
     }
-    
 }
 extension MyReportsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,6 +60,7 @@ extension MyReportsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let nextVC = storyboard?.instantiateViewController(withIdentifier: "ReportDetailsVC") as! ReportDetailsVC
+        nextVC.report =  self.reports![indexPath.row]
         UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
