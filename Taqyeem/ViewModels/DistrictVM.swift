@@ -7,18 +7,22 @@
 //
 
 import Foundation
+import Alamofire
 struct DistrictVM {
     var district :District
-    static func getAllDistricts(completion: @escaping (_ users: [DistrictVM]?, _ error: String?) -> Void) {
-        var config = NetworkManager.Configuration(parameters: nil, url: .district, method: .post)
-        NetworkManager.makeRequest(configuration: config) {
-            response in
+    static func getAllDistricts( municID: Int ,completion: @escaping (_ users: [DistrictVM]?, _ error: String?) -> Void) {
+        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/district_by_munic")!)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        var userdic2 = "{\"id\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\"}"
+        let paramString = "{\"municipalityId\" : \(municID)}"
+        request.httpBody = paramString.data(using: .utf8)
+        Alamofire.request(request).responseJSON { (response) in
             if let statusCode = response.response?.statusCode {
                 if let res = response.result.value as? [NSDictionary] {
                     if statusCode >= 200 && statusCode < 300 {
-                        if let districts: [District] = res.getObject() {
-                    
-                            completion(districts.map {DistrictVM(district: $0) }, nil)
+                        if let resturants: [District] = res.getObject() {
+                            completion(resturants.map { DistrictVM(district: $0) }, nil)
                         }
                     } else {
                         completion(nil, "Unable to get data")
@@ -30,5 +34,7 @@ struct DistrictVM {
                 completion(nil, "Unable to get data")
             }
         }
+        
+        
     }
 }

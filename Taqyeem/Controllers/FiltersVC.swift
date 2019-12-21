@@ -17,6 +17,8 @@ class FiltersVC: UIViewController {
     var searchVc : ResturantSearchVC!
     @IBOutlet weak var lblPopupTitle: UILabel!
     @IBOutlet weak var containerView: UIView!
+    var municID =  0
+    var districtID = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareData()
@@ -52,7 +54,7 @@ class FiltersVC: UIViewController {
         }
     }
     func getDistricts() {
-        DistrictVM.getAllDistricts{districts, error in
+        DistrictVM.getAllDistricts(municID: self.municID){districts, error in
             if error != nil {
                 self.showAlert(message: error!)
                 return
@@ -65,7 +67,7 @@ class FiltersVC: UIViewController {
         }
     }
     func getStreets() {
-        StreetVM.getAllStreets{streets, error in
+        StreetVM.getAllStreets(municID: self.municID, districtID: self.districtID){streets, error in
             if error != nil {
                 self.showAlert(message: error!)
                 return
@@ -122,14 +124,18 @@ extension FiltersVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch self.filterID {
         case 1:
+            self.searchVc.municID = self.munics![indexPath.row].munic.id ?? 0
             self.dismiss(animated: true) {
+                
                 self.searchVc.getReturantsByMunic(municID: self.munics![indexPath.row].munic.id ?? 0)
             }
         case 2:
+            self.searchVc.districtID = self.districts![indexPath.row].district.id ?? 0
             self.dismiss(animated: true) {
                 self.searchVc.getReturantsByDistrict(districtID: self.districts![indexPath.row].district.id ?? 0)
             }
         case 3:
+              self.searchVc.streetID = self.streets![indexPath.row].street.id ?? 0
             self.dismiss(animated: true) {
                 self.searchVc.getReturantsByStreet(StreetID: self.streets![indexPath.row].street.id ?? 0)
             }

@@ -7,27 +7,53 @@
 //
 
 import Foundation
+import Alamofire
 struct StreetVM {
     var street :Street
-    static func getAllStreets(completion: @escaping (_ streets: [StreetVM]?, _ error: String?) -> Void) {
-        var config = NetworkManager.Configuration(parameters: nil, url: .streets, method: .post)
-        NetworkManager.makeRequest(configuration: config) {
-            response in
-            if let statusCode = response.response?.statusCode {
-                if let res = response.result.value as? [NSDictionary] {
-                    if statusCode >= 200 && statusCode < 300 {
-                        if let streets: [Street] = res.getObject() {
-                            completion(streets.map {StreetVM(street:  $0) }, nil)
-                        }
-                    } else {
-                        completion(nil, "Unable to get data")
-                    }
-                } else {
-                    completion(nil, "Unable to get data")
-                }
-            } else {
-                completion(nil, "Unable to get data")
-            }
-        }
+    static func getAllStreets(municID :Int , districtID :Int , completion: @escaping (_ streets: [StreetVM]?, _ error: String?) -> Void) {
+//        var config = NetworkManager.Configuration(parameters: nil, url: .streets, method: .post)
+//        NetworkManager.makeRequest(configuration: config) {
+//            response in
+//            if let statusCode = response.response?.statusCode {
+//                if let res = response.result.value as? [NSDictionary] {
+//                    if statusCode >= 200 && statusCode < 300 {
+//                        if let streets: [Street] = res.getObject() {
+//                            completion(streets.map {StreetVM(street:  $0) }, nil)
+//                        }
+//                    } else {
+//                        completion(nil, "Unable to get data")
+//                    }
+//                } else {
+//                    completion(nil, "Unable to get data")
+//                }
+//            } else {
+//                completion(nil, "Unable to get data")
+//            }
+//        }
+        
+        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/streets_by_district_id")!)
+               request.httpMethod = HTTPMethod.post.rawValue
+               request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+               let paramString = "{\"codeDistrict\" : \(districtID)}"
+               request.httpBody = paramString.data(using: .utf8)
+               Alamofire.request(request).responseJSON { (response) in
+                   if let statusCode = response.response?.statusCode {
+                       if let res = response.result.value as? [NSDictionary] {
+                           if statusCode >= 200 && statusCode < 300 {
+                               if let resturants: [Street] = res.getObject() {
+                                   completion(resturants.map { StreetVM(street: $0) }, nil)
+                               }
+                           } else {
+                               completion(nil, "Unable to get data")
+                           }
+                       } else {
+                           completion(nil, "Unable to get data")
+                       }
+                   } else {
+                       completion(nil, "Unable to get data")
+                   }
+               }
+        
+        
     }
 }

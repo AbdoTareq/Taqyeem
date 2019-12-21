@@ -43,6 +43,8 @@ class ResturantSearchVC: UIViewController {
         nextVC.modalPresentationStyle = .overCurrentContext
         nextVC.filterID =  sender.tag
         nextVC.searchVc =  self
+        nextVC.municID =  self.municID
+        nextVC.districtID =  self.districtID
         present(nextVC, animated: false, completion: nil)
     }
     
