@@ -62,6 +62,11 @@ struct ReportVM {
     }
     
     static func submitReport(complainInformation :String ,complainText:String,mobile:String,storename:String, completion: @escaping (_ success: Bool, _ error: String?) -> Void) {
+        guard let user = UserDefaultsAccess.sharedInstance.user, let id = user.id else {
+            completion(false, "You must login")
+            return
+        }
+        
         var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/comp/save")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -79,5 +84,26 @@ struct ReportVM {
             }
         }
     }
+    static func submitBug(issuesDescription :String ,date:String, completion: @escaping (_ success: Bool, _ error: String?) -> Void) {
+        guard let user = UserDefaultsAccess.sharedInstance.user, let id = user.id else {
+            completion(false, "You must login")
+            return
+        }
+        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/issue/save")!)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let paramString = "{\"dateTime\" : \"\(date)\", \"issuesDescription\" : \"\(issuesDescription)\", \"reportedBy\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\"}"
+        request.httpBody = paramString.data(using: .utf8)
+        Alamofire.request(request).responseJSON { (response) in
+            if let statusCode = response.response?.statusCode {
+                if statusCode == 201 {
+                    completion(true, nil)
+                } else {
+                    completion(false, "\(statusCode) - Unable to add bug")
+                }
+            }
+        }
+    }
+    
 }
 
