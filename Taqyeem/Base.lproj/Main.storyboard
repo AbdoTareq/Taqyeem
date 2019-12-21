@@ -968,14 +968,14 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ruv-Tw-esn">
                                                     <rect key="frame" x="10" y="10" width="374" height="59"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dyg-3s-73F">
-                                                            <rect key="frame" x="306" y="3" width="53" height="53"/>
+                                                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dyg-3s-73F">
+                                                            <rect key="frame" x="359" y="3" width="0.0" height="53"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="dyg-3s-73F" secondAttribute="height" multiplier="1:1" id="y5n-5d-Wcz"/>
+                                                                <constraint firstAttribute="width" id="xTt-zD-zua"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مطعم النزهة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxC-Vz-RQc">
-                                                            <rect key="frame" x="203" y="3" width="98" height="32"/>
+                                                            <rect key="frame" x="256" y="3" width="98" height="32"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="J9d-nm-lfx"/>
                                                             </constraints>
@@ -984,13 +984,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عنوان المطعم" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f18-vt-9F4">
-                                                            <rect key="frame" x="218.5" y="35" width="82.5" height="26.5"/>
+                                                            <rect key="frame" x="271.5" y="35" width="82.5" height="26.5"/>
                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZLS-nk-NQs" customClass="CosmosView" customModule="Cosmos">
-                                                            <rect key="frame" x="78" y="9" width="120" height="20"/>
+                                                            <rect key="frame" x="131" y="9" width="120" height="20"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="120" id="NhZ-kD-sgI"/>
@@ -2117,14 +2117,14 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tww-Q4-6VE">
                                                     <rect key="frame" x="10" y="10" width="394" height="80"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fZN-Dx-jdA">
-                                                            <rect key="frame" x="305" y="3" width="74" height="74"/>
+                                                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fZN-Dx-jdA">
+                                                            <rect key="frame" x="379" y="3" width="0.0" height="74"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="fZN-Dx-jdA" secondAttribute="height" multiplier="1:1" id="zei-x5-Zqb"/>
+                                                                <constraint firstAttribute="width" id="hd8-Qb-X0I"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مطعم النزهة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbN-TE-B8K">
-                                                            <rect key="frame" x="202" y="3" width="98" height="35"/>
+                                                            <rect key="frame" x="276" y="3" width="98" height="35"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="175" id="8VM-zZ-78Q"/>
                                                                 <constraint firstAttribute="height" constant="35" id="qDN-jr-feg"/>
@@ -2134,13 +2134,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عنوان المطعم" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ssb-39-AJz">
-                                                            <rect key="frame" x="54" y="38" width="246" height="24"/>
+                                                            <rect key="frame" x="54" y="38" width="320" height="24"/>
                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jwA-Eh-Mbp" customClass="CosmosView" customModule="Cosmos">
-                                                            <rect key="frame" x="77" y="13" width="120" height="15"/>
+                                                            <rect key="frame" x="151" y="13" width="120" height="15"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="15" id="EFu-Y8-vzJ"/>
