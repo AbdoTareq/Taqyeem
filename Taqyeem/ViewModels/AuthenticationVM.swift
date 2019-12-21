@@ -40,9 +40,9 @@ struct AuthenricationVM {
         var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/user/save")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let paramString = "{\"firstName\" : \"\(user.firstName)\", \"lastName\" : \"\(user.lastName)\", \"nickName\" : \"\(user.nickName)\", \"email\" : \"\(user.email)\", \"isBlackListed\" : \"\("0")\", \"isDeleted\" : \"\(0)\", \"mobile\" : \"\(user.mobile)\", \"password\" : \"\(user.password)\", \"isAdmin\" : \"\(0)\"}"
+        let paramString = "{\"firstName\" : \"\(user.firstName ?? "")\", \"lastName\" : \"\(user.lastName ?? "")\", \"nickName\" : \"\(user.nickName ?? "")\", \"email\" : \"\(user.email ?? "")\", \"isBlackListed\" : \"\("0")\", \"isDeleted\" : \"\(0)\", \"mobile\" : \"\(user.mobile ?? "")\", \"password\" : \"\(user.password ?? "")\", \"isAdmin\" : \"\(0)\"}"
         request.httpBody = paramString.data(using: .utf8)
-        
+  
         Alamofire.request(request).responseJSON { (response) in
             if let statusCode = response.response?.statusCode {
                 if statusCode == 201 {
@@ -78,4 +78,24 @@ struct AuthenricationVM {
             }
         }
     }
+    
+    
+    static func update(user: User, completion: @escaping (_ success: Bool, _ error: String?) -> Void) {
+          var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/user/save")!)
+          request.httpMethod = HTTPMethod.post.rawValue
+          request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let paramString = "{\"firstName\" : \"\(user.firstName ?? "")\", \"lastName\" : \"\(user.lastName ?? "")\", \"nickName\" : \"\(user.nickName ?? "")\", \"email\" : \"\(user.email ?? "")\", \"isBlackListed\" : \"\("0")\", \"isDeleted\" : \"\(0)\", \"mobile\" : \"\(user.mobile ?? "")\", \"password\" : \"\(user.password ?? "")\", \"isAdmin\" : \"\(0)\" ,  \"id\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\"}"
+          request.httpBody = paramString.data(using: .utf8)
+    
+          Alamofire.request(request).responseJSON { (response) in
+              if let statusCode = response.response?.statusCode {
+                  if statusCode == 201 {
+                      completion(true, nil)
+                  } else {
+                      completion(false, "\(statusCode) - Unable to update profile")
+                  }
+              }
+          }
+      }
+    
 }

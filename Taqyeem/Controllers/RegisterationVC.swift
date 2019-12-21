@@ -21,6 +21,15 @@ class RegisterationVC: UIViewController {
         super.viewDidLoad()
         initNavigationBar()
     }
+    
+    @IBAction func btnRegisterClicked(_ sender: Any) {
+        register()
+    }
+    
+    @IBAction func skipBtnClicked(_ sender: Any) {
+        
+    }
+    
     func register() {
         if txtFirstName.text == "" {
             showAlert(message: "برجاء ادخال الاسم الاول")

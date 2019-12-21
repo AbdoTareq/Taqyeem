@@ -39,7 +39,7 @@ class SettingsStack: UIStackView {
     }
     
     @objc func goToProfile(_: UITapGestureRecognizer) {
-        let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "CreateReportVC") as! CreateReportVC
+        let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "UpdateProfile") as! UpdateProfile
         UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
     }
     @objc func shareApp(_: UITapGestureRecognizer) {
