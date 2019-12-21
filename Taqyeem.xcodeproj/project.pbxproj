@@ -15,6 +15,7 @@
 		04813F2623A574B100859B96 /* RatingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F2523A574B100859B96 /* RatingVC.swift */; };
 		04813F2823A58BC600859B96 /* CommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F2723A58BC600859B96 /* CommentsVC.swift */; };
 		04813F2A23A58BE900859B96 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F2923A58BE900859B96 /* CommentCell.swift */; };
+		04BFD0A023AD7D4200486D8B /* UpdateProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFD09F23AD7D4200486D8B /* UpdateProfile.swift */; };
 		04C4DDA623A6845700E3661E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C4DDA523A6845700E3661E /* Comment.swift */; };
 		04C4DDA823A6858200E3661E /* CommentVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C4DDA723A6858200E3661E /* CommentVM.swift */; };
 		0617D8A923A2A15F00ACAA4A /* ResturantVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617D8A823A2A15F00ACAA4A /* ResturantVM.swift */; };
@@ -122,6 +123,7 @@
 		04813F2523A574B100859B96 /* RatingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingVC.swift; sourceTree = "<group>"; };
 		04813F2723A58BC600859B96 /* CommentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsVC.swift; sourceTree = "<group>"; };
 		04813F2923A58BE900859B96 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		04BFD09F23AD7D4200486D8B /* UpdateProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfile.swift; sourceTree = "<group>"; };
 		04C4DDA523A6845700E3661E /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		04C4DDA723A6858200E3661E /* CommentVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVM.swift; sourceTree = "<group>"; };
 		0617D8A823A2A15F00ACAA4A /* ResturantVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantVM.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				04250C3923A51CAD00ECB2A6 /* FiltersVC.swift */,
 				04813F2523A574B100859B96 /* RatingVC.swift */,
 				04813F2723A58BC600859B96 /* CommentsVC.swift */,
+				04BFD09F23AD7D4200486D8B /* UpdateProfile.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				06800B51238D3DE000F4CF20 /* BulletainVC.swift in Sources */,
 				0621EEC5238D81B4008C13C3 /* ResturantDetailsVC.swift in Sources */,
 				0653BFA82383133600BDC506 /* ColorExt.swift in Sources */,
+				04BFD0A023AD7D4200486D8B /* UpdateProfile.swift in Sources */,
 				06D1A3142389705E005568D1 /* HomeVC.swift in Sources */,
 				04250C3823A518FD00ECB2A6 /* MunicVM.swift in Sources */,
 				06BC66242392CA4900651171 /* AuthenticationVM.swift in Sources */,

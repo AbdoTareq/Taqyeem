@@ -27,4 +27,7 @@ class SettingsVC: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
         navigationItem.setHidesBackButton(true, animated: false)
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 }
