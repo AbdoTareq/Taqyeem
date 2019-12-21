@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import NotificationBannerSwift
 class CreateBugReportVC: UIViewController {
 
     @IBOutlet weak var viewContainer: UIView!
@@ -27,6 +27,22 @@ class CreateBugReportVC: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationItem.title = "ابلغ عن خطأ"
         navigationItem.setHidesBackButton(true, animated: false)
+    }
+    
+    @IBAction func btnSubmitBugClicked(_ sender: Any) {
+        self.startLoadingActivity()
+        ReportVM.submitBug(issuesDescription: self.txtDetails.text!, date: Date().getDate(type: .long).getShortDate()) { success, errorMessage in
+            self.stopLoadingActivity()
+            if success{
+                let banner = StatusBarNotificationBanner(title: "تم اضافه بلاغك بنجاح", style: .success)
+                           banner.show()
+                           self.navigationController?.popViewController(animated: true)
+            }
+            else {
+                let banner = StatusBarNotificationBanner(title: errorMessage!, style: .warning)
+                                          banner.show()
+            }
+        }
     }
 }
 extension CreateBugReportVC: UITextViewDelegate {

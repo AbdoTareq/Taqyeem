@@ -110,7 +110,7 @@ extension String
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
         let date = dateFormatter.date(from: self) ?? Date.current
 
-        dateFormatter.dateFormat = "MMM d yyyy" // Your New Date format as per requirement change it own
+        dateFormatter.dateFormat = "yyyy-MM-dd" // Your New Date format as per requirement change it own
         let newDate = dateFormatter.string(from: date) // pass Date here
         return newDate
     }
