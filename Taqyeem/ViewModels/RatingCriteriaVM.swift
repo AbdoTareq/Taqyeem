@@ -1,29 +1,36 @@
 //
-//  CommentVM.swift
+//  RatingCriteriaVM.swift
 //  Taqyeem
 //
-//  Created by mac on 12/15/19.
+//  Created by mac on 12/21/19.
 //  Copyright © 2019 mazeedit. All rights reserved.
 //
 
 import Foundation
 import Alamofire
-struct CommentVM {
-    var comment :Comment
-    static func getAllComments(storeID : Int,completion: @escaping (_ comments: [CommentVM]?, _ error: String?) -> Void) {
-        let url = NetworkManager.getUrl(service: .ratingAndComments)
+struct RatingCriteriaVM {
+var rateCriteria :RatingCriteria
+    var id: Int {
+           return rateCriteria.id ?? 0
+       }
+       var description: String {
+           return rateCriteria.description ?? ""
+       }
+    
+    static func gerCriteries(completion: @escaping (_ criteries: [RatingCriteriaVM]?, _ error: String?) -> Void) {
+        let url = NetworkManager.getUrl(service: .ratingCriteria)
         var request = URLRequest(url: URL(string: url)!)
-        request.httpMethod = HTTPMethod.post.rawValue
+        request.httpMethod = HTTPMethod.get.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let paramString = "{\"store\" : \"\(storeID)\", \"ratingCriteriaId\" : \"\(12)\"}"
+        let paramString = ""
         request.httpBody = paramString.data(using: .utf8)
         Alamofire.request(request).responseJSON { (response) in
             print(response)
             if let statusCode = response.response?.statusCode {
                 if let res = response.result.value as? [NSDictionary] {
                     if statusCode >= 200 && statusCode < 300 {
-                        if let comments: [Comment] = res.getObject() {
-                            completion(comments.map { CommentVM(comment: $0) }, nil)
+                        if let resturants: [RatingCriteria] = res.getObject() {
+                            completion(resturants.map { RatingCriteriaVM(rateCriteria: $0) }, nil)
                         }
                     } else {
                         completion(nil, "Unable to get data")
@@ -36,22 +43,24 @@ struct CommentVM {
             }
         }
     }
-    static func submitComment(comment :String ,storeId :Int , completion: @escaping (_ success: Bool, _ error: String?) -> Void) {
+    
+    
+    static func submitRatingCriteria(ratingValue :Double ,ratingCriteriaId :Int ,storeId :Int, completion: @escaping (_ success: Bool, _ error: String?) -> Void) {
         var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/store_rate_dtls/save")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        var dic2 = "{\"compplaintypeid\" : \"\(2)\"}"
-        var userdic2 = "{\"id\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\"}"
-        let paramString = "{\"comments\" : \"\(comment)\", \"iscommentblocked\" : \"\("0")\", \"ratingValue\" : \("5"), \"store\" : \"\(storeId)\", \"ratingCriteriaId\" : \"\("12")\", \"userId\" : \(UserDefaultsAccess.sharedInstance.user?.id ?? 0)}"
+        let paramString = "{\"comments\" : \"\("")\", \"iscommentblocked\" : \"\("0")\", \"ratingValue\" : \(ratingValue), \"store\" : \"\(storeId)\", \"ratingCriteriaId\" : \"\(ratingCriteriaId)\", \"userId\" : \(UserDefaultsAccess.sharedInstance.user?.id ?? 0)}"
         request.httpBody = paramString.data(using: .utf8)
         Alamofire.request(request).responseJSON { (response) in
             if let statusCode = response.response?.statusCode {
                 if statusCode == 201 {
                     completion(true, nil)
                 } else {
-                    completion(false, "\(statusCode) - Unable to add comment")
+                    completion(false, "\(statusCode) - Unable to add rate")
                 }
             }
         }
     }
+    
+    
 }

@@ -140,7 +140,7 @@ struct ResturantVM {
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let paramString = "{\"userId\" : \"\(41)\"}"
+        let paramString = "{\"userId\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\"}"
         request.httpBody = paramString.data(using: .utf8)
         Alamofire.request(request).responseJSON { (response) in
             print(response)
@@ -150,16 +150,44 @@ struct ResturantVM {
                         if let resturants: [Resturant] = res.getObject() {
                             completion(resturants.map { ResturantVM(resturant: $0) }, nil)
                         }
-                    } else {
-                        completion(nil, "Unable to get data")
+                    } else if statusCode == 500 {
+                        completion(nil, "this resturant already in your favourites")
+                    }
+                    else {
+                        
                     }
                 } else {
-                    completion(nil, "Unable to get data")
+                    completion(nil, "Unable to add resturant to favourites")
                 }
             } else {
-                completion(nil, "Unable to get data")
+                completion(nil, "Unable to add resturant to favourites")
             }
         }
     }
+    
+    static func addReturantToFav(resturantID : Int , completion: @escaping (_ success :Bool, _ error: String?) -> Void) {
+           let url = NetworkManager.getUrl(service: .storeToFave)
+           var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/favorit_stores/save")!)
+           request.httpMethod = HTTPMethod.post.rawValue
+           request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let paramString = "{\"userId\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\", \"storeId\" : \"\(resturantID)\"}"
+           request.httpBody = paramString.data(using: .utf8)
+           Alamofire.request(request).responseJSON { (response) in
+               print(response)
+               if let statusCode = response.response?.statusCode {
+                       if statusCode >= 200 && statusCode < 300 {
+                          completion(true, nil)
+                       }
+                    else {
+                       completion(false, "Unable to add to favourite")
+                   }
+            }
+                else {
+                      completion(false, "Unable to add to favourite")
+               }
+           }
+        }
+        
+    
     
 }

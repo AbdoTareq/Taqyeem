@@ -7,12 +7,15 @@
 //
 
 import UIKit
-
+import GrowingTextView
 class CommentsVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var resturant : Resturant =  Resturant()
     @IBOutlet weak var barButonItemTitle: UIBarButtonItem!
      var comments: [CommentVM]?
+    
+    @IBOutlet weak var txtComment: GrowingTextView!
+    @IBOutlet weak var commentContainerView: UIView!
     var storeID : Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +29,19 @@ class CommentsVC: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
         barButonItemTitle.tintColor =  UIColor.white
         getData()
+        txtComment.placeholder = "اضافه تعليق"
+        txtComment.placeholderColor =  UIColor.lightGray
+        commentContainerView.addShadow(color: UIColor.darkGray)
     }
     
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func addCommentBtnClicked(_ sender: Any) {
+        CommentVM.submitComment(comment: self.txtComment.text!, storeId: self.resturant.storeId ?? 0) { success, errorMessage in
+            
+        }
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false

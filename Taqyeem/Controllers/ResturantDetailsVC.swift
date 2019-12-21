@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+import NotificationBannerSwift
+import MapKit
+import CoreLocation
 class ResturantDetailsVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var resturantName = ""
@@ -30,7 +32,7 @@ class ResturantDetailsVC: UIViewController {
     }
     
     
-   
+    
     @objc func btnRatingClicked(_ sender: UIButton) {
         let nextVC = storyboard?.instantiateViewController(withIdentifier: "RatingVC") as! RatingVC
         nextVC.resturant =  self.resturantVM.resturant
@@ -38,11 +40,36 @@ class ResturantDetailsVC: UIViewController {
         
     }
     @objc func btnCommentsClicked(_ sender: UIButton) {
-          let nextVC = storyboard?.instantiateViewController(withIdentifier: "CommentsVC") as! CommentsVC
-          nextVC.resturant =  self.resturantVM.resturant
-          self.navigationController?.pushViewController(nextVC, animated: true)
-          
-      }
+        let nextVC = storyboard?.instantiateViewController(withIdentifier: "CommentsVC") as! CommentsVC
+        nextVC.resturant =  self.resturantVM.resturant
+        self.navigationController?.pushViewController(nextVC, animated: true)
+        
+    }
+    @objc func btnAddToFaveClicked(_ sender: UIButton) {
+        if self.resturantVM != nil {
+            self.startLoadingActivity()
+            ResturantVM.addReturantToFav(resturantID: self.resturantVM.resturant.storeId ?? 0) { success, errorMessage in
+                self.stopLoadingActivity()
+                if success {
+                    let banner = StatusBarNotificationBanner(title: "تم اضافه المطعم للمفضله", style: .success)
+                    banner.show()
+                 
+                }
+                else {
+                    let banner = StatusBarNotificationBanner(title: "لم نتمكن من اضافه المطعم للمفضله", style: .warning)
+                                      banner.show()
+                }
+            }
+            
+        }
+    }
+    
+    @objc func showDirectionClicked(_ sender: UIButton) {
+        let location = CLLocation(latitude: self.resturantVM.resturant.latitude ?? 0.0, longitude: self.resturantVM.resturant.longitude ?? 0.0)
+        self.openMapForLocation(location: location, zoom: 2, locationName: self.resturantVM.resturant.storeArabicName ?? "", title: self.resturantVM.resturant.storeArabicName ?? "", googleTitle: "Google Map", appleTitle: "Apple Map", cancelTitle: "cancel")
+    }
+    @objc func showResturantActivities(_ sender: UIButton) {
+    }
 }
 extension ResturantDetailsVC : UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,11 +99,14 @@ extension ResturantDetailsVC : UITableViewDelegate , UITableViewDataSource{
         if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ShowCommentRateCell", for: indexPath) as! ShowCommentRateCell
             cell.ratingBtn.addTarget(self, action: #selector(btnRatingClicked(_:)), for: .touchUpInside)
-         cell.btnComments.addTarget(self, action: #selector(btnCommentsClicked(_:)), for: .touchUpInside)
+            cell.btnComments.addTarget(self, action: #selector(btnCommentsClicked(_:)), for: .touchUpInside)
             return cell
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ResturantActivitiesDirections", for: indexPath) as! ResturantActivitiesDirections
+            cell.btnAddToFav.addTarget(self, action: #selector(btnAddToFaveClicked(_:)), for: .touchUpInside)
+            cell.btnDirections.addTarget(self, action: #selector(showDirectionClicked(_:)), for: .touchUpInside)
+            cell.btnResturantActivities.addTarget(self, action: #selector(showResturantActivities(_:)), for: .touchUpInside)
             return cell
         }
         
