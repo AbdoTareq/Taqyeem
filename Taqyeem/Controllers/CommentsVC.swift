@@ -48,7 +48,9 @@ class CommentsVC: UIViewController {
     }
     
     func getData()  {
+          self.startLoadingActivity()
         CommentVM.getAllComments(storeID:self.resturant.storeId ?? 0){ comments , error in
+              self.stopLoadingActivity()
                if error != nil {
                    self.showAlert(message: error!)
                    return

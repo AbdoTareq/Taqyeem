@@ -18,7 +18,9 @@ class BulletainVC: UIViewController {
     }
     
     func getData() {
+         self.startLoadingActivity()
         BulletainVM.getPublications() {bulletain, error in
+             self.stopLoadingActivity()
             if error != nil {
                 self.showAlert(title: "Failed", message: error!, buttonTitle: "OK")
             } else {
