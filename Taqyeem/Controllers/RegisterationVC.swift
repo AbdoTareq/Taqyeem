@@ -64,7 +64,9 @@ class RegisterationVC: UIViewController {
             return
         }
         let user = User(id: nil, firstName: txtFirstName.text!, lastName: txtLastName.text!, nickName: txtFamilyName.text, email: txtMail.text!, image: nil, token: nil, mobile: txtPhone.text!, password: txtPassword.text)
+        self.startLoadingActivity()
         AuthenricationVM.register(user: user) {success, error in
+            self.stopLoadingActivity()
             if !success {
                 if error != nil {
                     self.showAlert(message: error!)

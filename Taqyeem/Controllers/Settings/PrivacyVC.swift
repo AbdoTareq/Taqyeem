@@ -20,7 +20,9 @@ class PrivacyVC: UIViewController {
         vwContainer.addShadow(color: UIColor.gray)
     }
     func getData() {
+        self.startLoadingActivity()
         HelpVM.get(type: 2) {help, error in
+            self.stopLoadingActivity()
             if help != nil {
                 self.privacy = help![0]
             } else {

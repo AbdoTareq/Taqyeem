@@ -9,10 +9,10 @@
 import UIKit
 import NotificationBannerSwift
 class CreateReportVC: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     var reportTitle :String = ""
-      var reportDescription :String = ""
+    var reportDescription :String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
@@ -28,18 +28,18 @@ class CreateReportVC: UIViewController {
     }
     
     @objc func btnSubmitReportClicked(_ sender: UIButton) {
-         self.startLoadingActivity()
-         prepareReportsData()
+        self.startLoadingActivity()
+        prepareReportsData()
         ReportVM.submitReport(complainInformation: self.reportTitle, complainText: self.reportDescription , mobile: UserDefaultsAccess.sharedInstance.user?.mobile ?? "", storename: "kfc") { success , errorMessage in
             self.stopLoadingActivity()
             if success {
-             let banner = StatusBarNotificationBanner(title: "تم اضافه بلاغك بنجاح", style: .success)
+                let banner = StatusBarNotificationBanner(title: "تم اضافه بلاغك بنجاح", style: .success)
                 banner.show()
                 self.navigationController?.popViewController(animated: true)
             }
             else {
                 let banner = StatusBarNotificationBanner(title: errorMessage!, style: .warning)
-                            banner.show()
+                banner.show()
             }
         }
     }
@@ -48,8 +48,8 @@ class CreateReportVC: UIViewController {
             if  let cell =  cellItem as? CreateReportTitleCell {
                 self.reportTitle = cell.txtTitle!.text!
             }
-           if let  cell = cellItem as? CreateReportDetailsCell {
-            self.reportDescription  = cell.txtDetails.text!
+            if let  cell = cellItem as? CreateReportDetailsCell {
+                self.reportDescription  = cell.txtDetails.text!
             }
         }
     }
@@ -74,7 +74,7 @@ extension CreateReportVC : UITableViewDelegate , UITableViewDataSource{
             return cell
         }
         if indexPath.row == 3 {
-           let cell = tableView.dequeueReusableCell(withIdentifier: "CreateReportSendCell", for: indexPath) as! CreateReportSendCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CreateReportSendCell", for: indexPath) as! CreateReportSendCell
             cell.btnSubmitReport.addTarget(self, action: #selector(btnSubmitReportClicked(_:)), for: .touchUpInside)
             return cell
         }

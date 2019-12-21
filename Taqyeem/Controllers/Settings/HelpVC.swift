@@ -20,7 +20,9 @@ class HelpVC: UIViewController {
         vwContainer.addShadow(color: UIColor.gray)
     }
     func getData() {
+        self.startLoadingActivity()
         HelpVM.get(type: 1) {help, error in
+            self.stopLoadingActivity()
             if help != nil {
                 self.help = help![0]
             } else {

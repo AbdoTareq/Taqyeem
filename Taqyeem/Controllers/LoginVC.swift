@@ -35,7 +35,9 @@ class LoginVC: UIViewController {
             showAlert(message: "برجاء ادخال كلمة المرور")
             return
         }
+        self.startLoadingActivity()
         AuthenricationVM.login(mobile: txtPhone.text!, password: txtPassword.text!) {user, error in
+            self.stopLoadingActivity()
             if error != nil {
                 self.showAlert(message: error!)
                 return

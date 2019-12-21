@@ -1975,13 +1975,6 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6iC-lF-Zvs">
                                                     <rect key="frame" x="10" y="10" width="394" height="181"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uoY-eM-yHe">
-                                                            <rect key="frame" x="15" y="44.5" width="126.5" height="126.5"/>
-                                                            <color key="backgroundColor" red="0.47450980390000003" green="0.46666666670000001" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="uoY-eM-yHe" secondAttribute="height" multiplier="1:1" id="jPU-Qc-abh"/>
-                                                            </constraints>
-                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عنوان الخبر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ih0-Ny-qjh">
                                                             <rect key="frame" x="274.5" y="4" width="79.5" height="32"/>
                                                             <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="17"/>
@@ -2009,7 +2002,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO7-5K-aug">
-                                                            <rect key="frame" x="146.5" y="58.5" width="232.5" height="112.5"/>
+                                                            <rect key="frame" x="10" y="58.5" width="369" height="112.5"/>
                                                             <string key="text">تعد كتابة المقال مكونًا أساسيًا للنجاح الأكاديمي في عصرنا الحالي على جميع المستويات، حيث أنها في الأساس هي الطريقة التي يتواصل بها الأفراد داخل المجتمع الأكاديمي مع بعضهم البعض. هناك طرق أساسية يقوم بها الأكاديميون بتنظيم عملهم، وطرق رسمية لإيصال ما يريدون قوله، وبالتالي فإن كتابة المقالات هي الطريقة الرسمية التي يمكن للأكاديميين المحترفين من خلالها التواصل فيما بينهم، إلى جانب أنها ليست حكراً على الطلاب في مواد معينة يأخذونها في الجامعة ولا على الصحفيين الذين تقتضي طبيعة عملهم كتابة أو قراءة المقالات بشكل مستمر، بينما الغالبية العظمى من المعلمين والأساتذة يكتبون أيضًا مقالات على المستوى المهني للتعامل فيما بينهم تصفح على موقع فرصة </string>
                                                             <fontDescription key="fontDescription" name="Cairo-Light" family="Cairo" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2020,16 +2013,13 @@
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cO7-5K-aug" secondAttribute="bottom" constant="10" id="0Jw-80-qHx"/>
                                                         <constraint firstItem="zSa-80-VoB" firstAttribute="top" secondItem="6iC-lF-Zvs" secondAttribute="top" constant="10" id="2du-3j-Dxq"/>
-                                                        <constraint firstItem="uoY-eM-yHe" firstAttribute="height" secondItem="6iC-lF-Zvs" secondAttribute="height" multiplier="0.7" id="3jg-bp-7B8"/>
                                                         <constraint firstItem="s6G-Xj-9uc" firstAttribute="top" secondItem="zSa-80-VoB" secondAttribute="bottom" constant="5" id="4x7-oT-y8J"/>
-                                                        <constraint firstItem="uoY-eM-yHe" firstAttribute="leading" secondItem="6iC-lF-Zvs" secondAttribute="leading" constant="15" id="99R-v6-LnJ"/>
                                                         <constraint firstItem="Dfq-vk-Jz5" firstAttribute="trailing" secondItem="Ih0-Ny-qjh" secondAttribute="trailing" id="B2f-zd-N3g"/>
                                                         <constraint firstItem="Ih0-Ny-qjh" firstAttribute="centerY" secondItem="zSa-80-VoB" secondAttribute="centerY" id="CHP-KM-71h"/>
                                                         <constraint firstAttribute="trailing" secondItem="cO7-5K-aug" secondAttribute="trailing" constant="15" id="JSh-Tx-8c0"/>
                                                         <constraint firstAttribute="trailing" secondItem="zSa-80-VoB" secondAttribute="trailing" constant="15" id="N8j-vY-RKe"/>
-                                                        <constraint firstItem="cO7-5K-aug" firstAttribute="leading" secondItem="uoY-eM-yHe" secondAttribute="trailing" constant="5" id="SVM-EB-dco"/>
+                                                        <constraint firstItem="cO7-5K-aug" firstAttribute="leading" secondItem="6iC-lF-Zvs" secondAttribute="leading" constant="10" id="NyT-c2-rMI"/>
                                                         <constraint firstAttribute="trailing" secondItem="s6G-Xj-9uc" secondAttribute="trailing" constant="15" id="bS8-WR-rc7"/>
-                                                        <constraint firstAttribute="bottom" secondItem="uoY-eM-yHe" secondAttribute="bottom" constant="10" id="dL1-wC-2zG"/>
                                                         <constraint firstItem="cO7-5K-aug" firstAttribute="top" secondItem="Dfq-vk-Jz5" secondAttribute="bottom" id="iXr-qu-Lcv"/>
                                                         <constraint firstItem="Dfq-vk-Jz5" firstAttribute="centerY" secondItem="s6G-Xj-9uc" secondAttribute="centerY" id="x5T-87-KIg"/>
                                                         <constraint firstItem="zSa-80-VoB" firstAttribute="leading" secondItem="Ih0-Ny-qjh" secondAttribute="trailing" constant="5" id="zhD-KI-r3e"/>
@@ -2051,7 +2041,6 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="img" destination="uoY-eM-yHe" id="1ej-DR-C9O"/>
                                             <outlet property="lblDate" destination="Dfq-vk-Jz5" id="ijf-7o-0qg"/>
                                             <outlet property="lblDetails" destination="cO7-5K-aug" id="ZKm-aV-FXu"/>
                                             <outlet property="lblTitle" destination="Ih0-Ny-qjh" id="2fH-bP-Y8W"/>

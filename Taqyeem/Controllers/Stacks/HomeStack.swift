@@ -41,6 +41,10 @@ class HomeStack: UIStackView {
         UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
     }
     @objc func goToFav(_: UITapGestureRecognizer) {
+        if UserDefaultsAccess.sharedInstance.user == nil {
+            UIApplication.topViewController()!.showAlert(message: "يجب عليك تسجيل الدخول للمتابعة")
+            return
+        }
         let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "FavouritesVC") as! FavouritesVC
         UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
     }

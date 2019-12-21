@@ -64,7 +64,9 @@ class ResturantSearchVC: UIViewController {
     }
     func getReturantsByMunic(municID :Int)  {
         self.municID =  municID
+        self.startLoadingActivity()
         ResturantVM.getResturantsByMunic(MunicID: municID) { resturants , error in
+            self.stopLoadingActivity()
             if error != nil {
                 self.showAlert(message: error!)
                 return
@@ -80,7 +82,9 @@ class ResturantSearchVC: UIViewController {
     }
     func getReturantsByDistrict(districtID :Int)  {
         self.districtID =  districtID
+        self.startLoadingActivity()
         ResturantVM.getResturantsByDistrict(MunicID: self.municID, districtID: districtID) { resturants , error in
+            self.stopLoadingActivity()
             if error != nil {
                 self.showAlert(message: error!)
                 return
@@ -96,7 +100,9 @@ class ResturantSearchVC: UIViewController {
     }
     func getReturantsByStreet(StreetID :Int)  {
         self.streetID =  StreetID
+        self.startLoadingActivity()
         ResturantVM.getResturantsBystreet(MunicID: self.municID, districtID: self.districtID , streetID :self.streetID) { resturants , error in
+            self.stopLoadingActivity()
             if error != nil {
                 self.showAlert(message: error!)
                 return

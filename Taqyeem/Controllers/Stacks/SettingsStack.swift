@@ -51,6 +51,10 @@ class SettingsStack: UIStackView {
         UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
     }
     @objc func goToCreateReport(_: UITapGestureRecognizer) {
+        if UserDefaultsAccess.sharedInstance.user == nil {
+            UIApplication.topViewController()!.showAlert(message: "يجب عليك تسجيل الدخول للمتابعة")
+            return
+        }
         let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "CreateBugReportVC") as! CreateBugReportVC
         UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
     }
