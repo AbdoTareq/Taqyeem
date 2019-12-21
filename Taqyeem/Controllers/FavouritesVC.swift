@@ -18,7 +18,9 @@ class FavouritesVC: UIViewController {
         getData()
     }
     func getData() {
+        self.startLoadingActivity()
         ResturantVM.getFavourites() {resturants, error in
+            self.stopLoadingActivity()
             if error != nil {
                 self.showAlert(message: error!)
                 return
