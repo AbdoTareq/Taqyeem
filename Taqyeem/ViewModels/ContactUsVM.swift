@@ -20,7 +20,7 @@ struct ContactUsVM {
         return contactUs.contactType ?? 0
     }
     static func get(category: Int, completion: @escaping (_ contactUs: [ContactUsVM]?, _ error: String?) -> Void) {
-        let url = NetworkManager.getUrl(service: .ratingAndComments)
+        let url = NetworkManager.getUrl(service: .contact)
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")

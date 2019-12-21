@@ -498,7 +498,7 @@
                                                                             <constraint firstAttribute="width" constant="60" id="pFU-Qb-VdL"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="أخبار الادارة العامة لصحة البيئة" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4C-PB-WVO">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="أخبار الادارة العامة لصحة البيئة" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i4C-PB-WVO">
                                                                         <rect key="frame" x="5" y="80" width="177" height="64"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                                                         <color key="textColor" red="0.80000000000000004" green="0.63137254899999995" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -513,6 +513,7 @@
                                                                     <constraint firstItem="i4C-PB-WVO" firstAttribute="leading" secondItem="sNS-Vt-Mhw" secondAttribute="leading" constant="5" id="afX-mx-5hT"/>
                                                                     <constraint firstItem="JLR-Ld-Aq6" firstAttribute="top" secondItem="sNS-Vt-Mhw" secondAttribute="top" constant="10" id="l9U-MJ-pvn"/>
                                                                     <constraint firstItem="JLR-Ld-Aq6" firstAttribute="centerX" secondItem="sNS-Vt-Mhw" secondAttribute="centerX" id="qHR-lK-ctO"/>
+                                                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="i4C-PB-WVO" secondAttribute="bottom" constant="10" id="vTR-q3-sY4"/>
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
@@ -2258,13 +2259,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="sCg-c9-TeW">
-                                <rect key="frame" x="50" y="118" width="314" height="130"/>
+                                <rect key="frame" x="107" y="118" width="200" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="iao-Hc-XaU"/>
+                                    <constraint firstAttribute="height" constant="100" id="iao-Hc-XaU"/>
+                                    <constraint firstAttribute="width" constant="200" id="xqv-cW-IsP"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngp-3D-DYi">
-                                <rect key="frame" x="50" y="328" width="314" height="40"/>
+                                <rect key="frame" x="50" y="298" width="314" height="40"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone-icon" translatesAutoresizingMaskIntoConstraints="NO" id="xf0-gs-nL9">
                                         <rect key="frame" x="269" y="0.0" width="40" height="40"/>
@@ -2305,7 +2307,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZb-TU-fNR">
-                                <rect key="frame" x="50" y="398" width="314" height="40"/>
+                                <rect key="frame" x="50" y="368" width="314" height="40"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password" translatesAutoresizingMaskIntoConstraints="NO" id="ef9-IZ-xRF">
                                         <rect key="frame" x="269" y="0.0" width="40" height="40"/>
@@ -2315,7 +2317,7 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yLO-pP-2JR" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="5" y="0.0" width="261" height="40"/>
+                                        <rect key="frame" x="5" y="-7" width="261" height="54"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                         <userDefinedRuntimeAttributes>
@@ -2343,7 +2345,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOH-nI-pvK">
-                                <rect key="frame" x="50" y="518" width="314" height="40"/>
+                                <rect key="frame" x="50" y="488" width="314" height="40"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.63137254899999995" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="tWd-W9-aV9"/>
@@ -2362,7 +2364,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpK-X2-HzI">
-                                <rect key="frame" x="50" y="568" width="314" height="40"/>
+                                <rect key="frame" x="50" y="538" width="314" height="40"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.63137254899999995" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="60q-gV-XUB"/>
@@ -2381,7 +2383,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fv6-hD-RCK">
-                                <rect key="frame" x="165.5" y="638" width="83" height="44"/>
+                                <rect key="frame" x="165.5" y="608" width="83" height="44"/>
                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                 <state key="normal" title="إنشاء حساب">
                                     <color key="titleColor" red="0.80000000000000004" green="0.63137254899999995" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -2402,8 +2404,7 @@
                             <constraint firstItem="tpK-X2-HzI" firstAttribute="leading" secondItem="iOH-nI-pvK" secondAttribute="leading" id="SVU-GA-bf5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iOH-nI-pvK" secondAttribute="trailing" constant="50" id="W7X-oc-Wa1"/>
                             <constraint firstItem="iOH-nI-pvK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="aNl-AB-6H8"/>
-                            <constraint firstItem="sCg-c9-TeW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="e7I-Eb-COu"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sCg-c9-TeW" secondAttribute="trailing" constant="50" id="fAu-TQ-zWw"/>
+                            <constraint firstItem="sCg-c9-TeW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kxJ-WF-Qg8"/>
                             <constraint firstItem="Fv6-hD-RCK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o6J-YD-hkg"/>
                             <constraint firstItem="iOH-nI-pvK" firstAttribute="top" secondItem="EZb-TU-fNR" secondAttribute="bottom" constant="80" id="sXQ-il-dhi"/>
                             <constraint firstItem="EZb-TU-fNR" firstAttribute="top" secondItem="ngp-3D-DYi" secondAttribute="bottom" constant="30" id="vGW-EQ-p7L"/>
@@ -5371,7 +5372,7 @@
         <!--Contact KaseemVC-->
         <scene sceneID="tt7-2B-RPi">
             <objects>
-                <viewController storyboardIdentifier="ContactKaseemVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2d7-Sh-4Bg" customClass="ContactKaseemVC" customModule="Taqyeem" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactKaseemVC" extendedLayoutIncludesOpaqueBars="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2d7-Sh-4Bg" customClass="ContactKaseemVC" customModule="Taqyeem" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lnq-Cp-U6w">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5392,8 +5393,8 @@
                                         <color key="textColor" red="0.80000000000000004" green="0.63137254899999995" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="qusyem@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUL-2Z-znn">
-                                        <rect key="frame" x="232" y="40" width="129.5" height="28.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUL-2Z-znn">
+                                        <rect key="frame" x="348" y="40" width="13.5" height="28.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -5431,8 +5432,8 @@
                                         <color key="textColor" red="0.80000000000000004" green="0.63137254899999995" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+966 1234567890" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEV-Zw-4Hg">
-                                        <rect key="frame" x="240.5" y="40" width="121" height="28.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEV-Zw-4Hg">
+                                        <rect key="frame" x="348" y="40" width="13.5" height="28.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -5455,7 +5456,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cS7-dR-KZe">
-                                <rect key="frame" x="15" y="285" width="384" height="107"/>
+                                <rect key="frame" x="15" y="285" width="384" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hashtag" translatesAutoresizingMaskIntoConstraints="NO" id="gQk-QF-Zin">
                                         <rect key="frame" x="349" y="10" width="25" height="25"/>
@@ -5471,16 +5472,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="f3B-dJ-9i3">
-                                        <rect key="frame" x="292" y="40" width="69.5" height="57"/>
+                                        <rect key="frame" x="361.5" y="40" width="0.0" height="0.0"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* فيس بوك" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAS-Av-B5P">
-                                                <rect key="frame" x="0.0" y="0.0" width="69.5" height="28.5"/>
+                                            <label hidden="YES" opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* فيس بوك" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAS-Av-B5P">
+                                                <rect key="frame" x="0.0" y="0.0" width="69.5" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* تويتر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBb-VS-SUD">
-                                                <rect key="frame" x="0.0" y="28.5" width="69.5" height="28.5"/>
+                                            <label hidden="YES" opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* تويتر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBb-VS-SUD">
+                                                <rect key="frame" x="0.0" y="0.0" width="69.5" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -5528,6 +5529,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="lblEmail" destination="iUL-2Z-znn" id="6gT-c4-dew"/>
+                        <outlet property="lblFacebook" destination="PAS-Av-B5P" id="7Fh-OP-Q4F"/>
+                        <outlet property="lblPhone" destination="jEV-Zw-4Hg" id="3O2-ZP-sdc"/>
+                        <outlet property="lblTwitter" destination="oBb-VS-SUD" id="TW8-Cc-X9y"/>
                         <outlet property="vwMail" destination="r7u-nO-BdQ" id="SdJ-1J-EYB"/>
                         <outlet property="vwPhone" destination="fON-t7-SGh" id="btP-O0-QrX"/>
                         <outlet property="vwSocial" destination="cS7-dR-KZe" id="Mh5-Sr-eCK"/>
@@ -5876,6 +5881,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="lblEmail" destination="tBW-yj-8iL" id="vgn-xQ-Clm"/>
+                        <outlet property="lblFacebook" destination="D38-Hq-MHI" id="ic9-tp-5O0"/>
+                        <outlet property="lblPhone" destination="rfK-lT-ywj" id="zqq-CL-9eF"/>
+                        <outlet property="lblTwitter" destination="fBF-PY-ZUk" id="0Fs-pe-7IE"/>
                         <outlet property="vwMail" destination="jLH-lm-CLH" id="zQt-a6-fOq"/>
                         <outlet property="vwPhone" destination="C7n-1i-WI9" id="Bmu-I5-AcT"/>
                         <outlet property="vwSocial" destination="Rkg-0C-76n" id="vKa-pf-O60"/>
