@@ -16,11 +16,11 @@ class GeneralNewsVC: UIViewController {
         initNavigationBar()
         getData()
     }
-
+    
     func getData() {
-         self.startLoadingActivity()
+        self.startLoadingActivity()
         NewsVM.getNews() {news, error in
-             self.stopLoadingActivity()
+            self.stopLoadingActivity()
             if error != nil {
                 self.showAlert(title: "Failed", message: error!, buttonTitle: "OK")
             } else {
@@ -38,7 +38,7 @@ class GeneralNewsVC: UIViewController {
         navigationItem.title = "الأخبار"
         navigationItem.setHidesBackButton(true, animated: false)
     }
-
+    
 }
 extension GeneralNewsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

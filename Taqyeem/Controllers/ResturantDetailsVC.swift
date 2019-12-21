@@ -27,7 +27,7 @@ class ResturantDetailsVC: UIViewController {
     func initNavigationBar() {
         UINavigationBar.appearance().backgroundColor = UIColor(hexString: "#CCA121")
         navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationItem.title =   resturantVM.resturant.storeNameBanner ??  resturantVM.resturant.storeArabicName ?? ""
+        navigationItem.title = resturantVM.resturant.storeNameBanner ??  resturantVM.resturant.storeArabicName ?? ""
         navigationItem.setHidesBackButton(true, animated: false)
     }
     
@@ -41,7 +41,7 @@ class ResturantDetailsVC: UIViewController {
     }
     @objc func btnCommentsClicked(_ sender: UIButton) {
         let nextVC = storyboard?.instantiateViewController(withIdentifier: "CommentsVC") as! CommentsVC
-        nextVC.resturant =  self.resturantVM.resturant
+        nextVC.resturant = self.resturantVM.resturant
         self.navigationController?.pushViewController(nextVC, animated: true)
         
     }
@@ -53,11 +53,11 @@ class ResturantDetailsVC: UIViewController {
                 if success {
                     let banner = StatusBarNotificationBanner(title: "تم اضافه المطعم للمفضله", style: .success)
                     banner.show()
-                 
+                    
                 }
                 else {
                     let banner = StatusBarNotificationBanner(title: "لم نتمكن من اضافه المطعم للمفضله", style: .warning)
-                                      banner.show()
+                    banner.show()
                 }
             }
             
@@ -109,7 +109,6 @@ extension ResturantDetailsVC : UITableViewDelegate , UITableViewDataSource{
             cell.btnResturantActivities.addTarget(self, action: #selector(showResturantActivities(_:)), for: .touchUpInside)
             return cell
         }
-        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension

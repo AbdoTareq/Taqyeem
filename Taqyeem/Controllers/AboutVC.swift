@@ -20,7 +20,9 @@ class AboutVC: UIViewController {
         getData()
     }
     func getData() {
+        self.startLoadingActivity()
         HelpVM.get(type: 4) {help, error in
+            self.stopLoadingActivity()
             if help != nil {
                 self.about = help![0]
             } else {

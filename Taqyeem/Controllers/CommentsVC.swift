@@ -12,7 +12,7 @@ class CommentsVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var resturant : Resturant =  Resturant()
     @IBOutlet weak var barButonItemTitle: UIBarButtonItem!
-     var comments: [CommentVM]?
+    var comments: [CommentVM]?
     
     @IBOutlet weak var txtComment: GrowingTextView!
     @IBOutlet weak var commentContainerView: UIView!
@@ -39,8 +39,10 @@ class CommentsVC: UIViewController {
     }
     
     @IBAction func addCommentBtnClicked(_ sender: Any) {
+        self.startLoadingActivity()
         CommentVM.submitComment(comment: self.txtComment.text!, storeId: self.resturant.storeId ?? 0) { success, errorMessage in
-            
+            self.stopLoadingActivity()
+            self.getData()
         }
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -48,21 +50,21 @@ class CommentsVC: UIViewController {
     }
     
     func getData()  {
-          self.startLoadingActivity()
+        self.startLoadingActivity()
         CommentVM.getAllComments(storeID:self.resturant.storeId ?? 0){ comments , error in
-              self.stopLoadingActivity()
-               if error != nil {
-                   self.showAlert(message: error!)
-                   return
-               }
-               guard let comments = comments else {return}
-               self.comments = comments
-               self.tableView.delegate =  self
-               self.tableView.dataSource =  self
-               self.tableView.reloadData()
-               
-           }
-       }
+            self.stopLoadingActivity()
+            if error != nil {
+                self.showAlert(message: error!)
+                return
+            }
+            guard let comments = comments else {return}
+            self.comments = comments
+            self.tableView.delegate =  self
+            self.tableView.dataSource =  self
+            self.tableView.reloadData()
+            
+        }
+    }
     
     
 }

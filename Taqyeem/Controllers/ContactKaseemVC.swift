@@ -29,9 +29,9 @@ class ContactKaseemVC: UIViewController {
         vwPhone.addShadow(color: UIColor.gray)
     }
     func getData() {
-         self.startLoadingActivity()
+        self.startLoadingActivity()
         ContactUsVM.get(category: 2) {contact, error in
-             self.stopLoadingActivity()
+            self.stopLoadingActivity()
             if contact != nil {
                 self.contactUs = contact
             } else {

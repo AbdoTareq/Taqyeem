@@ -48,11 +48,16 @@ class RatingVC: UIViewController {
     }
     @IBAction func submitRatingCriteria(_ sender: Any) {
         if self.rating.count >= 1 {
+            self.startLoadingActivity()
             RatingCriteriaVM.submitRatingCriteria(ratingValue: self.foodQuality.rating, ratingCriteriaId: self.rating[0].id, storeId: self.resturant.storeId ?? 0) { success, errorMessage in
+                self.stopLoadingActivity()
                 if self.rating.count >= 2  {
-                    RatingCriteriaVM.submitRatingCriteria(ratingValue: self.severityQuality.rating, ratingCriteriaId: self.rating[1].id, storeId: self.resturant.storeId ?? 0) { success, errorMessage in
+                    RatingCriteriaVM.submitRatingCriteria(ratingValue: self.severityQuality.rating, ratingCriteriaId: self.rating[1].id, storeId: self.resturant.storeId ?? 0) {
+                        success, errorMessage in
+                        self.stopLoadingActivity()
                         if self.rating.count >= 3 {
                             RatingCriteriaVM.submitRatingCriteria(ratingValue: self.rsturantClean.rating, ratingCriteriaId: self.rating[2].id, storeId: self.resturant.storeId ?? 0) { success, errorMessage in
+                                self.stopLoadingActivity()
                                 if success{
                                     let banner = StatusBarNotificationBanner(title: "تم اضافه تقيمك بنجاح", style: .success)
                                     banner.show()

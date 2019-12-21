@@ -16,10 +16,10 @@ class ContactManagementVC: UIViewController {
     
     @IBOutlet weak var lblPhone: UILabel!
     @IBOutlet weak var lblEmail: UILabel!
-
+    
     @IBOutlet weak var lblTwitter: UILabel!
     @IBOutlet weak var lblFacebook: UILabel!
-
+    
     var contactUs: [ContactUsVM]?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class ContactManagementVC: UIViewController {
         vwPhone.addShadow(color: UIColor.gray)
     }
     func getData() {
-          self.startLoadingActivity()
+        self.startLoadingActivity()
         ContactUsVM.get(category: 1) {contact, error in
             self.stopLoadingActivity()
             if contact != nil {

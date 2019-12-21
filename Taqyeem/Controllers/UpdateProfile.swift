@@ -66,7 +66,9 @@ class UpdateProfile: UIViewController {
         }
         self.startLoadingActivity()
         let user = User(id: nil, firstName: txtFirstName.text!, lastName: txtSecondName.text!, nickName: txtFamilyName.text, email: txtEmail.text!, image: nil, token: nil, mobile: txtMobile.text!, password: txtPassword.text)
+        self.startLoadingActivity()
         AuthenricationVM.update(user: user) {success, error in
+            self.stopLoadingActivity()
             if !success {
                 if error != nil {
                     self.showAlert(message: error!)

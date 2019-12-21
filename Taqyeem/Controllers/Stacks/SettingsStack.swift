@@ -39,6 +39,10 @@ class SettingsStack: UIStackView {
     }
     
     @objc func goToProfile(_: UITapGestureRecognizer) {
+        if UserDefaultsAccess.sharedInstance.user == nil {
+            UIApplication.topViewController()!.showAlert(message: "يجب عليك تسجيل الدخول للمتابعة")
+            return
+        }
         let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "UpdateProfile") as! UpdateProfile
         UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
     }
