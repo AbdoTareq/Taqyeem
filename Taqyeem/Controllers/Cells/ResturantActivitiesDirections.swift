@@ -10,6 +10,9 @@ import UIKit
 
 class ResturantActivitiesDirections: UITableViewCell {
 
+    @IBOutlet weak var btnResturantActivities: UIButton!
+    @IBOutlet weak var btnDirections: UIButton!
+    @IBOutlet weak var btnAddToFav: UIButton!
     @IBOutlet weak var containerView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -16,6 +16,7 @@
 		04813F2823A58BC600859B96 /* CommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F2723A58BC600859B96 /* CommentsVC.swift */; };
 		04813F2A23A58BE900859B96 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F2923A58BE900859B96 /* CommentCell.swift */; };
 		04BFD0A023AD7D4200486D8B /* UpdateProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFD09F23AD7D4200486D8B /* UpdateProfile.swift */; };
+		04C002E523AE7D12001D5C69 /* RatingCriteriaVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C002E423AE7D12001D5C69 /* RatingCriteriaVM.swift */; };
 		04C4DDA623A6845700E3661E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C4DDA523A6845700E3661E /* Comment.swift */; };
 		04C4DDA823A6858200E3661E /* CommentVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C4DDA723A6858200E3661E /* CommentVM.swift */; };
 		0617D8A923A2A15F00ACAA4A /* ResturantVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617D8A823A2A15F00ACAA4A /* ResturantVM.swift */; };
@@ -124,6 +125,7 @@
 		04813F2723A58BC600859B96 /* CommentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsVC.swift; sourceTree = "<group>"; };
 		04813F2923A58BE900859B96 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		04BFD09F23AD7D4200486D8B /* UpdateProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfile.swift; sourceTree = "<group>"; };
+		04C002E423AE7D12001D5C69 /* RatingCriteriaVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCriteriaVM.swift; sourceTree = "<group>"; };
 		04C4DDA523A6845700E3661E /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		04C4DDA723A6858200E3661E /* CommentVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVM.swift; sourceTree = "<group>"; };
 		0617D8A823A2A15F00ACAA4A /* ResturantVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantVM.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 		06BC66222392CA3100651171 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				04C002E423AE7D12001D5C69 /* RatingCriteriaVM.swift */,
 				06BC66232392CA4900651171 /* AuthenticationVM.swift */,
 				066CBBF123958FED00E118D9 /* NewsVM.swift */,
 				066CBBF52395CA5000E118D9 /* BulletainVM.swift */,
@@ -630,6 +633,7 @@
 				0653BFAC2383133600BDC506 /* SpinnerExt.swift in Sources */,
 				0621EEC1238D815C008C13C3 /* ResturantImages.swift in Sources */,
 				0653BFB62383147000BDC506 /* GenericModel.swift in Sources */,
+				04C002E523AE7D12001D5C69 /* RatingCriteriaVM.swift in Sources */,
 				06BC661B23927EF600651171 /* SettingsStack.swift in Sources */,
 				066CBBEE2395778600E118D9 /* RatingCriteria.swift in Sources */,
 				0653BFB72383147000BDC506 /* NetworkManager.swift in Sources */,

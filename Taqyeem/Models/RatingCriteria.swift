@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct RatingCriteria {
+struct RatingCriteria: Codable {
     var id: Int?
     var description: String?
     var icon: String?

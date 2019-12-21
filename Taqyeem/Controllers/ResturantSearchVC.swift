@@ -47,7 +47,9 @@ class ResturantSearchVC: UIViewController {
     }
     
     func getData()  {
+        self.startLoadingActivity()
         ResturantVM.getResturants { resturants , error in
+            self.stopLoadingActivity()
             if error != nil {
                 self.showAlert(message: error!)
                 return

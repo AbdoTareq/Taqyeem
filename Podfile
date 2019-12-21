@@ -14,4 +14,5 @@ target 'Taqyeem' do
   pod 'Cosmos', '~> 20.0'
   pod 'UIWindowTransition'
   pod 'NotificationBannerSwift'
+   pod 'GrowingTextView'
 end
