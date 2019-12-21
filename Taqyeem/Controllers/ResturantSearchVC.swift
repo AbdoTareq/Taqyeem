@@ -11,6 +11,7 @@ import UIKit
 class ResturantSearchVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var resturants: [ResturantVM]?
+    var resturantsFiltered = [ResturantVM]()
     var municID : Int = 0
     var districtID : Int = 0
     var streetID : Int = 0
@@ -116,9 +117,14 @@ extension ResturantSearchVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResturantCell", for: indexPath) as! ResturantCell
-        cell.configureCell(resturant: self.resturants![indexPath.row])
+        if resturantsFiltered.count == 0 {
+            cell.configureCell(resturant: self.resturants![indexPath.row])
+        } else {
+            cell.configureCell(resturant: self.resturantsFiltered[indexPath.row])
+        }
         return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
@@ -128,5 +134,18 @@ extension ResturantSearchVC: UITableViewDelegate, UITableViewDataSource {
         nextVC.resturantName = "مطعم المطار"
         nextVC.resturantVM =  self.resturants![indexPath.row]
         UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
+    }
+}
+extension ResturantSearchVC: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        resturantsFiltered.removeAll()
+        if textField.text == "" {
+            return
+        }
+        if let resturants = resturants, resturants.count > 0 {
+            for resturant in resturants where resturant.name.contains(textField.text!) {
+                resturantsFiltered.append(resturant)
+            }
+        }
     }
 }

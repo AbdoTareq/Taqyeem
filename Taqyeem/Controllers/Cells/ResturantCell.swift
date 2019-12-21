@@ -19,14 +19,8 @@ class ResturantCell: UITableViewCell {
         vwContainer.addShadow(color: UIColor.darkGray)
     }
     func configureCell(resturant :ResturantVM) {
-        self.lblResturantName.text = resturant.resturant.storeNameBanner ??  resturant.resturant.storeArabicName
-        let resturantNumb : String = String(resturant.resturant.buildingNumber ?? 0 )
-        let resturantRat : Int = resturant.resturant.rating ?? 0
-        self.lblResturantAddress.text = resturantNumb + " " + resturant.resturant.streetName! + " " + resturant.resturant.districtName!
-        self.vwRating.rating =  Double(resturantRat)
+        self.lblResturantName.text = resturant.name
+        self.lblResturantAddress.text = resturant.address
+        self.vwRating.rating =  Double(resturant.rating)
     }
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-
 }

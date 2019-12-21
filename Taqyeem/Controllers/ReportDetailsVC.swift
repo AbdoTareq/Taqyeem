@@ -24,7 +24,10 @@ class ReportDetailsVC: UIViewController {
         tableView.reloadData()
         
     }
-   
+   override func viewWillAppear(_ animated: Bool) {
+       super.viewWillAppear(animated)
+       initNavigationBar()
+   }
     @IBAction func navBtnBack_Click(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
     }

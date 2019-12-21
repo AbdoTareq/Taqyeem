@@ -18,7 +18,10 @@ class NewsDetailsVC: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
     
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        initNavigationBar()
+    }
     @IBAction func navBtnBack_Click(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
     }

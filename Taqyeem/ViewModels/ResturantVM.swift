@@ -10,6 +10,19 @@ import Foundation
 import Alamofire
 struct ResturantVM {
     var resturant: Resturant
+    var id: Int {
+        return resturant.storeId ?? 0
+    }
+    var name: String {
+        return resturant.storeNameBanner ?? resturant.storeArabicName ?? ""
+    }
+    var address: String {
+        return "\(resturant.buildingNumber ?? 0) \(resturant.streetName ?? "") \(resturant.districtName ?? "")"
+    }
+    var rating: Int {
+        return resturant.rating ?? 0
+    }
+   
     static func getResturants(completion: @escaping (_ resturants: [ResturantVM]?, _ error: String?) -> Void) {
         let url = NetworkManager.getUrl(service: .storesByMunic)
         var request = URLRequest(url: URL(string: url)!)
