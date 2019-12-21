@@ -13,12 +13,32 @@ class ContactKaseemVC: UIViewController {
     @IBOutlet weak var vwMail: UIView!
     @IBOutlet weak var vwSocial: UIView!
     @IBOutlet weak var vwPhone: UIView!
+    var contactUs: [ContactUsVM]?
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
         vwMail.addShadow(color: UIColor.gray)
         vwSocial.addShadow(color: UIColor.gray)
         vwPhone.addShadow(color: UIColor.gray)
+    }
+    func getData() {
+        ContactUsVM.get(category: 2) {contact, error in
+            if contact != nil {
+                self.contactUs = contact
+            }
+        }
+    }
+    func bindData() {
+        guard let contacts = contactUs else { return }
+        for contact in contacts {
+            if contact.type == 3 {
+                
+            } else if contact.type == 1 {
+                
+            } else if contact.type == 2 {
+                
+            }
+        }
     }
     @IBAction func navBtnBack_Click(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)

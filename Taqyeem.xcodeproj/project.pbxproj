@@ -74,6 +74,8 @@
 		066CBBF023958F3100E118D9 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CBBEF23958F3100E118D9 /* News.swift */; };
 		066CBBF223958FED00E118D9 /* NewsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CBBF123958FED00E118D9 /* NewsVM.swift */; };
 		066CBBF62395CA5000E118D9 /* BulletainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CBBF52395CA5000E118D9 /* BulletainVM.swift */; };
+		066EC39D23AE866600B0C67D /* ContactUsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066EC39C23AE866600B0C67D /* ContactUsVM.swift */; };
+		066EC39F23AE868E00B0C67D /* ContactUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066EC39E23AE868E00B0C67D /* ContactUs.swift */; };
 		06800B4D238D2D9600F4CF20 /* GeneralNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06800B4C238D2D9600F4CF20 /* GeneralNewsCell.swift */; };
 		06800B4F238D2DBE00F4CF20 /* GeneralNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06800B4E238D2DBE00F4CF20 /* GeneralNewsVC.swift */; };
 		06800B51238D3DE000F4CF20 /* BulletainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06800B50238D3DE000F4CF20 /* BulletainVC.swift */; };
@@ -184,6 +186,8 @@
 		066CBBEF23958F3100E118D9 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		066CBBF123958FED00E118D9 /* NewsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVM.swift; sourceTree = "<group>"; };
 		066CBBF52395CA5000E118D9 /* BulletainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletainVM.swift; sourceTree = "<group>"; };
+		066EC39C23AE866600B0C67D /* ContactUsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsVM.swift; sourceTree = "<group>"; };
+		066EC39E23AE868E00B0C67D /* ContactUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUs.swift; sourceTree = "<group>"; };
 		06800B4C238D2D9600F4CF20 /* GeneralNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralNewsCell.swift; sourceTree = "<group>"; };
 		06800B4E238D2DBE00F4CF20 /* GeneralNewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralNewsVC.swift; sourceTree = "<group>"; };
 		06800B50238D3DE000F4CF20 /* BulletainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletainVC.swift; sourceTree = "<group>"; };
@@ -327,6 +331,7 @@
 				06C445202397A7AB00DA1569 /* Report.swift */,
 				0617D8AA23A2A17A00ACAA4A /* Resturant.swift */,
 				04C4DDA523A6845700E3661E /* Comment.swift */,
+				066EC39E23AE868E00B0C67D /* ContactUs.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -430,6 +435,7 @@
 				04250C3D23A52B4E00ECB2A6 /* DistrictVM.swift */,
 				04813F2323A53A9500859B96 /* StreetVM.swift */,
 				04C4DDA723A6858200E3661E /* CommentVM.swift */,
+				066EC39C23AE866600B0C67D /* ContactUsVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -653,9 +659,11 @@
 				066CBBEA2395752700E118D9 /* District.swift in Sources */,
 				0653BFA72383133600BDC506 /* NavigationExt.swift in Sources */,
 				0664EF30238EC16700E29C9D /* CreateReportTitleCell.swift in Sources */,
+				066EC39D23AE866600B0C67D /* ContactUsVM.swift in Sources */,
 				0653BFA22383133600BDC506 /* NavigationBarExt.swift in Sources */,
 				0653BFA02383133600BDC506 /* TextFieldExt.swift in Sources */,
 				06D275AE238F262B00D9DD39 /* ReportDetailsCell.swift in Sources */,
+				066EC39F23AE868E00B0C67D /* ContactUs.swift in Sources */,
 				0653BFA92383133600BDC506 /* DateExt.swift in Sources */,
 				04250C3E23A52B4E00ECB2A6 /* DistrictVM.swift in Sources */,
 				0653BFA42383133600BDC506 /* CopyableLabel.swift in Sources */,
@@ -858,7 +866,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = U54GNAM74P;
 				INFOPLIST_FILE = Taqyeem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -878,7 +886,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = U54GNAM74P;
 				INFOPLIST_FILE = Taqyeem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
