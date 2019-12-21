@@ -10,6 +10,7 @@ import UIKit
 
 class InfoVC: UIViewController {
 
+    @IBOutlet weak var lblContent: UILabel!
     @IBOutlet weak var vwContainer: UIView!
     var info: HelpVM?
     override func viewDidLoad() {

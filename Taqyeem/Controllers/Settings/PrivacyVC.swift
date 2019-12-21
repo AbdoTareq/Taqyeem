@@ -10,11 +10,13 @@ import UIKit
 
 class PrivacyVC: UIViewController {
     
+    @IBOutlet weak var lblContent: UILabel!
     @IBOutlet weak var vwContainer: UIView!
     var privacy: HelpVM?
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
+        getData()
         vwContainer.addShadow(color: UIColor.gray)
     }
     func getData() {
