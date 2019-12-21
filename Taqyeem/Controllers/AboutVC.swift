@@ -12,10 +12,26 @@ class AboutVC: UIViewController {
 
     @IBOutlet weak var vwContainer: UIView!
     @IBOutlet weak var lblContent: UILabel!
+    var about: HelpVM?
     override func viewDidLoad() {
         super.viewDidLoad()
         vwContainer.addShadow(color: UIColor.darkGray)
         initNavigationBar()
+        getData()
+    }
+    func getData() {
+        HelpVM.get(type: 4) {help, error in
+            if help != nil {
+                self.about = help![0]
+            } else {
+                self.showAlert(message: error ?? "Failed to get data")
+            }
+            self.bindData()
+        }
+    }
+    func bindData() {
+        guard let about = about else { return }
+        lblContent.text = about.text
     }
     @IBAction func navBtnBack_Click(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)

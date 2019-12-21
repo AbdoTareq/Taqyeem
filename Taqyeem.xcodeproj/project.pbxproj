@@ -77,6 +77,8 @@
 		066CBBF62395CA5000E118D9 /* BulletainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CBBF52395CA5000E118D9 /* BulletainVM.swift */; };
 		066EC39D23AE866600B0C67D /* ContactUsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066EC39C23AE866600B0C67D /* ContactUsVM.swift */; };
 		066EC39F23AE868E00B0C67D /* ContactUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066EC39E23AE868E00B0C67D /* ContactUs.swift */; };
+		066EC3A123AE986900B0C67D /* HelpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066EC3A023AE986900B0C67D /* HelpVM.swift */; };
+		066EC3A323AE988100B0C67D /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066EC3A223AE988100B0C67D /* Help.swift */; };
 		06800B4D238D2D9600F4CF20 /* GeneralNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06800B4C238D2D9600F4CF20 /* GeneralNewsCell.swift */; };
 		06800B4F238D2DBE00F4CF20 /* GeneralNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06800B4E238D2DBE00F4CF20 /* GeneralNewsVC.swift */; };
 		06800B51238D3DE000F4CF20 /* BulletainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06800B50238D3DE000F4CF20 /* BulletainVC.swift */; };
@@ -190,6 +192,8 @@
 		066CBBF52395CA5000E118D9 /* BulletainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletainVM.swift; sourceTree = "<group>"; };
 		066EC39C23AE866600B0C67D /* ContactUsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsVM.swift; sourceTree = "<group>"; };
 		066EC39E23AE868E00B0C67D /* ContactUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUs.swift; sourceTree = "<group>"; };
+		066EC3A023AE986900B0C67D /* HelpVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVM.swift; sourceTree = "<group>"; };
+		066EC3A223AE988100B0C67D /* Help.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
 		06800B4C238D2D9600F4CF20 /* GeneralNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralNewsCell.swift; sourceTree = "<group>"; };
 		06800B4E238D2DBE00F4CF20 /* GeneralNewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralNewsVC.swift; sourceTree = "<group>"; };
 		06800B50238D3DE000F4CF20 /* BulletainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletainVC.swift; sourceTree = "<group>"; };
@@ -334,6 +338,7 @@
 				0617D8AA23A2A17A00ACAA4A /* Resturant.swift */,
 				04C4DDA523A6845700E3661E /* Comment.swift */,
 				066EC39E23AE868E00B0C67D /* ContactUs.swift */,
+				066EC3A223AE988100B0C67D /* Help.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -439,6 +444,7 @@
 				04813F2323A53A9500859B96 /* StreetVM.swift */,
 				04C4DDA723A6858200E3661E /* CommentVM.swift */,
 				066EC39C23AE866600B0C67D /* ContactUsVM.swift */,
+				066EC3A023AE986900B0C67D /* HelpVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -657,6 +663,7 @@
 				04C4DDA623A6845700E3661E /* Comment.swift in Sources */,
 				06D1A31E23899629005568D1 /* RegisterationVC.swift in Sources */,
 				04813F2823A58BC600859B96 /* CommentsVC.swift in Sources */,
+				066EC3A323AE988100B0C67D /* Help.swift in Sources */,
 				06C4451D23971FB500DA1569 /* CodableExt.swift in Sources */,
 				0653BFB92383147000BDC506 /* ServiceBase.swift in Sources */,
 				06D275A9238F25B500D9DD39 /* ReportDetailsVC.swift in Sources */,
@@ -696,6 +703,7 @@
 				068F6B11239272DA009CFFF2 /* ContactKaseemVC.swift in Sources */,
 				0664EF34238EC19300E29C9D /* CreateReportImagesCell.swift in Sources */,
 				06BC662123928BD100651171 /* InfoVC.swift in Sources */,
+				066EC3A123AE986900B0C67D /* HelpVM.swift in Sources */,
 				0653BFA62383133600BDC506 /* CircleView.swift in Sources */,
 				0653BFBA2383147000BDC506 /* PaginationN.swift in Sources */,
 				06BC661D239288CA00651171 /* CreateBugReportVC.swift in Sources */,

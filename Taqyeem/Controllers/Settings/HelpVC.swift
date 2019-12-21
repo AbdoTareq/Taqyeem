@@ -11,14 +11,29 @@ import UIKit
 class HelpVC: UIViewController {
 
     @IBOutlet weak var vwContainer: UIView!
-    
-    @IBAction func navBtnBack_Click(_ sender: UIBarButtonItem) {
-        navigationController?.popViewController(animated: true)
-    }
+    var help: HelpVM?
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
         vwContainer.addShadow(color: UIColor.gray)
+    }
+    func getData() {
+        HelpVM.get(type: 1) {help, error in
+            if help != nil {
+                self.help = help![0]
+            } else {
+                self.showAlert(message: error ?? "Failed to get data")
+            }
+            self.bindData()
+        }
+    }
+    func bindData() {
+        guard let help = help else { return }
+        lblContent.text = help.text
+    }
+    
+    @IBAction func navBtnBack_Click(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
     }
     func initNavigationBar() {
         UINavigationBar.appearance().backgroundColor = UIColor(hexString: "#CCA121")
