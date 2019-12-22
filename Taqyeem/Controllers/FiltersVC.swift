@@ -126,17 +126,19 @@ extension FiltersVC: UITableViewDelegate, UITableViewDataSource {
         case 1:
             self.searchVc.municID = self.munics![indexPath.row].munic.id ?? 0
             self.dismiss(animated: true) {
-                
+                self.searchVc.lblMunic.text = self.munics![indexPath.row].munic.name
                 self.searchVc.getReturantsByMunic(municID: self.munics![indexPath.row].munic.id ?? 0)
             }
         case 2:
             self.searchVc.districtID = self.districts![indexPath.row].district.id ?? 0
             self.dismiss(animated: true) {
+                self.searchVc.lblDistrict.text = self.districts![indexPath.row].district.name
                 self.searchVc.getReturantsByDistrict(districtID: self.districts![indexPath.row].district.id ?? 0)
             }
         case 3:
               self.searchVc.streetID = self.streets![indexPath.row].street.id ?? 0
             self.dismiss(animated: true) {
+                self.searchVc.lblStreet.text = self.streets![indexPath.row].street.name
                 self.searchVc.getReturantsByStreet(StreetID: self.streets![indexPath.row].street.id ?? 0)
             }
         default:

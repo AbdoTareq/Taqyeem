@@ -15,6 +15,10 @@ class ResturantSearchVC: UIViewController {
     var municID : Int = 0
     var districtID : Int = 0
     var streetID : Int = 0
+    
+    @IBOutlet weak var lblStreet: UILabel!
+    @IBOutlet weak var lblDistrict: UILabel!
+    @IBOutlet weak var lblMunic: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
@@ -97,7 +101,6 @@ class ResturantSearchVC: UIViewController {
             self.tableView.delegate =  self
             self.tableView.dataSource =  self
             self.tableView.reloadData()
-            
         }
     }
     func getReturantsByStreet(StreetID :Int)  {
@@ -115,7 +118,6 @@ class ResturantSearchVC: UIViewController {
             self.tableView.delegate =  self
             self.tableView.dataSource =  self
             self.tableView.reloadData()
-            
         }
     }
     

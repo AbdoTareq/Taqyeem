@@ -810,8 +810,8 @@
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="municipal" translatesAutoresizingMaskIntoConstraints="NO" id="fJm-Ar-Idd">
                                                         <rect key="frame" x="44" y="0.0" width="40" height="40"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بريدة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKK-Ai-zqg">
-                                                        <rect key="frame" x="46" y="41" width="36" height="21"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بريدة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="FKK-Ai-zqg">
+                                                        <rect key="frame" x="3" y="41" width="123" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.80000000000000004" green="0.63137254899999995" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -838,9 +838,10 @@
                                                     <constraint firstItem="cDe-gU-BMO" firstAttribute="leading" secondItem="g91-Gw-HmW" secondAttribute="trailing" id="Ik9-X8-egz"/>
                                                     <constraint firstItem="fJm-Ar-Idd" firstAttribute="top" secondItem="DVA-3J-ZLM" secondAttribute="top" id="KdP-Gj-bOf"/>
                                                     <constraint firstItem="FKK-Ai-zqg" firstAttribute="top" secondItem="fJm-Ar-Idd" secondAttribute="bottom" constant="1" id="WPE-62-Dwr"/>
+                                                    <constraint firstItem="FKK-Ai-zqg" firstAttribute="leading" secondItem="g91-Gw-HmW" secondAttribute="trailing" constant="2" id="Wx4-uB-SXO"/>
                                                     <constraint firstItem="cDe-gU-BMO" firstAttribute="top" secondItem="DVA-3J-ZLM" secondAttribute="top" id="eL6-us-n6h"/>
-                                                    <constraint firstItem="FKK-Ai-zqg" firstAttribute="centerX" secondItem="DVA-3J-ZLM" secondAttribute="centerX" id="fLf-Km-juR"/>
                                                     <constraint firstAttribute="trailing" secondItem="cDe-gU-BMO" secondAttribute="trailing" id="lEK-9w-qrD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="FKK-Ai-zqg" secondAttribute="trailing" constant="2" id="pxU-n6-oZI"/>
                                                     <constraint firstAttribute="bottom" secondItem="FKK-Ai-zqg" secondAttribute="bottom" id="sHX-6M-Dju"/>
                                                     <constraint firstItem="g91-Gw-HmW" firstAttribute="centerY" secondItem="DVA-3J-ZLM" secondAttribute="centerY" id="waj-Zc-Kth"/>
                                                     <constraint firstItem="g91-Gw-HmW" firstAttribute="height" secondItem="DVA-3J-ZLM" secondAttribute="height" multiplier="0.8" id="yUK-iS-b91"/>
@@ -852,8 +853,8 @@
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="district" translatesAutoresizingMaskIntoConstraints="NO" id="I7L-Jj-3mB">
                                                         <rect key="frame" x="44" y="0.0" width="40" height="40"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الإسكان" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pd-OG-oMk">
-                                                        <rect key="frame" x="39.5" y="41" width="49" height="21"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الإسكان" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="7pd-OG-oMk">
+                                                        <rect key="frame" x="3" y="41" width="122" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.80000000000000004" green="0.63137254899999995" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -868,12 +869,13 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="lxE-s0-fRp" secondAttribute="bottom" id="0dt-zM-Gk5"/>
-                                                    <constraint firstItem="7pd-OG-oMk" firstAttribute="centerX" secondItem="dET-zU-2JD" secondAttribute="centerX" id="B67-SG-2nW"/>
+                                                    <constraint firstItem="7pd-OG-oMk" firstAttribute="leading" secondItem="dET-zU-2JD" secondAttribute="leading" constant="3" id="6Fn-Er-VsI"/>
                                                     <constraint firstAttribute="trailing" secondItem="lxE-s0-fRp" secondAttribute="trailing" id="HQk-PQ-lSx"/>
                                                     <constraint firstItem="I7L-Jj-3mB" firstAttribute="centerX" secondItem="dET-zU-2JD" secondAttribute="centerX" id="K4I-5z-qn8"/>
                                                     <constraint firstItem="lxE-s0-fRp" firstAttribute="top" secondItem="dET-zU-2JD" secondAttribute="top" id="LMU-iO-ELG"/>
                                                     <constraint firstAttribute="bottom" secondItem="7pd-OG-oMk" secondAttribute="bottom" id="LdQ-Tv-NhY"/>
                                                     <constraint firstItem="7pd-OG-oMk" firstAttribute="top" secondItem="I7L-Jj-3mB" secondAttribute="bottom" constant="1" id="NMP-0g-5zc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="7pd-OG-oMk" secondAttribute="trailing" constant="3" id="QEW-By-VWL"/>
                                                     <constraint firstItem="lxE-s0-fRp" firstAttribute="leading" secondItem="dET-zU-2JD" secondAttribute="leading" id="mLv-3K-qTp"/>
                                                     <constraint firstItem="I7L-Jj-3mB" firstAttribute="top" secondItem="dET-zU-2JD" secondAttribute="top" id="zSU-YQ-9cY"/>
                                                 </constraints>
@@ -891,8 +893,8 @@
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="road" translatesAutoresizingMaskIntoConstraints="NO" id="V9e-Fw-HHR">
                                                         <rect key="frame" x="44" y="0.0" width="40" height="40"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="أحد" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXw-4N-LxA">
-                                                        <rect key="frame" x="51" y="41" width="26" height="21"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="أحد" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="HXw-4N-LxA">
+                                                        <rect key="frame" x="3" y="41" width="121" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.80000000000000004" green="0.63137254899999995" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -911,9 +913,10 @@
                                                     <constraint firstAttribute="bottom" secondItem="HXw-4N-LxA" secondAttribute="bottom" id="Inu-dh-4in"/>
                                                     <constraint firstItem="OMo-RF-Gr6" firstAttribute="leading" secondItem="fne-e7-cnJ" secondAttribute="trailing" id="JD7-Jl-jqm"/>
                                                     <constraint firstItem="fne-e7-cnJ" firstAttribute="top" secondItem="DZb-RU-Ceo" secondAttribute="top" id="QCw-KN-5tN"/>
+                                                    <constraint firstItem="HXw-4N-LxA" firstAttribute="leading" secondItem="DZb-RU-Ceo" secondAttribute="leading" constant="3" id="bP6-4l-DOL"/>
                                                     <constraint firstItem="OMo-RF-Gr6" firstAttribute="height" secondItem="DZb-RU-Ceo" secondAttribute="height" multiplier="0.8" id="cct-rW-Yec"/>
+                                                    <constraint firstItem="OMo-RF-Gr6" firstAttribute="leading" secondItem="HXw-4N-LxA" secondAttribute="trailing" constant="3" id="e3e-A9-Gln"/>
                                                     <constraint firstAttribute="bottom" secondItem="fne-e7-cnJ" secondAttribute="bottom" id="m10-QL-h29"/>
-                                                    <constraint firstItem="HXw-4N-LxA" firstAttribute="centerX" secondItem="DZb-RU-Ceo" secondAttribute="centerX" id="mdD-Wj-Pes"/>
                                                     <constraint firstAttribute="trailing" secondItem="OMo-RF-Gr6" secondAttribute="trailing" id="moX-Xr-153"/>
                                                     <constraint firstItem="fne-e7-cnJ" firstAttribute="leading" secondItem="DZb-RU-Ceo" secondAttribute="leading" id="mrz-8N-WVm"/>
                                                     <constraint firstItem="HXw-4N-LxA" firstAttribute="top" secondItem="V9e-Fw-HHR" secondAttribute="bottom" constant="1" id="uOg-Ez-hTe"/>
@@ -1063,6 +1066,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="cRb-mJ-zLs"/>
                     <connections>
+                        <outlet property="lblDistrict" destination="7pd-OG-oMk" id="NcK-O0-MDe"/>
+                        <outlet property="lblMunic" destination="FKK-Ai-zqg" id="lc3-R3-tLe"/>
+                        <outlet property="lblStreet" destination="HXw-4N-LxA" id="0yN-xx-LK9"/>
                         <outlet property="tableView" destination="tcM-la-B7Y" id="lo3-5P-5oA"/>
                     </connections>
                 </viewController>
@@ -3868,10 +3874,10 @@
                                                             </collectionViewFlowLayout>
                                                             <cells>
                                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ResturantICollectionViewmage" id="0Qx-U9-RRK" customClass="ResturantICollectionViewmage" customModule="Taqyeem" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="2" width="64" height="64"/>
+                                                                    <rect key="frame" x="0.0" y="18" width="32" height="32"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="e4C-dh-HYN">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite-heart-button" translatesAutoresizingMaskIntoConstraints="NO" id="dDG-DX-2pM">
@@ -4617,14 +4623,14 @@
                                                             </collectionViewFlowLayout>
                                                             <cells>
                                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ResturantICollectionViewmage" id="jE5-Sx-1IJ" customClass="ResturantICollectionViewmage" customModule="Taqyeem" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="2" width="64" height="64"/>
+                                                                    <rect key="frame" x="0.0" y="18" width="32" height="32"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SAF-kw-Cfn">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite-heart-button" translatesAutoresizingMaskIntoConstraints="NO" id="j8x-5X-jAH">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                                             </imageView>
                                                                         </subviews>
                                                                         <constraints>
@@ -5266,7 +5272,7 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite-heart-button" translatesAutoresizingMaskIntoConstraints="NO" id="5Nn-TK-OJ5">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                                 </imageView>
                                                             </subviews>
                                                             <constraints>
@@ -5560,19 +5566,19 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عنوان البلاغ" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgL-Cx-wEv">
-                                                            <rect key="frame" x="272.5" y="10" width="81.5" height="32"/>
+                                                            <rect key="frame" x="284.5" y="10" width="69.5" height="20"/>
                                                             <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تاريخ البلاغ :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjU-Ra-Uhy">
-                                                            <rect key="frame" x="320.5" y="40" width="63.5" height="26.5"/>
+                                                            <rect key="frame" x="320.5" y="40" width="63.5" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="١٥/١٠/٢٠١٩" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AaA-Be-5tw">
-                                                            <rect key="frame" x="262" y="40" width="56.5" height="26.5"/>
+                                                            <rect key="frame" x="250" y="40" width="68.5" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
