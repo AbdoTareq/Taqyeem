@@ -13,6 +13,9 @@ class CreateReportVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var reportTitle :String = ""
     var reportDescription :String = ""
+    var storeName :String = ""
+    var complainType = ""
+    var complainId = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
@@ -28,9 +31,15 @@ class CreateReportVC: UIViewController {
     }
     
     @objc func btnSubmitReportClicked(_ sender: UIButton) {
+           prepareReportsData()
+        if self.complainId == 0 || storeName == "" || reportTitle == "" || reportDescription == "" {
+            let banner = StatusBarNotificationBanner(title: "من فضلك ادخل جمبع البيانات", style: .warning)
+            banner.show()
+        }
+        else {
         self.startLoadingActivity()
-        prepareReportsData()
-        ReportVM.submitReport(complainInformation: self.reportTitle, complainText: self.reportDescription , mobile: UserDefaultsAccess.sharedInstance.user?.mobile ?? "", storename: "kfc") { success , errorMessage in
+     
+        ReportVM.submitReport(complainInformation: self.reportTitle, complainText: self.reportDescription , mobile: UserDefaultsAccess.sharedInstance.user?.mobile ?? "", storename: self.storeName, complainId: self.complainId) { success , errorMessage in
             self.stopLoadingActivity()
             if success {
                 let banner = StatusBarNotificationBanner(title: "تم اضافه بلاغك بنجاح", style: .success)
@@ -42,6 +51,7 @@ class CreateReportVC: UIViewController {
                 banner.show()
             }
         }
+        }
     }
     func prepareReportsData()  {
         for cellItem in  self.tableView.visibleCells {
@@ -51,12 +61,19 @@ class CreateReportVC: UIViewController {
             if let  cell = cellItem as? CreateReportDetailsCell {
                 self.reportDescription  = cell.txtDetails.text!
             }
+            if let  cell = cellItem as? ReportResturantName {
+                self.storeName  = cell.resturantName.text!
+            }
         }
+    }
+    func reloadReportType() {
+        let indexPath = IndexPath(item: 3, section: 0)
+        tableView.reloadRows(at: [indexPath], with: .top)
     }
 }
 extension CreateReportVC : UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -70,15 +87,39 @@ extension CreateReportVC : UITableViewDelegate , UITableViewDataSource{
             return cell
         }
         if indexPath.row == 2 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "CreateReportImagesCell", for: indexPath) as! CreateReportImagesCell
+            cell = tableView.dequeueReusableCell(withIdentifier: "ReportResturantName", for: indexPath) as! ReportResturantName
             return cell
         }
         if indexPath.row == 3 {
+           let cell = tableView.dequeueReusableCell(withIdentifier: "ReportType", for: indexPath) as! ReportType
+            if self.complainType != ""{
+                cell.reportType.text = self.complainType
+            }
+          return cell
+        }
+        if indexPath.row == 4 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "CreateReportImagesCell", for: indexPath) as! CreateReportImagesCell
+            return cell
+        }
+        if indexPath.row == 5{
             let cell = tableView.dequeueReusableCell(withIdentifier: "CreateReportSendCell", for: indexPath) as! CreateReportSendCell
             cell.btnSubmitReport.addTarget(self, action: #selector(btnSubmitReportClicked(_:)), for: .touchUpInside)
             return cell
         }
+        
+        
+        
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 3 {
+            let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ComplainTypesVC") as! ComplainTypesVC
+                 nextVC.modalTransitionStyle = .crossDissolve
+                 nextVC.modalPresentationStyle = .overCurrentContext
+                 present(nextVC, animated: false, completion: nil)
+            
+        }
+        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension

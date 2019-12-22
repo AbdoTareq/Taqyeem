@@ -29,7 +29,7 @@ enum ServiceBase: String {
     
     case news = "news"
     case publications = "publication"
-    
+    case complains =  "comptype/all"
     case register = "user/save"
     case login = "user/authenticate"
 

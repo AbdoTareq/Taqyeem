@@ -15,6 +15,11 @@
 		04813F2623A574B100859B96 /* RatingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F2523A574B100859B96 /* RatingVC.swift */; };
 		04813F2823A58BC600859B96 /* CommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F2723A58BC600859B96 /* CommentsVC.swift */; };
 		04813F2A23A58BE900859B96 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F2923A58BE900859B96 /* CommentCell.swift */; };
+		048DBCA223B00CF700641FC6 /* ReportResturantName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048DBCA123B00CF700641FC6 /* ReportResturantName.swift */; };
+		048DBCA623B00EA500641FC6 /* ReportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048DBCA523B00EA500641FC6 /* ReportType.swift */; };
+		048DBCA823B0123B00641FC6 /* CompplainType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048DBCA723B0123B00641FC6 /* CompplainType.swift */; };
+		048DBCAA23B0128100641FC6 /* ComplainTypeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048DBCA923B0128100641FC6 /* ComplainTypeVM.swift */; };
+		048DBCAC23B0159300641FC6 /* ComplainTypesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048DBCAB23B0159300641FC6 /* ComplainTypesVC.swift */; };
 		04BFD0A023AD7D4200486D8B /* UpdateProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFD09F23AD7D4200486D8B /* UpdateProfile.swift */; };
 		04C002E523AE7D12001D5C69 /* RatingCriteriaVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C002E423AE7D12001D5C69 /* RatingCriteriaVM.swift */; };
 		04C4DDA623A6845700E3661E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C4DDA523A6845700E3661E /* Comment.swift */; };
@@ -128,6 +133,11 @@
 		04813F2523A574B100859B96 /* RatingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingVC.swift; sourceTree = "<group>"; };
 		04813F2723A58BC600859B96 /* CommentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsVC.swift; sourceTree = "<group>"; };
 		04813F2923A58BE900859B96 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		048DBCA123B00CF700641FC6 /* ReportResturantName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportResturantName.swift; sourceTree = "<group>"; };
+		048DBCA523B00EA500641FC6 /* ReportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportType.swift; sourceTree = "<group>"; };
+		048DBCA723B0123B00641FC6 /* CompplainType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompplainType.swift; sourceTree = "<group>"; };
+		048DBCA923B0128100641FC6 /* ComplainTypeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplainTypeVM.swift; sourceTree = "<group>"; };
+		048DBCAB23B0159300641FC6 /* ComplainTypesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplainTypesVC.swift; sourceTree = "<group>"; };
 		04BFD09F23AD7D4200486D8B /* UpdateProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfile.swift; sourceTree = "<group>"; };
 		04C002E423AE7D12001D5C69 /* RatingCriteriaVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCriteriaVM.swift; sourceTree = "<group>"; };
 		04C4DDA523A6845700E3661E /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -314,6 +324,7 @@
 				04813F2523A574B100859B96 /* RatingVC.swift */,
 				04813F2723A58BC600859B96 /* CommentsVC.swift */,
 				04BFD09F23AD7D4200486D8B /* UpdateProfile.swift */,
+				048DBCAB23B0159300641FC6 /* ComplainTypesVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -339,6 +350,7 @@
 				04C4DDA523A6845700E3661E /* Comment.swift */,
 				066EC39E23AE868E00B0C67D /* ContactUs.swift */,
 				066EC3A223AE988100B0C67D /* Help.swift */,
+				048DBCA723B0123B00641FC6 /* CompplainType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -445,6 +457,7 @@
 				04C4DDA723A6858200E3661E /* CommentVM.swift */,
 				066EC39C23AE866600B0C67D /* ContactUsVM.swift */,
 				066EC3A023AE986900B0C67D /* HelpVM.swift */,
+				048DBCA923B0128100641FC6 /* ComplainTypeVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -467,6 +480,8 @@
 				0664EF3D238F1E9F00E29C9D /* ReportCell.swift */,
 				04250C3B23A523F500ECB2A6 /* TitleCell.swift */,
 				04813F2923A58BE900859B96 /* CommentCell.swift */,
+				048DBCA123B00CF700641FC6 /* ReportResturantName.swift */,
+				048DBCA523B00EA500641FC6 /* ReportType.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -663,6 +678,7 @@
 				04C4DDA623A6845700E3661E /* Comment.swift in Sources */,
 				06D1A31E23899629005568D1 /* RegisterationVC.swift in Sources */,
 				04813F2823A58BC600859B96 /* CommentsVC.swift in Sources */,
+				048DBCA823B0123B00641FC6 /* CompplainType.swift in Sources */,
 				066EC3A323AE988100B0C67D /* Help.swift in Sources */,
 				06C4451D23971FB500DA1569 /* CodableExt.swift in Sources */,
 				0653BFB92383147000BDC506 /* ServiceBase.swift in Sources */,
@@ -682,11 +698,13 @@
 				066CBBE8239573D000E118D9 /* Munic.swift in Sources */,
 				04813F2423A53A9500859B96 /* StreetVM.swift in Sources */,
 				0621EEBE238D815C008C13C3 /* ResturantICollectionViewmage.swift in Sources */,
+				048DBCAC23B0159300641FC6 /* ComplainTypesVC.swift in Sources */,
 				0621EEBF238D815C008C13C3 /* ResturantGeneralInfo.swift in Sources */,
 				0628176F238458CF0002420A /* UserDefaultsAccess.swift in Sources */,
 				0653BFA52383133600BDC506 /* AlertExt.swift in Sources */,
 				066CBBF023958F3100E118D9 /* News.swift in Sources */,
 				0664EF3B238ECC9300E29C9D /* MyReportsVC.swift in Sources */,
+				048DBCAA23B0128100641FC6 /* ComplainTypeVM.swift in Sources */,
 				04250C3C23A523F500ECB2A6 /* TitleCell.swift in Sources */,
 				0653BF752382C49600BDC506 /* ViewController.swift in Sources */,
 				0664EF39238EC84400E29C9D /* ContactStack.swift in Sources */,
@@ -700,6 +718,7 @@
 				06D275B2238F264B00D9DD39 /* ReportDateCell.swift in Sources */,
 				06554F64238DD51800935E21 /* NewsTitleCell.swift in Sources */,
 				04813F2A23A58BE900859B96 /* CommentCell.swift in Sources */,
+				048DBCA623B00EA500641FC6 /* ReportType.swift in Sources */,
 				068F6B11239272DA009CFFF2 /* ContactKaseemVC.swift in Sources */,
 				0664EF34238EC19300E29C9D /* CreateReportImagesCell.swift in Sources */,
 				06BC662123928BD100651171 /* InfoVC.swift in Sources */,
@@ -713,6 +732,7 @@
 				04813F2623A574B100859B96 /* RatingVC.swift in Sources */,
 				06D1A316238970B6005568D1 /* HomeStack.swift in Sources */,
 				06D1A31C2389961C005568D1 /* LoginVC.swift in Sources */,
+				048DBCA223B00CF700641FC6 /* ReportResturantName.swift in Sources */,
 				0653BFAA2383133600BDC506 /* JsonableExt.swift in Sources */,
 				06BC661F23928B2500651171 /* PrivacyVC.swift in Sources */,
 				0653BF8C23830C8400BDC506 /* MainTBC.swift in Sources */,
