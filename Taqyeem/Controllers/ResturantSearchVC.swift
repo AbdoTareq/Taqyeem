@@ -70,6 +70,10 @@ class ResturantSearchVC: UIViewController {
     }
     func getReturantsByMunic(municID :Int)  {
         self.municID =  municID
+        self.lblDistrict.text = "الإسكان"
+        self.lblStreet.text = "أحد"
+        self.districtID = 0
+        self.streetID = 0
         self.startLoadingActivity()
         ResturantVM.getResturantsByMunic(MunicID: municID) { resturants , error in
             self.stopLoadingActivity()
@@ -87,6 +91,8 @@ class ResturantSearchVC: UIViewController {
         }
     }
     func getReturantsByDistrict(districtID :Int)  {
+         self.lblStreet.text = "أحد"
+         self.streetID = 0
         self.districtID =  districtID
         self.startLoadingActivity()
         ResturantVM.getResturantsByDistrict(MunicID: self.municID, districtID: districtID) { resturants , error in

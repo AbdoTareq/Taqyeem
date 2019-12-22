@@ -22,6 +22,7 @@ class FiltersVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareData()
+        self.tableView.delaysContentTouches =  false
     }
     func prepareData() {
         switch self.filterID {
@@ -40,7 +41,9 @@ class FiltersVC: UIViewController {
     }
     
     func getMunics() {
+        self.startLoadingActivity()
         MunicVM.getAllMunics{munics, error in
+            self.stopLoadingActivity()
             if error != nil {
                 self.showAlert(message: error!)
                 return
@@ -54,7 +57,9 @@ class FiltersVC: UIViewController {
         }
     }
     func getDistricts() {
+        self.startLoadingActivity()
         DistrictVM.getAllDistricts(municID: self.municID){districts, error in
+             self.stopLoadingActivity()
             if error != nil {
                 self.showAlert(message: error!)
                 return
@@ -67,7 +72,9 @@ class FiltersVC: UIViewController {
         }
     }
     func getStreets() {
+        self.startLoadingActivity()
         StreetVM.getAllStreets(municID: self.municID, districtID: self.districtID){streets, error in
+             self.stopLoadingActivity()
             if error != nil {
                 self.showAlert(message: error!)
                 return
@@ -122,6 +129,7 @@ extension FiltersVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         switch self.filterID {
         case 1:
             self.searchVc.municID = self.munics![indexPath.row].munic.id ?? 0

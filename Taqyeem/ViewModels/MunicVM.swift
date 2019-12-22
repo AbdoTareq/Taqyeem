@@ -5,11 +5,9 @@
 //  Created by mac on 12/14/19.
 //  Copyright © 2019 mazeedit. All rights reserved.
 //
-
 import Foundation
 struct MunicVM {
     var munic :Munic
-    
     static func getAllMunics(completion: @escaping (_ munics: [MunicVM]?, _ error: String?) -> Void) {
         var config = NetworkManager.Configuration(parameters: nil, url: .munic, method: .post)
         NetworkManager.makeRequest(configuration: config) {
@@ -31,7 +29,4 @@ struct MunicVM {
             }
         }
     }
-    
-    
-    
 }
