@@ -56,7 +56,7 @@ class ResturantDetailsVC: UIViewController {
             
             return
         }
-        let nextVC = storyboard?.instantiateViewController(withIdentifier: "RatingVC") as! RatingVC
+        let nextVC = storyboard?.instantiateViewController(withIdentifier: "RateVc") as! RateVc
         nextVC.resturant =  self.resturantVM.resturant
         self.navigationController?.pushViewController(nextVC, animated: true)
         
@@ -101,7 +101,7 @@ class ResturantDetailsVC: UIViewController {
                     
                 }
                 else {
-                    let banner = StatusBarNotificationBanner(title: "لم نتمكن من اضافه المطعم للمفضله", style: .warning)
+                    let banner = StatusBarNotificationBanner(title: errorMessage!, style: .warning)
                     banner.show()
                 }
             }

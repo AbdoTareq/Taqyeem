@@ -12,7 +12,6 @@
 		04250C3C23A523F500ECB2A6 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04250C3B23A523F500ECB2A6 /* TitleCell.swift */; };
 		04250C3E23A52B4E00ECB2A6 /* DistrictVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04250C3D23A52B4E00ECB2A6 /* DistrictVM.swift */; };
 		04813F2423A53A9500859B96 /* StreetVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F2323A53A9500859B96 /* StreetVM.swift */; };
-		04813F2623A574B100859B96 /* RatingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F2523A574B100859B96 /* RatingVC.swift */; };
 		04813F2823A58BC600859B96 /* CommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F2723A58BC600859B96 /* CommentsVC.swift */; };
 		04813F2A23A58BE900859B96 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04813F2923A58BE900859B96 /* CommentCell.swift */; };
 		048DBCA223B00CF700641FC6 /* ReportResturantName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048DBCA123B00CF700641FC6 /* ReportResturantName.swift */; };
@@ -25,6 +24,9 @@
 		04C132B323B15B4800A5E550 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C132B223B15B4800A5E550 /* Activity.swift */; };
 		04C132B523B15B9700A5E550 /* ActivityVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C132B423B15B9700A5E550 /* ActivityVM.swift */; };
 		04C132B723B15E7600A5E550 /* ActivitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C132B623B15E7600A5E550 /* ActivitiesVC.swift */; };
+		04C132B923B16A9600A5E550 /* RatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C132B823B16A9600A5E550 /* RatingCell.swift */; };
+		04C132BB23B1704100A5E550 /* RateVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C132BA23B1704100A5E550 /* RateVc.swift */; };
+		04C132BD23B170A800A5E550 /* RateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C132BC23B170A800A5E550 /* RateCell.swift */; };
 		04C4DDA623A6845700E3661E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C4DDA523A6845700E3661E /* Comment.swift */; };
 		04C4DDA823A6858200E3661E /* CommentVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C4DDA723A6858200E3661E /* CommentVM.swift */; };
 		0617D8A923A2A15F00ACAA4A /* ResturantVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617D8A823A2A15F00ACAA4A /* ResturantVM.swift */; };
@@ -133,7 +135,6 @@
 		04250C3B23A523F500ECB2A6 /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		04250C3D23A52B4E00ECB2A6 /* DistrictVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistrictVM.swift; sourceTree = "<group>"; };
 		04813F2323A53A9500859B96 /* StreetVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetVM.swift; sourceTree = "<group>"; };
-		04813F2523A574B100859B96 /* RatingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingVC.swift; sourceTree = "<group>"; };
 		04813F2723A58BC600859B96 /* CommentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsVC.swift; sourceTree = "<group>"; };
 		04813F2923A58BE900859B96 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		048DBCA123B00CF700641FC6 /* ReportResturantName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportResturantName.swift; sourceTree = "<group>"; };
@@ -146,6 +147,9 @@
 		04C132B223B15B4800A5E550 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		04C132B423B15B9700A5E550 /* ActivityVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVM.swift; sourceTree = "<group>"; };
 		04C132B623B15E7600A5E550 /* ActivitiesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesVC.swift; sourceTree = "<group>"; };
+		04C132B823B16A9600A5E550 /* RatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCell.swift; sourceTree = "<group>"; };
+		04C132BA23B1704100A5E550 /* RateVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateVc.swift; sourceTree = "<group>"; };
+		04C132BC23B170A800A5E550 /* RateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCell.swift; sourceTree = "<group>"; };
 		04C4DDA523A6845700E3661E /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		04C4DDA723A6858200E3661E /* CommentVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVM.swift; sourceTree = "<group>"; };
 		0617D8A823A2A15F00ACAA4A /* ResturantVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantVM.swift; sourceTree = "<group>"; };
@@ -327,11 +331,11 @@
 				068F6B10239272DA009CFFF2 /* ContactKaseemVC.swift */,
 				068F6B13239272F2009CFFF2 /* ContactManagementVC.swift */,
 				04250C3923A51CAD00ECB2A6 /* FiltersVC.swift */,
-				04813F2523A574B100859B96 /* RatingVC.swift */,
 				04813F2723A58BC600859B96 /* CommentsVC.swift */,
 				04BFD09F23AD7D4200486D8B /* UpdateProfile.swift */,
 				048DBCAB23B0159300641FC6 /* ComplainTypesVC.swift */,
 				04C132B623B15E7600A5E550 /* ActivitiesVC.swift */,
+				04C132BA23B1704100A5E550 /* RateVc.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -491,6 +495,8 @@
 				04813F2923A58BE900859B96 /* CommentCell.swift */,
 				048DBCA123B00CF700641FC6 /* ReportResturantName.swift */,
 				048DBCA523B00EA500641FC6 /* ReportType.swift */,
+				04C132B823B16A9600A5E550 /* RatingCell.swift */,
+				04C132BC23B170A800A5E550 /* RateCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -674,6 +680,7 @@
 				066CBBEE2395778600E118D9 /* RatingCriteria.swift in Sources */,
 				0653BFB72383147000BDC506 /* NetworkManager.swift in Sources */,
 				04C132B323B15B4800A5E550 /* Activity.swift in Sources */,
+				04C132BD23B170A800A5E550 /* RateCell.swift in Sources */,
 				06554F68238DD53700935E21 /* NewsImageCell.swift in Sources */,
 				0621EEC3238D815C008C13C3 /* ResturantLocation.swift in Sources */,
 				06D275B0238F263F00D9DD39 /* ReportImagesCell.swift in Sources */,
@@ -726,6 +733,7 @@
 				06554F66238DD52B00935E21 /* NewsDetailsCell.swift in Sources */,
 				0621EEC0238D815C008C13C3 /* ResturantActivitiesDirections.swift in Sources */,
 				0664EF2E238EBFED00E29C9D /* CreateReportVC.swift in Sources */,
+				04C132B923B16A9600A5E550 /* RatingCell.swift in Sources */,
 				0617D8AB23A2A17A00ACAA4A /* Resturant.swift in Sources */,
 				06D275B2238F264B00D9DD39 /* ReportDateCell.swift in Sources */,
 				06554F64238DD51800935E21 /* NewsTitleCell.swift in Sources */,
@@ -738,10 +746,10 @@
 				0653BFA62383133600BDC506 /* CircleView.swift in Sources */,
 				0653BFBA2383147000BDC506 /* PaginationN.swift in Sources */,
 				06BC661D239288CA00651171 /* CreateBugReportVC.swift in Sources */,
+				04C132BB23B1704100A5E550 /* RateVc.swift in Sources */,
 				06D1A31223897001005568D1 /* BoardersExt.swift in Sources */,
 				0653BF712382C49600BDC506 /* AppDelegate.swift in Sources */,
 				06A6CA52238CA09A00565026 /* FavouritesVC.swift in Sources */,
-				04813F2623A574B100859B96 /* RatingVC.swift in Sources */,
 				06D1A316238970B6005568D1 /* HomeStack.swift in Sources */,
 				06D1A31C2389961C005568D1 /* LoginVC.swift in Sources */,
 				048DBCA223B00CF700641FC6 /* ReportResturantName.swift in Sources */,

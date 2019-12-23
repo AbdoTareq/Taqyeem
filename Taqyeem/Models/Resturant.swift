@@ -22,7 +22,7 @@ struct Resturant: Codable {
     var streetName: String?
     //var ratingCriteriaId": null,
     var ratingCriteriaDescription: String?
-    var rating:Int?
+    var rating:Double?
     //var ratingValue:Int?
     var activityCategory: String?
     var storeNameBanner: String?

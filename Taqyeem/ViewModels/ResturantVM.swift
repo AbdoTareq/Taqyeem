@@ -19,8 +19,8 @@ struct ResturantVM {
     var address: String {
         return "\(resturant.buildingNumber ?? 0) \(resturant.streetName ?? "") \(resturant.districtName ?? "")"
     }
-    var rating: Int {
-        return resturant.rating ?? 0
+    var rating: Double {
+        return resturant.rating ?? 0.0
     }
    
     static func getResturants(completion: @escaping (_ resturants: [ResturantVM]?, _ error: String?) -> Void) {
@@ -178,12 +178,15 @@ struct ResturantVM {
                        if statusCode >= 200 && statusCode < 300 {
                           completion(true, nil)
                        }
+                        if statusCode == 500  {
+                           completion(false, "المطعم مضاف سابقا للمفضله")
+                        }
                     else {
-                       completion(false, "Unable to add to favourite")
+                       completion(false, "لم نتمكن من اضافه المطعم للمفضله")
                    }
             }
                 else {
-                      completion(false, "Unable to add to favourite")
+                      completion(false, "لم نتمكن من اضافه المطعم للمفضله")
                }
            }
         }
