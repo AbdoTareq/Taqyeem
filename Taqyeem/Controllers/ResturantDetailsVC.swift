@@ -34,6 +34,28 @@ class ResturantDetailsVC: UIViewController {
     
     
     @objc func btnRatingClicked(_ sender: UIButton) {
+        guard let user = UserDefaultsAccess.sharedInstance.user, let id = user.id else {
+            let alertController = UIAlertController(title: "تسجيل الدخول", message: "يتوجب عليك تسجيل الدخول", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "موافق", style: UIAlertAction.Style.default) {
+                UIAlertAction in
+                UserDefaultsAccess.sharedInstance.skippedLogin  = false
+                let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+                nextVC.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(nextVC, animated: true)
+                
+            }
+            let cancelAction = UIAlertAction(title: "الغاء", style: UIAlertAction.Style.cancel) {
+                UIAlertAction in
+                
+            }
+            alertController.addAction(okAction)
+            alertController.addAction(cancelAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            
+            return
+        }
         let nextVC = storyboard?.instantiateViewController(withIdentifier: "RatingVC") as! RatingVC
         nextVC.resturant =  self.resturantVM.resturant
         self.navigationController?.pushViewController(nextVC, animated: true)
@@ -46,6 +68,29 @@ class ResturantDetailsVC: UIViewController {
         
     }
     @objc func btnAddToFaveClicked(_ sender: UIButton) {
+        guard let user = UserDefaultsAccess.sharedInstance.user, let id = user.id else {
+            let alertController = UIAlertController(title: "تسجيل الدخول", message: "يتوجب عليك تسجيل الدخول", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "موافق", style: UIAlertAction.Style.default) {
+                UIAlertAction in
+                UserDefaultsAccess.sharedInstance.skippedLogin  = false
+                let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+                nextVC.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(nextVC, animated: true)
+                
+            }
+            let cancelAction = UIAlertAction(title: "الغاء", style: UIAlertAction.Style.cancel) {
+                UIAlertAction in
+                
+            }
+            alertController.addAction(okAction)
+            alertController.addAction(cancelAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            
+            return
+        }
+        
         if self.resturantVM != nil {
             self.startLoadingActivity()
             ResturantVM.addReturantToFav(resturantID: self.resturantVM.resturant.storeId ?? 0) { success, errorMessage in
@@ -69,6 +114,10 @@ class ResturantDetailsVC: UIViewController {
         self.openMapForLocation(location: location, zoom: 2, locationName: self.resturantVM.resturant.storeArabicName ?? "", title: self.resturantVM.resturant.storeArabicName ?? "", googleTitle: "Google Map", appleTitle: "Apple Map", cancelTitle: "cancel")
     }
     @objc func showResturantActivities(_ sender: UIButton) {
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ActivitiesVC") as! ActivitiesVC
+        nextVC.storeID =  self.resturantVM.id
+        self.navigationController?.pushViewController(nextVC, animated: true)
+        
     }
 }
 extension ResturantDetailsVC : UITableViewDelegate , UITableViewDataSource{
@@ -82,6 +131,7 @@ extension ResturantDetailsVC : UITableViewDelegate , UITableViewDataSource{
             cell.lblresturantDisc.text =  (self.resturantVM.resturant.amanatActivity ?? "" + " - " + (self.resturantVM.resturant.surveyActivity ?? ""))
             let rate  =  Int(self.resturantVM.resturant.rating ?? 0 )
             cell.vwRating.rating =  Double(rate)
+            cell.selectionStyle = .none
             return cell
         }
         if indexPath.row == 1 {
@@ -89,17 +139,20 @@ extension ResturantDetailsVC : UITableViewDelegate , UITableViewDataSource{
             let resturant =  self.resturantVM.resturant
             let resturantNumb : String = String(resturant.buildingNumber ?? 0 )
             cell.lblResturantAddress.text = resturantNumb + " " + resturant.streetName! + " " + resturant.districtName!
+            cell.selectionStyle = .none
             return cell
         }
         if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ResturantImages", for: indexPath) as! ResturantImages
             cell.loadData()
+            cell.selectionStyle = .none
             return cell
         }
         if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ShowCommentRateCell", for: indexPath) as! ShowCommentRateCell
             cell.ratingBtn.addTarget(self, action: #selector(btnRatingClicked(_:)), for: .touchUpInside)
             cell.btnComments.addTarget(self, action: #selector(btnCommentsClicked(_:)), for: .touchUpInside)
+            cell.selectionStyle = .none
             return cell
         }
         else {
@@ -107,6 +160,7 @@ extension ResturantDetailsVC : UITableViewDelegate , UITableViewDataSource{
             cell.btnAddToFav.addTarget(self, action: #selector(btnAddToFaveClicked(_:)), for: .touchUpInside)
             cell.btnDirections.addTarget(self, action: #selector(showDirectionClicked(_:)), for: .touchUpInside)
             cell.btnResturantActivities.addTarget(self, action: #selector(showResturantActivities(_:)), for: .touchUpInside)
+            cell.selectionStyle = .none
             return cell
         }
     }

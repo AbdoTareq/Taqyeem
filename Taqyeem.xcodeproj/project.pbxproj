@@ -22,6 +22,9 @@
 		048DBCAC23B0159300641FC6 /* ComplainTypesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048DBCAB23B0159300641FC6 /* ComplainTypesVC.swift */; };
 		04BFD0A023AD7D4200486D8B /* UpdateProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFD09F23AD7D4200486D8B /* UpdateProfile.swift */; };
 		04C002E523AE7D12001D5C69 /* RatingCriteriaVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C002E423AE7D12001D5C69 /* RatingCriteriaVM.swift */; };
+		04C132B323B15B4800A5E550 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C132B223B15B4800A5E550 /* Activity.swift */; };
+		04C132B523B15B9700A5E550 /* ActivityVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C132B423B15B9700A5E550 /* ActivityVM.swift */; };
+		04C132B723B15E7600A5E550 /* ActivitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C132B623B15E7600A5E550 /* ActivitiesVC.swift */; };
 		04C4DDA623A6845700E3661E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C4DDA523A6845700E3661E /* Comment.swift */; };
 		04C4DDA823A6858200E3661E /* CommentVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C4DDA723A6858200E3661E /* CommentVM.swift */; };
 		0617D8A923A2A15F00ACAA4A /* ResturantVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617D8A823A2A15F00ACAA4A /* ResturantVM.swift */; };
@@ -140,6 +143,9 @@
 		048DBCAB23B0159300641FC6 /* ComplainTypesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplainTypesVC.swift; sourceTree = "<group>"; };
 		04BFD09F23AD7D4200486D8B /* UpdateProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfile.swift; sourceTree = "<group>"; };
 		04C002E423AE7D12001D5C69 /* RatingCriteriaVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCriteriaVM.swift; sourceTree = "<group>"; };
+		04C132B223B15B4800A5E550 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		04C132B423B15B9700A5E550 /* ActivityVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVM.swift; sourceTree = "<group>"; };
+		04C132B623B15E7600A5E550 /* ActivitiesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesVC.swift; sourceTree = "<group>"; };
 		04C4DDA523A6845700E3661E /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		04C4DDA723A6858200E3661E /* CommentVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVM.swift; sourceTree = "<group>"; };
 		0617D8A823A2A15F00ACAA4A /* ResturantVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantVM.swift; sourceTree = "<group>"; };
@@ -325,6 +331,7 @@
 				04813F2723A58BC600859B96 /* CommentsVC.swift */,
 				04BFD09F23AD7D4200486D8B /* UpdateProfile.swift */,
 				048DBCAB23B0159300641FC6 /* ComplainTypesVC.swift */,
+				04C132B623B15E7600A5E550 /* ActivitiesVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -351,6 +358,7 @@
 				066EC39E23AE868E00B0C67D /* ContactUs.swift */,
 				066EC3A223AE988100B0C67D /* Help.swift */,
 				048DBCA723B0123B00641FC6 /* CompplainType.swift */,
+				04C132B223B15B4800A5E550 /* Activity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -458,6 +466,7 @@
 				066EC39C23AE866600B0C67D /* ContactUsVM.swift */,
 				066EC3A023AE986900B0C67D /* HelpVM.swift */,
 				048DBCA923B0128100641FC6 /* ComplainTypeVM.swift */,
+				04C132B423B15B9700A5E550 /* ActivityVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -664,12 +673,14 @@
 				06BC661B23927EF600651171 /* SettingsStack.swift in Sources */,
 				066CBBEE2395778600E118D9 /* RatingCriteria.swift in Sources */,
 				0653BFB72383147000BDC506 /* NetworkManager.swift in Sources */,
+				04C132B323B15B4800A5E550 /* Activity.swift in Sources */,
 				06554F68238DD53700935E21 /* NewsImageCell.swift in Sources */,
 				0621EEC3238D815C008C13C3 /* ResturantLocation.swift in Sources */,
 				06D275B0238F263F00D9DD39 /* ReportImagesCell.swift in Sources */,
 				04250C3A23A51CAD00ECB2A6 /* FiltersVC.swift in Sources */,
 				06BC661923927E4800651171 /* HelpVC.swift in Sources */,
 				0653BFAD2383133600BDC506 /* GradientP.swift in Sources */,
+				04C132B723B15E7600A5E550 /* ActivitiesVC.swift in Sources */,
 				0653BFA32383133600BDC506 /* ViewExt.swift in Sources */,
 				068F6B0F2392726E009CFFF2 /* ContactVC.swift in Sources */,
 				06554F6A238DD5AC00935E21 /* NewsDetailsVC.swift in Sources */,
@@ -683,6 +694,7 @@
 				06C4451D23971FB500DA1569 /* CodableExt.swift in Sources */,
 				0653BFB92383147000BDC506 /* ServiceBase.swift in Sources */,
 				06D275A9238F25B500D9DD39 /* ReportDetailsVC.swift in Sources */,
+				04C132B523B15B9700A5E550 /* ActivityVM.swift in Sources */,
 				066CBBEA2395752700E118D9 /* District.swift in Sources */,
 				0653BFA72383133600BDC506 /* NavigationExt.swift in Sources */,
 				0664EF30238EC16700E29C9D /* CreateReportTitleCell.swift in Sources */,
@@ -899,7 +911,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = U54GNAM74P;
+				DEVELOPMENT_TEAM = C62678PPRW;
 				INFOPLIST_FILE = Taqyeem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -919,7 +931,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = U54GNAM74P;
+				DEVELOPMENT_TEAM = C62678PPRW;
 				INFOPLIST_FILE = Taqyeem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

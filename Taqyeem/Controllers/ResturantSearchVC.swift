@@ -31,7 +31,7 @@ class ResturantSearchVC: UIViewController {
     
     @IBAction func showMunicFilter(_ sender: UIButton) {
         if sender.tag == 2 && self.municID == 0 {
-            self.showAlert(message: "من فضلك قم باختيار بريديه")
+            self.showAlert(message: "من فضلك قم باختيار بلديه")
             return
         }
         if sender.tag == 3 && (self.districtID == 0) {
@@ -39,7 +39,7 @@ class ResturantSearchVC: UIViewController {
             return
         }
         if sender.tag == 3 && (self.municID == 0) {
-            self.showAlert(message: "من فضلك قم باختيار بريديه")
+            self.showAlert(message: "من فضلك قم باختيار بلديه")
             return
         }
         let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "FiltersVC") as! FiltersVC
@@ -70,8 +70,8 @@ class ResturantSearchVC: UIViewController {
     }
     func getReturantsByMunic(municID :Int)  {
         self.municID =  municID
-        self.lblDistrict.text = "الإسكان"
-        self.lblStreet.text = "أحد"
+        self.lblDistrict.text = "الحي"
+        self.lblStreet.text = "الشارع"
         self.districtID = 0
         self.streetID = 0
         self.startLoadingActivity()
@@ -91,7 +91,7 @@ class ResturantSearchVC: UIViewController {
         }
     }
     func getReturantsByDistrict(districtID :Int)  {
-         self.lblStreet.text = "أحد"
+         self.lblStreet.text = "الشارع"
          self.streetID = 0
         self.districtID =  districtID
         self.startLoadingActivity()

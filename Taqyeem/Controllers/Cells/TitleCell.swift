@@ -11,4 +11,5 @@ import UIKit
 class TitleCell: UITableViewCell {   
     @IBOutlet weak var lblTitle: UILabel!
     
+    @IBOutlet weak var containerView: UIView!
 }

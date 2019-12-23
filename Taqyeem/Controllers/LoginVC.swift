@@ -14,7 +14,6 @@ class LoginVC: UIViewController {
     @IBOutlet weak var txtPassword: SkyFloatingLabelTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         initNavigationBar()
     }
     override func viewWillAppear(_ animated: Bool) {
