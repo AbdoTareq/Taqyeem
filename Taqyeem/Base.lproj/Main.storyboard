@@ -3170,7 +3170,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xhS-8I-rIW" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="5" y="-7" width="271" height="54"/>
+                                                <rect key="frame" x="5" y="0.0" width="271" height="40"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
@@ -3208,7 +3208,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J7t-SW-3OC" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="5" y="-7" width="271" height="54"/>
+                                                <rect key="frame" x="5" y="0.0" width="271" height="40"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
@@ -3246,7 +3246,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QRZ-Kb-1Og" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="5" y="-7" width="271" height="54"/>
+                                                <rect key="frame" x="5" y="0.0" width="271" height="40"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
@@ -3284,7 +3284,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hrd-mP-hzI" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="5" y="-7" width="271" height="54"/>
+                                                <rect key="frame" x="5" y="0.0" width="271" height="40"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
@@ -3322,7 +3322,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RS8-ad-4TB" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="5" y="-7" width="271" height="54"/>
+                                                <rect key="frame" x="5" y="0.0" width="271" height="40"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
@@ -3838,10 +3838,10 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2VR-mL-puo">
-                                                            <rect key="frame" x="182.5" y="0.0" width="1" height="92"/>
+                                                            <rect key="frame" x="181.5" y="10" width="2" height="72"/>
                                                             <color key="backgroundColor" red="0.95434552429999997" green="0.81304579970000002" blue="0.35773432249999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="1" id="pmA-G2-id8"/>
+                                                                <constraint firstAttribute="width" constant="2" id="pmA-G2-id8"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -3854,9 +3854,9 @@
                                                         <constraint firstItem="Ofx-Qr-M8C" firstAttribute="width" secondItem="Jvm-3G-hYr" secondAttribute="width" multiplier="0.43" id="erS-Qt-bez"/>
                                                         <constraint firstItem="Ofx-Qr-M8C" firstAttribute="top" secondItem="Jvm-3G-hYr" secondAttribute="top" constant="5" id="fAc-vA-Nof"/>
                                                         <constraint firstItem="X9S-Ug-EnX" firstAttribute="width" secondItem="Ofx-Qr-M8C" secondAttribute="width" id="iEd-nD-Lar"/>
-                                                        <constraint firstAttribute="bottom" secondItem="2VR-mL-puo" secondAttribute="bottom" id="mJd-aY-UVE"/>
+                                                        <constraint firstAttribute="bottom" secondItem="2VR-mL-puo" secondAttribute="bottom" constant="10" id="mJd-aY-UVE"/>
                                                         <constraint firstItem="X9S-Ug-EnX" firstAttribute="top" secondItem="Jvm-3G-hYr" secondAttribute="top" constant="5" id="nxg-Vw-eNf"/>
-                                                        <constraint firstItem="2VR-mL-puo" firstAttribute="top" secondItem="Jvm-3G-hYr" secondAttribute="top" id="vWx-vR-IFq"/>
+                                                        <constraint firstItem="2VR-mL-puo" firstAttribute="top" secondItem="Jvm-3G-hYr" secondAttribute="top" constant="10" id="vWx-vR-IFq"/>
                                                         <constraint firstItem="X9S-Ug-EnX" firstAttribute="leading" secondItem="Jvm-3G-hYr" secondAttribute="leading" constant="20" id="wBF-gg-ZU1"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -3960,10 +3960,10 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMM-Sn-xdw">
-                                                            <rect key="frame" x="238.5" y="2" width="1" height="88"/>
+                                                            <rect key="frame" x="237.5" y="10" width="2" height="72"/>
                                                             <color key="backgroundColor" red="0.95434552429999997" green="0.81304579970000002" blue="0.35773432249999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="1" id="249-6z-2gU"/>
+                                                                <constraint firstAttribute="width" constant="2" id="249-6z-2gU"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DSb-JD-nt1">
@@ -4001,10 +4001,10 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlJ-Gl-nGi">
-                                                            <rect key="frame" x="123" y="2" width="1" height="88"/>
+                                                            <rect key="frame" x="123" y="10" width="2" height="72"/>
                                                             <color key="backgroundColor" red="0.95434552429999997" green="0.81304579970000002" blue="0.35773432249999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="1" id="QId-m3-N8h"/>
+                                                                <constraint firstAttribute="width" constant="2" id="QId-m3-N8h"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -4012,24 +4012,24 @@
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="gGz-ka-ocn" secondAttribute="trailing" constant="20" id="0Jb-Q3-MUq"/>
                                                         <constraint firstItem="6CN-wn-WGl" firstAttribute="leading" secondItem="P0O-Mn-ddz" secondAttribute="leading" constant="20" id="1sL-wf-qB6"/>
-                                                        <constraint firstItem="hlJ-Gl-nGi" firstAttribute="bottom" secondItem="pMM-Sn-xdw" secondAttribute="bottom" id="5h0-0X-E5j"/>
                                                         <constraint firstItem="6CN-wn-WGl" firstAttribute="width" secondItem="gGz-ka-ocn" secondAttribute="width" id="6wg-Fn-47W"/>
                                                         <constraint firstItem="hlJ-Gl-nGi" firstAttribute="leading" secondItem="6CN-wn-WGl" secondAttribute="trailing" constant="8.5" id="7VV-FX-dpf"/>
-                                                        <constraint firstItem="hlJ-Gl-nGi" firstAttribute="top" secondItem="pMM-Sn-xdw" secondAttribute="top" id="8AD-Pm-Nwf"/>
+                                                        <constraint firstItem="pMM-Sn-xdw" firstAttribute="top" secondItem="P0O-Mn-ddz" secondAttribute="top" constant="10" id="C3r-NW-2nU"/>
                                                         <constraint firstItem="gGz-ka-ocn" firstAttribute="width" secondItem="P0O-Mn-ddz" secondAttribute="width" multiplier="0.26" id="Da6-j6-yzm"/>
+                                                        <constraint firstItem="hlJ-Gl-nGi" firstAttribute="top" secondItem="P0O-Mn-ddz" secondAttribute="top" constant="10" id="Htp-Q6-w3T"/>
                                                         <constraint firstItem="gGz-ka-ocn" firstAttribute="top" secondItem="P0O-Mn-ddz" secondAttribute="top" constant="5" id="Iuh-Rj-EiY"/>
                                                         <constraint firstAttribute="bottom" secondItem="6CN-wn-WGl" secondAttribute="bottom" constant="5" id="Kyz-4b-PTz"/>
                                                         <constraint firstItem="DSb-JD-nt1" firstAttribute="top" secondItem="gGz-ka-ocn" secondAttribute="top" id="UbF-cW-YcK"/>
-                                                        <constraint firstItem="pMM-Sn-xdw" firstAttribute="top" secondItem="P0O-Mn-ddz" secondAttribute="top" constant="2" id="V8V-eJ-45j"/>
                                                         <constraint firstItem="6CN-wn-WGl" firstAttribute="top" secondItem="P0O-Mn-ddz" secondAttribute="top" constant="5" id="Wh4-xH-eYc"/>
                                                         <constraint firstItem="EER-fh-Fqd" firstAttribute="top" secondItem="MHb-KE-N7e" secondAttribute="top" id="X1h-GR-aFO"/>
                                                         <constraint firstItem="DQh-t1-kOH" firstAttribute="top" secondItem="EER-fh-Fqd" secondAttribute="top" id="Y68-7b-aor"/>
                                                         <constraint firstItem="DSb-JD-nt1" firstAttribute="centerX" secondItem="P0O-Mn-ddz" secondAttribute="centerX" id="av6-sh-hoy"/>
                                                         <constraint firstItem="DSb-JD-nt1" firstAttribute="bottom" secondItem="gGz-ka-ocn" secondAttribute="bottom" id="cdP-8d-OIt"/>
                                                         <constraint firstItem="gGz-ka-ocn" firstAttribute="leading" secondItem="pMM-Sn-xdw" secondAttribute="trailing" constant="10" id="cwq-Yn-O3b"/>
+                                                        <constraint firstAttribute="bottom" secondItem="hlJ-Gl-nGi" secondAttribute="bottom" constant="10" id="lIl-Wd-uH6"/>
+                                                        <constraint firstAttribute="bottom" secondItem="pMM-Sn-xdw" secondAttribute="bottom" constant="10" id="p1s-Ww-ul0"/>
                                                         <constraint firstItem="DSb-JD-nt1" firstAttribute="width" secondItem="gGz-ka-ocn" secondAttribute="width" id="qLD-Z3-z0P"/>
                                                         <constraint firstAttribute="bottom" secondItem="gGz-ka-ocn" secondAttribute="bottom" constant="5" id="qqV-aX-g4A"/>
-                                                        <constraint firstAttribute="bottom" secondItem="pMM-Sn-xdw" secondAttribute="bottom" constant="2" id="rlw-xK-qsU"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -4456,10 +4456,10 @@
                                                             </collectionViewFlowLayout>
                                                             <cells>
                                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ResturantICollectionViewmage" id="jE5-Sx-1IJ" customClass="ResturantICollectionViewmage" customModule="Taqyeem" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="18" width="32" height="32"/>
+                                                                    <rect key="frame" x="0.0" y="2" width="64" height="64"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SAF-kw-Cfn">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite-heart-button" translatesAutoresizingMaskIntoConstraints="NO" id="j8x-5X-jAH">
@@ -5240,7 +5240,7 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite-heart-button" translatesAutoresizingMaskIntoConstraints="NO" id="5Nn-TK-OJ5">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                                                 </imageView>
                                                             </subviews>
                                                             <constraints>
@@ -6433,7 +6433,7 @@
                                                                 <action selector="rateBtnCliked:" destination="P6Y-U7-Qnj" eventType="touchUpInside" id="cN5-dk-eyR"/>
                                                             </connections>
                                                         </button>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SwC-tN-MYY" customClass="CosmosView" customModule="Cosmos">
+                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SwC-tN-MYY" customClass="CosmosView" customModule="Cosmos">
                                                             <rect key="frame" x="8" y="30" width="120" height="20"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <userDefinedRuntimeAttributes>
