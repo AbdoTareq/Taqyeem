@@ -31,10 +31,10 @@ class FiltersVC: UIViewController {
             lblPopupTitle.text = "اختر البلديه"
         case 2:
             getDistricts()
-            lblPopupTitle.text = "اختر الاسكان"
+            lblPopupTitle.text = "اختر الحي"
         case 3:
             getStreets()
-            lblPopupTitle.text = "اختر الاحد"
+            lblPopupTitle.text = "اختر الشارع"
         default:
             break
         }

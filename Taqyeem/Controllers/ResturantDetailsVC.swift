@@ -98,15 +98,49 @@ class ResturantDetailsVC: UIViewController {
                 if success {
                     let banner = StatusBarNotificationBanner(title: "تم اضافه المطعم للمفضله", style: .success)
                     banner.show()
-                    
+                }
+                else {
+                    if errorMessage!.contains("مضاف"){
+                        self.removeReturantFromFav()
+                    }
+                    else {
+                        
+                        let banner = StatusBarNotificationBanner(title: errorMessage!, style: .warning)
+                        banner.show()
+                    }
+                }
+            }
+            
+        }
+    }
+    func removeReturantFromFav() {
+        let alertController = UIAlertController(title: "المفضله", message: "المطعم مضاف سابقا للمفضله", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "موافق", style: UIAlertAction.Style.default) {
+            UIAlertAction in
+            
+        }
+        let cancelAction = UIAlertAction(title: "حذف من المفضله", style: UIAlertAction.Style.cancel) {
+            UIAlertAction in
+            self.startLoadingActivity()
+            ResturantVM.removeReturantToFav(resturantID: self.resturantVM.resturant.storeId ?? 0) { (success, errorMessage) in
+                self.stopLoadingActivity()
+                if success {
+                    let banner = StatusBarNotificationBanner(title: "تم حذف المطعم من المفضله", style: .success)
+                    banner.show()
                 }
                 else {
                     let banner = StatusBarNotificationBanner(title: errorMessage!, style: .warning)
                     banner.show()
                 }
+                
             }
             
         }
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
     }
     
     @objc func showDirectionClicked(_ sender: UIButton) {

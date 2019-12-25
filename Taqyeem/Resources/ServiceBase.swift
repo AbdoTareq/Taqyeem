@@ -32,10 +32,10 @@ enum ServiceBase: String {
     case complains =  "comptype/all"
     case register = "user/save"
     case login = "user/authenticate"
-
+ 
     case reports = "comp/save"
        case allReports = "comp/by_userid"
-    //case createReport = "comp"
+    case deleteFromFav = "favourite_stores/delete"
     case favStores = "favorit_stores/user_fav"
     case contact = "contact/list_by_category"
     case help = "help/list_by_type"
