@@ -9,5 +9,10 @@
 import UIKit
 
 class ResturantICollectionViewmage: UICollectionViewCell {
-    
+    @IBOutlet weak var img: UIImageView!
+    func loadImage(image: String) {
+        if let decodedData = Data(base64Encoded: image, options: .ignoreUnknownCharacters) {
+            img.image = UIImage(data: decodedData)
+        }
+    }
 }

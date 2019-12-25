@@ -9,11 +9,14 @@
 import UIKit
 import GrowingTextView
 class CommentsVC: UIViewController {
+    
+    @IBOutlet weak var lblNone: UILabel!
+    
     @IBOutlet weak var tableView: UITableView!
     var resturant : Resturant =  Resturant()
     @IBOutlet weak var barButonItemTitle: UIBarButtonItem!
     var comments: [CommentVM]?
-        var storeID : Int = 0
+    var storeID : Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 100.0
@@ -26,15 +29,15 @@ class CommentsVC: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
         barButonItemTitle.tintColor =  UIColor.white
         getData()
-      
-
+        
+        
     }
     
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
- 
+    
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
     }
@@ -49,6 +52,9 @@ class CommentsVC: UIViewController {
             }
             guard let comments = comments else {return}
             self.comments = comments
+            self.tableView.isHidden = comments.count == 0
+            self.lblNone.isHidden = comments.count != 0
+            
             self.tableView.delegate =  self
             self.tableView.dataSource =  self
             self.tableView.reloadData()

@@ -9,25 +9,22 @@
 import UIKit
 
 class ResturantImages: UITableViewCell {
+    @IBOutlet weak var lblNone: UILabel!
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
+    var images = [String]()
     override func awakeFromNib() {
         super.awakeFromNib()
         containerView.addShadow(color: UIColor.gray)
-        // Initialization code
+        collectionView.isHidden = images.count == 0
+        lblNone.isHidden = images.count != 0
         
     }
     func loadData()  {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.reloadData()
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
 }

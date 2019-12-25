@@ -19,6 +19,7 @@ class HelpVC: UIViewController {
         getData()
         vwContainer.addShadow(color: UIColor.gray)
     }
+
     func getData() {
         self.startLoadingActivity()
         HelpVM.get(type: 1) {help, error in
@@ -31,24 +32,25 @@ class HelpVC: UIViewController {
             self.bindData()
         }
     }
+
     func bindData() {
         guard let help = help else { return }
-
+        
         let attribute: NSAttributedString = {
             let attributedString = NSMutableAttributedString()
-            for item in help where item.isHeader == 1 {
-                attributedString.append(NSAttributedString(string: "■ \(item.text) \n\n", attributes: [
-                    NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17),
-                    NSAttributedString.Key.foregroundColor: UIColor(hexString: "#CCA121")
-                ]))
+            for item in help {
+                if item.isHeader == 1 {
+                    attributedString.append(NSAttributedString(string: "■ \(item.text) \n\n", attributes: [
+                        NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17),
+                        NSAttributedString.Key.foregroundColor: UIColor(hexString: "#CCA121")
+                    ]))
+                } else {
+                    attributedString.append(NSAttributedString(string: "      ■ \(item.text) \n\n", attributes: [
+                        NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17),
+                        NSAttributedString.Key.foregroundColor: UIColor(hexString: "#CCA121")
+                    ]))
+                }
             }
-            for item in help where item.isHeader == 0 {
-                attributedString.append(NSAttributedString(string: "      ■ \(item.text) \n\n", attributes: [
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17),
-                    NSAttributedString.Key.foregroundColor: UIColor(hexString: "#CCA121")
-                ]))
-            }
-            
             return attributedString
         }()
         lblContent.attributedText = attribute
@@ -57,6 +59,7 @@ class HelpVC: UIViewController {
     @IBAction func navBtnBack_Click(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
     }
+
     func initNavigationBar() {
         UINavigationBar.appearance().backgroundColor = UIColor(hexString: "#CCA121")
         navigationController?.setNavigationBarHidden(false, animated: true)

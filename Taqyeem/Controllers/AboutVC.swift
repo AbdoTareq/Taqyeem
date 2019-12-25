@@ -9,7 +9,7 @@
 import UIKit
 
 class AboutVC: UIViewController {
-
+    
     @IBOutlet weak var vwContainer: UIView!
     @IBOutlet weak var lblContent: UILabel!
     var about: [HelpVM]?
@@ -33,22 +33,22 @@ class AboutVC: UIViewController {
     }
     func bindData() {
         guard let about = about else { return }
-
+        
         let attribute: NSAttributedString = {
             let attributedString = NSMutableAttributedString()
-            for item in about where item.isHeader == 1 {
-                attributedString.append(NSAttributedString(string: "■ \(item.text) \n\n", attributes: [
-                    NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17),
-                    NSAttributedString.Key.foregroundColor: UIColor(hexString: "#CCA121")
-                ]))
+            for item in about {
+                if item.isHeader == 1 {
+                    attributedString.append(NSAttributedString(string: "■ \(item.text) \n\n", attributes: [
+                        NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17),
+                        NSAttributedString.Key.foregroundColor: UIColor(hexString: "#CCA121")
+                    ]))
+                } else {
+                    attributedString.append(NSAttributedString(string: "      ■ \(item.text) \n\n", attributes: [
+                        NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17),
+                        NSAttributedString.Key.foregroundColor: UIColor(hexString: "#CCA121")
+                    ]))
+                }
             }
-            for item in about where item.isHeader == 0 {
-                attributedString.append(NSAttributedString(string: "      ■ \(item.text) \n\n", attributes: [
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17),
-                    NSAttributedString.Key.foregroundColor: UIColor(hexString: "#CCA121")
-                ]))
-            }
-            
             return attributedString
         }()
         lblContent.attributedText = attribute

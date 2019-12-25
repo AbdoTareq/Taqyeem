@@ -47,8 +47,16 @@ class SettingsStack: UIStackView {
         UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
     }
     @objc func shareApp(_: UITapGestureRecognizer) {
-        let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "MyReportsVC") as! MyReportsVC
-        UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
+        let firstActivityItem = "www.AppURLWhenUploaded.com"
+        let secondActivityItem : NSURL = NSURL(string: "http//:urlyouwant")!
+        // If you want to put an image
+        let image : UIImage = UIImage(named: "image.jpg")!
+
+        let activityViewController : UIActivityViewController = UIActivityViewController(
+            activityItems: [firstActivityItem, secondActivityItem, image], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceRect = CGRect(x: 150, y: 150, width: 0, height: 0)
+
+        UIApplication.topViewController()!.present(activityViewController, animated: true, completion: nil)
     }
     @objc func goToHelp(_: UITapGestureRecognizer) {
         let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "HelpVC") as! HelpVC

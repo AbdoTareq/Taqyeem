@@ -33,22 +33,22 @@ class PrivacyVC: UIViewController {
     }
     func bindData() {
         guard let privacy = privacy else { return }
-
+        
         let attribute: NSAttributedString = {
             let attributedString = NSMutableAttributedString()
-            for item in privacy where item.isHeader == 1 {
-                attributedString.append(NSAttributedString(string: "■ \(item.text) \n\n", attributes: [
-                    NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17),
-                    NSAttributedString.Key.foregroundColor: UIColor(hexString: "#CCA121")
-                ]))
+            for item in privacy {
+                if item.isHeader == 1 {
+                    attributedString.append(NSAttributedString(string: "■ \(item.text) \n\n", attributes: [
+                        NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17),
+                        NSAttributedString.Key.foregroundColor: UIColor(hexString: "#CCA121")
+                    ]))
+                } else {
+                    attributedString.append(NSAttributedString(string: "      ■ \(item.text) \n\n", attributes: [
+                        NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17),
+                        NSAttributedString.Key.foregroundColor: UIColor(hexString: "#CCA121")
+                    ]))
+                }
             }
-            for item in privacy where item.isHeader == 0 {
-                attributedString.append(NSAttributedString(string: "      ■ \(item.text) \n\n", attributes: [
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17),
-                    NSAttributedString.Key.foregroundColor: UIColor(hexString: "#CCA121")
-                ]))
-            }
-            
             return attributedString
         }()
         lblContent.attributedText = attribute

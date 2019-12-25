@@ -30,9 +30,7 @@ class ResturantDetailsVC: UIViewController {
         navigationItem.title = resturantVM.resturant.storeNameBanner ??  resturantVM.resturant.storeArabicName ?? ""
         navigationItem.setHidesBackButton(true, animated: false)
     }
-    
-    
-    
+
     @objc func btnRatingClicked(_ sender: UIButton) {
         guard let user = UserDefaultsAccess.sharedInstance.user, let id = user.id else {
             let alertController = UIAlertController(title: "تسجيل الدخول", message: "يتوجب عليك تسجيل الدخول", preferredStyle: .alert)
