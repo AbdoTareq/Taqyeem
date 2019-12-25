@@ -29,6 +29,7 @@ class UserDefaultsAccess {
         }
     }
     func clearData() {
+        self.user = nil
         token = ""
     }
     
