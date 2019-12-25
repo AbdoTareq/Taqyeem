@@ -18,7 +18,7 @@ class RateVc: UIViewController {
         loadData()
         self.tabBarController?.hidesBottomBarWhenPushed =  true
         self.tabBarController?.tabBar.isHidden = true
-        barButonItemTitle.title = "تقييم مطعم  " + resturant.storeArabicName!
+        barButonItemTitle.title = "تقييم مطعم  " + (resturant.storeArabicName ?? resturant.storeNameBanner ?? "" ) 
         self.navigationItem.setHidesBackButton(true, animated:true)
         barButonItemTitle.tintColor =  UIColor.white
     }

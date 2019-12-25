@@ -189,26 +189,26 @@ struct ResturantVM {
     }
     
     static func removeReturantToFav(resturantID : Int , completion: @escaping (_ success :Bool, _ error: String?) -> Void) {
-          var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/favorit_stores/delete/")!)
-          request.httpMethod = HTTPMethod.delete.rawValue
-          request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-          let paramString = "{\"userId\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\", \"storeId\" : \"\(resturantID)\"}"
-          request.httpBody = paramString.data(using: .utf8)
-          Alamofire.request(request).responseJSON { (response) in
-              print(response)
-              if let statusCode = response.response?.statusCode {
-                  if statusCode >= 200 && statusCode < 300 {
-                      completion(true, nil)
-                  }
-                
-                  else {
-                      completion(false, "لم نتمكن من حذف المطعم من المفضله")
-                  }
-              }
-              else {
-                  completion(false, "لم نتمكن من حذف المطعم من المفضله")
-              }
-          }
-      }
+        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/favorit_stores/delete/")!)
+        request.httpMethod = HTTPMethod.delete.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let paramString = "{\"userId\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\", \"storeId\" : \"\(resturantID)\"}"
+        request.httpBody = paramString.data(using: .utf8)
+        Alamofire.request(request).responseJSON { (response) in
+            print(response)
+            if let statusCode = response.response?.statusCode {
+                if statusCode >= 200 && statusCode < 300 {
+                    completion(true, nil)
+                }
+                    
+                else {
+                    completion(false, "لم نتمكن من حذف المطعم من المفضله")
+                }
+            }
+            else {
+                completion(false, "لم نتمكن من حذف المطعم من المفضله")
+            }
+        }
+    }
     
 }
