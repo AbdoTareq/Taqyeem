@@ -2055,7 +2055,7 @@
                                         <rect key="frame" x="5" y="0.0" width="261" height="40"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                                 <color key="value" red="0.80000000000000004" green="0.63137254901960782" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
@@ -2067,6 +2067,12 @@
                                                 <color key="value" red="0.80000000000000004" green="0.63137254899999995" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="رقم المحمول"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                                <color key="value" red="0.80000000000000004" green="0.63137254899999995" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                <color key="value" red="0.80000000000000004" green="0.63137254899999995" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
@@ -2653,20 +2659,20 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم المستخدم" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0c-Bv-OgP">
-                                        <rect key="frame" x="268.5" y="21" width="92.5" height="22.5"/>
+                                        <rect key="frame" x="234.5" y="14" width="126.5" height="36"/>
                                         <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="19"/>
                                         <color key="textColor" red="0.76502388720000003" green="0.59990489479999998" blue="0.1231803373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTQ-l1-hQI">
-                                        <rect key="frame" x="191" y="101.5" width="208" height="1"/>
+                                        <rect key="frame" x="191" y="108" width="208" height="1"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="6pQ-Pv-kPc"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="الاسم الثاني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vYa-5w-A9k">
-                                        <rect key="frame" x="191" y="112.5" width="208" height="34"/>
+                                        <rect key="frame" x="191" y="119" width="208" height="34"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="21"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -2677,11 +2683,11 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0y-v4-uYu">
-                                        <rect key="frame" x="191" y="156.5" width="208" height="1"/>
+                                        <rect key="frame" x="191" y="163" width="208" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="اسم العائله " textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VhP-PP-Gqo">
-                                        <rect key="frame" x="191" y="167.5" width="208" height="34"/>
+                                        <rect key="frame" x="191" y="174" width="208" height="34"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="21"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -2692,14 +2698,14 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWq-2f-rG6">
-                                        <rect key="frame" x="191" y="211.5" width="208" height="1"/>
+                                        <rect key="frame" x="191" y="218" width="208" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail" translatesAutoresizingMaskIntoConstraints="NO" id="u9F-no-atk">
-                                        <rect key="frame" x="368" y="234.5" width="31" height="30"/>
+                                        <rect key="frame" x="368" y="241" width="31" height="30"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اعدادات الحساب " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e66-p1-W4E">
-                                        <rect key="frame" x="242.5" y="237" width="117.5" height="25"/>
+                                        <rect key="frame" x="223" y="243.5" width="137" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="u7i-vy-rvg"/>
                                         </constraints>
@@ -2708,7 +2714,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="البريد الالكتروني " textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pd5-5l-9CE">
-                                        <rect key="frame" x="20" y="272.5" width="379" height="40"/>
+                                        <rect key="frame" x="20" y="279" width="379" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="qmQ-H0-4CS"/>
                                         </constraints>
@@ -2722,14 +2728,14 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAU-qd-G60">
-                                        <rect key="frame" x="20" y="322.5" width="379" height="1"/>
+                                        <rect key="frame" x="20" y="329" width="379" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="kUw-3k-TQG"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="رقم المحمول " textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J7M-2Q-wrp">
-                                        <rect key="frame" x="20" y="333.5" width="379" height="41"/>
+                                        <rect key="frame" x="20" y="340" width="379" height="41"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="21"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -2740,17 +2746,17 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y0M-3p-lk4">
-                                        <rect key="frame" x="20" y="384.5" width="379" height="1"/>
+                                        <rect key="frame" x="20" y="391" width="379" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="XVL-Dl-LN5"/>
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password" translatesAutoresizingMaskIntoConstraints="NO" id="rTj-3E-8Uv">
-                                        <rect key="frame" x="367" y="407.5" width="32" height="30"/>
+                                        <rect key="frame" x="367" y="414" width="32" height="30"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" اعدادات كلمه المرور " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHi-Kd-WaA">
-                                        <rect key="frame" x="20" y="405" width="339" height="35"/>
+                                        <rect key="frame" x="20" y="411.5" width="339" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="3Bn-IR-Zbm"/>
                                         </constraints>
@@ -2759,7 +2765,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="كلمه المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="96z-WE-rPm">
-                                        <rect key="frame" x="20" y="448" width="379" height="41"/>
+                                        <rect key="frame" x="20" y="454.5" width="379" height="41"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="21"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -2770,11 +2776,11 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bji-vr-WFM">
-                                        <rect key="frame" x="20" y="499" width="379" height="1"/>
+                                        <rect key="frame" x="20" y="505.5" width="379" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="تاكيد كلمه المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7g8-Wl-eLo">
-                                        <rect key="frame" x="20" y="510" width="379" height="41"/>
+                                        <rect key="frame" x="20" y="516.5" width="379" height="41"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="21"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -2785,14 +2791,14 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YRv-O1-n4r">
-                                        <rect key="frame" x="20" y="561" width="379" height="1"/>
+                                        <rect key="frame" x="20" y="567.5" width="379" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="7rI-OI-a3u"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AN2-dK-WEp">
-                                        <rect key="frame" x="41.5" y="611.5" width="331" height="40"/>
+                                        <rect key="frame" x="41.5" y="618" width="331" height="40"/>
                                         <color key="backgroundColor" red="0.76502388720000003" green="0.59990489479999998" blue="0.1231803373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="OUW-Bo-6i8"/>
@@ -2810,7 +2816,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1C-85-GgI">
-                                        <rect key="frame" x="41.5" y="676.5" width="331" height="40"/>
+                                        <rect key="frame" x="41.5" y="683" width="331" height="40"/>
                                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="تسجيل الخروج">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2833,7 +2839,7 @@
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Dmp-g3-ecv">
-                                        <rect key="frame" x="20" y="79.5" width="100" height="100"/>
+                                        <rect key="frame" x="20" y="86" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="SPx-hJ-U88"/>
                                             <constraint firstAttribute="width" constant="100" id="vvo-S6-c8p"/>
@@ -2854,7 +2860,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOQ-XK-yeQ">
-                                        <rect key="frame" x="20" y="79.5" width="100" height="100"/>
+                                        <rect key="frame" x="20" y="86" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="Iex-uc-H34"/>
                                         </constraints>
@@ -3132,7 +3138,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xhS-8I-rIW" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="5" y="-7" width="271" height="54"/>
+                                                <rect key="frame" x="5" y="0.0" width="271" height="40"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
@@ -3170,7 +3176,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J7t-SW-3OC" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="5" y="-7" width="271" height="54"/>
+                                                <rect key="frame" x="5" y="0.0" width="271" height="40"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
@@ -3208,7 +3214,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QRZ-Kb-1Og" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="5" y="-7" width="271" height="54"/>
+                                                <rect key="frame" x="5" y="0.0" width="271" height="40"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
@@ -3246,7 +3252,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hrd-mP-hzI" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="5" y="-7" width="271" height="54"/>
+                                                <rect key="frame" x="5" y="0.0" width="271" height="40"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
@@ -3284,7 +3290,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RS8-ad-4TB" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="5" y="-7" width="271" height="54"/>
+                                                <rect key="frame" x="5" y="0.0" width="271" height="40"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
@@ -3496,7 +3502,7 @@
                                                             <string key="text">أوضح المركز في الانفوجراف الذي نشره أمس انه يحقق معدل نمو صناعي بقطاع الجلود يصل إلي 7% صناعة الدباغة مليار جنيه.
 </string>
                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
-                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" red="0.80000000000000004" green="0.63137254899999995" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="معلومات عن المطعم" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXl-P1-NXi">
@@ -3588,7 +3594,7 @@
                                                             <string key="text">أوضح المركز في الانفوجراف الذي نشره أمس انه يحقق معدل نمو 
 </string>
                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
-                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" red="0.80000000000000004" green="0.63137254899999995" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marker" translatesAutoresizingMaskIntoConstraints="NO" id="7ES-tX-DC8">
@@ -3655,10 +3661,10 @@
                                                             <color key="textColor" red="0.9703704715" green="0.84471923110000002" blue="0.4093876481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عفوا، لا توجد صور لهذا المطعم" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMB-9V-UTV">
-                                                            <rect key="frame" x="90.5" y="49" width="213" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عفوا، لا توجد صور لهذا المطعم" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMB-9V-UTV">
+                                                            <rect key="frame" x="5" y="43.5" width="381" height="32"/>
+                                                            <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
+                                                            <color key="textColor" red="0.80000000000000004" green="0.63137254899999995" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cKd-5S-2n1">
@@ -3675,14 +3681,14 @@
                                                             </collectionViewFlowLayout>
                                                             <cells>
                                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ResturantICollectionViewmage" id="0Qx-U9-RRK" customClass="ResturantICollectionViewmage" customModule="Taqyeem" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="18" width="32" height="32"/>
+                                                                    <rect key="frame" x="0.0" y="2" width="64" height="64"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="e4C-dh-HYN">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite-heart-button" translatesAutoresizingMaskIntoConstraints="NO" id="dDG-DX-2pM">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                                                             </imageView>
                                                                         </subviews>
                                                                         <constraints>
@@ -3702,15 +3708,16 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstItem="cKd-5S-2n1" firstAttribute="leading" secondItem="jds-lB-DUg" secondAttribute="leading" constant="5" id="8xq-a0-aHJ"/>
-                                                        <constraint firstItem="rMB-9V-UTV" firstAttribute="centerX" secondItem="jds-lB-DUg" secondAttribute="centerX" id="DU3-Qg-k6i"/>
                                                         <constraint firstItem="A7g-qg-LRb" firstAttribute="top" secondItem="jds-lB-DUg" secondAttribute="top" constant="8" id="EKK-mX-7q9"/>
                                                         <constraint firstItem="cKd-5S-2n1" firstAttribute="top" secondItem="iUP-nF-sHJ" secondAttribute="bottom" constant="7" id="Fn9-bq-q6z"/>
                                                         <constraint firstItem="cKd-5S-2n1" firstAttribute="trailing" secondItem="A7g-qg-LRb" secondAttribute="trailing" id="Moi-sH-rLl"/>
                                                         <constraint firstAttribute="bottom" secondItem="cKd-5S-2n1" secondAttribute="bottom" constant="5" id="Msc-gY-tOi"/>
+                                                        <constraint firstItem="rMB-9V-UTV" firstAttribute="centerY" secondItem="jds-lB-DUg" secondAttribute="centerY" id="NhU-5D-vn6"/>
+                                                        <constraint firstItem="rMB-9V-UTV" firstAttribute="trailing" secondItem="A7g-qg-LRb" secondAttribute="trailing" id="RC1-fB-f8s"/>
                                                         <constraint firstItem="iUP-nF-sHJ" firstAttribute="centerY" secondItem="A7g-qg-LRb" secondAttribute="centerY" id="RZZ-Fl-qML"/>
-                                                        <constraint firstItem="rMB-9V-UTV" firstAttribute="centerY" secondItem="jds-lB-DUg" secondAttribute="centerY" id="c0R-lY-9T3"/>
                                                         <constraint firstAttribute="trailing" secondItem="A7g-qg-LRb" secondAttribute="trailing" constant="8" id="gd0-Kh-pEP"/>
                                                         <constraint firstItem="A7g-qg-LRb" firstAttribute="leading" secondItem="iUP-nF-sHJ" secondAttribute="trailing" constant="8" id="mpi-kW-mM3"/>
+                                                        <constraint firstItem="rMB-9V-UTV" firstAttribute="leading" secondItem="jds-lB-DUg" secondAttribute="leading" constant="5" id="nlJ-lg-Ynz"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -4263,7 +4270,7 @@
                                                                 <constraint firstAttribute="height" constant="2" id="rcO-hg-vio"/>
                                                             </constraints>
                                                         </view>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="بلاغ هام" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="zNx-r8-O6C">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="zNx-r8-O6C">
                                                             <rect key="frame" x="10" y="35" width="384" height="37"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
@@ -4393,31 +4400,31 @@
                                             <outlet property="txtDetails" destination="9yO-xG-r8g" id="zsm-4k-r1N"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CreateReportImagesCell" rowHeight="141" id="sb3-NS-Rgi" customClass="CreateReportImagesCell" customModule="Taqyeem" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="355" width="414" height="141"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CreateReportImagesCell" rowHeight="153" id="sb3-NS-Rgi" customClass="CreateReportImagesCell" customModule="Taqyeem" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="355" width="414" height="153"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sb3-NS-Rgi" id="lOU-fZ-FbI">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="141"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="153"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ung-dM-2gi">
-                                                    <rect key="frame" x="5" y="16" width="404" height="119"/>
+                                                    <rect key="frame" x="5" y="16" width="404" height="131"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="1Uz-C6-DOg">
+                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="1Uz-C6-DOg">
                                                             <rect key="frame" x="371" y="8" width="25" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="25" id="44I-y0-ace"/>
                                                                 <constraint firstAttribute="height" constant="25" id="zVK-J7-jxB"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إضافة صورة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8S0-uj-tLw">
-                                                            <rect key="frame" x="255.5" y="1.5" width="107.5" height="38"/>
+                                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إضافة صورة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8S0-uj-tLw">
+                                                            <rect key="frame" x="255.5" y="-10.5" width="107.5" height="62"/>
                                                             <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
                                                             <color key="textColor" red="0.9703704715" green="0.84471923110000002" blue="0.4093876481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="b6v-iQ-9uC">
-                                                            <rect key="frame" x="5" y="46.5" width="391" height="67.5"/>
+                                                            <rect key="frame" x="5" y="58.5" width="391" height="67.5"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="67.5" id="Jql-uA-7hk"/>
@@ -4430,14 +4437,18 @@
                                                             </collectionViewFlowLayout>
                                                             <cells>
                                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ResturantICollectionViewmage" id="jE5-Sx-1IJ" customClass="ResturantICollectionViewmage" customModule="Taqyeem" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="18" width="32" height="32"/>
+                                                                    <rect key="frame" x="0.0" y="-6.5" width="80" height="80"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SAF-kw-Cfn">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite-heart-button" translatesAutoresizingMaskIntoConstraints="NO" id="j8x-5X-jAH">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j8x-5X-jAH">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="80" id="K35-D8-9cW"/>
+                                                                                    <constraint firstAttribute="height" constant="80" id="TRq-13-Ak3"/>
+                                                                                </constraints>
                                                                             </imageView>
                                                                         </subviews>
                                                                         <constraints>
@@ -4447,6 +4458,9 @@
                                                                             <constraint firstItem="j8x-5X-jAH" firstAttribute="top" secondItem="SAF-kw-Cfn" secondAttribute="top" id="hVb-dc-4sC"/>
                                                                         </constraints>
                                                                     </collectionViewCellContentView>
+                                                                    <connections>
+                                                                        <outlet property="img" destination="j8x-5X-jAH" id="gCH-yi-Eos"/>
+                                                                    </connections>
                                                                 </collectionViewCell>
                                                             </cells>
                                                         </collectionView>
@@ -4454,12 +4468,12 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="b6v-iQ-9uC" secondAttribute="bottom" constant="5" id="1cr-cE-FFQ"/>
-                                                        <constraint firstItem="1Uz-C6-DOg" firstAttribute="leading" secondItem="8S0-uj-tLw" secondAttribute="trailing" constant="8" id="2Sh-c2-Ma3"/>
                                                         <constraint firstItem="1Uz-C6-DOg" firstAttribute="top" secondItem="ung-dM-2gi" secondAttribute="top" constant="8" id="4SJ-Bj-Vjc"/>
                                                         <constraint firstItem="b6v-iQ-9uC" firstAttribute="top" secondItem="8S0-uj-tLw" secondAttribute="bottom" constant="7" id="CRv-IQ-fAq"/>
                                                         <constraint firstAttribute="trailing" secondItem="1Uz-C6-DOg" secondAttribute="trailing" constant="8" id="Ipa-lx-XJF"/>
                                                         <constraint firstItem="b6v-iQ-9uC" firstAttribute="leading" secondItem="ung-dM-2gi" secondAttribute="leading" constant="5" id="Wei-dm-Agg"/>
                                                         <constraint firstItem="b6v-iQ-9uC" firstAttribute="trailing" secondItem="1Uz-C6-DOg" secondAttribute="trailing" id="YSm-ws-gOh"/>
+                                                        <constraint firstItem="1Uz-C6-DOg" firstAttribute="leading" secondItem="8S0-uj-tLw" secondAttribute="trailing" constant="8" id="vNh-5c-7js"/>
                                                         <constraint firstItem="8S0-uj-tLw" firstAttribute="centerY" secondItem="1Uz-C6-DOg" secondAttribute="centerY" id="wyK-An-3nd"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -4479,10 +4493,12 @@
                                         <connections>
                                             <outlet property="collectionView" destination="b6v-iQ-9uC" id="rng-I6-K0V"/>
                                             <outlet property="containerView" destination="ung-dM-2gi" id="ym5-Nc-3Hq"/>
+                                            <outlet property="imgPlus" destination="1Uz-C6-DOg" id="bfj-gk-bik"/>
+                                            <outlet property="lblAddImage" destination="8S0-uj-tLw" id="3OG-uP-7KS"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CreateReportSendCell" id="VKv-Mo-nHG" customClass="CreateReportSendCell" customModule="Taqyeem" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="496" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="508" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VKv-Mo-nHG" id="upB-bo-89Y">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -4524,7 +4540,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReportResturantName" rowHeight="125" id="fLp-z0-lEQ" customClass="ReportResturantName" customModule="Taqyeem" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="576" width="414" height="125"/>
+                                        <rect key="frame" x="0.0" y="588" width="414" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fLp-z0-lEQ" id="gM3-5e-9Bl">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
@@ -4533,58 +4549,55 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLb-Wg-o7r">
                                                     <rect key="frame" x="5" y="5" width="404" height="115"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="road" translatesAutoresizingMaskIntoConstraints="NO" id="DPC-Qg-i8I">
-                                                            <rect key="frame" x="348" y="8" width="48" height="32"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="25" id="3Fm-Vi-LUt"/>
-                                                                <constraint firstAttribute="height" constant="25" id="6VE-Mk-p14"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مكان البلاغ" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g7o-fH-vAX">
-                                                            <rect key="frame" x="197" y="8" width="143" height="32"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
-                                                            <color key="textColor" red="0.9703704715" green="0.84471923110000002" blue="0.4093876481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="UD4-ot-Ags" customClass="GrowingTextView" customModule="GrowingTextView">
-                                                            <rect key="frame" x="8" y="48" width="388" height="40"/>
+                                                            <rect key="frame" x="8" y="47.5" width="388" height="40"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Bfn-KU-oT2"/>
-                                                                <constraint firstAttribute="height" constant="40" id="Q6E-wP-RBb"/>
                                                             </constraints>
                                                             <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="اسم المطعم"/>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                                     <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </textView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ymd-CM-bkc">
-                                                            <rect key="frame" x="8" y="96" width="388" height="1"/>
+                                                            <rect key="frame" x="8" y="95.5" width="388" height="1"/>
                                                             <color key="backgroundColor" red="0.76502388720000003" green="0.59990489479999998" blue="0.1231803373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="eC5-Os-Npw"/>
                                                             </constraints>
                                                         </view>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="road" translatesAutoresizingMaskIntoConstraints="NO" id="05C-Ow-LWi">
+                                                            <rect key="frame" x="371" y="8" width="25" height="25"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="25" id="168-EA-CAW"/>
+                                                                <constraint firstAttribute="height" constant="25" id="hFS-eq-acS"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="موقع البلاغ" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkQ-sk-fae">
+                                                            <rect key="frame" x="262" y="1.5" width="101" height="38"/>
+                                                            <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
+                                                            <color key="textColor" red="0.9703704715" green="0.84471923110000002" blue="0.4093876481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="UD4-ot-Ags" secondAttribute="trailing" constant="8" id="4qr-64-dIU"/>
-                                                        <constraint firstItem="DPC-Qg-i8I" firstAttribute="leading" secondItem="g7o-fH-vAX" secondAttribute="trailing" constant="8" id="5X0-L3-szq"/>
                                                         <constraint firstItem="UD4-ot-Ags" firstAttribute="leading" secondItem="NLb-Wg-o7r" secondAttribute="leading" constant="8" id="6ji-wW-fBh"/>
-                                                        <constraint firstAttribute="trailing" secondItem="DPC-Qg-i8I" secondAttribute="trailing" constant="8" id="HmQ-Nn-6q9"/>
                                                         <constraint firstItem="Ymd-CM-bkc" firstAttribute="leading" secondItem="NLb-Wg-o7r" secondAttribute="leading" constant="8" id="MM1-EI-Rcx"/>
-                                                        <constraint firstItem="g7o-fH-vAX" firstAttribute="centerY" secondItem="DPC-Qg-i8I" secondAttribute="centerY" id="fMY-cX-tPR"/>
-                                                        <constraint firstItem="DPC-Qg-i8I" firstAttribute="top" secondItem="NLb-Wg-o7r" secondAttribute="top" constant="8" id="hHm-99-ojl"/>
+                                                        <constraint firstItem="UD4-ot-Ags" firstAttribute="top" secondItem="BkQ-sk-fae" secondAttribute="bottom" constant="8" id="R5g-B3-PCt"/>
+                                                        <constraint firstAttribute="trailing" secondItem="05C-Ow-LWi" secondAttribute="trailing" constant="8" id="UsT-lO-khl"/>
                                                         <constraint firstAttribute="height" constant="115" id="htF-hC-NfI"/>
-                                                        <constraint firstItem="UD4-ot-Ags" firstAttribute="top" secondItem="DPC-Qg-i8I" secondAttribute="bottom" constant="8" id="pjT-Rn-qZX"/>
+                                                        <constraint firstItem="05C-Ow-LWi" firstAttribute="top" secondItem="NLb-Wg-o7r" secondAttribute="top" constant="8" id="jen-px-iuQ"/>
+                                                        <constraint firstItem="BkQ-sk-fae" firstAttribute="centerY" secondItem="05C-Ow-LWi" secondAttribute="centerY" id="laf-9Z-bf2"/>
                                                         <constraint firstAttribute="trailing" secondItem="Ymd-CM-bkc" secondAttribute="trailing" constant="8" id="rwK-eQ-AKt"/>
+                                                        <constraint firstItem="05C-Ow-LWi" firstAttribute="leading" secondItem="BkQ-sk-fae" secondAttribute="trailing" constant="8" id="snf-Q7-KgA"/>
                                                         <constraint firstItem="Ymd-CM-bkc" firstAttribute="top" secondItem="UD4-ot-Ags" secondAttribute="bottom" constant="8" id="tnK-gc-Cye"/>
+                                                        <constraint firstItem="UD4-ot-Ags" firstAttribute="trailing" secondItem="05C-Ow-LWi" secondAttribute="trailing" id="yUB-aE-q3n"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -4606,7 +4619,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReportType" rowHeight="52" id="kc0-rX-ZbJ" customClass="ReportType" customModule="Taqyeem" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="701" width="414" height="52"/>
+                                        <rect key="frame" x="0.0" y="713" width="414" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kc0-rX-ZbJ" id="Ayp-vD-2oZ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="52"/>
@@ -4615,16 +4628,15 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iim-hx-snU">
                                                     <rect key="frame" x="5" y="5" width="404" height="42"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop-down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="xPi-Xy-eWZ">
-                                                            <rect key="frame" x="362" y="8" width="34" height="11"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop-down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="zQZ-tJ-6S5">
+                                                            <rect key="frame" x="371" y="8" width="25" height="25"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="25" id="NGJ-Sf-0aV"/>
-                                                                <constraint firstAttribute="width" constant="25" id="Nax-KE-8xC"/>
+                                                                <constraint firstAttribute="width" constant="25" id="4Cd-wS-iLv"/>
+                                                                <constraint firstAttribute="height" constant="25" id="dhx-HK-oLP"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نوع البلاغ" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kMD-Zw-oJe">
-                                                            <rect key="frame" x="211" y="1" width="143" height="25"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نوع البلاغ" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JlH-3F-iMd">
+                                                            <rect key="frame" x="283" y="1.5" width="80" height="38"/>
                                                             <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
                                                             <color key="textColor" red="0.9703704715" green="0.84471923110000002" blue="0.4093876481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
@@ -4632,11 +4644,11 @@
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
+                                                        <constraint firstItem="JlH-3F-iMd" firstAttribute="centerY" secondItem="zQZ-tJ-6S5" secondAttribute="centerY" id="AbB-5c-hID"/>
                                                         <constraint firstAttribute="height" constant="40" id="Dss-Dy-bU4"/>
-                                                        <constraint firstItem="xPi-Xy-eWZ" firstAttribute="top" secondItem="Iim-hx-snU" secondAttribute="top" constant="8" id="PD3-mg-zah"/>
-                                                        <constraint firstItem="xPi-Xy-eWZ" firstAttribute="leading" secondItem="kMD-Zw-oJe" secondAttribute="trailing" constant="8" id="YRd-Pj-y8i"/>
-                                                        <constraint firstAttribute="trailing" secondItem="xPi-Xy-eWZ" secondAttribute="trailing" constant="8" id="uTW-Sj-u4s"/>
-                                                        <constraint firstItem="kMD-Zw-oJe" firstAttribute="centerY" secondItem="xPi-Xy-eWZ" secondAttribute="centerY" id="xHw-rJ-Wav"/>
+                                                        <constraint firstItem="zQZ-tJ-6S5" firstAttribute="leading" secondItem="JlH-3F-iMd" secondAttribute="trailing" constant="8" id="JFS-KQ-mcT"/>
+                                                        <constraint firstItem="zQZ-tJ-6S5" firstAttribute="top" secondItem="Iim-hx-snU" secondAttribute="top" constant="8" id="RRZ-GK-nmy"/>
+                                                        <constraint firstAttribute="trailing" secondItem="zQZ-tJ-6S5" secondAttribute="trailing" constant="8" id="bhS-67-rrA"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -4654,7 +4666,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="containerView" destination="Iim-hx-snU" id="0EW-zZ-Dmy"/>
-                                            <outlet property="reportType" destination="kMD-Zw-oJe" id="bgp-IS-8Dq"/>
+                                            <outlet property="reportType" destination="JlH-3F-iMd" id="RZt-sk-80j"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -5207,14 +5219,14 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ResturantICollectionViewmage" id="zlc-Qx-00h" customClass="ResturantICollectionViewmage" customModule="Taqyeem" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="18" width="32" height="32"/>
+                                                        <rect key="frame" x="0.0" y="2" width="64" height="64"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7BM-mf-Bcp">
-                                                            <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite-heart-button" translatesAutoresizingMaskIntoConstraints="NO" id="5Nn-TK-OJ5">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                                                 </imageView>
                                                             </subviews>
                                                             <constraints>

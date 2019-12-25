@@ -14,11 +14,9 @@ struct ReportVM {
     var id: Int {
         return report.id ?? 0
     }
-    
     var complaininformername: String {
         return report.complaininformername ?? ""
     }
-    
     var complaintext: String {
         return report.complaintext ?? ""
     }
@@ -27,6 +25,9 @@ struct ReportVM {
     }
     var mobile: Int {
         return report.mobile ?? 0
+    }
+    var images: [String] {
+        return report.complainimages ?? []
     }
     var user: User {
         return report.mobileuser ?? User()
@@ -39,7 +40,7 @@ struct ReportVM {
         var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/comp/by_userid")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        var userdic2 = "{\"id\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\"}"
+        let userdic2 = "{\"id\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\"}"
         let paramString = "{\"mobileuser\" : \(userdic2)}"
         request.httpBody = paramString.data(using: .utf8)
         Alamofire.request(request).responseJSON { (response) in

@@ -15,6 +15,9 @@ class FavouritesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         getData()
     }
     func getData() {
@@ -30,7 +33,6 @@ class FavouritesVC: UIViewController {
             self.tableView.delegate =  self
             self.tableView.dataSource =  self
             self.tableView.reloadData()
-            
         }
     }
     @IBAction func navBtnBack_Click(_ sender: UIBarButtonItem) {

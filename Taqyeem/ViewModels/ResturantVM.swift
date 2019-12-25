@@ -174,15 +174,12 @@ struct ResturantVM {
             if let statusCode = response.response?.statusCode {
                 if statusCode >= 200 && statusCode < 300 {
                     completion(true, nil)
-                }
-                if statusCode == 500  {
+                } else if statusCode == 500  {
                     completion(false, "المطعم مضاف سابقا للمفضله")
-                }
-                else {
+                } else {
                     completion(false, "لم نتمكن من اضافه المطعم للمفضله")
                 }
-            }
-            else {
+            } else {
                 completion(false, "لم نتمكن من اضافه المطعم للمفضله")
             }
         }

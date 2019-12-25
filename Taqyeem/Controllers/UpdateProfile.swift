@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import  NotificationBannerSwift
+import NotificationBannerSwift
 import AVFoundation
 import MobileCoreServices
 
@@ -21,8 +21,8 @@ class UpdateProfile: UIViewController {
     @IBOutlet weak var txtFamilyName: UITextField!
     @IBOutlet weak var txtSecondName: UITextField!
     @IBOutlet weak var txtFirstName: UITextField!
-     private let imagePicker = UIImagePickerController()
-    var imageBase :String = ""
+    private let imagePicker = UIImagePickerController()
+    var imageBase: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.setHidesBackButton(true, animated: false)
@@ -31,7 +31,7 @@ class UpdateProfile: UIViewController {
         imagePicker.delegate = self
         userProfileImage.makeCircle()
     }
-    
+
     func bindDataToUi() {
         self.txtMobile.text = UserDefaultsAccess.sharedInstance.user?.mobile ?? ""
         self.txtEmail.text = UserDefaultsAccess.sharedInstance.user?.email ?? ""
@@ -39,15 +39,12 @@ class UpdateProfile: UIViewController {
         self.txtSecondName.text = UserDefaultsAccess.sharedInstance.user?.lastName ?? ""
         self.txtFamilyName.text = UserDefaultsAccess.sharedInstance.user?.nickName ?? ""
         let dataDecoded : Data = Data(base64Encoded: UserDefaultsAccess.sharedInstance.user?.image ?? "", options: .ignoreUnknownCharacters)!
-              let decodedimage = UIImage(data: dataDecoded)
+        let decodedimage = UIImage(data: dataDecoded)
         if decodedimage != nil {
             userProfileImage.image = decodedimage
         }
-      
-              
-              
-        
     }
+
     @IBAction func btnSveClicked(_ sender: Any) {
         if txtFirstName.text == "" {
             showAlert(message: "برجاء ادخال الاسم الاول")
@@ -102,30 +99,29 @@ class UpdateProfile: UIViewController {
     
     @IBAction func updateUserProfile(_ sender: Any) {
         let cameraMediaType = AVMediaType.video
-               let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: cameraMediaType)
-               switch cameraAuthorizationStatus {
-               case .denied:
-                   self.showAlert(title: "تنبيه", message:"يجب تفعيل صلاحية الكاميرا لالتقاط الصور", buttonTitle: "موافق")
-                   break
-               case .authorized:
-                   DispatchQueue.main.async {
-                       self.onloadCamera()
-                   }
-                   break
-               case .restricted: break
-               case .notDetermined:
-                   AVCaptureDevice.requestAccess(for: cameraMediaType) { granted in
-                       if granted {
-                           DispatchQueue.main.async {
-                               self.onloadCamera()
-                           }
-                       } else {
-                           self.showAlert(title: "تنبيه", message:"يجب تفعيل صلاحية الكاميرا لالتقاط الصور", buttonTitle: "موافق")
-                       }
-                   }
-               }
+        let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: cameraMediaType)
+        switch cameraAuthorizationStatus {
+        case .denied:
+            self.showAlert(title: "تنبيه", message:"يجب تفعيل صلاحية الكاميرا لالتقاط الصور", buttonTitle: "موافق")
+            break
+        case .authorized:
+            DispatchQueue.main.async {
+                self.onloadCamera()
+            }
+            break
+        case .restricted: break
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: cameraMediaType) { granted in
+                if granted {
+                    DispatchQueue.main.async {
+                        self.onloadCamera()
+                    }
+                } else {
+                    self.showAlert(title: "تنبيه", message:"يجب تفعيل صلاحية الكاميرا لالتقاط الصور", buttonTitle: "موافق")
+                }
+            }
+        }
     }
-    
     
     func login(mobile: String, password: String) {
         AuthenricationVM.login(mobile: mobile, password: password) {user, error in
@@ -143,21 +139,20 @@ class UpdateProfile: UIViewController {
         }
     }
     
-    
     @IBAction func btnLogoutClicked(_ sender: Any) {
     }
     
     @IBAction func backBtnClicked(_ sender: Any) {        self.navigationController?.popViewController(animated: true)
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden =  false
     }
     
-    
     @IBAction func btnLogoUtClicked(_ sender: Any) {
         UserDefaultsAccess.sharedInstance.clearData()
-         let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-         nextVC.hidesBottomBarWhenPushed = true
+        let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        nextVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
@@ -173,6 +168,7 @@ extension UpdateProfile: UIImagePickerControllerDelegate, UINavigationController
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+
     func openGallary() {
         imagePicker.mediaTypes = [kUTTypeImage as String]
         imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
@@ -200,6 +196,6 @@ extension UpdateProfile: UIImagePickerControllerDelegate, UINavigationController
         
         self.userProfileImage.image = pickedImage
         self.imageBase = (pickedImage.resizeImageUsingVImage(size: CGSize(width: 100, height: 100))?.toBase64(quality: .medium))!
+        imagePicker.dismiss(animated: true, completion: nil)
     }
-    
 }

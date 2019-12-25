@@ -33,7 +33,7 @@ class RateVc: UIViewController {
     func loadData()  {
         RatingCriteriaVM.gerCriteries { critries, errorMessage in
             if critries != nil {
-                self.rating =  critries!
+                self.rating = critries!
                 self.tableView.delegate =  self
                 self.tableView.dataSource =  self
                 self.tableView.reloadData()
@@ -45,13 +45,11 @@ class RateVc: UIViewController {
         RatingCriteriaVM.submitRatingCriteria(ratingValue: rateVal, ratingCriteriaId: ratingCritriaId, storeId: self.resturant.storeId ?? 0, comment: comment) { success, errorMessage in
             self.stopLoadingActivity()
             if success {
-            let banner = StatusBarNotificationBanner(title: "تم اضافه تقيمك بنجاح", style: .success)
-            banner.show()
-            self.navigationController?.popViewController(animated: true)
-         }
-            else {
+                let banner = StatusBarNotificationBanner(title: "تم اضافه تقيمك بنجاح", style: .success)
+                banner.show()
+            } else {
                 let banner = StatusBarNotificationBanner(title: "لم نتمكن من اضافه تقييمك", style: .warning)
-                          banner.show()
+                banner.show()
             }
         }
     }
@@ -59,7 +57,7 @@ class RateVc: UIViewController {
 }
 extension RateVc: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rating.count ?? 0
+        return rating.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

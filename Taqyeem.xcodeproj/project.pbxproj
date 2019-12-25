@@ -94,6 +94,7 @@
 		06800B4F238D2DBE00F4CF20 /* GeneralNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06800B4E238D2DBE00F4CF20 /* GeneralNewsVC.swift */; };
 		06800B51238D3DE000F4CF20 /* BulletainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06800B50238D3DE000F4CF20 /* BulletainVC.swift */; };
 		06800B53238D592900F4CF20 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06800B52238D592900F4CF20 /* AboutVC.swift */; };
+		0683B07023B417A400B525A9 /* ComplaintImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0683B06F23B417A400B525A9 /* ComplaintImage.swift */; };
 		068F6B0F2392726E009CFFF2 /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068F6B0E2392726E009CFFF2 /* ContactVC.swift */; };
 		068F6B11239272DA009CFFF2 /* ContactKaseemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068F6B10239272DA009CFFF2 /* ContactKaseemVC.swift */; };
 		068F6B14239272F2009CFFF2 /* ContactManagementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068F6B13239272F2009CFFF2 /* ContactManagementVC.swift */; };
@@ -220,6 +221,7 @@
 		06800B4E238D2DBE00F4CF20 /* GeneralNewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralNewsVC.swift; sourceTree = "<group>"; };
 		06800B50238D3DE000F4CF20 /* BulletainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletainVC.swift; sourceTree = "<group>"; };
 		06800B52238D592900F4CF20 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
+		0683B06F23B417A400B525A9 /* ComplaintImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintImage.swift; sourceTree = "<group>"; };
 		068F6B0E2392726E009CFFF2 /* ContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVC.swift; sourceTree = "<group>"; };
 		068F6B10239272DA009CFFF2 /* ContactKaseemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactKaseemVC.swift; sourceTree = "<group>"; };
 		068F6B13239272F2009CFFF2 /* ContactManagementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactManagementVC.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 				066EC3A223AE988100B0C67D /* Help.swift */,
 				048DBCA723B0123B00641FC6 /* CompplainType.swift */,
 				04C132B223B15B4800A5E550 /* Activity.swift */,
+				0683B06F23B417A400B525A9 /* ComplaintImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -675,6 +678,7 @@
 				06BC66242392CA4900651171 /* AuthenticationVM.swift in Sources */,
 				0653BFA12383133600BDC506 /* ExtendedView.swift in Sources */,
 				06C6339C238C81330025F3C9 /* ResturantSearchVC.swift in Sources */,
+				0683B07023B417A400B525A9 /* ComplaintImage.swift in Sources */,
 				0653BFAC2383133600BDC506 /* SpinnerExt.swift in Sources */,
 				0621EEC1238D815C008C13C3 /* ResturantImages.swift in Sources */,
 				0653BFB62383147000BDC506 /* GenericModel.swift in Sources */,

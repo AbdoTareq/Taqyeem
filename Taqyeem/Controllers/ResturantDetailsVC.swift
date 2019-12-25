@@ -74,18 +74,14 @@ class ResturantDetailsVC: UIViewController {
                 let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
                 nextVC.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(nextVC, animated: true)
-                
             }
             let cancelAction = UIAlertAction(title: "الغاء", style: UIAlertAction.Style.cancel) {
                 UIAlertAction in
-                
             }
             alertController.addAction(okAction)
             alertController.addAction(cancelAction)
-            
+
             self.present(alertController, animated: true, completion: nil)
-            
-            
             return
         }
         

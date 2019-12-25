@@ -13,7 +13,7 @@ struct Report: Codable {
     var complaintext: String?
     var storename: String?
     var mobile: Int?
-    var mobileuser : User
-     var complaindate: String?
-    
+    var mobileuser : User?
+    var complaindate: String?
+    var complainimages: [String]?
 }
