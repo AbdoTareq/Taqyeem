@@ -152,6 +152,14 @@ class UpdateProfile: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden =  false
     }
+    
+    
+    @IBAction func btnLogoUtClicked(_ sender: Any) {
+        UserDefaultsAccess.sharedInstance.clearData()
+         let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+         nextVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
 extension UpdateProfile: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func onloadCamera() {
