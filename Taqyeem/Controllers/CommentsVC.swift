@@ -13,10 +13,7 @@ class CommentsVC: UIViewController {
     var resturant : Resturant =  Resturant()
     @IBOutlet weak var barButonItemTitle: UIBarButtonItem!
     var comments: [CommentVM]?
-    
-    @IBOutlet weak var txtComment: GrowingTextView!
-    @IBOutlet weak var commentContainerView: UIView!
-    var storeID : Int = 0
+        var storeID : Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 100.0
@@ -29,22 +26,15 @@ class CommentsVC: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
         barButonItemTitle.tintColor =  UIColor.white
         getData()
-        txtComment.placeholder = "اضافه تعليق"
-        txtComment.placeholderColor =  UIColor.lightGray
-        commentContainerView.addShadow(color: UIColor.darkGray)
+      
+
     }
     
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func addCommentBtnClicked(_ sender: Any) {
-        self.startLoadingActivity()
-        CommentVM.submitComment(comment: self.txtComment.text!, storeId: self.resturant.storeId ?? 0) { success, errorMessage in
-            self.stopLoadingActivity()
-            self.getData()
-        }
-    }
+ 
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
     }

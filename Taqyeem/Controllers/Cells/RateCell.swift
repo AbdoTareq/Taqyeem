@@ -12,6 +12,7 @@ class RateCell: UITableViewCell {
     @IBOutlet weak var critriaName: UILabel!
     @IBOutlet weak var rateBtn: UIButton!
     @IBOutlet weak var rateView: CosmosView!
+    @IBOutlet weak var txtComment: UITextField!
     
     @IBOutlet weak var containerView: UIView!
     override func awakeFromNib() {
@@ -20,7 +21,7 @@ class RateCell: UITableViewCell {
     }
     @IBAction func rateBtnCliked(_ sender: UIButton) {
         if let vc = UIApplication.topViewController() as? RateVc {
-            vc.rate(rateVal: self.rateView.rating, ratingCritriaId: sender.tag)
+            vc.rate(rateVal: self.rateView.rating, ratingCritriaId: sender.tag, comment: self.txtComment.text!)
         }
     }
 }

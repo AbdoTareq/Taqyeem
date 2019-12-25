@@ -45,7 +45,7 @@ var rateCriteria :RatingCriteria
     }
     
     
-    static func submitRatingCriteria(ratingValue :Double ,ratingCriteriaId :Int ,storeId :Int, completion: @escaping (_ success: Bool, _ error: String?) -> Void) {
+    static func submitRatingCriteria(ratingValue :Double ,ratingCriteriaId :Int ,storeId :Int,comment :String, completion: @escaping (_ success: Bool, _ error: String?) -> Void) {
         guard let user = UserDefaultsAccess.sharedInstance.user, let id = user.id else {
                           completion(false, "You must login")
                           return
@@ -53,7 +53,7 @@ var rateCriteria :RatingCriteria
         var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/store_rate_dtls/save")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let paramString = "{\"comments\" : \"\("")\", \"iscommentblocked\" : \"\("0")\", \"ratingValue\" : \(ratingValue), \"store\" : \"\(storeId)\", \"ratingCriteriaId\" : \"\(ratingCriteriaId)\", \"userId\" : \(UserDefaultsAccess.sharedInstance.user?.id ?? 0)}"
+        let paramString = "{\"iscommentblocked\" : \"\("0")\", \"ratingValue\" : \(ratingValue), \"store\" : \"\(storeId)\", \"ratingCriteriaId\" : \"\(ratingCriteriaId)\", \"userId\" : \(UserDefaultsAccess.sharedInstance.user?.id ?? 0),\"comments\" : \"\(comment)\"}"
         request.httpBody = paramString.data(using: .utf8)
         Alamofire.request(request).responseJSON { (response) in
             if let statusCode = response.response?.statusCode {

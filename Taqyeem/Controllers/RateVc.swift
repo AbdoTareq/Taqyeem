@@ -40,9 +40,9 @@ class RateVc: UIViewController {
             }
         }
     }
-    func rate(rateVal :Double , ratingCritriaId :Int)  {
+    func rate(rateVal :Double , ratingCritriaId :Int ,comment:String)  {
         self.startLoadingActivity()
-        RatingCriteriaVM.submitRatingCriteria(ratingValue: rateVal, ratingCriteriaId: ratingCritriaId, storeId: self.resturant.storeId ?? 0) { success, errorMessage in
+        RatingCriteriaVM.submitRatingCriteria(ratingValue: rateVal, ratingCriteriaId: ratingCritriaId, storeId: self.resturant.storeId ?? 0, comment: comment) { success, errorMessage in
             self.stopLoadingActivity()
             if success {
             let banner = StatusBarNotificationBanner(title: "تم اضافه تقيمك بنجاح", style: .success)
