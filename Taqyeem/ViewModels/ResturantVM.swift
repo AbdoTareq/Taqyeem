@@ -20,7 +20,7 @@ struct ResturantVM {
         return "\(resturant.buildingNumber ?? 0) \(resturant.streetName ?? "") \(resturant.districtName ?? "")"
     }
     var rating: Double {
-        return resturant.rating ?? 0.0
+        return resturant.rating ??  resturant.ratingValue ?? 0.0
     }
     
     static func getResturants(completion: @escaping (_ resturants: [ResturantVM]?, _ error: String?) -> Void) {
@@ -189,8 +189,8 @@ struct ResturantVM {
     }
     
     static func removeReturantToFav(resturantID : Int , completion: @escaping (_ success :Bool, _ error: String?) -> Void) {
-          var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/favourite_stores/delete")!)
-          request.httpMethod = HTTPMethod.post.rawValue
+          var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/favorit_stores/delete/")!)
+          request.httpMethod = HTTPMethod.delete.rawValue
           request.setValue("application/json", forHTTPHeaderField: "Content-Type")
           let paramString = "{\"userId\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\", \"storeId\" : \"\(resturantID)\"}"
           request.httpBody = paramString.data(using: .utf8)
