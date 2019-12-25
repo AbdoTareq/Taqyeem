@@ -52,8 +52,14 @@ class ContactKaseemVC: UIViewController {
                 lblFacebook.addGestureRecognizer(fbClicked)
             } else if contact.type == 1 {
                 lblPhone.text = contact.value
+                lblPhone.tag = i
+                let phoneClicked = UITapGestureRecognizer(target: self, action: #selector(call))
+                lblPhone.addGestureRecognizer(phoneClicked)
             } else if contact.type == 2 {
                 lblEmail.text = contact.value
+                lblEmail.tag = i
+                let mailClicked = UITapGestureRecognizer(target: self, action: #selector(mail))
+                lblEmail.addGestureRecognizer(mailClicked)
             }
         }
     }
@@ -65,6 +71,27 @@ class ContactKaseemVC: UIViewController {
             }
         }
     }
+    @objc func call(_ gesture: UITapGestureRecognizer) {
+        guard let contacts = contactUs else { return }
+        if let index = gesture.view?.tag {
+            
+            let appUrl = "tel://\(contacts[index].value)"
+            if let url = URL(string: appUrl), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
+        }
+    }
+    
+    @objc func mail(_ gesture: UITapGestureRecognizer) {
+        guard let contacts = contactUs else { return }
+        if let index = gesture.view?.tag {
+            let appUrl = "mailto:\(contacts[index].value)"
+            if let url = URL(string: appUrl), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
+        }
+    }
+    
     @IBAction func navBtnBack_Click(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
     }

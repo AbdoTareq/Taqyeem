@@ -11,18 +11,24 @@ import UIKit
 class ResturantSearchVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var resturants: [ResturantVM]?
-    var resturantsFiltered = [ResturantVM]()
+    var resturantsFiltered: [ResturantVM]?
     var municID : Int = 0
     var districtID : Int = 0
     var streetID : Int = 0
+    @IBOutlet weak var txtSearch: UITextField!
     
     @IBOutlet weak var lblStreet: UILabel!
     @IBOutlet weak var lblDistrict: UILabel!
     @IBOutlet weak var lblMunic: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        initNavigationBar()
+        
+        txtSearch.delegate = self
         getData()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        initNavigationBar()
+        super.viewWillAppear(animated)
     }
     func initNavigationBar() {
         navigationController?.setNavigationBarHidden(true, animated: true)
@@ -130,15 +136,18 @@ class ResturantSearchVC: UIViewController {
 }
 extension ResturantSearchVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if resturantsFiltered != nil {
+            return resturantsFiltered!.count
+        }
         return resturants?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResturantCell", for: indexPath) as! ResturantCell
-        if resturantsFiltered.count == 0 {
+        if resturantsFiltered == nil {
             cell.configureCell(resturant: self.resturants![indexPath.row])
         } else {
-            cell.configureCell(resturant: self.resturantsFiltered[indexPath.row])
+            cell.configureCell(resturant: self.resturantsFiltered![indexPath.row])
         }
         return cell
     }
@@ -156,14 +165,17 @@ extension ResturantSearchVC: UITableViewDelegate, UITableViewDataSource {
 }
 extension ResturantSearchVC: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        resturantsFiltered.removeAll()
         if textField.text == "" {
+            resturantsFiltered = nil
+            tableView.reloadData()
             return
         }
+        resturantsFiltered = [ResturantVM]()
         if let resturants = resturants, resturants.count > 0 {
             for resturant in resturants where resturant.name.contains(textField.text!) {
-                resturantsFiltered.append(resturant)
+                resturantsFiltered!.append(resturant)
             }
+            tableView.reloadData()
         }
     }
 }

@@ -45,27 +45,53 @@ class ContactManagementVC: UIViewController {
         guard let contacts = contactUs else { return }
         var i = 0
         for contact in contacts {
-            if contact.type == 3 {
-                lblFacebook.isHidden = false
-                lblFacebook.tag = i
-                let fbClicked = UITapGestureRecognizer(target: self, action: #selector(goTOFB))
-                lblFacebook.addGestureRecognizer(fbClicked)
-            } else if contact.type == 1 {
-                lblPhone.text = contact.value
-            } else if contact.type == 2 {
-                lblEmail.text = contact.value
+                i += 1
+                if contact.type == 3 {
+                    lblFacebook.isHidden = false
+                    lblFacebook.tag = i
+                    let fbClicked = UITapGestureRecognizer(target: self, action: #selector(goTOFB))
+                    lblFacebook.addGestureRecognizer(fbClicked)
+                } else if contact.type == 1 {
+                    lblPhone.text = contact.value
+                    lblPhone.tag = i
+                    let phoneClicked = UITapGestureRecognizer(target: self, action: #selector(call))
+                    lblPhone.addGestureRecognizer(phoneClicked)
+                } else if contact.type == 2 {
+                    lblEmail.text = contact.value
+                    lblEmail.tag = i
+                    let mailClicked = UITapGestureRecognizer(target: self, action: #selector(mail))
+                    lblEmail.addGestureRecognizer(mailClicked)
+                }
             }
-            i += 1
         }
-    }
-    @objc func goTOFB(_ gesture: UITapGestureRecognizer) {
-        guard let contacts = contactUs else { return }
-        if let index = gesture.view?.tag {
-            if let url = URL(string: contacts[index].value) {
-                UIApplication.shared.open(url)
+        @objc func goTOFB(_ gesture: UITapGestureRecognizer) {
+            guard let contacts = contactUs else { return }
+            if let index = gesture.view?.tag {
+                if let url = URL(string: contacts[index].value) {
+                    UIApplication.shared.open(url)
+                }
             }
         }
-    }
+        @objc func call(_ gesture: UITapGestureRecognizer) {
+            guard let contacts = contactUs else { return }
+            if let index = gesture.view?.tag {
+                
+                let appUrl = "tel://\(contacts[index].value)"
+                if let url = URL(string: appUrl), UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url)
+                }
+            }
+        }
+        
+        @objc func mail(_ gesture: UITapGestureRecognizer) {
+            guard let contacts = contactUs else { return }
+            if let index = gesture.view?.tag {
+                let appUrl = "mailto:\(contacts[index].value)"
+                if let url = URL(string: appUrl), UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url)
+                }
+            }
+        }
     @IBAction func navBtnBack_Click(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
     }

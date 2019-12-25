@@ -1140,6 +1140,7 @@
                         <outlet property="lblMunic" destination="FKK-Ai-zqg" id="lc3-R3-tLe"/>
                         <outlet property="lblStreet" destination="HXw-4N-LxA" id="0yN-xx-LK9"/>
                         <outlet property="tableView" destination="tcM-la-B7Y" id="lo3-5P-5oA"/>
+                        <outlet property="txtSearch" destination="qJI-Zm-xfi" id="MjT-s7-yBM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FgD-EE-5zJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1804,15 +1805,15 @@
                                 <rect key="frame" x="0.0" y="93" width="414" height="803"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="GeneralNewsCell" rowHeight="196" id="DVT-kI-dhg" customClass="GeneralNewsCell" customModule="Taqyeem" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="196"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="GeneralNewsCell" rowHeight="104" id="DVT-kI-dhg" customClass="GeneralNewsCell" customModule="Taqyeem" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="104"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DVT-kI-dhg" id="IY3-TI-LCA">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="196"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6iC-lF-Zvs">
-                                                    <rect key="frame" x="10" y="10" width="394" height="181"/>
+                                                    <rect key="frame" x="10" y="10" width="394" height="89"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عنوان الخبر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ih0-Ny-qjh">
                                                             <rect key="frame" x="274.5" y="4" width="79.5" height="32"/>
@@ -1840,9 +1841,8 @@
                                                                 <constraint firstAttribute="height" constant="20" id="jk8-gd-USj"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO7-5K-aug">
-                                                            <rect key="frame" x="10" y="58.5" width="369" height="112.5"/>
-                                                            <string key="text">تعد كتابة المقال مكونًا أساسيًا للنجاح الأكاديمي في عصرنا الحالي على جميع المستويات، حيث أنها في الأساس هي الطريقة التي يتواصل بها الأفراد داخل المجتمع الأكاديمي مع بعضهم البعض. هناك طرق أساسية يقوم بها الأكاديميون بتنظيم عملهم، وطرق رسمية لإيصال ما يريدون قوله، وبالتالي فإن كتابة المقالات هي الطريقة الرسمية التي يمكن للأكاديميين المحترفين من خلالها التواصل فيما بينهم، إلى جانب أنها ليست حكراً على الطلاب في مواد معينة يأخذونها في الجامعة ولا على الصحفيين الذين تقتضي طبيعة عملهم كتابة أو قراءة المقالات بشكل مستمر، بينما الغالبية العظمى من المعلمين والأساتذة يكتبون أيضًا مقالات على المستوى المهني للتعامل فيما بينهم تصفح على موقع فرصة </string>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO7-5K-aug">
+                                                            <rect key="frame" x="10" y="58.5" width="369" height="0.0"/>
                                                             <fontDescription key="fontDescription" name="Cairo-Light" family="Cairo" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1921,7 +1921,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LlB-4j-8YO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5482.608695652174" y="-3458.0357142857142"/>
+            <point key="canvasLocation" x="5481.1594202898559" y="-3458.0357142857142"/>
         </scene>
         <!--مطاعمي المفضلة-->
         <scene sceneID="LFz-xL-JNA">
@@ -4456,10 +4456,10 @@
                                                             </collectionViewFlowLayout>
                                                             <cells>
                                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ResturantICollectionViewmage" id="jE5-Sx-1IJ" customClass="ResturantICollectionViewmage" customModule="Taqyeem" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="2" width="64" height="64"/>
+                                                                    <rect key="frame" x="0.0" y="18" width="32" height="32"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SAF-kw-Cfn">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite-heart-button" translatesAutoresizingMaskIntoConstraints="NO" id="j8x-5X-jAH">
@@ -5355,7 +5355,7 @@
                                         <color key="textColor" red="0.80000000000000004" green="0.63137254899999995" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUL-2Z-znn">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUL-2Z-znn">
                                         <rect key="frame" x="348" y="40" width="13.5" height="28.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5394,7 +5394,7 @@
                                         <color key="textColor" red="0.80000000000000004" green="0.63137254899999995" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEV-Zw-4Hg">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEV-Zw-4Hg">
                                         <rect key="frame" x="348" y="40" width="13.5" height="28.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5436,13 +5436,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="f3B-dJ-9i3">
                                         <rect key="frame" x="361.5" y="40" width="0.0" height="0.0"/>
                                         <subviews>
-                                            <label hidden="YES" opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* فيس بوك" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAS-Av-B5P">
+                                            <label hidden="YES" opaque="NO" tag="99" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* فيس بوك" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAS-Av-B5P">
                                                 <rect key="frame" x="0.0" y="0.0" width="69.5" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label hidden="YES" opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* تويتر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBb-VS-SUD">
+                                            <label hidden="YES" opaque="NO" tag="99" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* تويتر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBb-VS-SUD">
                                                 <rect key="frame" x="0.0" y="0.0" width="69.5" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5707,7 +5707,7 @@
                                         <color key="textColor" red="0.80000000000000004" green="0.63137254899999995" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="qusyem@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBW-yj-8iL">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="qusyem@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBW-yj-8iL">
                                         <rect key="frame" x="232" y="40" width="129.5" height="28.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5746,7 +5746,7 @@
                                         <color key="textColor" red="0.80000000000000004" green="0.63137254899999995" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+966 1234567890" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfK-lT-ywj">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+966 1234567890" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfK-lT-ywj">
                                         <rect key="frame" x="240.5" y="40" width="121" height="28.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5770,7 +5770,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkg-0C-76n">
-                                <rect key="frame" x="15" y="285" width="384" height="107"/>
+                                <rect key="frame" x="15" y="285" width="384" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hashtag" translatesAutoresizingMaskIntoConstraints="NO" id="DGM-uc-gER">
                                         <rect key="frame" x="349" y="10" width="25" height="25"/>
@@ -5786,16 +5786,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rUy-1w-XJc">
-                                        <rect key="frame" x="292" y="40" width="69.5" height="57"/>
+                                        <rect key="frame" x="361.5" y="40" width="0.0" height="0.0"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* فيس بوك" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D38-Hq-MHI">
-                                                <rect key="frame" x="0.0" y="0.0" width="69.5" height="28.5"/>
+                                            <label hidden="YES" opaque="NO" tag="99" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* فيس بوك" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D38-Hq-MHI">
+                                                <rect key="frame" x="0.0" y="0.0" width="69.5" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* تويتر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBF-PY-ZUk">
-                                                <rect key="frame" x="0.0" y="28.5" width="69.5" height="28.5"/>
+                                            <label hidden="YES" opaque="NO" tag="99" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* تويتر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBF-PY-ZUk">
+                                                <rect key="frame" x="0.0" y="0.0" width="69.5" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -5865,10 +5865,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ld-Tz-5jn">
-                                <rect key="frame" x="10" y="128" width="394" height="10"/>
+                                <rect key="frame" x="10" y="128" width="394" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGE-js-y3p">
-                                        <rect key="frame" x="10" y="5" width="374" height="0.0"/>
+                                        <rect key="frame" x="10" y="5" width="374" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="05S-j7-BQe"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>

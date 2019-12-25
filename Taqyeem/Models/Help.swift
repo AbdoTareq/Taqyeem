@@ -10,4 +10,5 @@ import Foundation
 struct Help: Codable {
     var id: Int?
     var text: String?
+    var isHeader: Int?
 }

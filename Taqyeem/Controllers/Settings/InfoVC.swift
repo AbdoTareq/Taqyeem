@@ -12,7 +12,7 @@ class InfoVC: UIViewController {
 
     @IBOutlet weak var lblContent: UILabel!
     @IBOutlet weak var vwContainer: UIView!
-    var info: HelpVM?
+    var info: [HelpVM]?
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
@@ -24,7 +24,7 @@ class InfoVC: UIViewController {
         HelpVM.get(type: 3) {help, error in
             self.stopLoadingActivity()
             if help != nil {
-                self.info = help![0]
+                self.info = help!
             } else {
                 self.showAlert(message: error ?? "Failed to get data")
             }
@@ -33,7 +33,25 @@ class InfoVC: UIViewController {
     }
     func bindData() {
         guard let info = info else { return }
-        lblContent.text = info.text
+
+        let attribute: NSAttributedString = {
+            let attributedString = NSMutableAttributedString()
+            for item in info where item.isHeader == 1 {
+                attributedString.append(NSAttributedString(string: "■ \(item.text) \n\n", attributes: [
+                    NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17),
+                    NSAttributedString.Key.foregroundColor: UIColor(hexString: "#CCA121")
+                ]))
+            }
+            for item in info where item.isHeader == 0 {
+                attributedString.append(NSAttributedString(string: "      ■ \(item.text) \n\n", attributes: [
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17),
+                    NSAttributedString.Key.foregroundColor: UIColor(hexString: "#CCA121")
+                ]))
+            }
+            
+            return attributedString
+        }()
+        lblContent.attributedText = attribute
     }
     @IBAction func navBtnBack_Click(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
