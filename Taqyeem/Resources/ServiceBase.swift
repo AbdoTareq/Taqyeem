@@ -22,7 +22,7 @@ enum ServiceBase: String {
     case stores = "stores_global"
     case storesByMunic = "stores_by_munic"
     case storesByMunicDist = "stores_by_munic_dist"
-    case storesByMunicStreet = "stores_by_street"
+    case storesByMunicStreet = "stores_by_munic_street"
     case storeToFave =  "favorit_stores/save"
     case storeRating = "store_avg_ratings"
     case storeRatingDetails = "store_avg_spec_ratings"

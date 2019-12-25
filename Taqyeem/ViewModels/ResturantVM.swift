@@ -103,7 +103,7 @@ struct ResturantVM {
     }
     
     static func getResturantsBystreet(MunicID : Int ,districtID :Int ,streetID:Int , completion: @escaping (_ resturants: [ResturantVM]?, _ error: String?) -> Void) {
-        let url = NetworkManager.getUrl(service: .storesByMunic)
+        let url = NetworkManager.getUrl(service: .storesByMunicStreet)
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
