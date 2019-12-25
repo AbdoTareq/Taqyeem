@@ -8,8 +8,12 @@
 
 import UIKit
 import  NotificationBannerSwift
+import AVFoundation
+import MobileCoreServices
+
 class UpdateProfile: UIViewController {
     
+    @IBOutlet weak var userProfileImage: UIImageView!
     @IBOutlet weak var txtConfirmPassword: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtMobile: UITextField!
@@ -17,11 +21,15 @@ class UpdateProfile: UIViewController {
     @IBOutlet weak var txtFamilyName: UITextField!
     @IBOutlet weak var txtSecondName: UITextField!
     @IBOutlet weak var txtFirstName: UITextField!
+     private let imagePicker = UIImagePickerController()
+    var imageBase :String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.setHidesBackButton(true, animated: false)
         self.tabBarController?.tabBar.isHidden =  true
         bindDataToUi()
+        imagePicker.delegate = self
+        userProfileImage.makeCircle()
     }
     
     func bindDataToUi() {
@@ -30,6 +38,15 @@ class UpdateProfile: UIViewController {
         self.txtFirstName.text = UserDefaultsAccess.sharedInstance.user?.firstName ?? ""
         self.txtSecondName.text = UserDefaultsAccess.sharedInstance.user?.lastName ?? ""
         self.txtFamilyName.text = UserDefaultsAccess.sharedInstance.user?.nickName ?? ""
+        let dataDecoded : Data = Data(base64Encoded: UserDefaultsAccess.sharedInstance.user?.image ?? "", options: .ignoreUnknownCharacters)!
+              let decodedimage = UIImage(data: dataDecoded)
+        if decodedimage != nil {
+            userProfileImage.image = decodedimage
+        }
+      
+              
+              
+        
     }
     @IBAction func btnSveClicked(_ sender: Any) {
         if txtFirstName.text == "" {
@@ -65,7 +82,7 @@ class UpdateProfile: UIViewController {
             return
         }
         self.startLoadingActivity()
-        let user = User(id: nil, firstName: txtFirstName.text!, lastName: txtSecondName.text!, nickName: txtFamilyName.text, email: txtEmail.text!, image: nil, token: nil, mobile: txtMobile.text!, password: txtPassword.text)
+        let user = User(id: nil, firstName: txtFirstName.text!, lastName: txtSecondName.text!, nickName: txtFamilyName.text, email: txtEmail.text!, image: self.imageBase, token: nil, mobile: txtMobile.text!, password: txtPassword.text)
         self.startLoadingActivity()
         AuthenricationVM.update(user: user) {success, error in
             self.stopLoadingActivity()
@@ -82,6 +99,34 @@ class UpdateProfile: UIViewController {
         }
         
     }
+    
+    @IBAction func updateUserProfile(_ sender: Any) {
+        let cameraMediaType = AVMediaType.video
+               let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: cameraMediaType)
+               switch cameraAuthorizationStatus {
+               case .denied:
+                   self.showAlert(title: "تنبيه", message:"يجب تفعيل صلاحية الكاميرا لالتقاط الصور", buttonTitle: "موافق")
+                   break
+               case .authorized:
+                   DispatchQueue.main.async {
+                       self.onloadCamera()
+                   }
+                   break
+               case .restricted: break
+               case .notDetermined:
+                   AVCaptureDevice.requestAccess(for: cameraMediaType) { granted in
+                       if granted {
+                           DispatchQueue.main.async {
+                               self.onloadCamera()
+                           }
+                       } else {
+                           self.showAlert(title: "تنبيه", message:"يجب تفعيل صلاحية الكاميرا لالتقاط الصور", buttonTitle: "موافق")
+                       }
+                   }
+               }
+    }
+    
+    
     func login(mobile: String, password: String) {
         AuthenricationVM.login(mobile: mobile, password: password) {user, error in
             self.stopLoadingActivity()
@@ -107,4 +152,46 @@ class UpdateProfile: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden =  false
     }
+}
+extension UpdateProfile: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func onloadCamera() {
+        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default) { _ in
+            self.openCamera()
+        })
+        alert.addAction(UIAlertAction(title: "Gallery", style: .default) { _ in
+            self.openGallary()
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    func openGallary() {
+        imagePicker.mediaTypes = [kUTTypeImage as String]
+        imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        imagePicker.allowsEditing = false
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func openCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            imagePicker.mediaTypes = [kUTTypeImage as String]
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.allowsEditing = false
+            
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        else {
+            let alert = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        guard let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        
+        self.userProfileImage.image = pickedImage
+        self.imageBase = (pickedImage.resizeImageUsingVImage(size: CGSize(width: 100, height: 100))?.toBase64(quality: .medium))!
+    }
+    
 }
