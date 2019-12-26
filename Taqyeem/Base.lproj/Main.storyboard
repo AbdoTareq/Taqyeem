@@ -4400,15 +4400,15 @@
                                             <outlet property="txtDetails" destination="9yO-xG-r8g" id="zsm-4k-r1N"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CreateReportImagesCell" rowHeight="153" id="sb3-NS-Rgi" customClass="CreateReportImagesCell" customModule="Taqyeem" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="355" width="414" height="153"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CreateReportImagesCell" rowHeight="214" id="sb3-NS-Rgi" customClass="CreateReportImagesCell" customModule="Taqyeem" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="355" width="414" height="214"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sb3-NS-Rgi" id="lOU-fZ-FbI">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="153"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="214"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ung-dM-2gi">
-                                                    <rect key="frame" x="5" y="16" width="404" height="131"/>
+                                                    <rect key="frame" x="5" y="16" width="404" height="192"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="1Uz-C6-DOg">
                                                             <rect key="frame" x="371" y="8" width="25" height="25"/>
@@ -4418,16 +4418,16 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إضافة صورة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8S0-uj-tLw">
-                                                            <rect key="frame" x="255.5" y="-10.5" width="107.5" height="62"/>
+                                                            <rect key="frame" x="255.5" y="-39" width="107.5" height="119"/>
                                                             <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
                                                             <color key="textColor" red="0.9703704715" green="0.84471923110000002" blue="0.4093876481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="b6v-iQ-9uC">
-                                                            <rect key="frame" x="5" y="58.5" width="391" height="67.5"/>
+                                                            <rect key="frame" x="5" y="87" width="391" height="100"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="67.5" id="Jql-uA-7hk"/>
+                                                                <constraint firstAttribute="height" constant="100" id="Jql-uA-7hk"/>
                                                             </constraints>
                                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8d9-M9-RPY">
                                                                 <size key="itemSize" width="50" height="50"/>
@@ -4437,17 +4437,17 @@
                                                             </collectionViewFlowLayout>
                                                             <cells>
                                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ResturantICollectionViewmage" id="jE5-Sx-1IJ" customClass="ResturantICollectionViewmage" customModule="Taqyeem" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="-6.5" width="80" height="80"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SAF-kw-Cfn">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j8x-5X-jAH">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="width" constant="80" id="K35-D8-9cW"/>
-                                                                                    <constraint firstAttribute="height" constant="80" id="TRq-13-Ak3"/>
+                                                                                    <constraint firstAttribute="width" constant="100" id="K35-D8-9cW"/>
+                                                                                    <constraint firstAttribute="height" constant="100" id="TRq-13-Ak3"/>
                                                                                 </constraints>
                                                                             </imageView>
                                                                         </subviews>
@@ -4458,6 +4458,7 @@
                                                                             <constraint firstItem="j8x-5X-jAH" firstAttribute="top" secondItem="SAF-kw-Cfn" secondAttribute="top" id="hVb-dc-4sC"/>
                                                                         </constraints>
                                                                     </collectionViewCellContentView>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <connections>
                                                                         <outlet property="img" destination="j8x-5X-jAH" id="gCH-yi-Eos"/>
                                                                     </connections>
@@ -4498,7 +4499,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CreateReportSendCell" id="VKv-Mo-nHG" customClass="CreateReportSendCell" customModule="Taqyeem" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="508" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="569" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VKv-Mo-nHG" id="upB-bo-89Y">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -4540,7 +4541,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReportResturantName" rowHeight="125" id="fLp-z0-lEQ" customClass="ReportResturantName" customModule="Taqyeem" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="588" width="414" height="125"/>
+                                        <rect key="frame" x="0.0" y="649" width="414" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fLp-z0-lEQ" id="gM3-5e-9Bl">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
@@ -4549,7 +4550,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLb-Wg-o7r">
                                                     <rect key="frame" x="5" y="5" width="404" height="115"/>
                                                     <subviews>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="UD4-ot-Ags" customClass="GrowingTextView" customModule="GrowingTextView">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="UD4-ot-Ags" customClass="GrowingTextView" customModule="GrowingTextView">
                                                             <rect key="frame" x="8" y="47.5" width="388" height="40"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
@@ -4564,7 +4565,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </textView>
-                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ymd-CM-bkc">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ymd-CM-bkc">
                                                             <rect key="frame" x="8" y="95.5" width="388" height="1"/>
                                                             <color key="backgroundColor" red="0.76502388720000003" green="0.59990489479999998" blue="0.1231803373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
@@ -4619,7 +4620,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReportType" rowHeight="52" id="kc0-rX-ZbJ" customClass="ReportType" customModule="Taqyeem" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="713" width="414" height="52"/>
+                                        <rect key="frame" x="0.0" y="774" width="414" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kc0-rX-ZbJ" id="Ayp-vD-2oZ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="52"/>
@@ -4891,6 +4892,9 @@
                                                                             <constraint firstItem="8Cu-Rw-1Zq" firstAttribute="leading" secondItem="KRm-2H-pQa" secondAttribute="leading" id="eWE-Gm-tf9"/>
                                                                         </constraints>
                                                                     </collectionViewCellContentView>
+                                                                    <connections>
+                                                                        <outlet property="img" destination="8Cu-Rw-1Zq" id="eoR-uX-IXq"/>
+                                                                    </connections>
                                                                 </collectionViewCell>
                                                             </cells>
                                                         </collectionView>

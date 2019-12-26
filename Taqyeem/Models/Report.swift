@@ -15,5 +15,5 @@ struct Report: Codable {
     var mobile: Int?
     var mobileuser : User?
     var complaindate: String?
-    var complainimages: [String]?
+    var complainimages: [ComplainImageModel]?
 }

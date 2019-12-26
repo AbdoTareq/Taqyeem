@@ -47,6 +47,8 @@ class RateVc: UIViewController {
             if success {
                 let banner = StatusBarNotificationBanner(title: "تم اضافه تقيمك بنجاح", style: .success)
                 banner.show()
+                 NotificationCenter.default.post(name: .didMakeChange, object: nil , userInfo: nil)
+                
             } else {
                 let banner = StatusBarNotificationBanner(title: "لم نتمكن من اضافه تقييمك", style: .warning)
                 banner.show()

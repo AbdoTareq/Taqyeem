@@ -57,7 +57,7 @@ extension ReportDetailsVC : UITableViewDelegate , UITableViewDataSource{
         }
         if indexPath.row == 2 {
            let  cell = tableView.dequeueReusableCell(withIdentifier: "ReportImagesCell", for: indexPath) as! ReportImagesCell
-            
+            cell.configure(images: self.report)
             return cell
         }
         if indexPath.row == 3 {

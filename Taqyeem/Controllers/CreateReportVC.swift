@@ -43,7 +43,7 @@ class CreateReportVC: UIViewController {
         else {
             self.startLoadingActivity()
             
-            ReportVM.submitReport(complainInformation: self.reportTitle, complainText: self.reportDescription , mobile: UserDefaultsAccess.sharedInstance.user?.mobile ?? "", storename: self.storeName, complainId: self.complainId) { success , errorMessage in
+            ReportVM.submitReport(complainInformation: self.reportTitle, complainText: self.reportDescription , mobile: UserDefaultsAccess.sharedInstance.user?.mobile ?? "", storename: self.storeName, complainImages: self.images, complainId: self.complainId) { success , errorMessage in
                 self.stopLoadingActivity()
                 if success {
                     let banner = StatusBarNotificationBanner(title: "تم اضافه بلاغك بنجاح", style: .success)
@@ -198,7 +198,8 @@ extension CreateReportVC: UIImagePickerControllerDelegate, UINavigationControlle
         let imageBase = (pickedImage.resizeImageUsingVImage(size: CGSize(width: 100, height: 100))?.toBase64(quality: .medium))!
         self.images.append(ComplaintImage(string: imageBase, img: pickedImage))
         imagePicker.dismiss(animated: true, completion: {
-            self.tableView.reloadData()
+               let indexPath = IndexPath(item:4, section: 0)
+            self.tableView.reloadRows(at: [indexPath], with: .top)
         })
     }
 }

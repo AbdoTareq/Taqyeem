@@ -15,8 +15,8 @@ class ResturantSearchVC: UIViewController {
     var municID : Int = 0
     var districtID : Int = 0
     var streetID : Int = 0
+    var lastSelectedIndex = 0
     @IBOutlet weak var txtSearch: UITextField!
-    
     @IBOutlet weak var lblStreet: UILabel!
     @IBOutlet weak var lblDistrict: UILabel!
     @IBOutlet weak var lblMunic: UILabel!
@@ -27,12 +27,14 @@ class ResturantSearchVC: UIViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
-      
+        
         super.viewWillAppear(animated)
-          initNavigationBar()
-        if self.resturants == nil {
-            getData()
-        }
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshResturants(_:)), name: .didMakeChange, object: nil)
+        
+        initNavigationBar()
+        //        if self.resturants == nil {
+        //            getData()
+        //        }
     }
     func initNavigationBar() {
         navigationController?.setNavigationBarHidden(true, animated: true)
@@ -40,6 +42,7 @@ class ResturantSearchVC: UIViewController {
     }
     
     @IBAction func showMunicFilter(_ sender: UIButton) {
+        lastSelectedIndex =  sender.tag
         if sender.tag == 2 && self.municID == 0 {
             self.showAlert(message: "من فضلك قم باختيار بلديه")
             return
@@ -78,6 +81,23 @@ class ResturantSearchVC: UIViewController {
             
         }
     }
+    
+    @objc func refreshResturants(_ notification:Notification) {
+        if self.lastSelectedIndex == 1 {
+            self.getReturantsByMunic(municID: self.municID)
+        }
+        if self.lastSelectedIndex == 2 {
+            self.getReturantsByDistrict(districtID: self.districtID)
+        }
+        if self.lastSelectedIndex == 3 {
+            self.getReturantsByStreet(StreetID: self.streetID)
+            
+        }
+        
+        
+    }
+    
+    
     func getReturantsByMunic(municID :Int)  {
         self.municID =  municID
         self.lblDistrict.text = "الحي"
@@ -101,8 +121,8 @@ class ResturantSearchVC: UIViewController {
         }
     }
     func getReturantsByDistrict(districtID :Int)  {
-         self.lblStreet.text = "الشارع"
-         self.streetID = 0
+        self.lblStreet.text = "الشارع"
+        self.streetID = 0
         self.districtID =  districtID
         self.startLoadingActivity()
         ResturantVM.getResturantsByDistrict(MunicID: self.municID, districtID: districtID) { resturants , error in
@@ -182,4 +202,8 @@ extension ResturantSearchVC: UITextFieldDelegate {
             tableView.reloadData()
         }
     }
+}
+extension Notification.Name {
+    static let didMakeChange = Notification.Name("didMakeChange")
+    
 }
