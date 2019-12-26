@@ -29,7 +29,7 @@ class ContactStack: UIStackView {
     }
     @objc func goToCreateReport(_: UITapGestureRecognizer) {
         if UserDefaultsAccess.sharedInstance.user == nil {
-            UIApplication.topViewController()!.showAlert(message: "يجب عليك تسجيل الدخول للمتابعة")
+            UIApplication.topViewController()!.logOut()
             return
         }
           let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "CreateReportVC") as! CreateReportVC
@@ -37,7 +37,7 @@ class ContactStack: UIStackView {
       }
       @objc func goToMyReports(_: UITapGestureRecognizer) {
         if UserDefaultsAccess.sharedInstance.user == nil {
-            UIApplication.topViewController()!.showAlert(message: "يجب عليك تسجيل الدخول للمتابعة")
+            UIApplication.topViewController()!.logOut()
             return
         }
           let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "MyReportsVC") as! MyReportsVC

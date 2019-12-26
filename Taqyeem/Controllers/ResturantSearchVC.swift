@@ -24,11 +24,15 @@ class ResturantSearchVC: UIViewController {
         super.viewDidLoad()
         
         txtSearch.delegate = self
-        getData()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
-        initNavigationBar()
+      
         super.viewWillAppear(animated)
+          initNavigationBar()
+        if self.resturants == nil {
+            getData()
+        }
     }
     func initNavigationBar() {
         navigationController?.setNavigationBarHidden(true, animated: true)

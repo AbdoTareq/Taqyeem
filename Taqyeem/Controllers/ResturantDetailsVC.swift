@@ -30,27 +30,10 @@ class ResturantDetailsVC: UIViewController {
         navigationItem.title = resturantVM.resturant.storeNameBanner ??  resturantVM.resturant.storeArabicName ?? ""
         navigationItem.setHidesBackButton(true, animated: false)
     }
-
+    
     @objc func btnRatingClicked(_ sender: UIButton) {
         guard let user = UserDefaultsAccess.sharedInstance.user, let id = user.id else {
-            let alertController = UIAlertController(title: "تسجيل الدخول", message: "يتوجب عليك تسجيل الدخول", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "موافق", style: UIAlertAction.Style.default) {
-                UIAlertAction in
-                UserDefaultsAccess.sharedInstance.skippedLogin  = false
-                let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-                nextVC.hidesBottomBarWhenPushed = true
-                self.navigationController?.pushViewController(nextVC, animated: true)
-                
-            }
-            let cancelAction = UIAlertAction(title: "الغاء", style: UIAlertAction.Style.cancel) {
-                UIAlertAction in
-                
-            }
-            alertController.addAction(okAction)
-            alertController.addAction(cancelAction)
-            
-            self.present(alertController, animated: true, completion: nil)
-            
+            self.logOut()
             
             return
         }
@@ -67,21 +50,7 @@ class ResturantDetailsVC: UIViewController {
     }
     @objc func btnAddToFaveClicked(_ sender: UIButton) {
         guard let user = UserDefaultsAccess.sharedInstance.user, let id = user.id else {
-            let alertController = UIAlertController(title: "تسجيل الدخول", message: "يتوجب عليك تسجيل الدخول", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "موافق", style: UIAlertAction.Style.default) {
-                UIAlertAction in
-                UserDefaultsAccess.sharedInstance.skippedLogin  = false
-                let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-                nextVC.hidesBottomBarWhenPushed = true
-                self.navigationController?.pushViewController(nextVC, animated: true)
-            }
-            let cancelAction = UIAlertAction(title: "الغاء", style: UIAlertAction.Style.cancel) {
-                UIAlertAction in
-            }
-            alertController.addAction(okAction)
-            alertController.addAction(cancelAction)
-
-            self.present(alertController, animated: true, completion: nil)
+            self.logOut()
             return
         }
         
@@ -194,5 +163,26 @@ extension ResturantDetailsVC : UITableViewDelegate , UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+}
+
+
+extension UIViewController {
+    func logOut()  {
+        let alertController = UIAlertController(title: "تسجيل الدخول", message: "يتوجب عليك تسجيل الدخول", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "موافق", style: UIAlertAction.Style.default) {
+            UIAlertAction in
+            UserDefaultsAccess.sharedInstance.skippedLogin  = false
+            let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            nextVC.hidesBottomBarWhenPushed = true
+            nextVC.navigationController?.isNavigationBarHidden =  true
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "الغاء", style: UIAlertAction.Style.cancel) {
+            UIAlertAction in
+        }
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }

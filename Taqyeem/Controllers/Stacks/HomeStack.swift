@@ -42,7 +42,7 @@ class HomeStack: UIStackView {
     }
     @objc func goToFav(_: UITapGestureRecognizer) {
         if UserDefaultsAccess.sharedInstance.user == nil {
-            UIApplication.topViewController()!.showAlert(message: "يجب عليك تسجيل الدخول للمتابعة")
+            UIApplication.topViewController()!.logOut()
             return
         }
         let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "FavouritesVC") as! FavouritesVC

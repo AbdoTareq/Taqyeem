@@ -14,7 +14,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var txtPassword: SkyFloatingLabelTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        initNavigationBar()
+     
     }
     override func viewWillAppear(_ animated: Bool) {
          if UserDefaultsAccess.sharedInstance.skippedLogin || UserDefaultsAccess.sharedInstance.user != nil {
@@ -24,6 +24,8 @@ class LoginVC: UIViewController {
         let transition = UIWindow.Transition(style: .fade, duration: duration)
         UIApplication.shared.setRootViewController(vc, transition: transition)
         }
+        initNavigationBar()
+        
     }
     func login() {
         if txtPhone.text == "" {
@@ -51,7 +53,7 @@ class LoginVC: UIViewController {
         }
     }
     func initNavigationBar() {
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         //navigationItem.title = "مطاعمي المفضلة"
     }
     
