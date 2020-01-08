@@ -30,6 +30,7 @@ class ForgetPasswordPhone: UIViewController {
                 let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "ForgetPasswordCode") as! ForgetPasswordCode
                        nextVC.code =  user!.token
                           nextVC.userID =  user?.id ?? 0
+                nextVC.phoneNumber =  self.txtPhoneNumber.text!
                          UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
             }
             else {

@@ -13,10 +13,14 @@ class ForgetPasswordCode: UIViewController {
     var code :String = ""
     var userID : Int = 0
     @IBOutlet weak var lblConfirmationCode: SkyFloatingLabelTextField!
+    @IBOutlet weak var lblPhoneNumber: UILabel!
+    var phoneNumber :String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: false)
   navigationItem.setHidesBackButton(true, animated: false)
+        
+        lblPhoneNumber.text =  self.phoneNumber
     }
     
     

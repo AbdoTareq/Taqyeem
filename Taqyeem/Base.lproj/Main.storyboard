@@ -6925,6 +6925,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="lblConfirmationCode" destination="irf-bo-5ZU" id="Q2C-sH-Rs4"/>
+                        <outlet property="lblPhoneNumber" destination="kxr-Qi-eGZ" id="vZA-13-202"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thp-Ng-sdc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
