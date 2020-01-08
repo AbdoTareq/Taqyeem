@@ -55,6 +55,11 @@ class LoginVC: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
+    @IBAction func forgetPasswordBtn(_ sender: Any) {
+    let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "ForgetPasswordPhone") as! ForgetPasswordPhone
+          UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
+      
+    }
     @IBAction func btnSkip_Click(_ sender: UIButton) {
         UserDefaultsAccess.sharedInstance.skippedLogin = true
         let nextVC = storyboard?.instantiateViewController(withIdentifier: "MainTBC") as! MainTBC
