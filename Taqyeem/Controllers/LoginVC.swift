@@ -14,17 +14,16 @@ class LoginVC: UIViewController {
     @IBOutlet weak var txtPassword: SkyFloatingLabelTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        
     }
     override func viewWillAppear(_ animated: Bool) {
-         if UserDefaultsAccess.sharedInstance.skippedLogin || UserDefaultsAccess.sharedInstance.user != nil {
-        let story = UIStoryboard(name: "Main", bundle:nil)
-        let vc = story.instantiateViewController(withIdentifier: "MainTBC") as! MainTBC
-        let duration = TimeInterval(0.10)
-        let transition = UIWindow.Transition(style: .fade, duration: duration)
-        UIApplication.shared.setRootViewController(vc, transition: transition)
-        }
         initNavigationBar()
+//        let story = UIStoryboard(name: "Main", bundle:nil)
+//        let vc = story.instantiateViewController(withIdentifier: "MainTBC") as! MainTBC
+//        let duration = TimeInterval(0.10)
+//        let transition = UIWindow.Transition(style: .fade, duration: duration)
+//        UIApplication.shared.setRootViewController(vc, transition: transition)
+//        UserDefaultsAccess.sharedInstance.skippedLogin = UserDefaultsAccess.sharedInstance.user == nil
         
     }
     func login() {
@@ -54,7 +53,6 @@ class LoginVC: UIViewController {
     }
     func initNavigationBar() {
         navigationController?.setNavigationBarHidden(true, animated: false)
-        //navigationItem.title = "مطاعمي المفضلة"
     }
     
     @IBAction func btnSkip_Click(_ sender: UIButton) {

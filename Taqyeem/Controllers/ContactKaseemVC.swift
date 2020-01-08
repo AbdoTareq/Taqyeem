@@ -15,11 +15,13 @@ class ContactKaseemVC: UIViewController {
     @IBOutlet weak var vwPhone: UIView!
     @IBOutlet weak var lblEmail: UILabel!
     
-    @IBOutlet weak var lblPhone: UILabel!
+    @IBOutlet weak var constantTableHeight: NSLayoutConstraint!
+    @IBOutlet weak var tablePhones: UITableView!
     
     @IBOutlet weak var lblTwitter: UILabel!
     @IBOutlet weak var lblFacebook: UILabel!
     var contactUs: [ContactUsVM]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
@@ -50,11 +52,6 @@ class ContactKaseemVC: UIViewController {
                 lblFacebook.tag = i
                 let fbClicked = UITapGestureRecognizer(target: self, action: #selector(goTOFB))
                 lblFacebook.addGestureRecognizer(fbClicked)
-            } else if contact.type == 1 {
-                lblPhone.text = contact.value
-                lblPhone.tag = i
-                let phoneClicked = UITapGestureRecognizer(target: self, action: #selector(call))
-                lblPhone.addGestureRecognizer(phoneClicked)
             } else if contact.type == 2 {
                 lblEmail.text = contact.value
                 lblEmail.tag = i
@@ -62,6 +59,7 @@ class ContactKaseemVC: UIViewController {
                 lblEmail.addGestureRecognizer(mailClicked)
             }
         }
+        tablePhones.reloadData()
     }
     @objc func goTOFB(_ gesture: UITapGestureRecognizer) {
         guard let contacts = contactUs else { return }
@@ -100,5 +98,30 @@ class ContactKaseemVC: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationItem.title = "التواصل مع امانة القصيم"
         navigationItem.setHidesBackButton(true, animated: false)
+    }
+    override func viewWillLayoutSubviews() {
+        super.updateViewConstraints()
+        guard let contactUs = contactUs else { return }
+        let list = contactUs.filter{$0.type == 1}
+        if list.count > 0 {
+            self.constantTableHeight?.constant = self.tablePhones.contentSize.height
+        }
+    }
+}
+extension ContactKaseemVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let contactUs = contactUs else {return 0}
+        return contactUs.filter{$0.type == 1}.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tablePhones.dequeueReusableCell(withIdentifier: "ContactPhoneCell", for: indexPath) as! ContactPhoneCell
+        let phones = contactUs!.filter{$0.type == 1}
+        cell.lblPhone.text = phones[indexPath.row].value
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+         self.viewWillLayoutSubviews()
     }
 }

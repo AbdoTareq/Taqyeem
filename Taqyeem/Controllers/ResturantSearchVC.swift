@@ -84,35 +84,35 @@ class ResturantSearchVC: UIViewController {
     
     @objc func refreshResturants(_ notification:Notification) {
         if self.lastSelectedIndex == 1 {
-            self.getReturantsByMunic(municID: self.municID)
+            self.getReturantsByMunic(municID: self.municID, enableLoader: false)
         }
         if self.lastSelectedIndex == 2 {
-            self.getReturantsByDistrict(districtID: self.districtID)
+            self.getReturantsByDistrict(districtID: self.districtID, enableLoader: false)
         }
         if self.lastSelectedIndex == 3 {
-            self.getReturantsByStreet(StreetID: self.streetID)
+            self.getReturantsByStreet(StreetID: self.streetID, enableLoader: false)
             
         }
-        
-        
     }
-    
-    
-    func getReturantsByMunic(municID :Int)  {
+
+    func getReturantsByMunic(municID :Int, enableLoader: Bool = true)  {
         self.municID =  municID
         self.lblDistrict.text = "الحي"
         self.lblStreet.text = "الشارع"
         self.districtID = 0
         self.streetID = 0
-        self.startLoadingActivity()
+        if enableLoader {
+            self.startLoadingActivity()
+        }
         ResturantVM.getResturantsByMunic(MunicID: municID) { resturants , error in
-            self.stopLoadingActivity()
+            if enableLoader {
+                self.stopLoadingActivity()
+            }
             if error != nil {
                 self.showAlert(message: error!)
                 return
             }
             guard let resturants = resturants else {return}
-            self.resturants?.removeAll()
             self.resturants = resturants
             self.tableView.delegate =  self
             self.tableView.dataSource =  self
@@ -120,36 +120,45 @@ class ResturantSearchVC: UIViewController {
             
         }
     }
-    func getReturantsByDistrict(districtID :Int)  {
+
+    func getReturantsByDistrict(districtID: Int, enableLoader: Bool = true)  {
+        
         self.lblStreet.text = "الشارع"
         self.streetID = 0
         self.districtID =  districtID
-        self.startLoadingActivity()
+        if enableLoader {
+            self.startLoadingActivity()
+        }
         ResturantVM.getResturantsByDistrict(MunicID: self.municID, districtID: districtID) { resturants , error in
-            self.stopLoadingActivity()
+            if enableLoader {
+                self.stopLoadingActivity()
+            }
             if error != nil {
                 self.showAlert(message: error!)
                 return
             }
             guard let resturants = resturants else {return}
-            self.resturants?.removeAll()
             self.resturants = resturants
             self.tableView.delegate =  self
             self.tableView.dataSource =  self
             self.tableView.reloadData()
         }
     }
-    func getReturantsByStreet(StreetID :Int)  {
+
+    func getReturantsByStreet(StreetID: Int, enableLoader: Bool = true)  {
         self.streetID =  StreetID
-        self.startLoadingActivity()
+        if enableLoader {
+            self.startLoadingActivity()
+        }
         ResturantVM.getResturantsBystreet(MunicID: self.municID, districtID: self.districtID , streetID :self.streetID) { resturants , error in
-            self.stopLoadingActivity()
+            if enableLoader {
+                self.stopLoadingActivity()
+            }
             if error != nil {
                 self.showAlert(message: error!)
                 return
             }
             guard let resturants = resturants else {return}
-            self.resturants?.removeAll()
             self.resturants = resturants
             self.tableView.delegate =  self
             self.tableView.dataSource =  self

@@ -59,7 +59,7 @@ class InfoVC: UIViewController {
     func initNavigationBar() {
         UINavigationBar.appearance().backgroundColor = UIColor(hexString: "#CCA121")
         navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationItem.title = "معلومات عن الشركة الاستثمارية"
+        navigationItem.title = "الملاحظات والمقترحات"
         navigationItem.setHidesBackButton(true, animated: false)
     }
 

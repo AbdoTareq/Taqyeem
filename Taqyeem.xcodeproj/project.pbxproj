@@ -96,6 +96,7 @@
 		06800B51238D3DE000F4CF20 /* BulletainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06800B50238D3DE000F4CF20 /* BulletainVC.swift */; };
 		06800B53238D592900F4CF20 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06800B52238D592900F4CF20 /* AboutVC.swift */; };
 		0683B07023B417A400B525A9 /* ComplaintImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0683B06F23B417A400B525A9 /* ComplaintImage.swift */; };
+		06879F5623B62B5E00267037 /* ContactPhoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06879F5523B62B5E00267037 /* ContactPhoneCell.swift */; };
 		068F6B0F2392726E009CFFF2 /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068F6B0E2392726E009CFFF2 /* ContactVC.swift */; };
 		068F6B11239272DA009CFFF2 /* ContactKaseemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068F6B10239272DA009CFFF2 /* ContactKaseemVC.swift */; };
 		068F6B14239272F2009CFFF2 /* ContactManagementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068F6B13239272F2009CFFF2 /* ContactManagementVC.swift */; };
@@ -224,6 +225,7 @@
 		06800B50238D3DE000F4CF20 /* BulletainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletainVC.swift; sourceTree = "<group>"; };
 		06800B52238D592900F4CF20 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		0683B06F23B417A400B525A9 /* ComplaintImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintImage.swift; sourceTree = "<group>"; };
+		06879F5523B62B5E00267037 /* ContactPhoneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPhoneCell.swift; sourceTree = "<group>"; };
 		068F6B0E2392726E009CFFF2 /* ContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVC.swift; sourceTree = "<group>"; };
 		068F6B10239272DA009CFFF2 /* ContactKaseemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactKaseemVC.swift; sourceTree = "<group>"; };
 		068F6B13239272F2009CFFF2 /* ContactManagementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactManagementVC.swift; sourceTree = "<group>"; };
@@ -506,6 +508,7 @@
 				048DBCA523B00EA500641FC6 /* ReportType.swift */,
 				04C132B823B16A9600A5E550 /* RatingCell.swift */,
 				04C132BC23B170A800A5E550 /* RateCell.swift */,
+				06879F5523B62B5E00267037 /* ContactPhoneCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -739,6 +742,7 @@
 				0653BF752382C49600BDC506 /* ViewController.swift in Sources */,
 				0664EF39238EC84400E29C9D /* ContactStack.swift in Sources */,
 				04C4DDA823A6858200E3661E /* CommentVM.swift in Sources */,
+				06879F5623B62B5E00267037 /* ContactPhoneCell.swift in Sources */,
 				0653BFAB2383133600BDC506 /* CircleExt.swift in Sources */,
 				0664EF36238EC1A300E29C9D /* CreateReportSendCell.swift in Sources */,
 				06554F66238DD52B00935E21 /* NewsDetailsCell.swift in Sources */,
@@ -930,8 +934,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
-				DEVELOPMENT_TEAM = C62678PPRW;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_TEAM = U54GNAM74P;
 				INFOPLIST_FILE = Taqyeem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -950,8 +954,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
-				DEVELOPMENT_TEAM = C62678PPRW;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_TEAM = U54GNAM74P;
 				INFOPLIST_FILE = Taqyeem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

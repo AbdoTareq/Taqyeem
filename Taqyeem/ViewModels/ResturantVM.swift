@@ -39,16 +39,17 @@ struct ResturantVM {
                             completion(resturants.map { ResturantVM(resturant: $0) }, nil)
                         }
                     } else {
-                        completion(nil, "Unable to get data")
+                        completion(nil, "عفوا، لا يوجد بيانات")
                     }
                 } else {
-                    completion(nil, "Unable to get data")
+                    completion(nil, "عفوا، لا يوجد بيانات")
                 }
             } else {
-                completion(nil, "Unable to get data")
+                completion(nil, "عفوا، لا يوجد بيانات")
             }
         }
     }
+
     static func getResturantsByMunic(MunicID : Int , completion: @escaping (_ resturants: [ResturantVM]?, _ error: String?) -> Void) {
         let url = NetworkManager.getUrl(service: .storesByMunic)
         var request = URLRequest(url: URL(string: url)!)
@@ -65,16 +66,17 @@ struct ResturantVM {
                             completion(resturants.map { ResturantVM(resturant: $0) }, nil)
                         }
                     } else {
-                        completion(nil, "Unable to get data")
+                        completion(nil, "عفوا، لا يوجد بيانات")
                     }
                 } else {
-                    completion(nil, "Unable to get data")
+                    completion(nil, "عفوا، لا يوجد بيانات")
                 }
             } else {
-                completion(nil, "Unable to get data")
+                completion(nil, "عفوا، لا يوجد بيانات")
             }
         }
     }
+
     static func getResturantsByDistrict(MunicID : Int ,districtID :Int , completion: @escaping (_ resturants: [ResturantVM]?, _ error: String?) -> Void) {
         let url = NetworkManager.getUrl(service: .storesByMunic)
         var request = URLRequest(url: URL(string: url)!)
@@ -91,17 +93,17 @@ struct ResturantVM {
                             completion(resturants.map { ResturantVM(resturant: $0) }, nil)
                         }
                     } else {
-                        completion(nil, "Unable to get data")
+                        completion(nil, "عفوا، لا يوجد بيانات")
                     }
                 } else {
-                    completion(nil, "Unable to get data")
+                    completion(nil, "عفوا، لا يوجد بيانات")
                 }
             } else {
-                completion(nil, "Unable to get data")
+                completion(nil, "عفوا، لا يوجد بيانات")
             }
         }
     }
-    
+
     static func getResturantsBystreet(MunicID : Int ,districtID :Int ,streetID:Int , completion: @escaping (_ resturants: [ResturantVM]?, _ error: String?) -> Void) {
         let url = NetworkManager.getUrl(service: .storesByMunicStreet)
         var request = URLRequest(url: URL(string: url)!)
@@ -118,19 +120,17 @@ struct ResturantVM {
                             completion(resturants.map { ResturantVM(resturant: $0) }, nil)
                         }
                     } else {
-                        completion(nil, "Unable to get data")
+                        completion(nil, "عفوا، لا يوجد بيانات")
                     }
                 } else {
-                    completion(nil, "Unable to get data")
+                    completion(nil, "عفوا، لا يوجد بيانات")
                 }
             } else {
-                completion(nil, "Unable to get data")
+                completion(nil, "عفوا، لا يوجد بيانات")
             }
         }
     }
-    
-    
-    
+
     static func getFavourites(completion: @escaping (_ users: [ResturantVM]?, _ error: String?) -> Void) {
         guard let user = UserDefaultsAccess.sharedInstance.user, let id = user.id else {
             completion(nil, "You must login")
@@ -162,7 +162,7 @@ struct ResturantVM {
             }
         }
     }
-    
+
     static func addReturantToFav(resturantID : Int , completion: @escaping (_ success :Bool, _ error: String?) -> Void) {
         var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/favorit_stores/save")!)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -184,7 +184,7 @@ struct ResturantVM {
             }
         }
     }
-    
+
     static func removeReturantToFav(resturantID : Int , completion: @escaping (_ success :Bool, _ error: String?) -> Void) {
         var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/favorit_stores/delete/")!)
         request.httpMethod = HTTPMethod.delete.rawValue
@@ -207,5 +207,4 @@ struct ResturantVM {
             }
         }
     }
-    
 }
