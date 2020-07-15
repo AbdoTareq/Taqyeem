@@ -10,6 +10,7 @@ import UIKit
 import NotificationBannerSwift
 import MapKit
 import CoreLocation
+import DeckTransition
 class ResturantDetailsVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var resturantName = ""
@@ -107,8 +108,17 @@ class ResturantDetailsVC: UIViewController {
     }
     
     @objc func showDirectionClicked(_ sender: UIButton) {
-        let location = CLLocation(latitude: self.resturantVM.resturant.latitude ?? 0.0, longitude: self.resturantVM.resturant.longitude ?? 0.0)
-        self.openMapForLocation(location: location, zoom: 2, locationName: self.resturantVM.resturant.storeArabicName ?? "", title: self.resturantVM.resturant.storeArabicName ?? "", googleTitle: "Google Map", appleTitle: "Apple Map", cancelTitle: "cancel")
+        //        let location = CLLocation(latitude: self.resturantVM.resturant.latitude ?? 0.0, longitude: self.resturantVM.resturant.longitude ?? 0.0)
+        //        self.openMapForLocation(location: location, zoom: 2, locationName: self.resturantVM.resturant.storeArabicName ?? "", title: self.resturantVM.resturant.storeArabicName ?? "", googleTitle: "Google Map", appleTitle: "Apple Map", cancelTitle: "cancel")
+        
+        
+        let nextVC = storyboard?.instantiateViewController(withIdentifier: "MapVC") as! MapVC
+        let transitionDelegate = DeckTransitioningDelegate()
+        nextVC.transitioningDelegate = transitionDelegate
+        nextVC.modalPresentationStyle = .custom
+        present(nextVC, animated: true, completion: nil)
+        
+        
     }
     @objc func showResturantActivities(_ sender: UIButton) {
         let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ActivitiesVC") as! ActivitiesVC
@@ -173,10 +183,13 @@ extension UIViewController {
         let okAction = UIAlertAction(title: "موافق", style: UIAlertAction.Style.default) {
             UIAlertAction in
             UserDefaultsAccess.sharedInstance.skippedLogin  = false
-            let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-            nextVC.hidesBottomBarWhenPushed = true
-            nextVC.navigationController?.isNavigationBarHidden =  true
-            self.navigationController?.pushViewController(nextVC, animated: true)
+            UserDefaultsAccess.sharedInstance.user = nil
+            
+            if let vc = UIApplication.topViewController()?.tabBarController as? MainTBC {
+                vc.setUpLoginPageInTabBar()
+                vc.selectedIndex = 0
+            }
+            
         }
         let cancelAction = UIAlertAction(title: "الغاء", style: UIAlertAction.Style.cancel) {
             UIAlertAction in

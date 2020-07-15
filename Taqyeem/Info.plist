@@ -22,6 +22,8 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>لتغيير الصور </string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>للبحث عن مطعمك المفضل</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>لتغيير الصور </string>
 	<key>UIAppFonts</key>

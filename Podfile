@@ -15,4 +15,10 @@ target 'Taqyeem' do
   pod 'UIWindowTransition'
   pod 'NotificationBannerSwift'
    pod 'GrowingTextView'
+   pod 'GoogleMaps'
+   pod 'GooglePlaces'
+   pod 'DeckTransition'
+   pod 'ActionSheetPicker-3.0'
+
 end
+

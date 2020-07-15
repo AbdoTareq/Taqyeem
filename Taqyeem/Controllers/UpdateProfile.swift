@@ -151,9 +151,13 @@ class UpdateProfile: UIViewController {
     
     @IBAction func btnLogoUtClicked(_ sender: Any) {
         UserDefaultsAccess.sharedInstance.clearData()
-        let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-        nextVC.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        UserDefaultsAccess.sharedInstance.skippedLogin  = false
+        UserDefaultsAccess.sharedInstance.user = nil
+        
+        if let vc = UIApplication.topViewController()?.tabBarController as? MainTBC {
+            vc.setUpLoginPageInTabBar()
+            vc.selectedIndex = 3
+        }
     }
 }
 extension UpdateProfile: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

@@ -11,9 +11,10 @@ import Cosmos
 class RateCell: UITableViewCell {
     @IBOutlet weak var critriaName: UILabel!
     @IBOutlet weak var rateBtn: UIButton!
-    @IBOutlet weak var rateView: CosmosView!
     @IBOutlet weak var txtComment: UITextField!
     
+    @IBOutlet weak var lblRate: UILabel!
+    @IBOutlet weak var showRateViewBtn: UIButton!
     @IBOutlet weak var containerView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,7 +22,16 @@ class RateCell: UITableViewCell {
     }
     @IBAction func rateBtnCliked(_ sender: UIButton) {
         if let vc = UIApplication.topViewController() as? RateVc {
-            vc.rate(rateVal: self.rateView.rating, ratingCritriaId: sender.tag, comment: self.txtComment.text!)
+            vc.rate(rateVal: Double(self.lblRate.text!) ?? 0.0, ratingCritriaId: sender.tag, comment: self.txtComment.text!)
         }
     }
+
+    
+    @IBAction func showRateView(_ sender: UIButton) {
+        if let vc = UIApplication.topViewController() as? RateVc {
+            vc.showActionasheetPicker(currentCellIndex: sender.tag, sender: sender)
+        }
+    }
+}
+
 }

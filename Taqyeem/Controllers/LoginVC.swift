@@ -46,8 +46,10 @@ class LoginVC: UIViewController {
                 UserDefaultsAccess.sharedInstance.user = user?.user
                 UserDefaultsAccess.sharedInstance.skippedLogin = false
                 UserDefaultsAccess.sharedInstance.token = user?.token ?? ""
-                let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "MainTBC") as! MainTBC
-                self.navigationController?.pushViewController(nextVC, animated: true)
+              if let vc = self.tabBarController as? MainTBC {
+                vc.setUpLoginPageInTabBar()
+                vc.selectedIndex = 2
+                } 
             }
         }
     }
@@ -62,8 +64,10 @@ class LoginVC: UIViewController {
     }
     @IBAction func btnSkip_Click(_ sender: UIButton) {
         UserDefaultsAccess.sharedInstance.skippedLogin = true
-        let nextVC = storyboard?.instantiateViewController(withIdentifier: "MainTBC") as! MainTBC
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        if let vc = self.tabBarController as? MainTBC {
+            vc.setUpLoginPageInTabBar()
+            vc.selectedIndex = 2
+        }
     }
     
     @IBAction func btnRegister_Click(_ sender: Any) {

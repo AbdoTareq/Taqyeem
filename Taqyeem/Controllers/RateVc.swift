@@ -8,11 +8,14 @@
 
 import UIKit
 import NotificationBannerSwift
+import ActionSheetPicker_3_0
 class RateVc: UIViewController {
     var rating = [RatingCriteriaVM]()
     @IBOutlet weak var barButonItemTitle: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     var resturant : Resturant =  Resturant()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
@@ -22,9 +25,12 @@ class RateVc: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated:true)
         barButonItemTitle.tintColor =  UIColor.white
     }
+    
+    
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
     }
@@ -56,6 +62,29 @@ class RateVc: UIViewController {
         }
     }
     
+    func showActionasheetPicker(currentCellIndex :Int , sender :UIButton) {
+        ActionSheetStringPicker.show(withTitle: "اختر مستوي التقييم",
+        rows: ["1", "2", "3" , "4" , "5"],
+        initialSelection: 1,
+        doneBlock: { picker, value, index in
+        print("picker = \(String(describing: picker))")
+        print("value = \(value)")
+        print("index = \(String(describing: index))")
+        self.setSelectedRate(index: currentCellIndex, Value:"\(index!)")
+        return
+        },
+        cancel: { picker in
+        return
+        },
+        origin: sender)
+    }
+    
+    func setSelectedRate(index :Int , Value :String)  {
+        if let cell  =  self.tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? RateCell {
+            cell.lblRate.text = Value
+        }
+    }
+    
 }
 extension RateVc: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -66,9 +95,13 @@ extension RateVc: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RateCell", for: indexPath) as! RateCell
         cell.critriaName.text =  self.rating[indexPath.row].description
         cell.rateBtn.tag = self.rating[indexPath.row].id
+        cell.showRateViewBtn.tag = indexPath.row
         return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+    
+    
 }
