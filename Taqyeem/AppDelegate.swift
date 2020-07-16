@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         UINavigationBar.appearance().barTintColor = UIColor(hexString: "#CCA121")
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-        GMSServices.provideAPIKey("AIzaSyDr9wfQLH4VDs7me-bZ3SS1q1KRMqffFbA")
+        GMSServices.provideAPIKey("AIzaSyBhfdHUoQrmn85ARcBxZPaO9dNxssz9wSo")
         return true
     }
     
