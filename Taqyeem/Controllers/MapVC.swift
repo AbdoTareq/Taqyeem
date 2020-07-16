@@ -13,69 +13,149 @@ import GoogleMaps
 class MapVC: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
     let locationManager = CLLocationManager()
+    var resturantLocation :  CLLocation!
+    var myCurrentLocation : CLLocation = CLLocation()
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         locationManager.delegate = self
-
-        if CLLocationManager.locationServicesEnabled() {
-         
-          locationManager.requestLocation()
-
-  
-          mapView.isMyLocationEnabled = true
-          mapView.settings.myLocationButton = true
-        } else {
-          locationManager.requestWhenInUseAuthorization()
-        }
+        
+//        if CLLocationManager.locationServicesEnabled() {
+//
+//            locationManager.requestLocation()
+//
+//
+//            mapView.isMyLocationEnabled = true
+//            mapView.settings.myLocationButton = true
+//        } else {
+//            locationManager.requestWhenInUseAuthorization()
+//        }
+        setupLocation()
         mapView.delegate = self
+        self.addMarker(location: resturantLocation)
     }
     
-
-  
-
+    
+    func setupLocation()  {
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
 }
 extension MapVC: CLLocationManagerDelegate  , GMSMapViewDelegate{
- 
-  func locationManager(
-    _ manager: CLLocationManager,
-    didChangeAuthorization status: CLAuthorizationStatus
-  ) {
-  
-    guard status == .authorizedWhenInUse else {
-      return
+    
+    func locationManager(
+        _ manager: CLLocationManager,
+        didChangeAuthorization status: CLAuthorizationStatus
+    ) {
+        
+        guard status == .authorizedWhenInUse else {
+            return
+        }
+        
+        locationManager.requestLocation()
+        
+        
+//        mapView.isMyLocationEnabled = true
+//        mapView.settings.myLocationButton = true
     }
-
-    locationManager.requestLocation()
-
- 
-    mapView.isMyLocationEnabled = true
-    mapView.settings.myLocationButton = true
-  }
-
- 
-  func locationManager(
-    _ manager: CLLocationManager,
-    didUpdateLocations locations: [CLLocation]) {
-    guard let location = locations.first else {
-      return
+    
+    func addMarker(location :CLLocation)   {
+         let marker = GMSMarker()
+               marker.position = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.latitude)
+               marker.icon = UIImage(named: "marker")
+               marker.map = mapView
     }
-    mapView.camera = GMSCameraPosition(
-      target: location.coordinate,
-      zoom: 6,
-      bearing: 0,
-      viewingAngle: 0)
-    let marker = GMSMarker()
-    marker.position = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.latitude)
-    marker.icon = UIImage(named: "location")
-    marker.map = mapView
-  }
+    func startDrawRout()  {
+        var myLocation  =  CLLocationCoordinate2D(latitude: self.myCurrentLocation.coordinate.latitude, longitude:  self.myCurrentLocation.coordinate.latitude)
+         var resLocation  =  CLLocationCoordinate2D(latitude: self.resturantLocation.coordinate.latitude, longitude:  self.resturantLocation.coordinate.latitude)
+        
+        self.drawLine(from: myLocation, to: resLocation)
+    }
+    
+    
+    func drawLine(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) {
+        let origin = "\(from.latitude),\(from.longitude)"
+        let destination = "\(to.latitude),\(to.longitude)"
+        
+     
+              let urlString = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=AIzaSyDr9wfQLH4VDs7me-bZ3SS1q1KRMqffFbA"
+              
+              let url = URL(string: urlString)
+              // (self.view as! GMSMapView).clear()
+              URLSession.shared.dataTask(with: url!, completionHandler: {
+                  (data, response, error) in
+                  if(error != nil){
+                      print("error")
+                  }else{
+                      do{
+                          let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String : AnyObject]
+                          let routes = json["routes"] as! NSArray
+                          
+                          OperationQueue.main.addOperation({
+                              if routes.count == 0 {
+                                  return
+                              }
+                              let routeOverviewPolyline: NSDictionary = (routes[0] as! NSDictionary).value(forKey: "overview_polyline") as! NSDictionary
+                              let points = routeOverviewPolyline.object(forKey: "points")
+                              let path = GMSPath.init(fromEncodedPath: points! as! String)
+                              let polyline = GMSPolyline.init(path: path)
+                              polyline.strokeWidth = 3
+                            polyline.strokeColor = UIColor.red
+                              
+                              let bounds = GMSCoordinateBounds(path: path!)
+                              (self.view as! GMSMapView).animate(with: GMSCameraUpdate.fit(bounds, withPadding: 30.0))
+                              //self.updateZoom()
+                              polyline.map = (self.view as! GMSMapView)
+                              //                        for route in routes
+                              //                        {
+                              //
+                              //
+                              //                        }
+                              self.updateZoom()
+                          })
+                      }catch let error as NSError{
+                          print("error:\(error)")
+                      }
+                  }
+              }).resume()
+    }
+    func drawPath(from polyStr: String){
+        let path = GMSPath(fromEncodedPath: polyStr)
+        let polyline = GMSPolyline(path: path)
+        polyline.strokeWidth = 3.0
+        polyline.strokeColor = UIColor.red
+        
+        polyline.map = mapView // Google MapView
+    }
+    
+    func updateZoom() {
+          (self.view as! GMSMapView).animate(toZoom: 10)
+    }
+    
+    func locationManager(
+        _ manager: CLLocationManager,
+        didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else {
+            return
+        }
+        self.myCurrentLocation = location
+        let camera = GMSCameraPosition.camera(withLatitude: (location.coordinate.latitude), longitude: (location.coordinate.longitude), zoom: 17.0)
 
-
-  func locationManager(
-    _ manager: CLLocationManager,
-    didFailWithError error: Error
-  ) {
-    print(error)
-  }
+        self.mapView?.animate(to: camera)
+        self.addMarker(location: location)
+       self.locationManager.stopUpdatingLocation()
+        self.startDrawRout()
+    }
+    
+    
+    func locationManager(
+        _ manager: CLLocationManager,
+        didFailWithError error: Error
+    ) {
+        print(error)
+    }
 }

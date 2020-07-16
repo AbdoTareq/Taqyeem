@@ -58,9 +58,14 @@ class MainTBC: UITabBarController {
             if let _ = self.viewControllers?[0]  as? LoginVC {}
             else {
                 self.viewControllers?.insert(loginVC, at: 0)
+                tabBar.items?[0].selectedImage = UIImage(named: "logoutSelected")?.withRenderingMode(.alwaysOriginal)
+                tabBar.items?[0].image = UIImage(named: "logoutNotSelected")?.withRenderingMode(.alwaysOriginal)
+                tabBar.items?[0].title = ""//localize("Search") // Profile
+                
             }
             
             self.selectedIndex =  3
+            
         }
         else {
             if let _  = self.viewControllers?[0] as? LoginVC {

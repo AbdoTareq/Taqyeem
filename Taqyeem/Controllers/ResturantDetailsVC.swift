@@ -108,7 +108,7 @@ class ResturantDetailsVC: UIViewController {
     }
     
     @objc func showDirectionClicked(_ sender: UIButton) {
-        //        let location = CLLocation(latitude: self.resturantVM.resturant.latitude ?? 0.0, longitude: self.resturantVM.resturant.longitude ?? 0.0)
+           let location = CLLocation(latitude: self.resturantVM.resturant.latitude ?? 0.0, longitude: self.resturantVM.resturant.longitude ?? 0.0)
         //        self.openMapForLocation(location: location, zoom: 2, locationName: self.resturantVM.resturant.storeArabicName ?? "", title: self.resturantVM.resturant.storeArabicName ?? "", googleTitle: "Google Map", appleTitle: "Apple Map", cancelTitle: "cancel")
         
         
@@ -116,6 +116,7 @@ class ResturantDetailsVC: UIViewController {
         let transitionDelegate = DeckTransitioningDelegate()
         nextVC.transitioningDelegate = transitionDelegate
         nextVC.modalPresentationStyle = .custom
+        nextVC.resturantLocation = location
         present(nextVC, animated: true, completion: nil)
         
         
