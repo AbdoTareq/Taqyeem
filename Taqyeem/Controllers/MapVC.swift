@@ -32,7 +32,7 @@ class MapVC: UIViewController {
 //        }
         setupLocation()
         mapView.delegate = self
-        self.addMarker(location: resturantLocation)
+        self.addMarker(location: resturantLocation, markerName: "marker")
     }
     
     
@@ -63,15 +63,15 @@ extension MapVC: CLLocationManagerDelegate  , GMSMapViewDelegate{
 //        mapView.settings.myLocationButton = true
     }
     
-    func addMarker(location :CLLocation)   {
+    func addMarker(location :CLLocation , markerName :String)   {
          let marker = GMSMarker()
-               marker.position = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.latitude)
-               marker.icon = UIImage(named: "marker")
+               marker.position = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+               marker.icon = UIImage(named: markerName)
                marker.map = mapView
     }
     func startDrawRout()  {
-        var myLocation  =  CLLocationCoordinate2D(latitude: self.myCurrentLocation.coordinate.latitude, longitude:  self.myCurrentLocation.coordinate.latitude)
-         var resLocation  =  CLLocationCoordinate2D(latitude: self.resturantLocation.coordinate.latitude, longitude:  self.resturantLocation.coordinate.latitude)
+        var myLocation  =  CLLocationCoordinate2D(latitude: self.myCurrentLocation.coordinate.latitude, longitude:  self.myCurrentLocation.coordinate.longitude)
+         var resLocation  =  CLLocationCoordinate2D(latitude: self.resturantLocation.coordinate.latitude, longitude:  self.resturantLocation.coordinate.longitude)
         
         self.drawLine(from: myLocation, to: resLocation)
     }
@@ -81,7 +81,8 @@ extension MapVC: CLLocationManagerDelegate  , GMSMapViewDelegate{
         let origin = "\(from.latitude),\(from.longitude)"
         let destination = "\(to.latitude),\(to.longitude)"
         
-     
+        //"30.083520,31.202073"
+        
               let urlString = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=AIzaSyBhfdHUoQrmn85ARcBxZPaO9dNxssz9wSo"
               
               let url = URL(string: urlString)
@@ -107,14 +108,9 @@ extension MapVC: CLLocationManagerDelegate  , GMSMapViewDelegate{
                             polyline.strokeColor = UIColor.red
                               
                               let bounds = GMSCoordinateBounds(path: path!)
-                              (self.view as! GMSMapView).animate(with: GMSCameraUpdate.fit(bounds, withPadding: 30.0))
-                              //self.updateZoom()
-                              polyline.map = (self.view as! GMSMapView)
-                              //                        for route in routes
-                              //                        {
-                              //
-                              //
-                              //                        }
+                            (self.mapView!).animate(with: GMSCameraUpdate.fit(bounds, withPadding: 30.0))
+                            polyline.map = (self.mapView)
+                     
                               self.updateZoom()
                           })
                       }catch let error as NSError{
@@ -123,17 +119,9 @@ extension MapVC: CLLocationManagerDelegate  , GMSMapViewDelegate{
                   }
               }).resume()
     }
-    func drawPath(from polyStr: String){
-        let path = GMSPath(fromEncodedPath: polyStr)
-        let polyline = GMSPolyline(path: path)
-        polyline.strokeWidth = 3.0
-        polyline.strokeColor = UIColor.red
-        
-        polyline.map = mapView // Google MapView
-    }
-    
+
     func updateZoom() {
-          (self.view as! GMSMapView).animate(toZoom: 10)
+          (self.mapView).animate(toZoom: 10)
     }
     
     func locationManager(
@@ -146,7 +134,7 @@ extension MapVC: CLLocationManagerDelegate  , GMSMapViewDelegate{
         let camera = GMSCameraPosition.camera(withLatitude: (location.coordinate.latitude), longitude: (location.coordinate.longitude), zoom: 17.0)
 
         self.mapView?.animate(to: camera)
-        self.addMarker(location: location)
+        self.addMarker(location: location, markerName: "location")
        self.locationManager.stopUpdatingLocation()
         self.startDrawRout()
     }
