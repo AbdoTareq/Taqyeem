@@ -21,9 +21,9 @@ struct Resturant: Codable {
     var foodCategory: Int?
     var streetName: String?
     //var ratingCriteriaId": null,
-    var ratingCriteriaDescription: String?
+    //var ratingCriteriaDescription: String?
     var rating:Double?
-    var ratingValue:Double?
+   // var ratingValue:Double?
     var activityCategory: String?
     var storeNameBanner: String?
     var englishNameBanner: String?
@@ -35,5 +35,5 @@ struct Resturant: Codable {
     var storeWebsite: String?
     //var utmX": null,
     //var utmY": null,
-    var storeRatingDetails: String?
+    //var storeRatingDetails: String?
 }

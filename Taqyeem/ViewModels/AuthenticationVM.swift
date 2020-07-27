@@ -34,13 +34,21 @@ struct AuthenricationVM {
     var mobile: String {
        return user.mobile ?? ""
     }
-    static func register(user: User, completion: @escaping (_ success: Bool, _ error: String?) -> Void) {
+    static func register(user: User, storeID :Int? =  0 , completion: @escaping (_ success: Bool, _ error: String?) -> Void) {
         
         
         var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/user/save")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let paramString = "{\"firstName\" : \"\(user.firstName ?? "")\", \"lastName\" : \"\(user.lastName ?? "")\", \"nickName\" : \"\(user.nickName ?? "")\", \"email\" : \"\(user.email ?? "")\", \"isBlackListed\" : \"\("0")\", \"isDeleted\" : \"\(0)\", \"mobile\" : \"\(user.mobile ?? "")\", \"password\" : \"\(user.password ?? "")\", \"isAdmin\" : \"\(0)\"}"
+        var  paramString = ""
+        
+        if storeID != 0 {
+           paramString = "{\"firstName\" : \"\(user.firstName ?? "")\", \"lastName\" : \"\(user.lastName ?? "")\", \"nickName\" : \"\(user.nickName ?? "")\", \"email\" : \"\(user.email ?? "")\", \"isBlackListed\" : \"\("0")\", \"isDeleted\" : \"\(0)\", \"mobile\" : \"\(user.mobile ?? "")\", \"password\" : \"\(user.password ?? "")\", \"isAdmin\" : \"\(0)\",\"storeId\" : \"\(storeID!)\"}"
+        }
+        else {
+         paramString = "{\"firstName\" : \"\(user.firstName ?? "")\", \"lastName\" : \"\(user.lastName ?? "")\", \"nickName\" : \"\(user.nickName ?? "")\", \"email\" : \"\(user.email ?? "")\", \"isBlackListed\" : \"\("0")\", \"isDeleted\" : \"\(0)\", \"mobile\" : \"\(user.mobile ?? "")\", \"password\" : \"\(user.password ?? "")\", \"isAdmin\" : \"\(0)\"}"
+        }
+         
         request.httpBody = paramString.data(using: .utf8)
   
         Alamofire.request(request).responseJSON { (response) in
@@ -48,7 +56,11 @@ struct AuthenricationVM {
                 if statusCode == 201 {
                     completion(true, nil)
                 } else {
-                    completion(false, "\(statusCode) - Unable to register")
+                    
+                     if let res = response.result.value as? NSDictionary {
+                        completion(false, "\(res["errorMessage"] as! String)")
+                    }
+                    
                 }
             }
         }
@@ -57,7 +69,7 @@ struct AuthenricationVM {
         var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/user/authenticate")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let paramString = "{\"mobile\" : \"\(mobile)\", \"token\" : \"\(password)\"}"
+        let paramString = "{\"mobile\" : \"\(mobile)\", \"password\" : \"\(password)\"}"
         request.httpBody = paramString.data(using: .utf8)
         Alamofire.request(request).responseJSON { (response) in
             print(response)
@@ -84,6 +96,7 @@ struct AuthenricationVM {
           var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/user/save")!)
           request.httpMethod = HTTPMethod.post.rawValue
           request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
         let paramString = "{\"image\" : \"\(user.image ?? "")\",\"firstName\" : \"\(user.firstName ?? "")\", \"lastName\" : \"\(user.lastName ?? "")\", \"nickName\" : \"\(user.nickName ?? "")\", \"email\" : \"\(user.email ?? "")\", \"isBlackListed\" : \"\("0")\", \"isDeleted\" : \"\(0)\", \"mobile\" : \"\(user.mobile ?? "")\", \"password\" : \"\(user.password ?? "")\", \"isAdmin\" : \"\(0)\" ,  \"id\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\"}"
           request.httpBody = paramString.data(using: .utf8)
     

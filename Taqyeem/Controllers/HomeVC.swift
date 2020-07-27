@@ -14,6 +14,7 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var stackMain: HomeStack!
     
+    @IBOutlet weak var loginView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         stackMain.initGestures()
@@ -22,9 +23,27 @@ class HomeVC: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
         initNavigationBar()
+    if UserDefaultsAccess.sharedInstance.user != nil {
+        loginView.isHidden = true
+    }
+    else {
+            loginView.isHidden = false
+    }
+    
     }
     func initNavigationBar() {
         navigationController?.setNavigationBarHidden(true, animated: true)
         navigationItem.setHidesBackButton(true, animated: false)
+    }
+    
+    
+    
+    @IBAction func loginBtnClicked(_ sender: Any) {
+        
+                  UserDefaultsAccess.sharedInstance.skippedLogin  = false
+                  let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+                  nextVC.hidesBottomBarWhenPushed = true
+                  //nextVC.navigationController?.isNavigationBarHidden =  true
+                  self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }

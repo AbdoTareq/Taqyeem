@@ -43,8 +43,19 @@ class MapVC: UIViewController {
             locationManager.startUpdatingLocation()
         }
     }
+    @IBAction func startDirectionBtnClicked(_ sender: Any) {
+        
+        if (UIApplication.shared.canOpenURL(NSURL(string:"comgooglemaps://")! as URL)) {
+            UIApplication.shared.openURL(NSURL(string:
+                "comgooglemaps://?saddr=&daddr=\(resturantLocation.coordinate.latitude),\(resturantLocation.coordinate.longitude)&directionsmode=driving")! as URL)
+
+            } else {
+                NSLog("Can't use comgooglemaps://");
+            }
+        }
+    }
     
-}
+
 extension MapVC: CLLocationManagerDelegate  , GMSMapViewDelegate{
     
     func locationManager(
@@ -69,6 +80,7 @@ extension MapVC: CLLocationManagerDelegate  , GMSMapViewDelegate{
                marker.icon = UIImage(named: markerName)
                marker.map = mapView
     }
+    
     func startDrawRout()  {
         var myLocation  =  CLLocationCoordinate2D(latitude: self.myCurrentLocation.coordinate.latitude, longitude:  self.myCurrentLocation.coordinate.longitude)
          var resLocation  =  CLLocationCoordinate2D(latitude: self.resturantLocation.coordinate.latitude, longitude:  self.resturantLocation.coordinate.longitude)
@@ -80,8 +92,6 @@ extension MapVC: CLLocationManagerDelegate  , GMSMapViewDelegate{
     func drawLine(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) {
         let origin = "\(from.latitude),\(from.longitude)"
         let destination = "\(to.latitude),\(to.longitude)"
-        
-        //"30.083520,31.202073"
         
               let urlString = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=AIzaSyBhfdHUoQrmn85ARcBxZPaO9dNxssz9wSo"
               
@@ -104,8 +114,8 @@ extension MapVC: CLLocationManagerDelegate  , GMSMapViewDelegate{
                               let points = routeOverviewPolyline.object(forKey: "points")
                               let path = GMSPath.init(fromEncodedPath: points! as! String)
                               let polyline = GMSPolyline.init(path: path)
-                              polyline.strokeWidth = 3
-                            polyline.strokeColor = UIColor.red
+                            polyline.strokeWidth = 5.0
+                            //polyline.strokeColor = UIColor.red
                               
                               let bounds = GMSCoordinateBounds(path: path!)
                             (self.mapView!).animate(with: GMSCameraUpdate.fit(bounds, withPadding: 30.0))
@@ -121,7 +131,7 @@ extension MapVC: CLLocationManagerDelegate  , GMSMapViewDelegate{
     }
 
     func updateZoom() {
-          (self.mapView).animate(toZoom: 10)
+         // (self.mapView).animate(toZoom: 10)
     }
     
     func locationManager(
@@ -134,7 +144,7 @@ extension MapVC: CLLocationManagerDelegate  , GMSMapViewDelegate{
         let camera = GMSCameraPosition.camera(withLatitude: (location.coordinate.latitude), longitude: (location.coordinate.longitude), zoom: 17.0)
 
         self.mapView?.animate(to: camera)
-        self.addMarker(location: location, markerName: "location")
+        self.addMarker(location: location, markerName: "loc")
        self.locationManager.stopUpdatingLocation()
         self.startDrawRout()
     }

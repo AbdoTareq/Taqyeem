@@ -14,6 +14,6 @@ struct Report: Codable {
     var storename: String?
     var mobile: Int?
     var mobileuser : User?
-    var complaindate: String?
+    var creationDate: String?
     var complainimages: [ComplainImageModel]?
 }

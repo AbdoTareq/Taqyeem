@@ -20,6 +20,7 @@ class ResturantSearchVC: UIViewController {
     @IBOutlet weak var lblStreet: UILabel!
     @IBOutlet weak var lblDistrict: UILabel!
     @IBOutlet weak var lblMunic: UILabel!
+    var isFromRegister :Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -82,6 +83,11 @@ class ResturantSearchVC: UIViewController {
         }
     }
     
+    
+    
+    @IBAction func backBtnClicked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     @objc func refreshResturants(_ notification:Notification) {
         if self.lastSelectedIndex == 1 {
             self.getReturantsByMunic(municID: self.municID, enableLoader: false)
@@ -190,10 +196,19 @@ extension ResturantSearchVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let nextVC = storyboard?.instantiateViewController(withIdentifier: "ResturantDetailsVC") as! ResturantDetailsVC
-        nextVC.resturantName = "مطعم المطار"
-        nextVC.resturantVM =  self.resturants![indexPath.row]
-        UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
+        if !isFromRegister{
+            let nextVC = storyboard?.instantiateViewController(withIdentifier: "ResturantDetailsVC") as! ResturantDetailsVC
+                   nextVC.resturantName = "مطعم المطار"
+                   nextVC.resturantVM =  self.resturants![indexPath.row]
+                   UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
+        }
+        else {
+            self.navigationController?.popViewController(animated: true, completion: {
+                if let vc =  UIApplication.topViewController() as? LoginVC {
+                    vc.goToRegistration(storeID: self.resturants![indexPath.row].id)
+                }
+            })
+        }
     }
 }
 extension ResturantSearchVC: UITextFieldDelegate {

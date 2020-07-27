@@ -26,6 +26,7 @@ class UpdateProfile: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.setHidesBackButton(true, animated: false)
+        self.navigationItem.leftBarButtonItem = nil
         self.tabBarController?.tabBar.isHidden =  true
         bindDataToUi()
         imagePicker.delegate = self
@@ -155,8 +156,8 @@ class UpdateProfile: UIViewController {
         UserDefaultsAccess.sharedInstance.user = nil
         
         if let vc = UIApplication.topViewController()?.tabBarController as? MainTBC {
-            vc.setUpLoginPageInTabBar()
-            vc.selectedIndex = 3
+           // vc.setUpLoginPageInTabBar()
+            vc.selectedIndex = 2
         }
     }
 }

@@ -55,9 +55,8 @@ class NetworkManager {
         return [
             "Content-Type": "application/json",
                 "Accept": "application/json",
-                "Authorization": "Bearer \(UserDefaultsAccess.sharedInstance.token)",
-                //"Content-language": L102Language.currentAppleLanguage().contains("ar") ? "ar" : "en",
-                //"current-version": appVersion
+                "Authorization": "Bearer \(UserDefaultsAccess.sharedInstance.token)"
+   
         ]
     }
 

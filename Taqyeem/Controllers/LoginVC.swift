@@ -18,12 +18,7 @@ class LoginVC: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         initNavigationBar()
-//        let story = UIStoryboard(name: "Main", bundle:nil)
-//        let vc = story.instantiateViewController(withIdentifier: "MainTBC") as! MainTBC
-//        let duration = TimeInterval(0.10)
-//        let transition = UIWindow.Transition(style: .fade, duration: duration)
-//        UIApplication.shared.setRootViewController(vc, transition: transition)
-//        UserDefaultsAccess.sharedInstance.skippedLogin = UserDefaultsAccess.sharedInstance.user == nil
+
         
     }
     func login() {
@@ -46,10 +41,7 @@ class LoginVC: UIViewController {
                 UserDefaultsAccess.sharedInstance.user = user?.user
                 UserDefaultsAccess.sharedInstance.skippedLogin = false
                 UserDefaultsAccess.sharedInstance.token = user?.token ?? ""
-              if let vc = self.tabBarController as? MainTBC {
-                vc.setUpLoginPageInTabBar()
-                vc.selectedIndex = 2
-                } 
+                self.navigationController?.popViewController(animated: false)
             }
         }
     }
@@ -64,10 +56,11 @@ class LoginVC: UIViewController {
     }
     @IBAction func btnSkip_Click(_ sender: UIButton) {
         UserDefaultsAccess.sharedInstance.skippedLogin = true
-        if let vc = self.tabBarController as? MainTBC {
-            vc.setUpLoginPageInTabBar()
-            vc.selectedIndex = 2
-        }
+//        if let vc = self.tabBarController as? MainTBC {
+//            //vc.setUpLoginPageInTabBar()
+//            vc.selectedIndex = 2
+//        }
+        self.navigationController?.popViewController(animated: false)
     }
     
     @IBAction func btnRegister_Click(_ sender: Any) {
@@ -78,6 +71,23 @@ class LoginVC: UIViewController {
     @IBAction func btnLogin_Click(_ sender: UIButton) {
         login()
     }
+    
+    
+    @IBAction func registerAsOwnerBtnClicked(_ sender: Any) {
+       
+        let nextVC = storyboard?.instantiateViewController(withIdentifier: "ResturantSearchVC") as! ResturantSearchVC
+        nextVC.isFromRegister =  true
+      self.navigationController?.pushViewController(nextVC, animated: true)
+        
+    }
+    
+    func goToRegistration(storeID :Int)  {
+        let nextVC = storyboard?.instantiateViewController(withIdentifier: "RegisterationVC") as! RegisterationVC
+        nextVC.storeId  = storeID
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    
 }
 extension SkyFloatingLabelTextField {
     open override func awakeFromNib() {

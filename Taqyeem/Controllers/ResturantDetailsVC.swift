@@ -28,7 +28,7 @@ class ResturantDetailsVC: UIViewController {
     func initNavigationBar() {
         UINavigationBar.appearance().backgroundColor = UIColor(hexString: "#CCA121")
         navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationItem.title = resturantVM.resturant.storeNameBanner ??  resturantVM.resturant.storeArabicName ?? ""
+        navigationItem.title = resturantVM.resturant.storeArabicName ??  resturantVM.resturant.storeNameBanner ?? ""
         navigationItem.setHidesBackButton(true, animated: false)
     }
     
@@ -115,7 +115,7 @@ class ResturantDetailsVC: UIViewController {
         let nextVC = storyboard?.instantiateViewController(withIdentifier: "MapVC") as! MapVC
         let transitionDelegate = DeckTransitioningDelegate()
         nextVC.transitioningDelegate = transitionDelegate
-        nextVC.modalPresentationStyle = .custom
+        nextVC.modalPresentationStyle = .overFullScreen
         nextVC.resturantLocation = location
         present(nextVC, animated: true, completion: nil)
         
@@ -138,7 +138,7 @@ extension ResturantDetailsVC : UITableViewDelegate , UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: "ResturantGeneralInfo", for: indexPath) as! ResturantGeneralInfo
             cell.lblresturantDisc.text =  (self.resturantVM.resturant.amanatActivity ?? "" + " - " + (self.resturantVM.resturant.surveyActivity ?? ""))
             
-            cell.vwRating.rating =  Double(self.resturantVM.resturant.rating ?? self.resturantVM.resturant.ratingValue ?? 0 )
+            cell.vwRating.rating =  Double(self.resturantVM.resturant.rating ?? self.resturantVM.resturant.rating ?? 0 )
             cell.selectionStyle = .none
             return cell
         }
@@ -184,13 +184,10 @@ extension UIViewController {
         let okAction = UIAlertAction(title: "موافق", style: UIAlertAction.Style.default) {
             UIAlertAction in
             UserDefaultsAccess.sharedInstance.skippedLogin  = false
-            UserDefaultsAccess.sharedInstance.user = nil
-            
-            if let vc = UIApplication.topViewController()?.tabBarController as? MainTBC {
-                vc.setUpLoginPageInTabBar()
-                vc.selectedIndex = 0
-            }
-            
+            let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            nextVC.hidesBottomBarWhenPushed = true
+            nextVC.navigationController?.isNavigationBarHidden =  true
+            self.navigationController?.pushViewController(nextVC, animated: true)
         }
         let cancelAction = UIAlertAction(title: "الغاء", style: UIAlertAction.Style.cancel) {
             UIAlertAction in

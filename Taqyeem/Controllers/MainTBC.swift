@@ -18,7 +18,7 @@ class MainTBC: UITabBarController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        setUpLoginPageInTabBar()
+       // setUpLoginPageInTabBar()
     }
     func setTabbarImages() {
         guard let vcs = viewControllers else { return }

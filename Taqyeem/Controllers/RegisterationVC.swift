@@ -17,6 +17,7 @@ class RegisterationVC: UIViewController {
     @IBOutlet weak var txtMail: SkyFloatingLabelTextField!
     @IBOutlet weak var txtPassword: SkyFloatingLabelTextField!
     @IBOutlet weak var txtConfirmPassword: SkyFloatingLabelTextField!
+    var storeId :Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
@@ -65,7 +66,7 @@ class RegisterationVC: UIViewController {
         }
         let user = User(id: nil, firstName: txtFirstName.text!, lastName: txtLastName.text!, nickName: txtFamilyName.text, email: txtMail.text!, image: nil, token: nil, mobile: txtPhone.text!, password: txtPassword.text)
         self.startLoadingActivity()
-        AuthenricationVM.register(user: user) {success, error in
+        AuthenricationVM.register(user: user , storeID: self.storeId) {success, error in
             self.stopLoadingActivity()
             if !success {
                 if error != nil {

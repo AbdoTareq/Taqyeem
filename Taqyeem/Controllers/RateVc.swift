@@ -21,9 +21,11 @@ class RateVc: UIViewController {
         loadData()
         self.tabBarController?.hidesBottomBarWhenPushed =  true
         self.tabBarController?.tabBar.isHidden = true
-        barButonItemTitle.title = "تقييم مطعم  " + (resturant.storeArabicName ?? resturant.storeNameBanner ?? "" ) 
-        self.navigationItem.setHidesBackButton(true, animated:true)
+        barButonItemTitle.title = "تقييم مطعم  " + (resturant.storeArabicName ?? resturant.storeNameBanner ?? "" )
+        
         barButonItemTitle.tintColor =  UIColor.white
+        self.navigationItem.setHidesBackButton(true, animated:false)
+       
     }
     
     
@@ -33,6 +35,10 @@ class RateVc: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     

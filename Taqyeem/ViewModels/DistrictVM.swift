@@ -14,6 +14,7 @@ struct DistrictVM {
         var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/district_by_munic")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
         var userdic2 = "{\"id\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\"}"
         let paramString = "{\"municipalityId\" : \(municID)}"
         request.httpBody = paramString.data(using: .utf8)

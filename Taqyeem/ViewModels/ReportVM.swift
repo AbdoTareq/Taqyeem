@@ -33,13 +33,14 @@ struct ReportVM {
         return report.mobileuser ?? User()
     }
     var complainDate: String {
-        return report.complaindate ?? ""
+        return report.creationDate ?? ""
     }
     
     static func getMyReports(completion: @escaping (_ users: [ReportVM]?, _ error: String?) -> Void) {
         var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/comp/by_userid")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
         let userdic2 = "{\"id\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\"}"
         let paramString = "{\"mobileuser\" : \(userdic2)}"
         request.httpBody = paramString.data(using: .utf8)
@@ -77,6 +78,7 @@ struct ReportVM {
         var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/comp/save")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
         var dic2 = "{\"compplaintypeid\" : \"\(complainId)\"}"
         var userdic2 = "{\"id\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\"}"
          paramString = "{\"complaininformername\" : \"\(complainInformation)\", \"complaintext\" : \"\(complainText)\", \"compplaintype\" : \(dic2), \"mobile\" : \"\(mobile)\", \"storename\" : \"\(storename)\", \"mobileuser\" : \(userdic2)}"
@@ -102,6 +104,7 @@ struct ReportVM {
         var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/issue/save")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
         let paramString = "{\"dateTime\" : \"\(date)\", \"issuesDescription\" : \"\(issuesDescription)\", \"reportedBy\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\"}"
         request.httpBody = paramString.data(using: .utf8)
         Alamofire.request(request).responseJSON { (response) in

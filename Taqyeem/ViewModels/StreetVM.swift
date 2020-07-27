@@ -15,6 +15,7 @@ struct StreetVM {
         var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/streets_by_district_id")!)
                request.httpMethod = HTTPMethod.post.rawValue
                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
                let paramString = "{\"codeDistrict\" : \(districtID)}"
                request.httpBody = paramString.data(using: .utf8)
                Alamofire.request(request).responseJSON { (response) in

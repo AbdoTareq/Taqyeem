@@ -25,7 +25,7 @@ class CommentsVC: UIViewController {
         tableView.dataSource =  self
         tableView.reloadData()
         barButonItemTitle.title = "تعليقات مطعم  " + (resturant.storeArabicName ?? resturant.storeNameBanner ?? "") 
-        self.navigationItem.setHidesBackButton(true, animated:true)
+        self.navigationItem.setHidesBackButton(true, animated:false)
         self.tabBarController?.tabBar.isHidden = true
         barButonItemTitle.tintColor =  UIColor.white
         getData()

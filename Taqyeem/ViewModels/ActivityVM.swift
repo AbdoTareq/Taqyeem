@@ -28,9 +28,10 @@ struct ActivityVM {
     }
     static func getResturantActivities(storeID :Int , completion: @escaping (_ streets: [ActivityVM]?, _ error: String?) -> Void) {
 
-        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/activities/all")!)
+        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/food_categories/all")!)
                request.httpMethod = HTTPMethod.post.rawValue
                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
                let paramString = "{\"storeId\" : \(storeID)}"
                request.httpBody = paramString.data(using: .utf8)
                Alamofire.request(request).responseJSON { (response) in

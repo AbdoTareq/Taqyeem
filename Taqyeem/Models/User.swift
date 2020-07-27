@@ -17,4 +17,9 @@ struct User: Codable {
     var token: String?
     var mobile: String?
     var password: String?
+    var jwttoken :String?
+    var isAdmin :Int?
+    var accountActivated  :Int?
+    var owner :Int?
+    var store : Int?
 }
