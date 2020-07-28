@@ -154,11 +154,12 @@ class UpdateProfile: UIViewController {
         UserDefaultsAccess.sharedInstance.clearData()
         UserDefaultsAccess.sharedInstance.skippedLogin  = false
         UserDefaultsAccess.sharedInstance.user = nil
+        self.navigationController?.popViewController(animated: false, completion: {
+            if let vc = UIApplication.topViewController()?.tabBarController as? MainTBC {
+                vc.setUpOwnerVC()
+            }
+        })
         
-        if let vc = UIApplication.topViewController()?.tabBarController as? MainTBC {
-           // vc.setUpLoginPageInTabBar()
-            vc.selectedIndex = 2
-        }
     }
 }
 extension UpdateProfile: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

@@ -33,6 +33,8 @@ struct Resturant: Codable {
     var phone: String?
     var storeBuilding: String?
     var storeWebsite: String?
+    var  categories : [Categories]?
+    var images : [StoreImage]?
     //var utmX": null,
     //var utmY": null,
     //var storeRatingDetails: String?

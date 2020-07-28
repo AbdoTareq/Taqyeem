@@ -130,6 +130,10 @@
 		06D275B0238F263F00D9DD39 /* ReportImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D275AF238F263F00D9DD39 /* ReportImagesCell.swift */; };
 		06D275B2238F264B00D9DD39 /* ReportDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D275B1238F264B00D9DD39 /* ReportDateCell.swift */; };
 		2720A06E24BBDA6D009EB808 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2720A06D24BBDA6D009EB808 /* MapVC.swift */; };
+		2771A7F624D005F700BAEBFB /* OwnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771A7F524D005F700BAEBFB /* OwnerController.swift */; };
+		27F83D0F24D070BD0095BB19 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F83D0E24D070BD0095BB19 /* Categories.swift */; };
+		27F83D1124D071A10095BB19 /* StoreImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F83D1024D071A10095BB19 /* StoreImage.swift */; };
+		27F83D1324D07C960095BB19 /* ActivationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F83D1224D07C960095BB19 /* ActivationCodeVC.swift */; };
 		D7A4E03F1BE8F9B9AF5C67B9 /* Pods_Taqyeem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 086EACD962037A2A3C3D2916 /* Pods_Taqyeem.framework */; };
 /* End PBXBuildFile section */
 
@@ -260,6 +264,10 @@
 		06D275B1238F264B00D9DD39 /* ReportDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDateCell.swift; sourceTree = "<group>"; };
 		086EACD962037A2A3C3D2916 /* Pods_Taqyeem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taqyeem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2720A06D24BBDA6D009EB808 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		2771A7F524D005F700BAEBFB /* OwnerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerController.swift; sourceTree = "<group>"; };
+		27F83D0E24D070BD0095BB19 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		27F83D1024D071A10095BB19 /* StoreImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreImage.swift; sourceTree = "<group>"; };
+		27F83D1224D07C960095BB19 /* ActivationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationCodeVC.swift; sourceTree = "<group>"; };
 		9E608CF9287CE76AFAE17E84 /* Pods-Taqyeem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taqyeem.release.xcconfig"; path = "Target Support Files/Pods-Taqyeem/Pods-Taqyeem.release.xcconfig"; sourceTree = "<group>"; };
 		C15E0DB3D17E60CF752D6BBE /* Pods-Taqyeem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taqyeem.debug.xcconfig"; path = "Target Support Files/Pods-Taqyeem/Pods-Taqyeem.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -348,6 +356,8 @@
 				0477175A23C65B2E00BEA280 /* ForgetPasswordCode.swift */,
 				0477175C23C65B4E00BEA280 /* ForgetPasswordNew.swift */,
 				2720A06D24BBDA6D009EB808 /* MapVC.swift */,
+				2771A7F524D005F700BAEBFB /* OwnerController.swift */,
+				27F83D1224D07C960095BB19 /* ActivationCodeVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -377,6 +387,8 @@
 				04C132B223B15B4800A5E550 /* Activity.swift */,
 				0683B06F23B417A400B525A9 /* ComplaintImage.swift */,
 				048DC9F523B56B82000C1F6D /* ComplainImageModel.swift */,
+				27F83D0E24D070BD0095BB19 /* Categories.swift */,
+				27F83D1024D071A10095BB19 /* StoreImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -726,6 +738,7 @@
 				06554F6A238DD5AC00935E21 /* NewsDetailsVC.swift in Sources */,
 				0664EF3E238F1E9F00E29C9D /* ReportCell.swift in Sources */,
 				0653BFB82383147000BDC506 /* APIResponse.swift in Sources */,
+				27F83D1124D071A10095BB19 /* StoreImage.swift in Sources */,
 				04C4DDA623A6845700E3661E /* Comment.swift in Sources */,
 				06D1A31E23899629005568D1 /* RegisterationVC.swift in Sources */,
 				04813F2823A58BC600859B96 /* CommentsVC.swift in Sources */,
@@ -749,6 +762,7 @@
 				066CBBE8239573D000E118D9 /* Munic.swift in Sources */,
 				04813F2423A53A9500859B96 /* StreetVM.swift in Sources */,
 				0621EEBE238D815C008C13C3 /* ResturantICollectionViewmage.swift in Sources */,
+				2771A7F624D005F700BAEBFB /* OwnerController.swift in Sources */,
 				048DBCAC23B0159300641FC6 /* ComplainTypesVC.swift in Sources */,
 				0621EEBF238D815C008C13C3 /* ResturantGeneralInfo.swift in Sources */,
 				0628176F238458CF0002420A /* UserDefaultsAccess.swift in Sources */,
@@ -761,6 +775,7 @@
 				0664EF39238EC84400E29C9D /* ContactStack.swift in Sources */,
 				04C4DDA823A6858200E3661E /* CommentVM.swift in Sources */,
 				06879F5623B62B5E00267037 /* ContactPhoneCell.swift in Sources */,
+				27F83D0F24D070BD0095BB19 /* Categories.swift in Sources */,
 				0653BFAB2383133600BDC506 /* CircleExt.swift in Sources */,
 				0664EF36238EC1A300E29C9D /* CreateReportSendCell.swift in Sources */,
 				06554F66238DD52B00935E21 /* NewsDetailsCell.swift in Sources */,
@@ -789,6 +804,7 @@
 				048DBCA223B00CF700641FC6 /* ReportResturantName.swift in Sources */,
 				0653BFAA2383133600BDC506 /* JsonableExt.swift in Sources */,
 				06BC661F23928B2500651171 /* PrivacyVC.swift in Sources */,
+				27F83D1324D07C960095BB19 /* ActivationCodeVC.swift in Sources */,
 				0653BF8C23830C8400BDC506 /* MainTBC.swift in Sources */,
 				066CBBEC2395769E00E118D9 /* Street.swift in Sources */,
 				06C445212397A7AB00DA1569 /* Report.swift in Sources */,

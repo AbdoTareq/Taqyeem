@@ -19,7 +19,7 @@ struct User: Codable {
     var password: String?
     var jwttoken :String?
     var isAdmin :Int?
-    var accountActivated  :Int?
+    var accountActivated  :Bool?
     var owner :Int?
     var store : Int?
 }

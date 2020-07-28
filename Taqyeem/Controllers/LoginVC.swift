@@ -18,7 +18,7 @@ class LoginVC: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         initNavigationBar()
-
+        
         
     }
     func login() {
@@ -38,28 +38,44 @@ class LoginVC: UIViewController {
                 return
             }
             if user != nil {
-                UserDefaultsAccess.sharedInstance.user = user?.user
                 UserDefaultsAccess.sharedInstance.skippedLogin = false
                 UserDefaultsAccess.sharedInstance.token = user?.token ?? ""
-                self.navigationController?.popViewController(animated: false)
+                if user?.user.accountActivated ?? false {
+                    UserDefaultsAccess.sharedInstance.user = user?.user
+                   
+                    self.goToHomePage() 
+                }
+                else {
+                   let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "ActivationCodeVC") as! ActivationCodeVC
+                    nextVC.user = user
+                   UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
+                    
+                }
             }
         }
     }
     func initNavigationBar() {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    func goToHomePage()  {
+        self.navigationController?.popViewController(animated: false, completion: {
+                              if let vc =  UIApplication.topViewController()?.tabBarController as? MainTBC{
+                                  vc.setUpOwnerVC()
+                              }
+                          })
+    }
     
     @IBAction func forgetPasswordBtn(_ sender: Any) {
-    let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "ForgetPasswordPhone") as! ForgetPasswordPhone
-          UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
-      
+        let nextVC = UIApplication.topViewController()!.storyboard?.instantiateViewController(withIdentifier: "ForgetPasswordPhone") as! ForgetPasswordPhone
+        UIApplication.topViewController()!.navigationController?.pushViewController(nextVC, animated: true)
+        
     }
     @IBAction func btnSkip_Click(_ sender: UIButton) {
         UserDefaultsAccess.sharedInstance.skippedLogin = true
-//        if let vc = self.tabBarController as? MainTBC {
-//            //vc.setUpLoginPageInTabBar()
-//            vc.selectedIndex = 2
-//        }
+        //        if let vc = self.tabBarController as? MainTBC {
+        //            //vc.setUpLoginPageInTabBar()
+        //            vc.selectedIndex = 2
+        //        }
         self.navigationController?.popViewController(animated: false)
     }
     
@@ -74,10 +90,10 @@ class LoginVC: UIViewController {
     
     
     @IBAction func registerAsOwnerBtnClicked(_ sender: Any) {
-       
+        
         let nextVC = storyboard?.instantiateViewController(withIdentifier: "ResturantSearchVC") as! ResturantSearchVC
         nextVC.isFromRegister =  true
-      self.navigationController?.pushViewController(nextVC, animated: true)
+        self.navigationController?.pushViewController(nextVC, animated: true)
         
     }
     

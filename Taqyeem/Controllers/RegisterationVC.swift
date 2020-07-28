@@ -66,9 +66,9 @@ class RegisterationVC: UIViewController {
         }
         let user = User(id: nil, firstName: txtFirstName.text!, lastName: txtLastName.text!, nickName: txtFamilyName.text, email: txtMail.text!, image: nil, token: nil, mobile: txtPhone.text!, password: txtPassword.text)
         self.startLoadingActivity()
-        AuthenricationVM.register(user: user , storeID: self.storeId) {success, error in
+        AuthenricationVM.register(user: user , storeID: self.storeId) {user, error in
             self.stopLoadingActivity()
-            if !success {
+            if user == nil {
                 if error != nil {
                     self.showAlert(message: error!)
                 } else {
@@ -76,23 +76,24 @@ class RegisterationVC: UIViewController {
                 }
                 return
             }
-            self.login(mobile: self.txtPhone.text!, password: self.txtPassword.text!)
+            self.navigationController?.popViewController(animated: true)
+            //self.login(mobile: self.txtPhone.text!, password: self.txtPassword.text!)
         }
     }
-    func login(mobile: String, password: String) {
-        AuthenricationVM.login(mobile: mobile, password: password) {user, error in
-            if error != nil {
-                self.showAlert(message: error!)
-                return
-            }
-            if user != nil {
-                UserDefaultsAccess.sharedInstance.user = user?.user
-                UserDefaultsAccess.sharedInstance.skippedLogin = false
-                let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "MainTBC") as! MainTBC
-                self.navigationController?.pushViewController(nextVC, animated: true)
-            }
-        }
-    }
+//    func login(mobile: String, password: String) {
+//        AuthenricationVM.login(mobile: mobile, password: password) {user, error in
+//            if error != nil {
+//                self.showAlert(message: error!)
+//                return
+//            }
+//            if user != nil {
+//                UserDefaultsAccess.sharedInstance.user = user?.user
+//                UserDefaultsAccess.sharedInstance.skippedLogin = false
+//                let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "MainTBC") as! MainTBC
+//                self.navigationController?.pushViewController(nextVC, animated: true)
+//            }
+//        }
+//    }
     func initNavigationBar() {
         navigationController?.setNavigationBarHidden(true, animated: true)
         //navigationItem.title = "مطاعمي المفضلة"

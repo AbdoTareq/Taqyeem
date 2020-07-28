@@ -18,7 +18,7 @@ class MainTBC: UITabBarController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-       // setUpLoginPageInTabBar()
+        setUpOwnerVC()
     }
     func setTabbarImages() {
         guard let vcs = viewControllers else { return }
@@ -51,16 +51,19 @@ class MainTBC: UITabBarController {
         }
     }
     
-    func setUpLoginPageInTabBar()  {
-        if UserDefaultsAccess.sharedInstance.user == nil {
+    func setUpOwnerVC()  {
+        if UserDefaultsAccess.sharedInstance.user != nil && UserDefaultsAccess.sharedInstance.user?.owner == 1 {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let loginVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-            if let _ = self.viewControllers?[0]  as? LoginVC {}
+           // let nav1 = UINavigationController()
+            let controller = mainStoryboard.instantiateViewController(withIdentifier: "OwnerController") as! OwnerController
+           // nav1.viewControllers = [controller]
+            
+            if let _ = self.viewControllers?[0]  as? OwnerController {}
             else {
-                self.viewControllers?.insert(loginVC, at: 0)
-                tabBar.items?[0].selectedImage = UIImage(named: "logoutSelected")?.withRenderingMode(.alwaysOriginal)
-                tabBar.items?[0].image = UIImage(named: "logoutNotSelected")?.withRenderingMode(.alwaysOriginal)
-                tabBar.items?[0].title = ""//localize("Search") // Profile
+                self.viewControllers?.insert(controller, at: 0)
+                tabBar.items?[0].selectedImage = UIImage(named: "shop-2")?.withRenderingMode(.alwaysOriginal)
+                tabBar.items?[0].image = UIImage(named: "shop")?.withRenderingMode(.alwaysOriginal)
+                tabBar.items?[0].title = ""
                 
             }
             
@@ -68,7 +71,7 @@ class MainTBC: UITabBarController {
             
         }
         else {
-            if let _  = self.viewControllers?[0] as? LoginVC {
+            if let _  = self.viewControllers?[0] as? OwnerController {
                 self.viewControllers?.remove(at: 0)
                 self.selectedIndex =  2
             }

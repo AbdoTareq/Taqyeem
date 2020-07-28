@@ -26,6 +26,7 @@ class SettingsVC: UIViewController {
     func initNavigationBar() {
         navigationController?.setNavigationBarHidden(true, animated: true)
         navigationItem.setHidesBackButton(true, animated: false)
+        self.tabBarController?.tabBar.isHidden =  false
     }
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
