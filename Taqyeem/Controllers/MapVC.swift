@@ -19,19 +19,9 @@ class MapVC: UIViewController {
         super.viewDidLoad()
         
         locationManager.delegate = self
-        
-//        if CLLocationManager.locationServicesEnabled() {
-//
-//            locationManager.requestLocation()
-//
-//
-//            mapView.isMyLocationEnabled = true
-//            mapView.settings.myLocationButton = true
-//        } else {
-//            locationManager.requestWhenInUseAuthorization()
-//        }
         setupLocation()
         mapView.delegate = self
+        navigationController?.setNavigationBarHidden(false, animated: true)
         self.addMarker(location: resturantLocation, markerName: "marker")
     }
     
@@ -53,6 +43,11 @@ class MapVC: UIViewController {
                 NSLog("Can't use comgooglemaps://");
             }
         }
+    
+    @IBAction func backBtnClicked(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    
     }
     
 
@@ -105,7 +100,7 @@ extension MapVC: CLLocationManagerDelegate  , GMSMapViewDelegate{
                       do{
                           let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String : AnyObject]
                           let routes = json["routes"] as! NSArray
-                          
+                          print( "routs is \(routes)")
                           OperationQueue.main.addOperation({
                               if routes.count == 0 {
                                   return
@@ -144,7 +139,7 @@ extension MapVC: CLLocationManagerDelegate  , GMSMapViewDelegate{
         let camera = GMSCameraPosition.camera(withLatitude: (location.coordinate.latitude), longitude: (location.coordinate.longitude), zoom: 17.0)
 
         self.mapView?.animate(to: camera)
-        self.addMarker(location: location, markerName: "loc")
+        self.addMarker(location: location, markerName: "location2")
        self.locationManager.stopUpdatingLocation()
         self.startDrawRout()
     }

@@ -130,10 +130,15 @@
 		06D275B0238F263F00D9DD39 /* ReportImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D275AF238F263F00D9DD39 /* ReportImagesCell.swift */; };
 		06D275B2238F264B00D9DD39 /* ReportDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D275B1238F264B00D9DD39 /* ReportDateCell.swift */; };
 		2720A06E24BBDA6D009EB808 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2720A06D24BBDA6D009EB808 /* MapVC.swift */; };
+		274DFE9424D216B3003A372F /* AddFoodImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274DFE9324D216B3003A372F /* AddFoodImage.swift */; };
 		2771A7F624D005F700BAEBFB /* OwnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771A7F524D005F700BAEBFB /* OwnerController.swift */; };
 		27F83D0F24D070BD0095BB19 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F83D0E24D070BD0095BB19 /* Categories.swift */; };
 		27F83D1124D071A10095BB19 /* StoreImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F83D1024D071A10095BB19 /* StoreImage.swift */; };
 		27F83D1324D07C960095BB19 /* ActivationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F83D1224D07C960095BB19 /* ActivationCodeVC.swift */; };
+		27F83D1524D1D9CB0095BB19 /* ResturantFoodCategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F83D1424D1D9CB0095BB19 /* ResturantFoodCategoriesVC.swift */; };
+		27F83D1724D1D9E10095BB19 /* ResturantImagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F83D1624D1D9E10095BB19 /* ResturantImagesVC.swift */; };
+		27F83D1924D1E0CE0095BB19 /* FoodCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F83D1824D1E0CE0095BB19 /* FoodCategoryCell.swift */; };
+		27F83D1B24D1EF030095BB19 /* FoodCategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F83D1A24D1EF020095BB19 /* FoodCategoriesVC.swift */; };
 		D7A4E03F1BE8F9B9AF5C67B9 /* Pods_Taqyeem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 086EACD962037A2A3C3D2916 /* Pods_Taqyeem.framework */; };
 /* End PBXBuildFile section */
 
@@ -264,10 +269,15 @@
 		06D275B1238F264B00D9DD39 /* ReportDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDateCell.swift; sourceTree = "<group>"; };
 		086EACD962037A2A3C3D2916 /* Pods_Taqyeem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taqyeem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2720A06D24BBDA6D009EB808 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		274DFE9324D216B3003A372F /* AddFoodImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodImage.swift; sourceTree = "<group>"; };
 		2771A7F524D005F700BAEBFB /* OwnerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerController.swift; sourceTree = "<group>"; };
 		27F83D0E24D070BD0095BB19 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		27F83D1024D071A10095BB19 /* StoreImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreImage.swift; sourceTree = "<group>"; };
 		27F83D1224D07C960095BB19 /* ActivationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationCodeVC.swift; sourceTree = "<group>"; };
+		27F83D1424D1D9CB0095BB19 /* ResturantFoodCategoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantFoodCategoriesVC.swift; sourceTree = "<group>"; };
+		27F83D1624D1D9E10095BB19 /* ResturantImagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantImagesVC.swift; sourceTree = "<group>"; };
+		27F83D1824D1E0CE0095BB19 /* FoodCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoryCell.swift; sourceTree = "<group>"; };
+		27F83D1A24D1EF020095BB19 /* FoodCategoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoriesVC.swift; sourceTree = "<group>"; };
 		9E608CF9287CE76AFAE17E84 /* Pods-Taqyeem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taqyeem.release.xcconfig"; path = "Target Support Files/Pods-Taqyeem/Pods-Taqyeem.release.xcconfig"; sourceTree = "<group>"; };
 		C15E0DB3D17E60CF752D6BBE /* Pods-Taqyeem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taqyeem.debug.xcconfig"; path = "Target Support Files/Pods-Taqyeem/Pods-Taqyeem.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -358,6 +368,9 @@
 				2720A06D24BBDA6D009EB808 /* MapVC.swift */,
 				2771A7F524D005F700BAEBFB /* OwnerController.swift */,
 				27F83D1224D07C960095BB19 /* ActivationCodeVC.swift */,
+				27F83D1424D1D9CB0095BB19 /* ResturantFoodCategoriesVC.swift */,
+				27F83D1624D1D9E10095BB19 /* ResturantImagesVC.swift */,
+				27F83D1A24D1EF020095BB19 /* FoodCategoriesVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -433,6 +446,7 @@
 				06554F63238DD51800935E21 /* NewsTitleCell.swift */,
 				06554F65238DD52B00935E21 /* NewsDetailsCell.swift */,
 				06554F67238DD53700935E21 /* NewsImageCell.swift */,
+				274DFE9324D216B3003A372F /* AddFoodImage.swift */,
 			);
 			path = NewsCells;
 			sourceTree = "<group>";
@@ -521,6 +535,7 @@
 				04C132B823B16A9600A5E550 /* RatingCell.swift */,
 				04C132BC23B170A800A5E550 /* RateCell.swift */,
 				06879F5523B62B5E00267037 /* ContactPhoneCell.swift */,
+				27F83D1824D1E0CE0095BB19 /* FoodCategoryCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -717,18 +732,22 @@
 				06C6339C238C81330025F3C9 /* ResturantSearchVC.swift in Sources */,
 				0683B07023B417A400B525A9 /* ComplaintImage.swift in Sources */,
 				0653BFAC2383133600BDC506 /* SpinnerExt.swift in Sources */,
+				274DFE9424D216B3003A372F /* AddFoodImage.swift in Sources */,
 				0621EEC1238D815C008C13C3 /* ResturantImages.swift in Sources */,
 				0653BFB62383147000BDC506 /* GenericModel.swift in Sources */,
 				04C002E523AE7D12001D5C69 /* RatingCriteriaVM.swift in Sources */,
 				06BC661B23927EF600651171 /* SettingsStack.swift in Sources */,
 				066CBBEE2395778600E118D9 /* RatingCriteria.swift in Sources */,
+				27F83D1724D1D9E10095BB19 /* ResturantImagesVC.swift in Sources */,
 				0653BFB72383147000BDC506 /* NetworkManager.swift in Sources */,
 				04C132B323B15B4800A5E550 /* Activity.swift in Sources */,
 				04C132BD23B170A800A5E550 /* RateCell.swift in Sources */,
 				06554F68238DD53700935E21 /* NewsImageCell.swift in Sources */,
 				0621EEC3238D815C008C13C3 /* ResturantLocation.swift in Sources */,
+				27F83D1524D1D9CB0095BB19 /* ResturantFoodCategoriesVC.swift in Sources */,
 				06D275B0238F263F00D9DD39 /* ReportImagesCell.swift in Sources */,
 				04250C3A23A51CAD00ECB2A6 /* FiltersVC.swift in Sources */,
+				27F83D1924D1E0CE0095BB19 /* FoodCategoryCell.swift in Sources */,
 				06BC661923927E4800651171 /* HelpVC.swift in Sources */,
 				04C132B723B15E7600A5E550 /* ActivitiesVC.swift in Sources */,
 				0653BFA32383133600BDC506 /* ViewExt.swift in Sources */,
@@ -790,6 +809,7 @@
 				048DBCA623B00EA500641FC6 /* ReportType.swift in Sources */,
 				068F6B11239272DA009CFFF2 /* ContactKaseemVC.swift in Sources */,
 				0664EF34238EC19300E29C9D /* CreateReportImagesCell.swift in Sources */,
+				27F83D1B24D1EF030095BB19 /* FoodCategoriesVC.swift in Sources */,
 				0477175923C65AEC00BEA280 /* ForgetPasswordPhone.swift in Sources */,
 				06BC662123928BD100651171 /* InfoVC.swift in Sources */,
 				066EC3A123AE986900B0C67D /* HelpVM.swift in Sources */,
