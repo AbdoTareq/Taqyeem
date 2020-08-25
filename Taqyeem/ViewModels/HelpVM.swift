@@ -37,6 +37,10 @@ struct HelpVM {
                         } else {
                          completion(nil, "Unable to get data")
                         }
+                    }else if statusCode == 401 {
+                        UserDefaultsAccess.sharedInstance.user = nil
+                        UIApplication.topViewController()?.stopLoadingActivity()
+                        UIApplication.topViewController()?.logOut()
                     } else {
                         completion(nil, "Unable to get data")
                     }

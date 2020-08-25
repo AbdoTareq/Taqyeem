@@ -26,6 +26,10 @@ struct CommentVM {
                         if let comments: [Comment] = res.getObject() {
                             completion(comments.map { CommentVM(comment: $0) }, nil)
                         }
+                    }else if statusCode == 401 {
+                        UserDefaultsAccess.sharedInstance.user = nil
+                        UIApplication.topViewController()?.stopLoadingActivity()
+                        UIApplication.topViewController()?.logOut()
                     } else {
                         completion(nil, "Unable to get data")
                     }

@@ -51,7 +51,13 @@ struct ReportVM {
                         if let resturants: [Report] = res.getObject() {
                             completion(resturants.map { ReportVM(report: $0) }, nil)
                         }
-                    } else {
+                    }
+                    else if statusCode == 401 {
+                        UserDefaultsAccess.sharedInstance.user = nil
+                        UIApplication.topViewController()?.stopLoadingActivity()
+                        UIApplication.topViewController()?.logOut()
+                    }
+                    else {
                         completion(nil, "Unable to get data")
                     }
                 } else {
@@ -74,23 +80,31 @@ struct ReportVM {
         for item in complainImages {
             imagesString.append("{\"complainimages\" : \"\(item.imgString!)\" , \"imagename\" : \"\(Date().getDate(type: .normal))\"}")
         }
-       let imagesStringarr = "[" + imagesString.joined(separator: ",") + "]"
+        let imagesStringarr = "[" + imagesString.joined(separator: ",") + "]"
         var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/comp/save")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
         var dic2 = "{\"compplaintypeid\" : \"\(complainId)\"}"
         var userdic2 = "{\"id\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\"}"
-         paramString = "{\"complaininformername\" : \"\(complainInformation)\", \"complaintext\" : \"\(complainText)\", \"compplaintype\" : \(dic2), \"mobile\" : \"\(mobile)\", \"storename\" : \"\(storename)\", \"mobileuser\" : \(userdic2)}"
+        paramString = "{\"complaininformername\" : \"\(complainInformation)\", \"complaintext\" : \"\(complainText)\", \"compplaintype\" : \(dic2), \"mobile\" : \"\(mobile)\", \"storename\" : \"\(storename)\", \"mobileuser\" : \(userdic2)}"
         if complainImages.count > 0 {
-          paramString = "{\"complaininformername\" : \"\(complainInformation)\", \"complaintext\" : \"\(complainText)\", \"compplaintype\" : \(dic2), \"mobile\" : \"\(mobile)\", \"storename\" : \"\(storename)\", \"mobileuser\" : \(userdic2) , \"complainimages\" : \(imagesStringarr)}"
+            paramString = "{\"complaininformername\" : \"\(complainInformation)\", \"complaintext\" : \"\(complainText)\", \"compplaintype\" : \(dic2), \"mobile\" : \"\(mobile)\", \"storename\" : \"\(storename)\", \"mobileuser\" : \(userdic2) , \"complainimages\" : \(imagesStringarr)}"
         }
         request.httpBody = paramString.data(using: .utf8)
         Alamofire.request(request).responseJSON { (response) in
             if let statusCode = response.response?.statusCode {
                 if statusCode == 201 {
                     completion(true, nil)
-                } else {
+                }
+                else if statusCode == 401 {
+                    UserDefaultsAccess.sharedInstance.user = nil
+                    UIApplication.topViewController()?.stopLoadingActivity()
+                    UIApplication.topViewController()?.logOut()
+                }
+                    
+                    
+                else {
                     completion(false, "\(statusCode) - Unable to upload report")
                 }
             }
@@ -111,7 +125,14 @@ struct ReportVM {
             if let statusCode = response.response?.statusCode {
                 if statusCode == 201 {
                     completion(true, nil)
-                } else {
+                }
+                    
+                else if statusCode == 401 {
+                    UserDefaultsAccess.sharedInstance.user = nil
+                    UIApplication.topViewController()?.stopLoadingActivity()
+                    UIApplication.topViewController()?.logOut()
+                }
+                else {
                     completion(false, "\(statusCode) - Unable to add bug")
                 }
             }

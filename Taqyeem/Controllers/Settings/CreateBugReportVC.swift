@@ -30,20 +30,26 @@ class CreateBugReportVC: UIViewController {
     }
     
     @IBAction func btnSubmitBugClicked(_ sender: Any) {
-        self.startLoadingActivity()
-        ReportVM.submitBug(issuesDescription: self.txtDetails.text!, date: Date().getDate(type: .long).getShortDate()) { success, errorMessage in
-            self.stopLoadingActivity()
-            if success{
-                let banner = StatusBarNotificationBanner(title: "تم اضافه بلاغك بنجاح", style: .success)
-                           banner.show()
-                           self.navigationController?.popViewController(animated: true)
-            }
-            else {
-                let banner = StatusBarNotificationBanner(title: errorMessage!, style: .warning)
-                                          banner.show()
-            }
+        if self.txtDetails.text != "" {
+            self.startLoadingActivity()
+                   ReportVM.submitBug(issuesDescription: self.txtDetails.text!, date: Date().getDate(type: .long).getShortDate()) { success, errorMessage in
+                       self.stopLoadingActivity()
+                       if success{
+                           let banner = StatusBarNotificationBanner(title: "تم اضافه بلاغك بنجاح", style: .success)
+                                      banner.show()
+                                      self.navigationController?.popViewController(animated: true)
+                       }
+                       else {
+                           let banner = StatusBarNotificationBanner(title: errorMessage!, style: .warning)
+                                                     banner.show()
+                       }
+                   }
+        }else {
+            let banner = StatusBarNotificationBanner(title: "من فضلك ادخل البيانات المطلوبه", style: .warning)
+                                                              banner.show()
         }
-    }
+        }
+       
 }
 extension CreateBugReportVC: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {

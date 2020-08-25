@@ -25,7 +25,11 @@ struct DistrictVM {
                         if let resturants: [District] = res.getObject() {
                             completion(resturants.map { DistrictVM(district: $0) }, nil)
                         }
-                    } else {
+                    } else if statusCode == 401 {
+                        UserDefaultsAccess.sharedInstance.user = nil
+                        UIApplication.topViewController()?.stopLoadingActivity()
+                        UIApplication.topViewController()?.logOut()
+                    }else {
                         completion(nil, "Unable to get data")
                     }
                 } else {

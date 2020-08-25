@@ -24,6 +24,10 @@ struct ForgetPasswordVM {
                                  if let user: User = res.getObject() {
                                      completion(AuthenricationVM(user: user), nil)
                                  }
+                             }else if statusCode == 401 {
+                                 UserDefaultsAccess.sharedInstance.user = nil
+                                 UIApplication.topViewController()?.stopLoadingActivity()
+                                 UIApplication.topViewController()?.logOut()
                              } else {
                                  completion(nil, "Unable to get data")
                              }
@@ -49,6 +53,10 @@ struct ForgetPasswordVM {
                       if let statusCode = response.response?.statusCode {
                               if statusCode >= 200 && statusCode < 300 {
                                completion(true, nil)
+                          }else if statusCode == 401 {
+                              UserDefaultsAccess.sharedInstance.user = nil
+                              UIApplication.topViewController()?.stopLoadingActivity()
+                              UIApplication.topViewController()?.logOut()
                           } else {
                               completion(false, "Unable to get data")
                           }
