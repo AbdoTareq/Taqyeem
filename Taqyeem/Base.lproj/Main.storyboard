@@ -943,15 +943,25 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rls-mL-9E7">
+                                                <rect key="frame" x="-7.5" y="-3" width="195" height="75"/>
+                                                <connections>
+                                                    <action selector="categoryfilterBtnClicked:" destination="Mph-9V-2OC" eventType="touchUpInside" id="qUx-kf-KGx"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="180" id="40Z-8g-6Ep"/>
+                                            <constraint firstItem="Rls-mL-9E7" firstAttribute="height" secondItem="Tcr-Il-wTa" secondAttribute="height" multiplier="1.08696" id="Cs3-U7-98Q"/>
                                             <constraint firstItem="M74-ke-EVB" firstAttribute="top" secondItem="Tcr-Il-wTa" secondAttribute="top" id="WS8-ql-diY"/>
                                             <constraint firstItem="1T3-rl-07e" firstAttribute="top" secondItem="M74-ke-EVB" secondAttribute="bottom" constant="5" id="abn-Dt-Oje"/>
+                                            <constraint firstItem="Rls-mL-9E7" firstAttribute="centerY" secondItem="Tcr-Il-wTa" secondAttribute="centerY" id="lk8-DY-QYh"/>
                                             <constraint firstItem="1T3-rl-07e" firstAttribute="centerX" secondItem="Tcr-Il-wTa" secondAttribute="centerX" id="p6h-8Y-1db"/>
                                             <constraint firstItem="M74-ke-EVB" firstAttribute="centerX" secondItem="Tcr-Il-wTa" secondAttribute="centerX" id="qJt-r8-A1U"/>
+                                            <constraint firstItem="Rls-mL-9E7" firstAttribute="centerX" secondItem="Tcr-Il-wTa" secondAttribute="centerX" id="thm-Sw-cfy"/>
                                             <constraint firstAttribute="bottom" secondItem="1T3-rl-07e" secondAttribute="bottom" constant="3" id="vWO-M6-gd7"/>
+                                            <constraint firstItem="Rls-mL-9E7" firstAttribute="width" secondItem="Tcr-Il-wTa" secondAttribute="width" multiplier="1.08333" id="wTy-Ez-ZG8"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1230,6 +1240,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cRb-mJ-zLs"/>
                     <connections>
+                        <outlet property="lblCurrentSelectedCategory" destination="OTE-rb-MsU" id="C8b-eg-UwT"/>
                         <outlet property="lblDistrict" destination="7pd-OG-oMk" id="NcK-O0-MDe"/>
                         <outlet property="lblMunic" destination="FKK-Ai-zqg" id="lc3-R3-tLe"/>
                         <outlet property="lblStreet" destination="HXw-4N-LxA" id="0yN-xx-LK9"/>

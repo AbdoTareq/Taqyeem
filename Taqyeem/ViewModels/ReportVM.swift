@@ -94,7 +94,7 @@ struct ReportVM {
         request.httpBody = paramString.data(using: .utf8)
         Alamofire.request(request).responseJSON { (response) in
             if let statusCode = response.response?.statusCode {
-                if statusCode == 201 {
+                if statusCode >= 200 && statusCode < 300{
                     completion(true, nil)
                 }
                 else if statusCode == 401 {
@@ -123,7 +123,7 @@ struct ReportVM {
         request.httpBody = paramString.data(using: .utf8)
         Alamofire.request(request).responseJSON { (response) in
             if let statusCode = response.response?.statusCode {
-                if statusCode == 201 {
+                if statusCode >= 200 && statusCode < 300 {
                     completion(true, nil)
                 }
                     

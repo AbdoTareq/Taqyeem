@@ -39,4 +39,5 @@ enum ServiceBase: String {
     case favStores = "favorit_stores/user_fav"
     case contact = "contact/list_by_category"
     case help = "help/list_by_type"
+    case searchByName = "store/search_by_name"
 }

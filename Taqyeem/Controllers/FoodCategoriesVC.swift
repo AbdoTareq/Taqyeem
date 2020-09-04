@@ -58,6 +58,10 @@ extension FoodCategoriesVC: UITableViewDelegate, UITableViewDataSource {
             if let vc = UIApplication.topViewController() as? OwnerController {
                 vc.resturantFoodCategories.addNewCategory(categoryID: self.activities![indexPath.row].id)
             }
+            if let vc = UIApplication.topViewController() as? ResturantSearchVC {
+                vc.filterCurrentResturantsByFoodCategory(name: self.activities![indexPath.row].name, id: self.activities![indexPath.row].id)
+            }
+            
         }
         
     }

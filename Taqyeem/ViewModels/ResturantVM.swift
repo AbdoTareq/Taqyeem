@@ -41,7 +41,7 @@ struct ResturantVM {
         let paramString = "{\"municipalityId\" : \"\(4)\"}"
         request.httpBody = paramString.data(using: .utf8)
         Alamofire.request(request).responseJSON { (response) in
-            print(response)
+    
             if let statusCode = response.response?.statusCode {
                 if let res = response.result.value as? [NSDictionary] {
                     if statusCode >= 200 && statusCode < 300 {
@@ -74,7 +74,7 @@ struct ResturantVM {
         let paramString = "{\"municipalityId\" : \"\(MunicID)\"}"
         request.httpBody = paramString.data(using: .utf8)
         Alamofire.request(request).responseJSON { (response) in
-            print(response)
+          
             if let statusCode = response.response?.statusCode {
                 if let res = response.result.value as? [NSDictionary] {
                     if statusCode >= 200 && statusCode < 300 {
@@ -107,7 +107,7 @@ struct ResturantVM {
         let paramString = "{\"districtId\" : \"\(districtID)\", \"municipalityId\" : \"\(MunicID)\"}"
         request.httpBody = paramString.data(using: .utf8)
         Alamofire.request(request).responseJSON { (response) in
-            print(response)
+ 
             if let statusCode = response.response?.statusCode {
                 if let res = response.result.value as? [NSDictionary] {
                     if statusCode >= 200 && statusCode < 300 {
@@ -140,7 +140,7 @@ struct ResturantVM {
         let paramString = "{\"districtId\" : \"\(districtID)\", \"municipalityId\" : \"\(MunicID)\", \"streetId\" : \"\(streetID)\"}"
         request.httpBody = paramString.data(using: .utf8)
         Alamofire.request(request).responseJSON { (response) in
-            print(response)
+       
             if let statusCode = response.response?.statusCode {
                 if let res = response.result.value as? [NSDictionary] {
                     if statusCode >= 200 && statusCode < 300 {
@@ -177,7 +177,7 @@ struct ResturantVM {
         let paramString = "{\"userId\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\"}"
         request.httpBody = paramString.data(using: .utf8)
         Alamofire.request(request).responseJSON { (response) in
-            print(response)
+         
             if let statusCode = response.response?.statusCode {
                 if let res = response.result.value as? [NSDictionary] {
                     if statusCode >= 200 && statusCode < 300 {
@@ -209,7 +209,7 @@ struct ResturantVM {
         let paramString = "{\"userId\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\", \"storeId\" : \"\(resturantID)\"}"
         request.httpBody = paramString.data(using: .utf8)
         Alamofire.request(request).responseJSON { (response) in
-            print(response)
+           
             if let statusCode = response.response?.statusCode {
                 if statusCode >= 200 && statusCode < 300 {
                     completion(true, nil)
@@ -236,7 +236,7 @@ struct ResturantVM {
         let paramString = "{\"userId\" : \"\(UserDefaultsAccess.sharedInstance.user?.id ?? 0)\", \"storeId\" : \"\(resturantID)\"}"
         request.httpBody = paramString.data(using: .utf8)
         Alamofire.request(request).responseJSON { (response) in
-            print(response)
+     
             if let statusCode = response.response?.statusCode {
                 if statusCode >= 200 && statusCode < 300 {
                     completion(true, nil)
@@ -262,7 +262,7 @@ struct ResturantVM {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
         Alamofire.request(request).responseJSON { (response) in
-            print(response)
+           
             if let statusCode = response.response?.statusCode {
                 if let res = response.result.value as? NSDictionary {
                     if statusCode >= 200 && statusCode < 300 {
@@ -294,7 +294,7 @@ struct ResturantVM {
         let paramString = "{\"store\" : \"\(resturantID)\", \"category\" : \"\(categoryID)\"}"
         request.httpBody = paramString.data(using: .utf8)
         Alamofire.request(request).responseJSON { (response) in
-            print(response)
+     
             if let statusCode = response.response?.statusCode {
                 if statusCode >= 200 && statusCode < 300 {
                     if let res = response.result.value as? NSDictionary {
@@ -328,7 +328,7 @@ struct ResturantVM {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
         Alamofire.request(request).responseJSON { (response) in
-            print(response)
+          
             if let statusCode = response.response?.statusCode {
                 if statusCode >= 200 && statusCode < 300 {
                     completion(true, nil)
@@ -357,7 +357,7 @@ struct ResturantVM {
         
         request.httpBody = paramString.data(using: .utf8)
         Alamofire.request(request).responseJSON { (response) in
-            print(response)
+      
             if let statusCode = response.response?.statusCode {
                 if statusCode >= 200 && statusCode < 300 {
                     completion(true, nil)
@@ -384,7 +384,7 @@ struct ResturantVM {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
         Alamofire.request(request).responseJSON { (response) in
-            print(response)
+
             if let statusCode = response.response?.statusCode {
                 if statusCode >= 200 && statusCode < 300 {
                     completion(true, nil)
@@ -404,5 +404,35 @@ struct ResturantVM {
             }
         }
     }
-    
+    static func getResturantsByname(searchText :  String,foodCategory:Int, completion: @escaping (_ resturants: [ResturantVM]?, _ error: String?) -> Void) {
+          let url = NetworkManager.getUrl(service: .searchByName)
+          var request = URLRequest(url: URL(string: url)!)
+          request.httpMethod = HTTPMethod.post.rawValue
+          request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+           request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
+          let paramString = "{\"foodCategory\" : \"\(foodCategory)\", \"storeId\" : \"\(0)\", \"storeNameLicense\" : \"\(searchText)\"}"
+          request.httpBody = paramString.data(using: .utf8)
+          Alamofire.request(request).responseJSON { (response) in
+              
+              if let statusCode = response.response?.statusCode {
+                  if let res = response.result.value as? [NSDictionary] {
+                      if statusCode >= 200 && statusCode < 300 {
+                          if let resturants: [Resturant] = res.getObject() {
+                              completion(resturants.map { ResturantVM(resturant: $0) }, nil)
+                          }
+                      }else if statusCode == 401 {
+                          UserDefaultsAccess.sharedInstance.user = nil
+                          UIApplication.topViewController()?.stopLoadingActivity()
+                          UIApplication.topViewController()?.logOut()
+                      } else {
+                          completion(nil, "عفوا، لا يوجد بيانات")
+                      }
+                  } else {
+                      completion(nil, "عفوا، لا يوجد بيانات")
+                  }
+              } else {
+                  completion(nil, "عفوا، لا يوجد بيانات")
+              }
+          }
+      }
 }
