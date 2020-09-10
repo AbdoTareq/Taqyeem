@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateReportTitleCell: UITableViewCell {
+class CreateReportTitleCell: UITableViewCell{
 
     @IBOutlet weak var txtTitle: UITextView!
     @IBOutlet weak var containerView: UIView!
@@ -16,6 +16,7 @@ class CreateReportTitleCell: UITableViewCell {
         super.awakeFromNib()
         txtTitle.delegate = self
         containerView.addShadow(color: UIColor.gray)
+        txtTitle.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -24,12 +25,19 @@ class CreateReportTitleCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    
 }
 extension CreateReportTitleCell: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         let fixedWidth = textView.frame.size.width
         let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
         textView.frame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if let vc = UIApplication.topViewController() as? CreateReportVC {
+           
+                                                                                                                                                       vc.reportTitle = textView.text!
+        }
     }
     
 }

@@ -62,10 +62,10 @@ class CreateReportVC: UIViewController {
             if  let cell =  cellItem as? CreateReportTitleCell {
                 self.reportTitle = cell.txtTitle!.text!
             }
-            if let  cell = cellItem as? CreateReportDetailsCell {
+            else if let  cell = cellItem as? CreateReportDetailsCell {
                 self.reportDescription  = cell.txtDetails.text!
             }
-            if let  cell = cellItem as? ReportResturantName {
+           else if let  cell = cellItem as? ReportResturantName {
                 self.storeName  = cell.resturantName.text!
             }
         }
