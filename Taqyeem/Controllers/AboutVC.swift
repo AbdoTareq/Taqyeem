@@ -15,24 +15,38 @@ class AboutVC: UIViewController {
     var about: [HelpVM]?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.vwContainer.isHidden = true
         vwContainer.addShadow(color: UIColor.darkGray)
         initNavigationBar()
         getData()
     }
     func getData() {
         self.startLoadingActivity()
-        HelpVM.get(type: 4) {help, error in
+        HelpVM.get(type: 4) { help, error in
             self.stopLoadingActivity()
             if help != nil {
                 self.about = help!
             } else {
                 self.showAlert(message: error ?? "Failed to get data")
             }
+           
             self.bindData()
+            if self.about?.count == 0 {
+                self.vwContainer.isHidden = true
+            }
+            else {
+                self.vwContainer.isHidden = false
+            }
         }
+        
     }
     func bindData() {
-        guard let about = about else { return }
+        guard let about = about else {
+            
+            lblContent.isHidden = true
+            return
+            
+        }
         
         let attribute: NSAttributedString = {
             let attributedString = NSMutableAttributedString()
@@ -41,16 +55,26 @@ class AboutVC: UIViewController {
                     attributedString.append(NSAttributedString(string: "■ \(item.text) \n\n", attributes: [
                         NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17),
                         NSAttributedString.Key.foregroundColor: UIColor(hexString: "#CCA121")
+                        
+                                                              
                     ]))
+                    if item.text == ""{
+                        self.vwContainer.isHidden = true
+                    }
+                  
                 } else {
                     attributedString.append(NSAttributedString(string: "      ■ \(item.text) \n\n", attributes: [
                         NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17),
                         NSAttributedString.Key.foregroundColor: UIColor(hexString: "#CCA121")
                     ]))
+                    if item.text == ""{
+                        self.vwContainer.isHidden = true
+                    }
                 }
             }
             return attributedString
         }()
+        
         lblContent.attributedText = attribute
     }
     @IBAction func navBtnBack_Click(_ sender: UIBarButtonItem) {

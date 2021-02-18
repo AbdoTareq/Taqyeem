@@ -202,7 +202,7 @@ struct ResturantVM {
     }
     
     static func addReturantToFav(resturantID : Int , completion: @escaping (_ success :Bool, _ error: String?) -> Void) {
-        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/favorit_stores/save")!)
+        var request = URLRequest(url: URL(string: "http://healthctrl.qassim.gov.sa:8008/rating_app/favorit_stores/save")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
@@ -229,7 +229,7 @@ struct ResturantVM {
     }
     
     static func removeReturantToFav(resturantID : Int , completion: @escaping (_ success :Bool, _ error: String?) -> Void) {
-        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/favorit_stores/delete/")!)
+        var request = URLRequest(url: URL(string: "http://healthctrl.qassim.gov.sa:8008/rating_app/favorit_stores/delete/")!)
         request.httpMethod = HTTPMethod.delete.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
@@ -257,7 +257,7 @@ struct ResturantVM {
     }
     
     static func getResturantByID(resturantID :Int ,completion: @escaping (_ resturants: ResturantVM?, _ error: String?) -> Void) {
-        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/stores/\(resturantID)")!)
+        var request = URLRequest(url: URL(string: "http://healthctrl.qassim.gov.sa:8008/rating_app/stores/\(resturantID)")!)
         request.httpMethod = HTTPMethod.get.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
@@ -287,7 +287,7 @@ struct ResturantVM {
     
     
     static func addCategoryToResturant(resturantID : Int ,categoryID:Int, completion: @escaping (_ success :Bool, _ error: String?) -> Void) {
-        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/stores_category/save")!)
+        var request = URLRequest(url: URL(string: "http://healthctrl.qassim.gov.sa:8008/rating_app/stores_category/save")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
@@ -323,7 +323,7 @@ struct ResturantVM {
     
     
     static func deleteCategoryFromResturant(categoryId : Int , completion: @escaping (_ success :Bool, _ error: String?) -> Void) {
-        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/stores_category_del/\(categoryId)")!)
+        var request = URLRequest(url: URL(string: "http://healthctrl.qassim.gov.sa:8008/rating_app/stores_category_del/\(categoryId)")!)
         request.httpMethod = HTTPMethod.delete.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
@@ -349,7 +349,7 @@ struct ResturantVM {
         }
     }
     static func addimageToResturant(resturantID : Int ,image:String, completion: @escaping (_ success :Bool, _ error: String?) -> Void) {
-        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/store/save_images")!)
+        var request = URLRequest(url: URL(string: "http://healthctrl.qassim.gov.sa:8008/rating_app/store/save_images")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
@@ -379,7 +379,7 @@ struct ResturantVM {
     
     
     static func deleteImageFromResturant(imageId : Int , completion: @escaping (_ success :Bool, _ error: String?) -> Void) {
-        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/store/delete_images/\(imageId)")!)
+        var request = URLRequest(url: URL(string: "http://healthctrl.qassim.gov.sa:8008/rating_app/store/delete_images/\(imageId)")!)
         request.httpMethod = HTTPMethod.delete.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")

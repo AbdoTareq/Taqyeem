@@ -59,7 +59,7 @@ struct RatingCriteriaVM {
             completion(false, "You must login")
             return
         }
-        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/store_rate_dtls/save")!)
+        var request = URLRequest(url: URL(string: "http://healthctrl.qassim.gov.sa:8008/rating_app/store_rate_dtls/save")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
     request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")

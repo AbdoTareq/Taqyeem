@@ -28,7 +28,7 @@ struct ActivityVM {
     }
     static func getResturantActivities(storeID :Int , completion: @escaping (_ streets: [ActivityVM]?, _ error: String?) -> Void) {
 
-        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/food_categories/all")!)
+        var request = URLRequest(url: URL(string: "http://healthctrl.qassim.gov.sa:8008/rating_app/food_categories/all")!)
                request.httpMethod = HTTPMethod.post.rawValue
                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")

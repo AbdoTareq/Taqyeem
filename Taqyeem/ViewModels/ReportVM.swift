@@ -37,7 +37,7 @@ struct ReportVM {
     }
     
     static func getMyReports(completion: @escaping (_ users: [ReportVM]?, _ error: String?) -> Void) {
-        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/comp/by_userid")!)
+        var request = URLRequest(url: URL(string: "http://healthctrl.qassim.gov.sa:8008/rating_app/comp/by_userid")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
@@ -81,7 +81,7 @@ struct ReportVM {
             imagesString.append("{\"complainimages\" : \"\(item.imgString!)\" , \"imagename\" : \"\(Date().getDate(type: .normal))\"}")
         }
         let imagesStringarr = "[" + imagesString.joined(separator: ",") + "]"
-        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/comp/save")!)
+        var request = URLRequest(url: URL(string: "http://healthctrl.qassim.gov.sa:8008/rating_app/comp/save")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
@@ -115,7 +115,7 @@ struct ReportVM {
             completion(false, "You must login")
             return
         }
-        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/issue/save")!)
+        var request = URLRequest(url: URL(string: "http://healthctrl.qassim.gov.sa:8008/rating_app/issue/save")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")

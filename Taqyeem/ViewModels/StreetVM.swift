@@ -12,7 +12,7 @@ struct StreetVM {
     var street :Street
     static func getAllStreets(municID :Int , districtID :Int , completion: @escaping (_ streets: [StreetVM]?, _ error: String?) -> Void) {
 
-        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/streets_by_district_id")!)
+        var request = URLRequest(url: URL(string: "http://healthctrl.qassim.gov.sa:8008/rating_app/streets_by_district_id")!)
                request.httpMethod = HTTPMethod.post.rawValue
                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")

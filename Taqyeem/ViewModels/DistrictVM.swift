@@ -11,7 +11,7 @@ import Alamofire
 struct DistrictVM {
     var district :District
     static func getAllDistricts( municID: Int ,completion: @escaping (_ users: [DistrictVM]?, _ error: String?) -> Void) {
-        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/district_by_munic")!)
+        var request = URLRequest(url: URL(string: "http://healthctrl.qassim.gov.sa:8008/rating_app/district_by_munic")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")

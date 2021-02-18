@@ -35,7 +35,7 @@ struct AuthenricationVM {
         return user.mobile ?? ""
     }
     static func register(user: User, storeID :Int? =  0 , completion: @escaping (_ user: AuthenricationVM?, _ error: String?) -> Void) {
-        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/user/save")!)
+        var request = URLRequest(url: URL(string: "http://healthctrl.qassim.gov.sa:8008/rating_app/user/save")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         var  paramString = ""
@@ -75,7 +75,7 @@ struct AuthenricationVM {
         }
     }
     static func login(mobile: String, password: String, completion: @escaping (_ user: AuthenricationVM?, _ error: String?) -> Void) {
-        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/user/authenticate")!)
+        var request = URLRequest(url: URL(string: "http://healthctrl.qassim.gov.sa:8008/rating_app/user/authenticate")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         let paramString = "{\"mobile\" : \"\(mobile)\", \"password\" : \"\(password)\"}"
@@ -102,7 +102,7 @@ struct AuthenricationVM {
     
     
     static func update(user: User, completion: @escaping (_ success: Bool, _ error: String?) -> Void) {
-        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/user/save")!)
+        var request = URLRequest(url: URL(string: "http://healthctrl.qassim.gov.sa:8008/rating_app/user/save")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")
@@ -131,7 +131,7 @@ struct AuthenricationVM {
     
     
     static func validatePhone(id: Int, activationCode: String, completion: @escaping (_ success: Bool?, _ error: String?) -> Void) {
-        var request = URLRequest(url: URL(string: "http://46.151.210.248:8888/rating_app/user/validate_phone")!)
+        var request = URLRequest(url: URL(string: "http://healthctrl.qassim.gov.sa:8008/rating_app/user/validate_phone")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(UserDefaultsAccess.sharedInstance.token)", forHTTPHeaderField: "Authorization")

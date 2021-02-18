@@ -6,7 +6,7 @@ enum Environment {
     case prod
 }
 class NetworkManager {
-    static var bURL = "http://46.151.210.248:8888/rating_app/"
+    static var bURL = "http://healthctrl.qassim.gov.sa:8008/rating_app/"
     static func getUrl(service: ServiceBase) -> String {
         return "\(bURL)\(service.rawValue)"
     }
@@ -29,7 +29,7 @@ class NetworkManager {
             func getURL() -> String {
                 switch self {
                 case .v1:
-                    return (Configuration.environment == .prod) ? "http://46.151.210.248:8888/rating_app/" : "https://api-dev.reachplus.co/api/v1/"
+                    return (Configuration.environment == .prod) ? "http://healthctrl.qassim.gov.sa:8008/rating_app/" : "https://api-dev.reachplus.co/api/v1/"
                 case .v2:
                     return (Configuration.environment == .prod) ? "https://api.reachplus.co/api/v2/" : "https://api-dev.reachplus.co/api/v2/"
                 }

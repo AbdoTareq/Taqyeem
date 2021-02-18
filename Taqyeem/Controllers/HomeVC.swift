@@ -12,6 +12,7 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
     
+    @IBOutlet weak var lblVersion: UILabel!
     @IBOutlet weak var stackMain: HomeStack!
     
     @IBOutlet weak var loginView: UIView!
@@ -29,6 +30,7 @@ class HomeVC: UIViewController {
         else {
             loginView.isHidden = false
         }
+        self.lblVersion.text = " الإصدار" + (Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String ) 
         
     }
     func initNavigationBar() {
